@@ -16,6 +16,9 @@ package ICD is
       InProcess : Boolean;
       IsOn : Boolean;
 
+      IsFib : Boolean;
+      isTar : Boolean;
+
       end record;
 
    procedure Tick(Computer : in out ICDType; HeartRateMonitor : in HRM.HRMType);
@@ -34,5 +37,11 @@ package ICD is
    procedure Init(Computer : in out ICDType);
    --# derives Computer from Computer;
    --#      post Computer.Rate = Measures.BPM'First;
+
+   procedure Detect_Fibrillation(Computer : in out ICDType);
+   --# derives Computer from Computer;
+
+   procedure Detect_Tarchycardia(Computer : in out ICDType);
+   --# derives Computer from Computer;
 
 end ICD;

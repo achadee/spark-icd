@@ -27,6 +27,16 @@ package body ICD is
       end if;
    end Tick;
 
+   procedure Detect_Fibrillation(Computer : in out ICDType) is
+   begin
+       Computer.isFib := True;
+   end Detect_Fibrillation;
+
+   procedure Detect_Tarchycardia(Computer : in out ICDType) is
+   begin
+       Computer.isTar := True;
+   end Detect_Tarchycardia;
+
    procedure Init(Computer : in out ICDType) is
    begin
         Computer.Rate := Measures.BPM'First;

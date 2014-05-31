@@ -5,7 +5,7 @@
            *******************************************************
 
 
-                        DATE : 31-MAY-2014 15:02:02.70
+                        DATE : 31-MAY-2014 15:25:49.48
 
 Line
    1  with Measures;
@@ -49,15 +49,33 @@ Line
            errors found.
 
   29  
-  30     procedure Init(Computer : in out ICDType) is
+  30     procedure Detect_Fibrillation(Computer : in out ICDType) is
   31     begin
-  32          Computer.Rate := Measures.BPM'First;
-  33     end Init;
+  32         Computer.isFib := True;
+  33     end Detect_Fibrillation;
+
++++        Flow analysis of subprogram Detect_Fibrillation 
+           performed: no errors found.
+
+  34  
+  35     procedure Detect_Tarchycardia(Computer : in out ICDType) is
+  36     begin
+  37         Computer.isTar := True;
+  38     end Detect_Tarchycardia;
+
++++        Flow analysis of subprogram Detect_Tarchycardia 
+           performed: no errors found.
+
+  39  
+  40     procedure Init(Computer : in out ICDType) is
+  41     begin
+  42          Computer.Rate := Measures.BPM'First;
+  43     end Init;
 
 +++        Flow analysis of subprogram Init performed: no 
            errors found.
 
-  34  end ICD;
+  44  end ICD;
 
 
 --End of file--------------------------------------------------
