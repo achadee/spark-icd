@@ -30,6 +30,9 @@ package ClosedLoop is
    procedure Tick(Sys : in out ClosedLoopType);
    --# derives Sys from Sys;
 
+   procedure Init(Sys : in out ClosedLoopType);
+   --# derives Sys from Sys;
+
    procedure Off(Sys : in out ClosedLoopType);
    --# derives Sys from Sys;
    --#      post Sys.Comp.IsOn = False and

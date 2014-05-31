@@ -26,4 +26,9 @@ package body ICD is
        Computer.Rate := Measures.BPM'First;
       end if;
    end Tick;
+
+   procedure Init(Computer : in out ICDType) is
+   begin
+        Computer.Rate := Measures.BPM'First;
+   end Init;
 end ICD;

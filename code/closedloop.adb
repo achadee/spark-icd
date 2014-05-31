@@ -29,6 +29,13 @@ package body ClosedLoop is
       ImpulseGenerator.On(Sys.Shock);
    end On;
 
+   procedure Init(Sys: in out ClosedLoopType) is
+   begin
+      HRM.Init(Sys.Monitor);
+      ImpulseGenerator.Init(Sys.Shock);
+      Icd.Init(Sys.Comp);
+   end Init;
+
    -- Tick the system, providing an impulse to the heart.
    procedure Tick(Sys : in out ClosedLoopType) is
    begin

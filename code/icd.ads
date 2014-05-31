@@ -31,4 +31,8 @@ package ICD is
    --# derives Computer from Computer;
    --#      post Computer.IsOn = True;
 
+   procedure Init(Computer : in out ICDType);
+   --# derives Computer from Computer;
+   --#      post Computer.Rate = Measures.BPM'First;
+
 end ICD;

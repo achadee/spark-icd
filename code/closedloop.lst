@@ -5,7 +5,7 @@
            *******************************************************
 
 
-                        DATE : 31-MAY-2014 14:36:35.15
+                        DATE : 31-MAY-2014 15:02:06.05
 
 Line
    1  with Measures;
@@ -47,21 +47,32 @@ Line
            errors found.
 
   31  
-  32     -- Tick the system, providing an impulse to the heart.
-  33     procedure Tick(Sys : in out ClosedLoopType) is
-  34     begin
-  35        for I in Integer range 0..100 loop
-  36           if Sys.Monitor.IsOn then
-  37              HRM.Tick(Sys.Monitor,Sys.Hrt);
-  38           end if;
-  39        end loop;
-  40     end Tick;
+  32     procedure Init(Sys: in out ClosedLoopType) is
+  33     begin
+  34        HRM.Init(Sys.Monitor);
+  35        ImpulseGenerator.Init(Sys.Shock);
+  36        Icd.Init(Sys.Comp);
+  37     end Init;
+
++++        Flow analysis of subprogram Init performed: no 
+           errors found.
+
+  38  
+  39     -- Tick the system, providing an impulse to the heart.
+  40     procedure Tick(Sys : in out ClosedLoopType) is
+  41     begin
+  42        for I in Integer range 0..100 loop
+  43           if Sys.Monitor.IsOn then
+  44              HRM.Tick(Sys.Monitor,Sys.Hrt);
+  45           end if;
+  46        end loop;
+  47     end Tick;
 
 +++        Flow analysis of subprogram Tick performed: no 
            errors found.
 
-  41  
-  42  end ClosedLoop;
+  48  
+  49  end ClosedLoop;
 
 
 --End of file--------------------------------------------------

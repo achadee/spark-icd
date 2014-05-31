@@ -5,7 +5,7 @@
            *******************************************************
 
 
-                        DATE : 31-MAY-2014 14:36:55.71
+                        DATE : 31-MAY-2014 15:02:02.70
 
 Line
    1  with Measures;
@@ -48,7 +48,16 @@ Line
 +++        Flow analysis of subprogram Tick performed: no 
            errors found.
 
-  29  end ICD;
+  29  
+  30     procedure Init(Computer : in out ICDType) is
+  31     begin
+  32          Computer.Rate := Measures.BPM'First;
+  33     end Init;
+
++++        Flow analysis of subprogram Init performed: no 
+           errors found.
+
+  34  end ICD;
 
 
 --End of file--------------------------------------------------
