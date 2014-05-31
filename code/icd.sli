@@ -40,15 +40,16 @@ D measures.ads 00000000000000 00000000
 D heart.ads 00000000000000 00000000
 
 X 2 icd.ads
-15i5 Rate 27r23 39r27
-17e7 IsOn 26r31 31r27 35r27
-24r19 Computer 25m16 25r30 26r22 27r14
-24r46 HeartRateMonitor 25r40
-29r18 Computer 30m16 30r30 31r18
-33r17 Computer 34m16 34r30 35r18
-37r19 Computer 38m16 38r30 39r18
-41r34 Computer 42m16 42r30
-44r34 Computer 45m16 45r30
+18i5 Rate 35r23 47r27
+20e7 IsOn 34r31 39r27 43r27
+32r19 Computer 33m16 33r30 34r22 35r14
+32r46 HeartRateMonitor 33r40
+37r18 Computer 38m16 38r30 39r18
+41r17 Computer 42m16 42r30 43r18
+45r19 Computer 46m16 46r30 47r18
+49r34 Computer 50m16 50r30
+52r34 Computer 53m16 53r30
+55r31 Computer 56m16 56r30
 X 3 impulsegenerator.ads
 10K9 ImpulseGenerator 2|8w13
 17i3 Impulse 26r50 46r42
@@ -77,10 +78,10 @@ X 4 hrm.ads
 X 5 randomnumber.ads
 2K9 RandomNumber 2|6w13 3|8w13 4|8w13 7|9w13
 X 6 measures.ads
-3K9 Measures 2|27r30 39r34 5w13 3|7w13 4|25r28 47r41 53r29 7w13 7|11r27
+3K9 Measures 2|35r30 47r34 5w13 3|7w13 4|25r28 47r41 53r29 7w13 7|11r27
 . 32r13 33r25 8w13
 9I12 Joules 29r26 29r63
-15I12 BPM 25r26 25r60 2|27r39 39r43 4|25r37 47r50 53r38 7|11r36 32r22
+15I12 BPM 25r26 25r60 2|35r39 47r43 4|25r37 47r50 53r38 7|11r36 32r22
 . 33r34
 18i39 Fst 20r12 21r26
 18i57 Lst 20r19 21r54

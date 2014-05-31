@@ -5,7 +5,7 @@
            *******************************************************
 
 
-                        DATE : 31-MAY-2014 15:25:49.48
+                        DATE : 31-MAY-2014 16:05:25.82
 
 Line
    1  with Measures;
@@ -60,22 +60,40 @@ Line
   34  
   35     procedure Detect_Tarchycardia(Computer : in out ICDType) is
   36     begin
-  37         Computer.isTar := True;
-  38     end Detect_Tarchycardia;
+  37         -- if the icd is on and the rate is above the upperbound
+  38         -- and a Tarchycardia has not been detected
+  39         if Computer.IsOn and Computer.Rate > Computer.UpperBound 
+  40         and Computer.IsTar = False then
+  41            -- something bad is about to happen!
+  42            -- so start a treatment
+  43            Computer.IsTar := True;
+  44         end if;
+  45     end Detect_Tarchycardia;
 
 +++        Flow analysis of subprogram Detect_Tarchycardia 
            performed: no errors found.
 
-  39  
-  40     procedure Init(Computer : in out ICDType) is
-  41     begin
-  42          Computer.Rate := Measures.BPM'First;
-  43     end Init;
+  46  
+  47     procedure Set_Next_Impulse(Computer : in out ICDType) is
+  48     begin
+  49        if Computer.IsTar and Computer.Count < MaxShocks then
+  50           Computer.Next := Computer.Rate + Integer(Float'Floor (600.0 / (Float(Computer.UpperBound) + ProjectedRate)));
+  51        end if;
+  52     end Set_Next_Impulse;
+
++++        Flow analysis of subprogram Set_Next_Impulse 
+           performed: no errors found.
+
+  53  
+  54     procedure Init(Computer : in out ICDType) is
+  55     begin
+  56          Computer.Rate := Measures.BPM'First;
+  57     end Init;
 
 +++        Flow analysis of subprogram Init performed: no 
            errors found.
 
-  44  end ICD;
+  58  end ICD;
 
 
 --End of file--------------------------------------------------

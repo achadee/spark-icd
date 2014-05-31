@@ -8,6 +8,9 @@ with ImpulseGenerator;
 --#         ImpulseGenerator;      
 package ICD is
    
+   ProjectedRate : constant Float := 15.0;
+   MaxShocks : constant Integer := 10;
+
    -- The record type for a heart rate monitor
    type ICDType is
       record
@@ -17,7 +20,12 @@ package ICD is
       IsOn : Boolean;
 
       IsFib : Boolean;
-      isTar : Boolean;
+      IsTar : Boolean;
+
+      -- ICD settings
+      UpperBound : Measures.BPM;
+      Count : Integer;
+      Next : Integer;
 
       end record;
 
@@ -42,6 +50,9 @@ package ICD is
    --# derives Computer from Computer;
 
    procedure Detect_Tarchycardia(Computer : in out ICDType);
+   --# derives Computer from Computer;
+
+   procedure Set_Next_Impulse(Computer : in out ICDType);
    --# derives Computer from Computer;
 
 end ICD;

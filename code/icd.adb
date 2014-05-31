@@ -34,8 +34,22 @@ package body ICD is
 
    procedure Detect_Tarchycardia(Computer : in out ICDType) is
    begin
-       Computer.isTar := True;
+       -- if the icd is on and the rate is above the upperbound
+       -- and a Tarchycardia has not been detected
+       if Computer.IsOn and Computer.Rate > Computer.UpperBound 
+       and Computer.IsTar = False then
+          -- something bad is about to happen!
+          -- so start a treatment
+          Computer.IsTar := True;
+       end if;
    end Detect_Tarchycardia;
+
+   procedure Set_Next_Impulse(Computer : in out ICDType) is
+   begin
+      if Computer.IsTar and Computer.Count < MaxShocks then
+         Computer.Next := Computer.Rate + Integer(Float'Floor (600.0 / (Float(Computer.UpperBound) + ProjectedRate)));
+      end if;
+   end Set_Next_Impulse;
 
    procedure Init(Computer : in out ICDType) is
    begin
