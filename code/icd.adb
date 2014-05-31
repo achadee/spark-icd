@@ -11,6 +11,11 @@ package body ICD is
       Computer.IsOn := False;
    end Off;
 
+   procedure On(Computer: in out ICDType) is
+   begin
+      Computer.IsOn := False;
+   end On;
+
    procedure Tick(Computer : in out ICDType; HeartRateMonitor : in HRM.HRMType) is
    begin
       if Computer.IsOn then

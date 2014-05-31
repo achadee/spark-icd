@@ -36,4 +36,10 @@ package ClosedLoop is
    --#           Sys.Monitor.isOn = False and
    --#           Sys.Shock.isOn = False;
 
+   procedure On(Sys : in out ClosedLoopType);
+   --# derives Sys from Sys;
+   --#      post Sys.Comp.IsOn = True and
+   --#           Sys.Monitor.isOn = True and
+   --#           Sys.Shock.isOn = True;
+
 end ClosedLoop;

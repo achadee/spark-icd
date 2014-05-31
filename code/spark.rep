@@ -5,7 +5,7 @@
            *******************************************************
 
 
-                        DATE : 31-MAY-2014 14:32:39.40
+                        DATE : 31-MAY-2014 14:36:55.71
 
 Options:
     noswitch
@@ -31,7 +31,7 @@ Options:
     output_directory (actual)=/Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/
 
 Selected files:
-   closedloop.adb
+   icd.adb
 
 
 Index Filename(s) used were: 
@@ -45,41 +45,20 @@ Full warning reporting selected
 
 
 Source Filename(s) used were:
-   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/closedloop.adb
-   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/closedloop.ads
+   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/icd.adb
    /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/icd.ads
-   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/heart.ads
    /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/impulsegenerator.ads
    /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/hrm.ads
-   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/measures.ads
    /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/randomnumber.ads
+   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/measures.ads
+   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/heart.ads
 
-
-
-Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/closedloop.ads
-No Listing File
-
-   Unit name:  ClosedLoop
-   Unit type:  package specification
-   Unit has been analysed, any errors are listed below.
-
-No errors found
 
 
 Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/icd.ads
 No Listing File
 
    Unit name:  ICD
-   Unit type:  package specification
-   Unit has been analysed, any errors are listed below.
-
-No errors found
-
-
-Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/heart.ads
-No Listing File
-
-   Unit name:  Heart
    Unit type:  package specification
    Unit has been analysed, any errors are listed below.
 
@@ -106,16 +85,6 @@ No Listing File
 No errors found
 
 
-Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/measures.ads
-No Listing File
-
-   Unit name:  Measures
-   Unit type:  package specification
-   Unit has been analysed, any errors are listed below.
-
-No errors found
-
-
 Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/randomnumber.ads
 No Listing File
 
@@ -126,10 +95,30 @@ No Listing File
 No errors found
 
 
-Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/closedloop.adb
-Listing Filename:  /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/closedloop.lst
+Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/measures.ads
+No Listing File
 
-   Unit name:  ClosedLoop
+   Unit name:  Measures
+   Unit type:  package specification
+   Unit has been analysed, any errors are listed below.
+
+No errors found
+
+
+Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/heart.ads
+No Listing File
+
+   Unit name:  Heart
+   Unit type:  package specification
+   Unit has been analysed, any errors are listed below.
+
+No errors found
+
+
+Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/icd.adb
+Listing Filename:  /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/icd.lst
+
+   Unit name:  ICD
    Unit type:  package body
    Unit has been analysed, any errors are listed below.
 
