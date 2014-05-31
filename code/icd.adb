@@ -1,6 +1,7 @@
 with Measures;
 with HRM;
 with ImpulseGenerator;
+--with Ada.Text_IO;
 
 package body ICD is
 
@@ -13,20 +14,8 @@ package body ICD is
 
    procedure On(Computer: in out ICDType) is
    begin
-      Computer.IsOn := False;
+      Computer.IsOn := True;
    end On;
-
-   procedure Tick(Computer : in out ICDType; HeartRateMonitor : in HRM.HRMType) is
-   begin
-      if Computer.IsOn then
-      --ICD.addRateToHistory(Computer);
-    -- read the heart rate from the HRM
-       HRM.GetRate(HeartRateMonitor, Computer.Rate);
-      else
-    -- If the Computer is not on, return 0 for both values
-       Computer.Rate := Measures.BPM'First;
-      end if;
-   end Tick;
 
    procedure Detect_Tarchycardia(Computer : in out ICDType) is
    begin
@@ -36,6 +25,8 @@ package body ICD is
        and Computer.IsTar = False then
           -- something bad is about to happen!
           -- so start a treatment
+          --Ada.Text_IO.Put_Line("tarch detected");
+
           Computer.IsTar := True;
        end if;
    end Detect_Tarchycardia;
@@ -54,11 +45,17 @@ package body ICD is
       elsif Computer.IsTar and Computer.count < MaxShocks 
             and Computer.Rate = Computer.Next and Shock.IsOn then
          ImpulseGenerator.SetImpulse(Shock, TarShock);
+      elsif not Computer.IsTar and not Computer.isFib then
+         ImpulseGenerator.SetImpulse(Shock, 0);
       end if;
    end Set_Impulse;
 
    procedure Init(Computer : in out ICDType) is
    begin
+        Computer.IsTar := False;
+        COmputer.IsFib := False;
+        Computer.UpperBound := 140;
+
         Computer.Rate := Measures.BPM'First;
         for I in Index loop
           Computer.heartRateHistory(I) := -1;
@@ -83,7 +80,6 @@ package body ICD is
 
       ---Calculate the avarage-----------------
       currentHistory := Computer.heartRateHistory;
-      Computer.isFib := False;
       Computer.history_avarage := 0;
       for I in Index loop
       Computer.history_avarage := Computer.history_avarage + currentHistory (I);
@@ -91,25 +87,49 @@ package body ICD is
       Computer.history_avarage := Computer.history_avarage / currentHistory'length;
       ---end calculating the average-----------
       ---Calculate Variance--------------------
+      Computer.history_variance := 0;
       for I in Index loop
-      temp := Computer.history_avarage - currentHistory (I);
+      temp := Computer.history_avarage - Computer.heartRateHistory(I);
       Computer.history_variance := temp * temp + Computer.history_variance;
       end loop;
       Computer.history_variance := Computer.history_variance / currentHistory'length;
       ---End Calculating the variance----------
-
-    If Computer.history_variance > 20 then
-      Computer.isFib := true;
-    end if;
-
-    if currentHistory (1) = -1 or 
-      Computer.ticksToReEnableDetectionAgain > 0 then
-
-      Computer.ticksToReEnableDetectionAgain := 
-        Computer.ticksToReEnableDetectionAgain - 1;
-      Computer.isFib := false;
+      if Computer.isFib then
+        --Ada.Text_IO.Put_Line("fib is true");
+        Computer.isFib := false;
+        Computer.ticksToReEnableDetectionAgain := 7;
+      else
+       if currentHistory (1) = -1 or 
+            Computer.ticksToReEnableDetectionAgain > 0 then
+            --Ada.Text_IO.Put_Line("fib nodetect");
+            Computer.ticksToReEnableDetectionAgain := 
+            Computer.ticksToReEnableDetectionAgain - 1;
+       else
+            If Computer.history_variance > 3000 then
+              --Ada.Text_IO.Put_Line(".");
+              Computer.isFib := true;
+           end if;
+       end if; 
     end if;
 
    end Detect_Fibrillation;
+
+   procedure Tick(Computer : in out ICDType; HeartRateMonitor : in HRM.HRMType; Shock : in out ImpulseGenerator.GeneratorType) is
+   begin
+
+      if Computer.IsOn then
+        --Ada.Text_IO.Put_Line("Computer is on");
+        -- read the heart rate from the HRM
+        HRM.GetRate(HeartRateMonitor, Computer.Rate);
+        addRateToHistory(Computer);
+        Detect_Fibrillation(Computer);
+        Detect_Tarchycardia(Computer);
+        Set_Impulse(Computer, Shock);
+      else
+        --Ada.Text_IO.Put_Line("Computer is off");
+      -- If the Computer is not on, return 0 for both values
+        Computer.Rate := Measures.BPM'First;
+      end if;
+   end Tick;
 
 end ICD;

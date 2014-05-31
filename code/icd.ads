@@ -38,8 +38,8 @@ package ICD is
       history_variance : Integer;
       end record;
 
-   procedure Tick(Computer : in out ICDType; HeartRateMonitor : in HRM.HRMType);
-   --# derives Computer from Computer, HeartRateMonitor;
+   procedure Tick(Computer : in out ICDType; HeartRateMonitor : in HRM.HRMType; Shock : in out ImpulseGenerator.GeneratorType);
+   --# derives Computer from Computer, HeartRateMonitor & Shock from Computer, Shock, HeartRateMonitor;
    --#      post not Computer.IsOn -> 
    --#      (Computer.Rate = Measures.BPM'First);
 

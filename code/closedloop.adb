@@ -43,7 +43,7 @@ package body ClosedLoop is
          -- if the computer is on, tick through the entire system
          if Sys.Comp.isOn then
             HRM.Tick(Sys.Monitor,Sys.Hrt);
-            ICD.Tick(Sys.Comp, Sys.Monitor);
+            ICD.Tick(Sys.Comp, Sys.Monitor, Sys.Shock);
             ImpulseGenerator.Tick(Sys.Shock, Sys.Hrt);
          end if;
       end loop;
