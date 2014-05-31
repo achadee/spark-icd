@@ -1,0 +1,23 @@
+*****************************************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+*****************************************************************************
+
+
+CREATED 27-MAY-2014, 15:39:24  SIMPLIFIED 27-MAY-2014, 15:49:48
+
+SPARK Simplifier GPL 2011
+Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+
+procedure ImpulseGenerator.On
+
+
+
+
+For path(s) from start to finish:
+
+procedure_on_1.
+*** true .          /* all conclusions proved */
+
+

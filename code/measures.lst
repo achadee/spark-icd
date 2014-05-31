@@ -1,0 +1,56 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 27-MAY-2014 15:39:23.94
+
+Line
+   1  package body Measures is
+   2     
+   3     function Limit(Input : in Integer; Fst : in Integer; Lst : in Integer)
+   4  		 return Integer
+   5     is
+   6        Output : Integer;
+   7     begin
+   8        if Input < Fst then
+   9  	 Output := Fst;
+  10        elsif Input > Lst then
+  11  	 Output := Lst;
+  12        else
+  13  	 Output := Input;
+  14        end if;
+  15        
+  16        return Output;
+  17     end Limit;
+
++++        Flow analysis of subprogram Limit performed: no 
+           errors found.
+
+  18     
+  19     function LimitBPM(Input : in Integer) return BPM 
+  20     is begin
+  21        return Limit(Input, BPM'First, BPM'Last);
+  22     end LimitBPM;
+
++++        Flow analysis of subprogram LimitBPM performed: 
+           no errors found.
+
+  23     
+  24     function LimitJoules(Input : in Integer) return Joules
+  25     is begin
+  26        return Limit(Input, Joules'First, Joules'Last);
+  27     end LimitJoules;
+
++++        Flow analysis of subprogram LimitJoules 
+           performed: no errors found.
+
+  28  
+  29  end Measures;
+No summarized warnings
+
+
+
+--End of file--------------------------------------------------

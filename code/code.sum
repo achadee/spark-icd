@@ -1,0 +1,558 @@
+-------------------------------------------------------------------------------
+                          Semantic Analysis Summary                            
+                                POGS GPL 2011                                  
+            Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.               
+-------------------------------------------------------------------------------
+
+Summary of:
+
+Verification Condition files (.vcg)
+Simplified Verification Condition files (.siv)
+ViCToR result files (.vct)
+Proof Logs (.plg)
+Dead Path Conjecture files (.dpc)
+Summary Dead Path files (.sdp)
+
+"status" column keys:
+    1st character:
+        '-' - No VC
+        'S' - No SIV
+        'U' - Undischarged
+        'E' - Proved by Examiner
+        'I' - Proved by Simplifier by Inference
+        'X' - Proved by Simplifier by Contradiction
+        'P' - Proved by Simplifier using User Defined Proof Rules
+        'V' - Proved by ViCToR
+        'C' - Proved by Checker
+        'R' - Proved by Review
+        'F' - VC is False
+    2nd character:
+        '-' - No DPC
+        'S' - No SDP
+        'U' - Unchecked
+        'D' - Dead path
+        'L' - Live path
+
+in the directory:
+/home/samana/swen90010-2014/assignments/assignment-4/code
+
+Summary produced: 27-MAY-2014 15:51:14.75
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/heart/getimpulse.vcg
+function Heart.GetImpulse
+
+VCs generated 27-MAY-2014 15:39:23
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for function_getimpulse :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/heart/getrate.vcg
+procedure Heart.GetRate
+
+VCs generated 27-MAY-2014 15:39:23
+
+VCs simplified 27-MAY-2014 15:49:47
+
+VCs for procedure_getrate :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start | rtc check @ 38      | Inference          | No DPC    |   I-   |
+| 2   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/heart/init.vcg
+procedure Heart.Init
+
+VCs generated 27-MAY-2014 15:39:23
+
+VCs simplified 27-MAY-2014 15:49:47
+
+VCs for procedure_init :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start | rtc check @ 21      | Inference          | No DPC    |   I-   |
+| 2   | start | rtc check @ 21      | Inference          | No DPC    |   I-   |
+| 3   | start | rtc check @ 21      | Inference          | No DPC    |   I-   |
+| 4   | start | rtc check @ 25      | Inference          | No DPC    |   I-   |
+| 5   | start | rtc check @ 26      | Inference          | No DPC    |   I-   |
+| 6   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/heart/setimpulse.vcg
+procedure Heart.SetImpulse
+
+VCs generated 27-MAY-2014 15:39:23
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for procedure_setimpulse :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start | rtc check @ 32      | Inference          | No DPC    |   I-   |
+| 2   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/heart/tick.vcg
+procedure Heart.Tick
+
+VCs generated 27-MAY-2014 15:39:23
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for procedure_tick :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start | rtc check @ 51      | Inference          | No DPC    |   I-   |
+| 2   | start | rtc check @ 51      | Inference          | No DPC    |   I-   |
+| 3   | start | rtc check @ 55      | Inference          | No DPC    |   I-   |
+| 4   | start | rtc check @ 55      | Inference          | No DPC    |   I-   |
+| 5   | start | rtc check @ 57      | Inference          | No DPC    |   I-   |
+| 6   | start | rtc check @ 58      | Inference          | No DPC    |   I-   |
+| 7   | start | rtc check @ 62      | Inference          | No DPC    |   I-   |
+| 8   | start | rtc check @ 62      | Inference          | No DPC    |   I-   |
+| 9   | start | rtc check @ 62      | Inference          | No DPC    |   I-   |
+| 10  | start | rtc check @ 62      | Inference          | No DPC    |   I-   |
+| 11  | start | rtc check @ 62      | Inference          | No DPC    |   I-   |
+| 12  | start | rtc check @ 62      | Inference          | No DPC    |   I-   |
+| 13  | start | rtc check @ 62      | Inference          | No DPC    |   I-   |
+| 14  | start | rtc check @ 62      | Inference          | No DPC    |   I-   |
+| 15  | start | rtc check @ 62      | Inference          | No DPC    |   I-   |
+| 16  | start |    assert @ finish  | Examiner           | No DPC    |   E-   |
+| 17  | start |    assert @ finish  | Examiner           | No DPC    |   E-   |
+| 18  | start |    assert @ finish  | Examiner           | No DPC    |   E-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/hrm/getrate.vcg
+procedure HRM.GetRate
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for procedure_getrate :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start | rtc check @ 35      | Inference          | No DPC    |   I-   |
+| 2   | start | rtc check @ 37      | Inference          | No DPC    |   I-   |
+| 3   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+| 4   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/hrm/init.vcg
+procedure HRM.Init
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for procedure_init :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start | rtc check @ 11      | Inference          | No DPC    |   I-   |
+| 2   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/hrm/ison.vcg
+function HRM.IsOn
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for function_ison :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/hrm/off.vcg
+procedure HRM.Off
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for procedure_off :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/hrm/on.vcg
+procedure HRM.On
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for procedure_on :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start | rtc check @ 18      | Inference          | No DPC    |   I-   |
+| 2   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/hrm/tick.vcg
+procedure HRM.Tick
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for procedure_tick :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start | rtc check @ 45      | Inference          | No DPC    |   I-   |
+| 2   | start | rtc check @ 48      | Inference          | No DPC    |   I-   |
+| 3   | start | rtc check @ 48      | Inference          | No DPC    |   I-   |
+| 4   | start | rtc check @ 48      | Inference          | No DPC    |   I-   |
+| 5   | start | rtc check @ 53      | Inference          | No DPC    |   I-   |
+| 6   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+| 7   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/icd/calculaterate.vcg
+procedure ICD.CalculateRate
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for procedure_calculaterate :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start |    assert @ finish  | False              | No DPC    |   F-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/icd/delivershock.vcg
+procedure ICD.deliverShock
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for procedure_delivershock :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start |    assert @ finish  | False              | No DPC    |   F-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/icd/detectventriclefibrillation.vcg
+function ICD.detectVentricleFibrillation
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for function_detectventriclefibrillation :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start |    assert @ finish  | False              | No DPC    |   F-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/icd/getnextimpulsetick.vcg
+procedure ICD.GetNextImpulseTick
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for procedure_getnextimpulsetick :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start |    assert @ finish  | False              | No DPC    |   F-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/icd/resetcounters.vcg
+procedure ICD.resetCounters
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for procedure_resetcounters :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start |    assert @ finish  | False              | No DPC    |   F-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/icd/tick.vcg
+procedure ICD.Tick
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for procedure_tick :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start |    assert @ finish  | False              | No DPC    |   F-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/icd/updateupperbound.vcg
+procedure ICD.UpdateUpperBound
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for procedure_updateupperbound :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start |    assert @ finish  | False              | No DPC    |   F-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/impulsegenerator/init.vcg
+procedure ImpulseGenerator.Init
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for procedure_init :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start | rtc check @ 9       | Inference          | No DPC    |   I-   |
+| 2   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/impulsegenerator/ison.vcg
+function ImpulseGenerator.IsOn
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for function_ison :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/impulsegenerator/off.vcg
+procedure ImpulseGenerator.Off
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for procedure_off :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/impulsegenerator/on.vcg
+procedure ImpulseGenerator.On
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for procedure_on :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/impulsegenerator/setimpulse.vcg
+procedure ImpulseGenerator.SetImpulse
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for procedure_setimpulse :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start | rtc check @ 32      | Inference          | No DPC    |   I-   |
+| 2   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+| 3   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/impulsegenerator/tick.vcg
+procedure ImpulseGenerator.Tick
+
+VCs generated 27-MAY-2014 15:39:24
+
+VCs simplified 27-MAY-2014 15:49:48
+
+VCs for procedure_tick :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start | rtc check @ 46      | Inference          | No DPC    |   I-   |
+| 2   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+| 3   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/measures/limit.vcg
+function Measures.Limit
+
+VCs generated 27-MAY-2014 15:39:23
+
+VCs simplified 27-MAY-2014 15:49:47
+
+VCs for function_limit :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start | rtc check @ 9       | Inference          | No DPC    |   I-   |
+| 2   | start | rtc check @ 11      | Inference          | No DPC    |   I-   |
+| 3   | start | rtc check @ 13      | Inference          | No DPC    |   I-   |
+| 4   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+| 5   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+| 6   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/measures/limitbpm.vcg
+function Measures.LimitBPM
+
+VCs generated 27-MAY-2014 15:39:23
+
+VCs simplified 27-MAY-2014 15:49:47
+
+VCs for function_limitbpm :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start | pre check @ 21      | Inference          | No DPC    |   I-   |
+| 2   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+File /home/samana/swen90010-2014/assignments/assignment-4/code/measures/limitjoules.vcg
+function Measures.LimitJoules
+
+VCs generated 27-MAY-2014 15:39:23
+
+VCs simplified 27-MAY-2014 15:49:47
+
+VCs for function_limitjoules :
+ -----------------------------------------------------------------------------
+| #   | From  | To                  | Proved By          | Dead Path | Status |
+|-----------------------------------------------------------------------------
+| 1   | start | pre check @ 26      | Inference          | No DPC    |   I-   |
+| 2   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+ -----------------------------------------------------------------------------
+
+
+===============================================================================
+Summary:
+
+The following subprograms have VCs proved false:
+
+   1  /home/samana/swen90010-2014/assignments/assignment-4/code/icd/calculaterate.vcg
+   1  /home/samana/swen90010-2014/assignments/assignment-4/code/icd/delivershock.vcg
+   1  /home/samana/swen90010-2014/assignments/assignment-4/code/icd/detectventriclefibrillation.vcg
+   1  /home/samana/swen90010-2014/assignments/assignment-4/code/icd/getnextimpulsetick.vcg
+   1  /home/samana/swen90010-2014/assignments/assignment-4/code/icd/resetcounters.vcg
+   1  /home/samana/swen90010-2014/assignments/assignment-4/code/icd/tick.vcg
+   1  /home/samana/swen90010-2014/assignments/assignment-4/code/icd/updateupperbound.vcg
+
+Proof strategies used by subprograms
+-------------------------------------------------------------------------
+Total subprograms with at least one VC proved by examiner:              1
+Total subprograms with at least one VC proved by simplifier:           20
+Total subprograms with at least one VC proved by contradiction:         0
+Total subprograms with at least one VC proved with user proof rule:     0
+Total subprograms with at least one VC proved by ViCToR:                0
+Total subprograms with at least one VC proved using checker:            0
+Total subprograms with at least one VC discharged by review:            0
+
+Maximum extent of strategies used for fully proved subprograms:
+-------------------------------------------------------------------------
+Total subprograms with proof completed by examiner:                     0
+Total subprograms with proof completed by simplifier:                  20
+Total subprograms with proof completed with user defined rules:         0
+Total subprograms with proof completed by ViCToR:                       0
+Total subprograms with proof completed by checker:                      0
+Total subprograms with VCs discharged by review:                        0
+
+Overall subprogram summary:
+-------------------------------------------------------------------------
+Total subprograms fully proved:                                        20
+Total subprograms with at least one undischarged VC:                    0
+Total subprograms with at least one false VC:                           7  <<<
+                                                                    -----
+Total subprograms for which VCs have been generated:                   27
+
+
+ZombieScope Summary:
+-------------------------------------------------------------------------
+Total subprograms for which DPCs have been generated:                   0
+Total number subprograms with dead paths found:                         0
+Total number of dead paths found:                                       0
+
+
+VC summary:
+-------------------------------------------------------------------------
+Note: (User) denotes where the Simplifier has proved VCs using one or
+      more user-defined proof rules.
+
+Total VCs by type:                                       
+                       -----------Proved By Or Using-----------
+                Total Examnr   Simp (User) ViCToR Checkr Review  False Undisc
+Assert/Post        35      3     25             0      0      0      7      0
+Precondition        2      0      2             0      0      0      0      0
+Check stmnt.        0      0      0             0      0      0      0      0
+Runtime check      37      0     37             0      0      0      0      0
+Refinem. VCs        0      0      0             0      0      0      0      0
+Inherit. VCs        0      0      0             0      0      0      0      0
+===============================================================================
+Totals:            74      3     64             0      0      0      7      0 <<<
+%Totals:                  4%    86%            0%     0%     0%     9%     0%
+===================== End of Semantic Analysis Summary ========================

@@ -1,0 +1,101 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 28-MAY-2014 16:34:36.88
+
+Line
+   1  with Measures; 
+   2  with RandomNumber;
+   3  
+   4  package body Heart is
+   5     
+   6     -- Some boundaries for impulse shocks
+   7     NoShock : constant Measures.Joules := 0;
+   8     SmallShock : constant Measures.Joules := 5;
+   9     
+  10     -- Parameters for generating random heart rate upon initialisation
+  11     HeartRateMu : constant Measures.BPM := 80;
+  12     HeartRateSigma : constant Measures.BPM := 10;
+  13     
+  14     -- Used to simulate volatility of the patient's response to treatment
+  15     Volatility : constant Float := 0.02;
+  16     
+  17     -- A local function to limit Dosage measures
+  18     procedure Init(Hrt : out HeartType) is
+  19     begin
+  20        -- Generate a random systolic pressure
+  21        Hrt.Rate :=
+  22  	Measures.LimitBPM(RandomNumber.
+  23  			    NormalInteger(HeartRateMu,
+  24  					  HeartRateSigma));      
+  25        Hrt.Impulse := 0;
+  26        DefaultChange := 1;
+  27     end Init;
+
++++        Flow analysis of subprogram Init performed: no 
+           errors found.
+
+  28     
+  29     procedure SetImpulse(Hrt : in out HeartType; 
+  30  			Joules : in Measures.Joules) is
+  31     begin
+  32        Hrt.Impulse := Joules;
+  33     end SetImpulse;
+
++++        Flow analysis of subprogram SetImpulse 
+           performed: no errors found.
+
+  34     
+  35     procedure GetRate(Hrt : in HeartType;
+  36  		     Rate : out Measures.BPM) is
+  37     begin
+  38        Rate := Hrt.Rate;
+  39     end GetRate;
+
++++        Flow analysis of subprogram GetRate performed: 
+           no errors found.
+
+  40     
+  41     function GetImpulse(Hrt : in HeartType) return Measures.Joules is
+  42     begin
+  43        return Hrt.Impulse;
+  44     end GetImpulse;
+
++++        Flow analysis of subprogram GetImpulse 
+           performed: no errors found.
+
+  45     
+  46     procedure Tick(Hrt : in out HeartType) is
+  47     begin
+  48        if (Hrt.Impulse = NoShock) then
+  49  	 -- No impulse, and the default behaviour of this heart is to increase
+  50  	 -- the rate slowly.
+  51  	 Hrt.Rate := 
+  52  	   Measures.LimitBPM(Hrt.Rate + DefaultChange);
+  53        elsif (Hrt.Impulse < SmallShock) then
+  54  	 -- A crude slowing of the heart given a shock
+  55  	 Hrt.Rate := Measures.LimitBPM(Hrt.Rate - Hrt.Impulse);
+  56        else -- a large shock
+  57  	 Hrt.Rate := 0;
+  58  	 DefaultChange := 0;
+  59        end if;
+  60        
+  61        -- Insert some random volatility
+  62        Hrt.Rate := 
+  63  	Measures.LimitBPM(RandomNumber.UniformIntegerWithError(Hrt.Rate,
+  64  							       Volatility));
+  65        
+  66     end Tick;
+
++++        Flow analysis of subprogram Tick performed: no 
+           errors found.
+
+  67     
+  68  end Heart;
+
+
+--End of file--------------------------------------------------

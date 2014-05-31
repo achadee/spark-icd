@@ -1,0 +1,33 @@
+           /*********************************************************/
+                           /*Proof Rule Declarations*/
+                              /*Examiner GPL 2011*/
+             /*Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.*/
+           /*********************************************************/
+
+
+                        /*DATE : 27-MAY-2014 15:39:24.00*/
+
+                      /*procedure ImpulseGenerator.Init*/
+
+
+rule_family init_rules:
+     X      requires [X:any] &
+     X <= Y requires [X:ire, Y:ire] &
+     X >= Y requires [X:ire, Y:ire].
+
+init_rules(1): integer__size >= 0 may_be_deduced.
+init_rules(2): integer__first may_be_replaced_by -2147483648.
+init_rules(3): integer__last may_be_replaced_by 2147483647.
+init_rules(4): integer__base__first may_be_replaced_by -2147483648.
+init_rules(5): integer__base__last may_be_replaced_by 2147483647.
+init_rules(6): measures__joules__size >= 0 may_be_deduced.
+init_rules(7): measures__joules__first may_be_replaced_by 0.
+init_rules(8): measures__joules__last may_be_replaced_by 45.
+init_rules(9): measures__joules__base__first may_be_replaced_by -2147483648.
+init_rules(10): measures__joules__base__last may_be_replaced_by 2147483647.
+init_rules(11): generatortype__size >= 0 may_be_deduced.
+init_rules(12): A = B may_be_deduced_from
+     [goal(checktype(A,generatortype)),
+      goal(checktype(B,generatortype)),
+      fld_impulse(A) = fld_impulse(B),
+      fld_ison(A) = fld_ison(B)].

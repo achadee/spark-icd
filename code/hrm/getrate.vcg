@@ -1,0 +1,72 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 27-MAY-2014 15:39:24.06
+
+                           procedure HRM.GetRate
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 35:
+
+procedure_getrate_1.
+H1:    true .
+H2:    true .
+H3:    fld_rate(monitor) >= measures__bpm__first .
+H4:    fld_rate(monitor) <= measures__bpm__last .
+H5:    fld_ison(monitor) .
+        ->
+C1:    fld_rate(monitor) >= measures__bpm__first .
+C2:    fld_rate(monitor) <= measures__bpm__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 37:
+
+procedure_getrate_2.
+H1:    true .
+H2:    true .
+H3:    fld_rate(monitor) >= measures__bpm__first .
+H4:    fld_rate(monitor) <= measures__bpm__last .
+H5:    not (fld_ison(monitor)) .
+        ->
+C1:    measures__bpm__first >= measures__bpm__first .
+C2:    measures__bpm__first <= measures__bpm__last .
+ 
+
+For path(s) from start to finish:
+
+procedure_getrate_3.
+H1:    true .
+H2:    true .
+H3:    fld_rate(monitor) >= measures__bpm__first .
+H4:    fld_rate(monitor) <= measures__bpm__last .
+H5:    fld_ison(monitor) .
+H6:    fld_rate(monitor) >= measures__bpm__first .
+H7:    fld_rate(monitor) <= measures__bpm__last .
+        ->
+C1:    fld_ison(monitor) -> (fld_rate(monitor) = fld_rate(
+           monitor)) .
+C2:    (not (fld_ison(monitor))) -> (fld_rate(monitor) = 
+           measures__bpm__first) .
+ 
+
+procedure_getrate_4.
+H1:    true .
+H2:    true .
+H3:    fld_rate(monitor) >= measures__bpm__first .
+H4:    fld_rate(monitor) <= measures__bpm__last .
+H5:    not (fld_ison(monitor)) .
+H6:    measures__bpm__first >= measures__bpm__first .
+H7:    measures__bpm__first <= measures__bpm__last .
+        ->
+C1:    fld_ison(monitor) -> (measures__bpm__first = fld_rate(
+           monitor)) .
+C2:    (not (fld_ison(monitor))) -> (measures__bpm__first = 
+           measures__bpm__first) .
+ 
+

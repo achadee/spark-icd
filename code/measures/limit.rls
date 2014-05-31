@@ -1,0 +1,22 @@
+           /*********************************************************/
+                           /*Proof Rule Declarations*/
+                              /*Examiner GPL 2011*/
+             /*Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.*/
+           /*********************************************************/
+
+
+                        /*DATE : 27-MAY-2014 15:39:23.93*/
+
+                          /*function Measures.Limit*/
+
+
+rule_family limit_rules:
+     X      requires [X:any] &
+     X <= Y requires [X:ire, Y:ire] &
+     X >= Y requires [X:ire, Y:ire].
+
+limit_rules(1): integer__size >= 0 may_be_deduced.
+limit_rules(2): integer__first may_be_replaced_by -2147483648.
+limit_rules(3): integer__last may_be_replaced_by 2147483647.
+limit_rules(4): integer__base__first may_be_replaced_by -2147483648.
+limit_rules(5): integer__base__last may_be_replaced_by 2147483647.

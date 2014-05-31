@@ -1,0 +1,36 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 28-MAY-2014 19:55:31.21
+
+Line
+   1  with Measures;
+   2  with HRM;
+   3  with ImpulseGenerator;
+   4  
+   5  package body ICD is
+   6  
+   7     NoShock : constant Measures.Joules := 0;
+   8  
+   9     procedure Tick(Computer : in out ICDType; HeartRateMonitor : in HRM.HRMType) is
+  10     begin
+  11        if Computer.IsOn then
+  12      -- read the heart rate from the HRM
+  13         HRM.GetRate(HeartRateMonitor, Computer.Rate);
+  14        else
+  15      -- If the Computer is not on, return 0 for both values
+  16         Computer.Rate := Measures.BPM'First;
+  17        end if;
+  18     end Tick;
+
++++        Flow analysis of subprogram Tick performed: no 
+           errors found.
+
+  19  end ICD;
+
+
+--End of file--------------------------------------------------

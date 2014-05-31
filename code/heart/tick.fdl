@@ -1,0 +1,49 @@
+           {*******************************************************}
+                               {FDL Declarations}
+                              {Examiner GPL 2011}
+             {Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.}
+           {*******************************************************}
+
+
+                        {DATE : 27-MAY-2014 15:39:23.98}
+
+                            {procedure Heart.Tick}
+
+
+title procedure tick;
+
+  function round__(real) : integer;
+  type hearttype = record
+        rate : integer;
+        impulse : integer
+     end;
+  const noshock : integer = pending;
+  const smallshock : integer = pending;
+  const volatility : real = pending;
+  const measures__bpm__base__first : integer = pending; 
+  const measures__bpm__base__last : integer = pending; 
+  const measures__joules__base__first : integer = pending; 
+  const measures__joules__base__last : integer = pending; 
+  const float__base__first : real = pending; 
+  const float__base__last : real = pending; 
+  const integer__base__first : integer = pending; 
+  const integer__base__last : integer = pending; 
+  const hearttype__size : integer = pending; 
+  const measures__bpm__first : integer = pending; 
+  const measures__bpm__last : integer = pending; 
+  const measures__bpm__size : integer = pending; 
+  const measures__joules__first : integer = pending; 
+  const measures__joules__last : integer = pending; 
+  const measures__joules__size : integer = pending; 
+  const float__first : real = pending; 
+  const float__last : real = pending; 
+  const float__size : integer = pending; 
+  const integer__first : integer = pending; 
+  const integer__last : integer = pending; 
+  const integer__size : integer = pending; 
+  var defaultchange : integer;
+  var hrt : hearttype;
+  function measures__limitbpm(integer) : integer;
+  function randomnumber__uniformintegerwitherror(integer, real) : integer;
+
+end;

@@ -1,0 +1,568 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 27-MAY-2014 15:39:23.98
+
+                            procedure Heart.Tick
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 51:
+
+procedure_tick_1.
+H1:    true .
+H2:    fld_impulse(hrt) >= measures__joules__first .
+H3:    fld_impulse(hrt) <= measures__joules__last .
+H4:    fld_rate(hrt) >= measures__bpm__first .
+H5:    fld_rate(hrt) <= measures__bpm__last .
+H6:    defaultchange >= measures__bpm__first .
+H7:    defaultchange <= measures__bpm__last .
+H8:    fld_impulse(hrt) = noshock .
+        ->
+C1:    fld_rate(hrt) + defaultchange >= integer__first .
+C2:    fld_rate(hrt) + defaultchange <= integer__last .
+C3:    fld_rate(hrt) + defaultchange >= integer__base__first .
+C4:    fld_rate(hrt) + defaultchange <= integer__base__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 51:
+
+procedure_tick_2.
+H1:    true .
+H2:    fld_impulse(hrt) >= measures__joules__first .
+H3:    fld_impulse(hrt) <= measures__joules__last .
+H4:    fld_rate(hrt) >= measures__bpm__first .
+H5:    fld_rate(hrt) <= measures__bpm__last .
+H6:    defaultchange >= measures__bpm__first .
+H7:    defaultchange <= measures__bpm__last .
+H8:    fld_impulse(hrt) = noshock .
+H9:    fld_rate(hrt) + defaultchange >= integer__first .
+H10:   fld_rate(hrt) + defaultchange <= integer__last .
+H11:   fld_rate(hrt) + defaultchange >= integer__base__first .
+H12:   fld_rate(hrt) + defaultchange <= integer__base__last .
+H13:   measures__limitbpm(fld_rate(hrt) + defaultchange) >= 
+           measures__bpm__first .
+H14:   measures__limitbpm(fld_rate(hrt) + defaultchange) <= 
+           measures__bpm__last .
+H15:   measures__bpm__first <= measures__limitbpm(fld_rate(
+           hrt) + defaultchange) .
+H16:   measures__limitbpm(fld_rate(hrt) + defaultchange) <= 
+           measures__bpm__last .
+        ->
+C1:    measures__limitbpm(fld_rate(hrt) + defaultchange) >= 
+           measures__bpm__first .
+C2:    measures__limitbpm(fld_rate(hrt) + defaultchange) <= 
+           measures__bpm__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 55:
+
+procedure_tick_3.
+H1:    true .
+H2:    fld_impulse(hrt) >= measures__joules__first .
+H3:    fld_impulse(hrt) <= measures__joules__last .
+H4:    fld_rate(hrt) >= measures__bpm__first .
+H5:    fld_rate(hrt) <= measures__bpm__last .
+H6:    defaultchange >= measures__bpm__first .
+H7:    defaultchange <= measures__bpm__last .
+H8:    not (fld_impulse(hrt) = noshock) .
+H9:    fld_impulse(hrt) < smallshock .
+        ->
+C1:    fld_rate(hrt) - fld_impulse(hrt) >= integer__first .
+C2:    fld_rate(hrt) - fld_impulse(hrt) <= integer__last .
+C3:    fld_rate(hrt) - fld_impulse(hrt) >= integer__base__first .
+C4:    fld_rate(hrt) - fld_impulse(hrt) <= integer__base__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 55:
+
+procedure_tick_4.
+H1:    true .
+H2:    fld_impulse(hrt) >= measures__joules__first .
+H3:    fld_impulse(hrt) <= measures__joules__last .
+H4:    fld_rate(hrt) >= measures__bpm__first .
+H5:    fld_rate(hrt) <= measures__bpm__last .
+H6:    defaultchange >= measures__bpm__first .
+H7:    defaultchange <= measures__bpm__last .
+H8:    not (fld_impulse(hrt) = noshock) .
+H9:    fld_impulse(hrt) < smallshock .
+H10:   fld_rate(hrt) - fld_impulse(hrt) >= integer__first .
+H11:   fld_rate(hrt) - fld_impulse(hrt) <= integer__last .
+H12:   fld_rate(hrt) - fld_impulse(hrt) >= integer__base__first .
+H13:   fld_rate(hrt) - fld_impulse(hrt) <= integer__base__last .
+H14:   measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) >= 
+           measures__bpm__first .
+H15:   measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 
+           measures__bpm__last .
+H16:   measures__bpm__first <= measures__limitbpm(fld_rate(
+           hrt) - fld_impulse(hrt)) .
+H17:   measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 
+           measures__bpm__last .
+        ->
+C1:    measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) >= 
+           measures__bpm__first .
+C2:    measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 
+           measures__bpm__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 57:
+
+procedure_tick_5.
+H1:    true .
+H2:    fld_impulse(hrt) >= measures__joules__first .
+H3:    fld_impulse(hrt) <= measures__joules__last .
+H4:    fld_rate(hrt) >= measures__bpm__first .
+H5:    fld_rate(hrt) <= measures__bpm__last .
+H6:    defaultchange >= measures__bpm__first .
+H7:    defaultchange <= measures__bpm__last .
+H8:    not (fld_impulse(hrt) = noshock) .
+H9:    not (fld_impulse(hrt) < smallshock) .
+        ->
+C1:    0 >= measures__bpm__first .
+C2:    0 <= measures__bpm__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 58:
+
+procedure_tick_6.
+H1:    true .
+H2:    fld_impulse(hrt) >= measures__joules__first .
+H3:    fld_impulse(hrt) <= measures__joules__last .
+H4:    fld_rate(hrt) >= measures__bpm__first .
+H5:    fld_rate(hrt) <= measures__bpm__last .
+H6:    defaultchange >= measures__bpm__first .
+H7:    defaultchange <= measures__bpm__last .
+H8:    not (fld_impulse(hrt) = noshock) .
+H9:    not (fld_impulse(hrt) < smallshock) .
+H10:   0 >= measures__bpm__first .
+H11:   0 <= measures__bpm__last .
+        ->
+C1:    0 >= measures__bpm__first .
+C2:    0 <= measures__bpm__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 62:
+
+procedure_tick_7.
+H1:    true .
+H2:    fld_impulse(hrt) >= measures__joules__first .
+H3:    fld_impulse(hrt) <= measures__joules__last .
+H4:    fld_rate(hrt) >= measures__bpm__first .
+H5:    fld_rate(hrt) <= measures__bpm__last .
+H6:    defaultchange >= measures__bpm__first .
+H7:    defaultchange <= measures__bpm__last .
+H8:    fld_impulse(hrt) = noshock .
+H9:    fld_rate(hrt) + defaultchange >= integer__first .
+H10:   fld_rate(hrt) + defaultchange <= integer__last .
+H11:   fld_rate(hrt) + defaultchange >= integer__base__first .
+H12:   fld_rate(hrt) + defaultchange <= integer__base__last .
+H13:   measures__limitbpm(fld_rate(hrt) + defaultchange) >= 
+           measures__bpm__first .
+H14:   measures__limitbpm(fld_rate(hrt) + defaultchange) <= 
+           measures__bpm__last .
+H15:   measures__bpm__first <= measures__limitbpm(fld_rate(
+           hrt) + defaultchange) .
+H16:   measures__limitbpm(fld_rate(hrt) + defaultchange) <= 
+           measures__bpm__last .
+H17:   measures__limitbpm(fld_rate(hrt) + defaultchange) >= 
+           measures__bpm__first .
+H18:   measures__limitbpm(fld_rate(hrt) + defaultchange) <= 
+           measures__bpm__last .
+        ->
+C1:    volatility >= float__first .
+C2:    volatility <= float__last .
+C3:    fld_rate(upf_rate(hrt, measures__limitbpm(fld_rate(
+           hrt) + defaultchange))) >= integer__first .
+C4:    fld_rate(upf_rate(hrt, measures__limitbpm(fld_rate(
+           hrt) + defaultchange))) <= integer__last .
+ 
+
+procedure_tick_8.
+H1:    true .
+H2:    fld_impulse(hrt) >= measures__joules__first .
+H3:    fld_impulse(hrt) <= measures__joules__last .
+H4:    fld_rate(hrt) >= measures__bpm__first .
+H5:    fld_rate(hrt) <= measures__bpm__last .
+H6:    defaultchange >= measures__bpm__first .
+H7:    defaultchange <= measures__bpm__last .
+H8:    not (fld_impulse(hrt) = noshock) .
+H9:    fld_impulse(hrt) < smallshock .
+H10:   fld_rate(hrt) - fld_impulse(hrt) >= integer__first .
+H11:   fld_rate(hrt) - fld_impulse(hrt) <= integer__last .
+H12:   fld_rate(hrt) - fld_impulse(hrt) >= integer__base__first .
+H13:   fld_rate(hrt) - fld_impulse(hrt) <= integer__base__last .
+H14:   measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) >= 
+           measures__bpm__first .
+H15:   measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 
+           measures__bpm__last .
+H16:   measures__bpm__first <= measures__limitbpm(fld_rate(
+           hrt) - fld_impulse(hrt)) .
+H17:   measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 
+           measures__bpm__last .
+H18:   measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) >= 
+           measures__bpm__first .
+H19:   measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 
+           measures__bpm__last .
+        ->
+C1:    volatility >= float__first .
+C2:    volatility <= float__last .
+C3:    fld_rate(upf_rate(hrt, measures__limitbpm(fld_rate(
+           hrt) - fld_impulse(hrt)))) >= integer__first .
+C4:    fld_rate(upf_rate(hrt, measures__limitbpm(fld_rate(
+           hrt) - fld_impulse(hrt)))) <= integer__last .
+ 
+
+procedure_tick_9.
+H1:    true .
+H2:    fld_impulse(hrt) >= measures__joules__first .
+H3:    fld_impulse(hrt) <= measures__joules__last .
+H4:    fld_rate(hrt) >= measures__bpm__first .
+H5:    fld_rate(hrt) <= measures__bpm__last .
+H6:    defaultchange >= measures__bpm__first .
+H7:    defaultchange <= measures__bpm__last .
+H8:    not (fld_impulse(hrt) = noshock) .
+H9:    not (fld_impulse(hrt) < smallshock) .
+H10:   0 >= measures__bpm__first .
+H11:   0 <= measures__bpm__last .
+H12:   0 >= measures__bpm__first .
+H13:   0 <= measures__bpm__last .
+        ->
+C1:    volatility >= float__first .
+C2:    volatility <= float__last .
+C3:    fld_rate(upf_rate(hrt, 0)) >= integer__first .
+C4:    fld_rate(upf_rate(hrt, 0)) <= integer__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 62:
+
+procedure_tick_10.
+H1:    true .
+H2:    fld_impulse(hrt) >= measures__joules__first .
+H3:    fld_impulse(hrt) <= measures__joules__last .
+H4:    fld_rate(hrt) >= measures__bpm__first .
+H5:    fld_rate(hrt) <= measures__bpm__last .
+H6:    defaultchange >= measures__bpm__first .
+H7:    defaultchange <= measures__bpm__last .
+H8:    fld_impulse(hrt) = noshock .
+H9:    fld_rate(hrt) + defaultchange >= integer__first .
+H10:   fld_rate(hrt) + defaultchange <= integer__last .
+H11:   fld_rate(hrt) + defaultchange >= integer__base__first .
+H12:   fld_rate(hrt) + defaultchange <= integer__base__last .
+H13:   measures__limitbpm(fld_rate(hrt) + defaultchange) >= 
+           measures__bpm__first .
+H14:   measures__limitbpm(fld_rate(hrt) + defaultchange) <= 
+           measures__bpm__last .
+H15:   measures__bpm__first <= measures__limitbpm(fld_rate(
+           hrt) + defaultchange) .
+H16:   measures__limitbpm(fld_rate(hrt) + defaultchange) <= 
+           measures__bpm__last .
+H17:   measures__limitbpm(fld_rate(hrt) + defaultchange) >= 
+           measures__bpm__first .
+H18:   measures__limitbpm(fld_rate(hrt) + defaultchange) <= 
+           measures__bpm__last .
+H19:   volatility >= float__first .
+H20:   volatility <= float__last .
+H21:   fld_rate(upf_rate(hrt, measures__limitbpm(fld_rate(
+           hrt) + defaultchange))) >= integer__first .
+H22:   fld_rate(upf_rate(hrt, measures__limitbpm(fld_rate(
+           hrt) + defaultchange))) <= integer__last .
+H23:   randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) + 
+           defaultchange))), volatility) >= integer__first .
+H24:   randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) + 
+           defaultchange))), volatility) <= integer__last .
+        ->
+C1:    randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) + 
+           defaultchange))), volatility) >= integer__first .
+C2:    randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) + 
+           defaultchange))), volatility) <= integer__last .
+ 
+
+procedure_tick_11.
+H1:    true .
+H2:    fld_impulse(hrt) >= measures__joules__first .
+H3:    fld_impulse(hrt) <= measures__joules__last .
+H4:    fld_rate(hrt) >= measures__bpm__first .
+H5:    fld_rate(hrt) <= measures__bpm__last .
+H6:    defaultchange >= measures__bpm__first .
+H7:    defaultchange <= measures__bpm__last .
+H8:    not (fld_impulse(hrt) = noshock) .
+H9:    fld_impulse(hrt) < smallshock .
+H10:   fld_rate(hrt) - fld_impulse(hrt) >= integer__first .
+H11:   fld_rate(hrt) - fld_impulse(hrt) <= integer__last .
+H12:   fld_rate(hrt) - fld_impulse(hrt) >= integer__base__first .
+H13:   fld_rate(hrt) - fld_impulse(hrt) <= integer__base__last .
+H14:   measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) >= 
+           measures__bpm__first .
+H15:   measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 
+           measures__bpm__last .
+H16:   measures__bpm__first <= measures__limitbpm(fld_rate(
+           hrt) - fld_impulse(hrt)) .
+H17:   measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 
+           measures__bpm__last .
+H18:   measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) >= 
+           measures__bpm__first .
+H19:   measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 
+           measures__bpm__last .
+H20:   volatility >= float__first .
+H21:   volatility <= float__last .
+H22:   fld_rate(upf_rate(hrt, measures__limitbpm(fld_rate(
+           hrt) - fld_impulse(hrt)))) >= integer__first .
+H23:   fld_rate(upf_rate(hrt, measures__limitbpm(fld_rate(
+           hrt) - fld_impulse(hrt)))) <= integer__last .
+H24:   randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) - fld_impulse(
+           hrt)))), volatility) >= integer__first .
+H25:   randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) - fld_impulse(
+           hrt)))), volatility) <= integer__last .
+        ->
+C1:    randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) - fld_impulse(
+           hrt)))), volatility) >= integer__first .
+C2:    randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) - fld_impulse(
+           hrt)))), volatility) <= integer__last .
+ 
+
+procedure_tick_12.
+H1:    true .
+H2:    fld_impulse(hrt) >= measures__joules__first .
+H3:    fld_impulse(hrt) <= measures__joules__last .
+H4:    fld_rate(hrt) >= measures__bpm__first .
+H5:    fld_rate(hrt) <= measures__bpm__last .
+H6:    defaultchange >= measures__bpm__first .
+H7:    defaultchange <= measures__bpm__last .
+H8:    not (fld_impulse(hrt) = noshock) .
+H9:    not (fld_impulse(hrt) < smallshock) .
+H10:   0 >= measures__bpm__first .
+H11:   0 <= measures__bpm__last .
+H12:   0 >= measures__bpm__first .
+H13:   0 <= measures__bpm__last .
+H14:   volatility >= float__first .
+H15:   volatility <= float__last .
+H16:   fld_rate(upf_rate(hrt, 0)) >= integer__first .
+H17:   fld_rate(upf_rate(hrt, 0)) <= integer__last .
+H18:   randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, 0)), volatility) >= integer__first .
+H19:   randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, 0)), volatility) <= integer__last .
+        ->
+C1:    randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, 0)), volatility) >= integer__first .
+C2:    randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, 0)), volatility) <= integer__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 62:
+
+procedure_tick_13.
+H1:    true .
+H2:    fld_impulse(hrt) >= measures__joules__first .
+H3:    fld_impulse(hrt) <= measures__joules__last .
+H4:    fld_rate(hrt) >= measures__bpm__first .
+H5:    fld_rate(hrt) <= measures__bpm__last .
+H6:    defaultchange >= measures__bpm__first .
+H7:    defaultchange <= measures__bpm__last .
+H8:    fld_impulse(hrt) = noshock .
+H9:    fld_rate(hrt) + defaultchange >= integer__first .
+H10:   fld_rate(hrt) + defaultchange <= integer__last .
+H11:   fld_rate(hrt) + defaultchange >= integer__base__first .
+H12:   fld_rate(hrt) + defaultchange <= integer__base__last .
+H13:   measures__limitbpm(fld_rate(hrt) + defaultchange) >= 
+           measures__bpm__first .
+H14:   measures__limitbpm(fld_rate(hrt) + defaultchange) <= 
+           measures__bpm__last .
+H15:   measures__bpm__first <= measures__limitbpm(fld_rate(
+           hrt) + defaultchange) .
+H16:   measures__limitbpm(fld_rate(hrt) + defaultchange) <= 
+           measures__bpm__last .
+H17:   measures__limitbpm(fld_rate(hrt) + defaultchange) >= 
+           measures__bpm__first .
+H18:   measures__limitbpm(fld_rate(hrt) + defaultchange) <= 
+           measures__bpm__last .
+H19:   volatility >= float__first .
+H20:   volatility <= float__last .
+H21:   fld_rate(upf_rate(hrt, measures__limitbpm(fld_rate(
+           hrt) + defaultchange))) >= integer__first .
+H22:   fld_rate(upf_rate(hrt, measures__limitbpm(fld_rate(
+           hrt) + defaultchange))) <= integer__last .
+H23:   randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) + 
+           defaultchange))), volatility) >= integer__first .
+H24:   randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) + 
+           defaultchange))), volatility) <= integer__last .
+H25:   randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) + 
+           defaultchange))), volatility) >= integer__first .
+H26:   randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) + 
+           defaultchange))), volatility) <= integer__last .
+H27:   measures__limitbpm(
+           randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) + 
+           defaultchange))), volatility)) >= measures__bpm__first .
+H28:   measures__limitbpm(
+           randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) + 
+           defaultchange))), volatility)) <= measures__bpm__last .
+H29:   measures__bpm__first <= measures__limitbpm(
+           randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) + 
+           defaultchange))), volatility)) .
+H30:   measures__limitbpm(
+           randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) + 
+           defaultchange))), volatility)) <= measures__bpm__last .
+        ->
+C1:    measures__limitbpm(
+           randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) + 
+           defaultchange))), volatility)) >= measures__bpm__first .
+C2:    measures__limitbpm(
+           randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) + 
+           defaultchange))), volatility)) <= measures__bpm__last .
+ 
+
+procedure_tick_14.
+H1:    true .
+H2:    fld_impulse(hrt) >= measures__joules__first .
+H3:    fld_impulse(hrt) <= measures__joules__last .
+H4:    fld_rate(hrt) >= measures__bpm__first .
+H5:    fld_rate(hrt) <= measures__bpm__last .
+H6:    defaultchange >= measures__bpm__first .
+H7:    defaultchange <= measures__bpm__last .
+H8:    not (fld_impulse(hrt) = noshock) .
+H9:    fld_impulse(hrt) < smallshock .
+H10:   fld_rate(hrt) - fld_impulse(hrt) >= integer__first .
+H11:   fld_rate(hrt) - fld_impulse(hrt) <= integer__last .
+H12:   fld_rate(hrt) - fld_impulse(hrt) >= integer__base__first .
+H13:   fld_rate(hrt) - fld_impulse(hrt) <= integer__base__last .
+H14:   measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) >= 
+           measures__bpm__first .
+H15:   measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 
+           measures__bpm__last .
+H16:   measures__bpm__first <= measures__limitbpm(fld_rate(
+           hrt) - fld_impulse(hrt)) .
+H17:   measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 
+           measures__bpm__last .
+H18:   measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) >= 
+           measures__bpm__first .
+H19:   measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 
+           measures__bpm__last .
+H20:   volatility >= float__first .
+H21:   volatility <= float__last .
+H22:   fld_rate(upf_rate(hrt, measures__limitbpm(fld_rate(
+           hrt) - fld_impulse(hrt)))) >= integer__first .
+H23:   fld_rate(upf_rate(hrt, measures__limitbpm(fld_rate(
+           hrt) - fld_impulse(hrt)))) <= integer__last .
+H24:   randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) - fld_impulse(
+           hrt)))), volatility) >= integer__first .
+H25:   randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) - fld_impulse(
+           hrt)))), volatility) <= integer__last .
+H26:   randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) - fld_impulse(
+           hrt)))), volatility) >= integer__first .
+H27:   randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) - fld_impulse(
+           hrt)))), volatility) <= integer__last .
+H28:   measures__limitbpm(
+           randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) - fld_impulse(
+           hrt)))), volatility)) >= measures__bpm__first .
+H29:   measures__limitbpm(
+           randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) - fld_impulse(
+           hrt)))), volatility)) <= measures__bpm__last .
+H30:   measures__bpm__first <= measures__limitbpm(
+           randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) - fld_impulse(
+           hrt)))), volatility)) .
+H31:   measures__limitbpm(
+           randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) - fld_impulse(
+           hrt)))), volatility)) <= measures__bpm__last .
+        ->
+C1:    measures__limitbpm(
+           randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) - fld_impulse(
+           hrt)))), volatility)) >= measures__bpm__first .
+C2:    measures__limitbpm(
+           randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, measures__limitbpm(fld_rate(hrt) - fld_impulse(
+           hrt)))), volatility)) <= measures__bpm__last .
+ 
+
+procedure_tick_15.
+H1:    true .
+H2:    fld_impulse(hrt) >= measures__joules__first .
+H3:    fld_impulse(hrt) <= measures__joules__last .
+H4:    fld_rate(hrt) >= measures__bpm__first .
+H5:    fld_rate(hrt) <= measures__bpm__last .
+H6:    defaultchange >= measures__bpm__first .
+H7:    defaultchange <= measures__bpm__last .
+H8:    not (fld_impulse(hrt) = noshock) .
+H9:    not (fld_impulse(hrt) < smallshock) .
+H10:   0 >= measures__bpm__first .
+H11:   0 <= measures__bpm__last .
+H12:   0 >= measures__bpm__first .
+H13:   0 <= measures__bpm__last .
+H14:   volatility >= float__first .
+H15:   volatility <= float__last .
+H16:   fld_rate(upf_rate(hrt, 0)) >= integer__first .
+H17:   fld_rate(upf_rate(hrt, 0)) <= integer__last .
+H18:   randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, 0)), volatility) >= integer__first .
+H19:   randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, 0)), volatility) <= integer__last .
+H20:   randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, 0)), volatility) >= integer__first .
+H21:   randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, 0)), volatility) <= integer__last .
+H22:   measures__limitbpm(
+           randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, 0)), volatility)) >= measures__bpm__first .
+H23:   measures__limitbpm(
+           randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, 0)), volatility)) <= measures__bpm__last .
+H24:   measures__bpm__first <= measures__limitbpm(
+           randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, 0)), volatility)) .
+H25:   measures__limitbpm(
+           randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, 0)), volatility)) <= measures__bpm__last .
+        ->
+C1:    measures__limitbpm(
+           randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, 0)), volatility)) >= measures__bpm__first .
+C2:    measures__limitbpm(
+           randomnumber__uniformintegerwitherror(fld_rate(upf_rate(
+           hrt, 0)), volatility)) <= measures__bpm__last .
+ 
+
+For path(s) from start to finish:
+
+procedure_tick_16.
+*** true .          /* trivially true VC removed by Examiner */
+
+
+procedure_tick_17.
+*** true .          /* trivially true VC removed by Examiner */
+
+
+procedure_tick_18.
+*** true .          /* trivially true VC removed by Examiner */
+
+

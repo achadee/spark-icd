@@ -1,0 +1,39 @@
+*****************************************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+*****************************************************************************
+
+
+CREATED 27-MAY-2014, 15:39:24  SIMPLIFIED 27-MAY-2014, 15:49:48
+
+SPARK Simplifier GPL 2011
+Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+
+procedure HRM.GetRate
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 35:
+
+procedure_getrate_1.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 37:
+
+procedure_getrate_2.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to finish:
+
+procedure_getrate_3.
+*** true .          /* all conclusions proved */
+
+
+procedure_getrate_4.
+*** true .          /* all conclusions proved */
+
+

@@ -1,0 +1,46 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 28-MAY-2014 20:17:22.06
+
+Line
+   1  with Measures;
+   2  with HRM;
+   3  with ImpulseGenerator;
+   4  with Heart;
+   5  
+   6  
+   7  -- This package defines a very simple and crude simulation of a heart.
+   8  --  The default behaviour is for the heart to speed up, unless it
+   9  --  receives a small shock, in which case it will slow down, or a
+  10  --  large shock, in which case it will cease working
+  11  package body ClosedLoop is
+  12     -- Create objects init objects
+  13     -- I create it in here to hide it from ClosedLoopExample
+  14     -- TODO move to ads as record
+  15     -- Initialise the system, setting a heart rate from a normal
+  16     -- probability distribution.
+  17  
+  18     
+  19     -- Tick the system, providing an impulse to the heart.
+  20     procedure Tick(Sys : in out ClosedLoopType) is
+  21     begin
+  22        for I in Integer range 0..100 loop
+  23           if Sys.Monitor.IsOn then
+  24              HRM.Tick(Sys.Monitor,Sys.Hrt);
+  25           end if;
+  26        end loop;
+  27     end Tick;
+
++++        Flow analysis of subprogram Tick performed: no 
+           errors found.
+
+  28  
+  29   end ClosedLoop;
+
+
+--End of file--------------------------------------------------

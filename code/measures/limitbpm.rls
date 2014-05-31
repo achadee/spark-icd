@@ -1,0 +1,27 @@
+           /*********************************************************/
+                           /*Proof Rule Declarations*/
+                              /*Examiner GPL 2011*/
+             /*Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.*/
+           /*********************************************************/
+
+
+                        /*DATE : 27-MAY-2014 15:39:23.94*/
+
+                         /*function Measures.LimitBPM*/
+
+
+rule_family limitbpm_rules:
+     X      requires [X:any] &
+     X <= Y requires [X:ire, Y:ire] &
+     X >= Y requires [X:ire, Y:ire].
+
+limitbpm_rules(1): integer__size >= 0 may_be_deduced.
+limitbpm_rules(2): integer__first may_be_replaced_by -2147483648.
+limitbpm_rules(3): integer__last may_be_replaced_by 2147483647.
+limitbpm_rules(4): integer__base__first may_be_replaced_by -2147483648.
+limitbpm_rules(5): integer__base__last may_be_replaced_by 2147483647.
+limitbpm_rules(6): bpm__size >= 0 may_be_deduced.
+limitbpm_rules(7): bpm__first may_be_replaced_by -1.
+limitbpm_rules(8): bpm__last may_be_replaced_by 300.
+limitbpm_rules(9): bpm__base__first may_be_replaced_by -2147483648.
+limitbpm_rules(10): bpm__base__last may_be_replaced_by 2147483647.

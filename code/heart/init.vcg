@@ -1,0 +1,193 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 27-MAY-2014 15:39:23.96
+
+                            procedure Heart.Init
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 21:
+
+procedure_init_1.
+H1:    true .
+        ->
+C1:    heartratesigma >= integer__first .
+C2:    heartratesigma <= integer__last .
+C3:    heartratemu >= integer__first .
+C4:    heartratemu <= integer__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 21:
+
+procedure_init_2.
+H1:    true .
+H2:    heartratesigma >= integer__first .
+H3:    heartratesigma <= integer__last .
+H4:    heartratemu >= integer__first .
+H5:    heartratemu <= integer__last .
+H6:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) >= integer__first .
+H7:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) <= integer__last .
+        ->
+C1:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) >= integer__first .
+C2:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) <= integer__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 21:
+
+procedure_init_3.
+H1:    true .
+H2:    heartratesigma >= integer__first .
+H3:    heartratesigma <= integer__last .
+H4:    heartratemu >= integer__first .
+H5:    heartratemu <= integer__last .
+H6:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) >= integer__first .
+H7:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) <= integer__last .
+H8:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) >= integer__first .
+H9:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) <= integer__last .
+H10:   measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) >= measures__bpm__first .
+H11:   measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) <= measures__bpm__last .
+H12:   measures__bpm__first <= measures__limitbpm(
+           randomnumber__normalinteger(heartratemu, 
+           heartratesigma)) .
+H13:   measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) <= measures__bpm__last .
+        ->
+C1:    measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) >= measures__bpm__first .
+C2:    measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) <= measures__bpm__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 25:
+
+procedure_init_4.
+H1:    true .
+H2:    heartratesigma >= integer__first .
+H3:    heartratesigma <= integer__last .
+H4:    heartratemu >= integer__first .
+H5:    heartratemu <= integer__last .
+H6:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) >= integer__first .
+H7:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) <= integer__last .
+H8:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) >= integer__first .
+H9:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) <= integer__last .
+H10:   measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) >= measures__bpm__first .
+H11:   measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) <= measures__bpm__last .
+H12:   measures__bpm__first <= measures__limitbpm(
+           randomnumber__normalinteger(heartratemu, 
+           heartratesigma)) .
+H13:   measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) <= measures__bpm__last .
+H14:   measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) >= measures__bpm__first .
+H15:   measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) <= measures__bpm__last .
+        ->
+C1:    0 >= measures__joules__first .
+C2:    0 <= measures__joules__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 26:
+
+procedure_init_5.
+H1:    true .
+H2:    heartratesigma >= integer__first .
+H3:    heartratesigma <= integer__last .
+H4:    heartratemu >= integer__first .
+H5:    heartratemu <= integer__last .
+H6:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) >= integer__first .
+H7:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) <= integer__last .
+H8:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) >= integer__first .
+H9:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) <= integer__last .
+H10:   measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) >= measures__bpm__first .
+H11:   measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) <= measures__bpm__last .
+H12:   measures__bpm__first <= measures__limitbpm(
+           randomnumber__normalinteger(heartratemu, 
+           heartratesigma)) .
+H13:   measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) <= measures__bpm__last .
+H14:   measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) >= measures__bpm__first .
+H15:   measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) <= measures__bpm__last .
+H16:   0 >= measures__joules__first .
+H17:   0 <= measures__joules__last .
+        ->
+C1:    1 >= measures__bpm__first .
+C2:    1 <= measures__bpm__last .
+ 
+
+For path(s) from start to finish:
+
+procedure_init_6.
+H1:    true .
+H2:    heartratesigma >= integer__first .
+H3:    heartratesigma <= integer__last .
+H4:    heartratemu >= integer__first .
+H5:    heartratemu <= integer__last .
+H6:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) >= integer__first .
+H7:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) <= integer__last .
+H8:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) >= integer__first .
+H9:    randomnumber__normalinteger(heartratemu, 
+           heartratesigma) <= integer__last .
+H10:   measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) >= measures__bpm__first .
+H11:   measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) <= measures__bpm__last .
+H12:   measures__bpm__first <= measures__limitbpm(
+           randomnumber__normalinteger(heartratemu, 
+           heartratesigma)) .
+H13:   measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) <= measures__bpm__last .
+H14:   measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) >= measures__bpm__first .
+H15:   measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma)) <= measures__bpm__last .
+H16:   0 >= measures__joules__first .
+H17:   0 <= measures__joules__last .
+H18:   1 >= measures__bpm__first .
+H19:   1 <= measures__bpm__last .
+        ->
+C1:    fld_impulse(upf_impulse(upf_rate(hrt, 
+           measures__limitbpm(randomnumber__normalinteger(
+           heartratemu, heartratesigma))), 0)) = 0 .
+C2:    measures__bpm__first <= fld_rate(upf_impulse(upf_rate(
+           hrt, measures__limitbpm(
+           randomnumber__normalinteger(heartratemu, 
+           heartratesigma))), 0)) .
+C3:    fld_rate(upf_impulse(upf_rate(hrt, measures__limitbpm(
+           randomnumber__normalinteger(heartratemu, 
+           heartratesigma))), 0)) <= measures__bpm__last .
+C4:    1 = 1 .
+ 
+

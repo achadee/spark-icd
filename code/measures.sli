@@ -1,0 +1,40 @@
+V "SPARK 2011"
+A -noswitch
+A -index_file=project.idx
+A -warning_file=spark.wrn
+A -notarget_compiler_data
+A -config_file=spark.cfg
+A -source_extension=ada
+A -listing_extension=lst
+A -nodictionary_file
+A -report_file=spark.rep
+A -nohtml
+A -vcg
+A -nostatistics
+A -fdl_identifiers=accept
+A -flow_analysis=information
+A -language=95
+A -profile=sequential
+A -annotation_character=#
+A -rules=none
+A -error_explanations=off
+A -justification_option=full
+A -output_directory=.
+A -output_directory (actual)=/home/samana/swen90010-2014/assignments/assignment-4/code/
+P
+R
+
+U Measures%b measures.adb
+U Measures%s measures.ads
+
+D measures.adb 00000000000000 00000000
+D measures.ads 00000000000000 00000000
+
+X 2 measures.ads
+9I12 Joules 29r26 29r63
+15I12 BPM 25r26 25r60
+18i39 Fst 20r12 21r26
+18i57 Lst 20r19 21r54
+21i15 Output 21r33 21r44
+25i15 Output 25r39 25r50
+29i15 Output 29r42 29r53

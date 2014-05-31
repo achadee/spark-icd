@@ -1,0 +1,74 @@
+V "SPARK 2011"
+A -noswitch
+A -index_file=project.idx
+A -nowarning_file
+A -notarget_compiler_data
+A -noconfig_file
+A -source_extension=ada
+A -listing_extension=lst
+A -nodictionary_file
+A -report_file=spark.rep
+A -nohtml
+A -nostatistics
+A -fdl_identifiers=accept
+A -flow_analysis=information
+A -language=95
+A -profile=sequential
+A -annotation_character=#
+A -rules=none
+A -error_explanations=off
+A -justification_option=full
+A -output_directory=.
+A -output_directory (actual)=/home/samana/swen90010-2014/assignments/assignment-4/code/
+P
+R
+
+U HRM%b hrm.adb
+U HRM%s hrm.ads
+W Heart%s heart.adb heart.sli
+W RandomNumber%s randomnumber.adb randomnumber.sli
+W Measures%s measures.adb measures.sli
+
+D hrm.adb 00000000000000 00000000
+D hrm.ads 00000000000000 00000000
+D heart.ads 00000000000000 00000000
+D randomnumber.ads 00000000000000 00000000
+D measures.ads 00000000000000 00000000
+
+X 2 hrm.ads
+16i3 Rate 25r21 45r45 53r22
+18e3 IsOn 24r21 30r21 35r25 39r23 45r22 47r26 52r25
+22r19 Monitor 23m16 24r13 25r13
+28r17 Monitor 29m16 30r13
+28r40 Hrt 29r29
+33r18 Monitor 34m16 34r29 35r17
+38r18 Monitor 39r15
+42r22 Monitor 44r26 45r14 45r37 47r18
+43i8 Rate 44m16 45r30 47r34
+50r19 Monitor 51m16 51r29 52r17 53r14
+50r45 Hrt 51r38
+X 3 heart.ads
+10K9 Heart 2|9w13
+19i3 Rate 32r39 33r17 51r24
+22i3 Impulse 31r17 40r17 44r19
+28U14 Init 29<19
+28r19 Hrt 30m16 31r13 32r35 33r13
+38r25 Hrt 39m16 39r25 40r13
+38i49 Joules 39r30 40r27
+43r24 Hrt 44r15
+48r22 Hrt 50r26 51r20
+49i8 Rate 50m16 51r13
+54U14 Tick 55=22
+54r19 Hrt 56m16 56r25 57r50
+61i4 DefaultChange 30m21 57m16 11o11 12r19 29r19 34r13 55r22 56r30 57r35
+X 4 randomnumber.ads
+2K9 RandomNumber 2|8w13 3|9w13
+X 5 measures.ads
+3K9 Measures 2|25r28 47r41 53r29 7w13 3|11r27 32r13 33r25 8w13
+9I12 Joules 29r26 29r63
+15I12 BPM 25r26 25r60 2|25r37 47r50 53r38 3|11r36 32r22 33r34
+18i39 Fst 20r12 21r26
+18i57 Lst 20r19 21r54
+21i15 Output 21r33 21r44
+25i15 Output 25r39 25r50
+29i15 Output 29r42 29r53

@@ -1,0 +1,128 @@
+           *******************************************************
+                         Report of SPARK Examination
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 28-MAY-2014 20:17:22.06
+
+Options:
+    noswitch
+    index_file=project.idx
+    nowarning_file
+    notarget_compiler_data
+    noconfig_file
+    source_extension=ada
+    listing_extension=lst
+    nodictionary_file
+    report_file=spark.rep
+    nohtml
+    nostatistics
+    fdl_identifiers=accept
+    flow_analysis=information
+    language=95
+    profile=sequential
+    annotation_character=#
+    rules=none
+    error_explanations=off
+    justification_option=full
+    output_directory=.
+    output_directory (actual)=/home/samana/swen90010-2014/assignments/assignment-4/code/
+
+Selected files:
+   closedloop.adb
+
+
+Index Filename(s) used were: 
+   /home/samana/swen90010-2014/assignments/assignment-4/code/project.idx
+
+
+No Meta Files used
+
+
+Full warning reporting selected
+
+
+Source Filename(s) used were:
+   /home/samana/swen90010-2014/assignments/assignment-4/code/closedloop.adb
+   /home/samana/swen90010-2014/assignments/assignment-4/code/closedloop.ads
+   /home/samana/swen90010-2014/assignments/assignment-4/code/heart.ads
+   /home/samana/swen90010-2014/assignments/assignment-4/code/impulsegenerator.ads
+   /home/samana/swen90010-2014/assignments/assignment-4/code/hrm.ads
+   /home/samana/swen90010-2014/assignments/assignment-4/code/measures.ads
+   /home/samana/swen90010-2014/assignments/assignment-4/code/randomnumber.ads
+
+
+
+Source Filename:   /home/samana/swen90010-2014/assignments/assignment-4/code/closedloop.ads
+No Listing File
+
+   Unit name:  ClosedLoop
+   Unit type:  package specification
+   Unit has been analysed, any errors are listed below.
+
+No errors found
+
+
+Source Filename:   /home/samana/swen90010-2014/assignments/assignment-4/code/heart.ads
+No Listing File
+
+   Unit name:  Heart
+   Unit type:  package specification
+   Unit has been analysed, any errors are listed below.
+
+No errors found
+
+
+Source Filename:   /home/samana/swen90010-2014/assignments/assignment-4/code/impulsegenerator.ads
+No Listing File
+
+   Unit name:  ImpulseGenerator
+   Unit type:  package specification
+   Unit has been analysed, any errors are listed below.
+
+No errors found
+
+
+Source Filename:   /home/samana/swen90010-2014/assignments/assignment-4/code/hrm.ads
+No Listing File
+
+   Unit name:  HRM
+   Unit type:  package specification
+   Unit has been analysed, any errors are listed below.
+
+No errors found
+
+
+Source Filename:   /home/samana/swen90010-2014/assignments/assignment-4/code/measures.ads
+No Listing File
+
+   Unit name:  Measures
+   Unit type:  package specification
+   Unit has been analysed, any errors are listed below.
+
+No errors found
+
+
+Source Filename:   /home/samana/swen90010-2014/assignments/assignment-4/code/randomnumber.ads
+No Listing File
+
+   Unit name:  RandomNumber
+   Unit type:  package specification
+   Unit has been analysed, any errors are listed below.
+
+No errors found
+
+
+Source Filename:   /home/samana/swen90010-2014/assignments/assignment-4/code/closedloop.adb
+Listing Filename:  /home/samana/swen90010-2014/assignments/assignment-4/code/closedloop.lst
+
+   Unit name:  ClosedLoop
+   Unit type:  package body
+   Unit has been analysed, any errors are listed below.
+
+No errors found
+
+
+--End of file--------------------------------------------------

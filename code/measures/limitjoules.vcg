@@ -1,0 +1,54 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 27-MAY-2014 15:39:23.94
+
+                       function Measures.LimitJoules
+
+
+
+
+For path(s) from start to precondition check associated with statement of line 26:
+
+function_limitjoules_1.
+H1:    true .
+H2:    input >= integer__first .
+H3:    input <= integer__last .
+        ->
+C1:    joules__first <= joules__last .
+C2:    joules__last >= integer__first .
+C3:    joules__last <= integer__last .
+C4:    joules__first >= integer__first .
+C5:    joules__first <= integer__last .
+C6:    input >= integer__first .
+C7:    input <= integer__last .
+ 
+
+For path(s) from start to finish:
+
+function_limitjoules_2.
+H1:    true .
+H2:    input >= integer__first .
+H3:    input <= integer__last .
+H4:    joules__first <= joules__last .
+H5:    joules__last >= integer__first .
+H6:    joules__last <= integer__last .
+H7:    joules__first >= integer__first .
+H8:    joules__first <= integer__last .
+H9:    input >= integer__first .
+H10:   input <= integer__last .
+H11:   limit(input, joules__first, joules__last) >= integer__first .
+H12:   limit(input, joules__first, joules__last) <= integer__last .
+H13:   joules__first <= limit(input, joules__first, joules__last) .
+H14:   limit(input, joules__first, joules__last) <= joules__last .
+        ->
+C1:    joules__first <= limit(input, joules__first, joules__last) .
+C2:    limit(input, joules__first, joules__last) <= joules__last .
+C3:    limit(input, joules__first, joules__last) >= joules__first .
+C4:    limit(input, joules__first, joules__last) <= joules__last .
+ 
+

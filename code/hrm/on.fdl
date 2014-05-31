@@ -1,0 +1,45 @@
+           {*******************************************************}
+                               {FDL Declarations}
+                              {Examiner GPL 2011}
+             {Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.}
+           {*******************************************************}
+
+
+                        {DATE : 27-MAY-2014 15:39:24.04}
+
+                              {procedure HRM.On}
+
+
+title procedure on;
+
+  function round__(real) : integer;
+  type heart__hearttype = record
+        rate : integer;
+        impulse : integer
+     end;
+  type hrmtype = record
+        rate : integer;
+        ison : boolean
+     end;
+  const measures__bpm__base__first : integer = pending; 
+  const measures__bpm__base__last : integer = pending; 
+  const measures__joules__base__first : integer = pending; 
+  const measures__joules__base__last : integer = pending; 
+  const integer__base__first : integer = pending; 
+  const integer__base__last : integer = pending; 
+  const hrmtype__size : integer = pending; 
+  const heart__hearttype__size : integer = pending; 
+  const measures__bpm__first : integer = pending; 
+  const measures__bpm__last : integer = pending; 
+  const measures__bpm__size : integer = pending; 
+  const measures__joules__first : integer = pending; 
+  const measures__joules__last : integer = pending; 
+  const measures__joules__size : integer = pending; 
+  const integer__first : integer = pending; 
+  const integer__last : integer = pending; 
+  const integer__size : integer = pending; 
+  var monitor : hrmtype;
+  var hrt : heart__hearttype;
+  var monitor__1 : hrmtype;
+
+end;
