@@ -44,12 +44,22 @@ package body ICD is
        end if;
    end Detect_Tarchycardia;
 
-   procedure Set_Next_Impulse(Computer : in out ICDType) is
+   procedure Set_Next(Computer : in out ICDType) is
    begin
       if Computer.IsTar and Computer.Count < MaxShocks then
          Computer.Next := Computer.Rate + Integer(Float'Floor (600.0 / (Float(Computer.UpperBound) + ProjectedRate)));
       end if;
-   end Set_Next_Impulse;
+   end Set_Next;
+
+   procedure Set_Impulse(Computer : in ICDType; Shock: in out ImpulseGenerator.GeneratorType) is
+   begin
+      if Computer.isFib and Shock.IsOn then
+         ImpulseGenerator.SetImpulse(Shock, FibShock);
+      elsif Computer.IsTar and Computer.count < MaxShocks 
+            and Computer.Rate = Computer.Next and Shock.IsOn then
+         ImpulseGenerator.SetImpulse(Shock, TarShock);
+      end if;
+   end Set_Impulse;
 
    procedure Init(Computer : in out ICDType) is
    begin
