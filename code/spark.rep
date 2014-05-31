@@ -5,7 +5,7 @@
            *******************************************************
 
 
-                        DATE : 28-MAY-2014 20:17:22.06
+                        DATE : 31-MAY-2014 14:32:39.40
 
 Options:
     noswitch
@@ -28,14 +28,14 @@ Options:
     error_explanations=off
     justification_option=full
     output_directory=.
-    output_directory (actual)=/home/samana/swen90010-2014/assignments/assignment-4/code/
+    output_directory (actual)=/Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/
 
 Selected files:
    closedloop.adb
 
 
 Index Filename(s) used were: 
-   /home/samana/swen90010-2014/assignments/assignment-4/code/project.idx
+   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/project.idx
 
 
 No Meta Files used
@@ -45,17 +45,18 @@ Full warning reporting selected
 
 
 Source Filename(s) used were:
-   /home/samana/swen90010-2014/assignments/assignment-4/code/closedloop.adb
-   /home/samana/swen90010-2014/assignments/assignment-4/code/closedloop.ads
-   /home/samana/swen90010-2014/assignments/assignment-4/code/heart.ads
-   /home/samana/swen90010-2014/assignments/assignment-4/code/impulsegenerator.ads
-   /home/samana/swen90010-2014/assignments/assignment-4/code/hrm.ads
-   /home/samana/swen90010-2014/assignments/assignment-4/code/measures.ads
-   /home/samana/swen90010-2014/assignments/assignment-4/code/randomnumber.ads
+   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/closedloop.adb
+   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/closedloop.ads
+   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/icd.ads
+   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/heart.ads
+   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/impulsegenerator.ads
+   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/hrm.ads
+   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/measures.ads
+   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/randomnumber.ads
 
 
 
-Source Filename:   /home/samana/swen90010-2014/assignments/assignment-4/code/closedloop.ads
+Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/closedloop.ads
 No Listing File
 
    Unit name:  ClosedLoop
@@ -65,7 +66,17 @@ No Listing File
 No errors found
 
 
-Source Filename:   /home/samana/swen90010-2014/assignments/assignment-4/code/heart.ads
+Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/icd.ads
+No Listing File
+
+   Unit name:  ICD
+   Unit type:  package specification
+   Unit has been analysed, any errors are listed below.
+
+No errors found
+
+
+Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/heart.ads
 No Listing File
 
    Unit name:  Heart
@@ -75,7 +86,7 @@ No Listing File
 No errors found
 
 
-Source Filename:   /home/samana/swen90010-2014/assignments/assignment-4/code/impulsegenerator.ads
+Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/impulsegenerator.ads
 No Listing File
 
    Unit name:  ImpulseGenerator
@@ -85,7 +96,7 @@ No Listing File
 No errors found
 
 
-Source Filename:   /home/samana/swen90010-2014/assignments/assignment-4/code/hrm.ads
+Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/hrm.ads
 No Listing File
 
    Unit name:  HRM
@@ -95,7 +106,7 @@ No Listing File
 No errors found
 
 
-Source Filename:   /home/samana/swen90010-2014/assignments/assignment-4/code/measures.ads
+Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/measures.ads
 No Listing File
 
    Unit name:  Measures
@@ -105,7 +116,7 @@ No Listing File
 No errors found
 
 
-Source Filename:   /home/samana/swen90010-2014/assignments/assignment-4/code/randomnumber.ads
+Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/randomnumber.ads
 No Listing File
 
    Unit name:  RandomNumber
@@ -115,8 +126,8 @@ No Listing File
 No errors found
 
 
-Source Filename:   /home/samana/swen90010-2014/assignments/assignment-4/code/closedloop.adb
-Listing Filename:  /home/samana/swen90010-2014/assignments/assignment-4/code/closedloop.lst
+Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/closedloop.adb
+Listing Filename:  /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/closedloop.lst
 
    Unit name:  ClosedLoop
    Unit type:  package body

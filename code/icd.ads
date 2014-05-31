@@ -12,7 +12,7 @@ package ICD is
    type ICDType is
       record
 	 -- The measure heart rate for the heart
-	    Rate : Measures.BPM;
+	   Rate : Measures.BPM;
       InProcess : Boolean;
       IsOn : Boolean;
 
@@ -22,4 +22,9 @@ package ICD is
    --# derives Computer from Computer, HeartRateMonitor;
    --#      post not Computer.IsOn -> 
    --#      (Computer.Rate = Measures.BPM'First);
+
+      procedure Off(Computer : in out ICDType);
+   --# derives Computer from Computer;
+   --#      post Computer.IsOn = False;
+
 end ICD;

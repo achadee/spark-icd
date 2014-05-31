@@ -2,7 +2,7 @@ with Measures;
 with HRM;
 with ImpulseGenerator;
 with Heart;
-
+with Icd;
 
 -- This package defines a very simple and crude simulation of a heart.
 --  The default behaviour is for the heart to speed up, unless it
@@ -15,7 +15,13 @@ package body ClosedLoop is
    -- Initialise the system, setting a heart rate from a normal
    -- probability distribution.
 
-   
+   procedure Off(Sys: in out ClosedLoopType) is
+   begin
+      Icd.Off(Sys.Comp);
+      HRM.Off(Sys.Monitor);
+      ImpulseGenerator.Off(Sys.Shock);
+   end Off;
+
    -- Tick the system, providing an impulse to the heart.
    procedure Tick(Sys : in out ClosedLoopType) is
    begin
@@ -26,4 +32,4 @@ package body ClosedLoop is
       end loop;
    end Tick;
 
- end ClosedLoop;
+end ClosedLoop;

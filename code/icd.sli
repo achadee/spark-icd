@@ -19,7 +19,7 @@ A -rules=none
 A -error_explanations=off
 A -justification_option=full
 A -output_directory=.
-A -output_directory (actual)=/home/samana/swen90010-2014/assignments/assignment-4/code/
+A -output_directory (actual)=/Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/
 P
 R
 
@@ -40,10 +40,11 @@ D measures.ads 00000000000000 00000000
 D heart.ads 00000000000000 00000000
 
 X 2 icd.ads
-15i6 Rate 24r23
-17e7 IsOn 23r31
+15i5 Rate 24r23
+17e7 IsOn 23r31 28r27
 21r19 Computer 22m16 22r30 23r22 24r14
 21r46 HeartRateMonitor 22r40
+26r21 Computer 27m16 27r30 28r18
 X 3 impulsegenerator.ads
 10K9 ImpulseGenerator 2|8w13
 17i3 Impulse 26r50 46r42

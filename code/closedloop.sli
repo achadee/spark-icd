@@ -19,12 +19,13 @@ A -rules=none
 A -error_explanations=off
 A -justification_option=full
 A -output_directory=.
-A -output_directory (actual)=/home/samana/swen90010-2014/assignments/assignment-4/code/
+A -output_directory (actual)=/Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/
 P
 R
 
 U ClosedLoop%b closedloop.adb
 U ClosedLoop%s closedloop.ads
+W ICD%s icd.adb icd.sli
 W Heart%s heart.adb heart.sli
 W ImpulseGenerator%s impulsegenerator.adb impulsegenerator.sli
 W HRM%s hrm.adb hrm.sli
@@ -33,6 +34,7 @@ W RandomNumber%s randomnumber.adb randomnumber.sli
 
 D closedloop.adb 00000000000000 00000000
 D closedloop.ads 00000000000000 00000000
+D icd.ads 00000000000000 00000000
 D heart.ads 00000000000000 00000000
 D impulsegenerator.ads 00000000000000 00000000
 D hrm.ads 00000000000000 00000000
@@ -40,9 +42,20 @@ D measures.ads 00000000000000 00000000
 D randomnumber.ads 00000000000000 00000000
 
 X 2 closedloop.ads
-26r19 Sys 27m16 27r25
-X 3 heart.ads
-10K9 Heart 2|9w13 4|9w13 5|9w13
+23r10 Monitor 36r22
+24r10 Shock 37r22
+26r10 Comp 35r22
+30r19 Sys 31m16 31r25
+33r18 Sys 34m16 34r25 35r18 36r18 37r18
+X 3 icd.ads
+9K9 ICD 2|11w13
+15i5 Rate 24r23
+17e7 IsOn 23r31 28r27 2|35r27
+21r19 Computer 22m16 22r30 23r22 24r14
+21r46 HeartRateMonitor 22r40
+26r21 Computer 27m16 27r30 28r18
+X 4 heart.ads
+10K9 Heart 2|10w13 5|9w13 6|9w13
 19i3 Rate 32r39 33r17 51r24
 22i3 Impulse 31r17 40r17 44r19
 28U14 Init 29<19
@@ -55,10 +68,10 @@ X 3 heart.ads
 54U14 Tick 55=22
 54r19 Hrt 56m16 56r25 57r50
 61i4 DefaultChange 30m21 57m16 11o11 12r19 29r19 34r13 55r22 56r30 57r35
-X 4 impulsegenerator.ads
-10K9 ImpulseGenerator 2|8w13
+X 5 impulsegenerator.ads
+10K9 ImpulseGenerator 2|9w13 3|8w13
 17i3 Impulse 26r50 46r42
-20e3 IsOn 26r23 31r23 36r27 40r25 46r24 47r28 53r27
+20e3 IsOn 26r23 31r23 36r27 40r25 46r24 47r28 53r27 2|37r28
 24r19 Generator 25m16 26r13 26r40
 29r17 Generator 30m16 30r31 31r13
 34r18 Generator 35m16 35r31 36r17
@@ -67,10 +80,10 @@ X 4 impulsegenerator.ads
 44i4 J 45r42 46r52
 50r19 Generator 52r25 53r17
 51r5 Hrt 52m16 52r36 53r35 53r41
-X 5 hrm.ads
-10K9 HRM 2|7w13
+X 6 hrm.ads
+10K9 HRM 2|8w13 3|7w13
 16i3 Rate 25r21 45r45 53r22
-18e3 IsOn 24r21 30r21 35r25 39r23 45r22 47r26 52r25
+18e3 IsOn 24r21 30r21 35r25 39r23 45r22 47r26 52r25 2|36r30
 22r19 Monitor 23m16 24r13 25r13
 28r17 Monitor 29m16 30r13
 28r40 Hrt 29r29
@@ -80,15 +93,15 @@ X 5 hrm.ads
 43i8 Rate 44m16 45r30 47r34
 50r19 Monitor 51m16 51r29 52r17 53r14
 50r45 Hrt 51r38
-X 6 measures.ads
-3K9 Measures 2|6w13 3|11r27 32r13 33r25 8w13 4|7w13 5|25r28 47r41 53r29
-. 7w13
+X 7 measures.ads
+3K9 Measures 2|7w13 3|24r30 5w13 4|11r27 32r13 33r25 8w13 5|7w13 6|25r28
+. 47r41 53r29 7w13
 9I12 Joules 29r26 29r63
-15I12 BPM 25r26 25r60 3|11r36 32r22 33r34 5|25r37 47r50 53r38
+15I12 BPM 25r26 25r60 3|24r39 4|11r36 32r22 33r34 6|25r37 47r50 53r38
 18i39 Fst 20r12 21r26
 18i57 Lst 20r19 21r54
 21i15 Output 21r33 21r44
 25i15 Output 25r39 25r50
 29i15 Output 29r42 29r53
-X 7 randomnumber.ads
-2K9 RandomNumber 3|9w13 4|8w13 5|8w13
+X 8 randomnumber.ads
+2K9 RandomNumber 3|6w13 4|9w13 5|8w13 6|8w13
