@@ -40,8 +40,11 @@ package body ClosedLoop is
    procedure Tick(Sys : in out ClosedLoopType) is
    begin
       for I in Integer range 0..100 loop
-         if Sys.Monitor.IsOn then
+         -- if the computer is on, tick through the entire system
+         if Sys.Comp.isOn then
             HRM.Tick(Sys.Monitor,Sys.Hrt);
+            ICD.Tick(Sys.Comp, Sys.Monitor);
+            ImpulseGenerator.Tick(Sys.Shock, Sys.Hrt);
          end if;
       end loop;
    end Tick;
