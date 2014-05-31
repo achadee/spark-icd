@@ -7,7 +7,9 @@ with ImpulseGenerator;
 --#         HRM,
 --#         ImpulseGenerator;      
 package ICD is
-   
+   subtype Index is Integer range 0 .. 6;
+   type History is array (Index) of Measures.BPM;
+
    ProjectedRate : constant Float := 15.0;
    MaxShocks : constant Integer := 10;
 
@@ -30,6 +32,10 @@ package ICD is
       Count : Integer;
       Next : Integer;
 
+      ticksToReEnableDetectionAgain : integer;
+      heartRateHistory : History;
+      history_avarage : Integer;
+      history_variance : Integer;
       end record;
 
    procedure Tick(Computer : in out ICDType; HeartRateMonitor : in HRM.HRMType);
@@ -60,6 +66,8 @@ package ICD is
 
    procedure Set_Impulse(Computer : in ICDType; Shock: in out ImpulseGenerator.GeneratorType);
    --# derives Shock from Computer, Shock;
+procedure addRateToHistory(Computer : in out ICDType);
+   --# derives Computer from Computer;
 
    
 end ICD;

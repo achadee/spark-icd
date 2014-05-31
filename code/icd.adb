@@ -19,6 +19,7 @@ package body ICD is
    procedure Tick(Computer : in out ICDType; HeartRateMonitor : in HRM.HRMType) is
    begin
       if Computer.IsOn then
+      --ICD.addRateToHistory(Computer);
     -- read the heart rate from the HRM
        HRM.GetRate(HeartRateMonitor, Computer.Rate);
       else
@@ -26,11 +27,6 @@ package body ICD is
        Computer.Rate := Measures.BPM'First;
       end if;
    end Tick;
-
-   procedure Detect_Fibrillation(Computer : in out ICDType) is
-   begin
-       Computer.isFib := True;
-   end Detect_Fibrillation;
 
    procedure Detect_Tarchycardia(Computer : in out ICDType) is
    begin
@@ -64,5 +60,56 @@ package body ICD is
    procedure Init(Computer : in out ICDType) is
    begin
         Computer.Rate := Measures.BPM'First;
+        for I in Index loop
+          Computer.heartRateHistory(I) := -1;
+        end loop;
+        Computer.ticksToReEnableDetectionAgain := Computer.heartRateHistory'length;
    end Init;
+
+   procedure addRateToHistory(Computer : in out ICDType) is
+      lastIndex : constant Integer := Computer.heartRateHistory'last;
+   begin
+      for I in Integer range 1 .. lastIndex - 1 loop
+        Computer.heartRateHistory(I) := Computer.heartRateHistory (I+1);
+      end loop;
+      --Put the new value
+      Computer.heartRateHistory (lastIndex) := Computer.rate;
+   end addRateToHistory;
+
+   procedure Detect_Fibrillation(Computer : in out ICDType) is
+   currentHistory : History;
+   temp : Integer;
+   begin
+
+      ---Calculate the avarage-----------------
+      currentHistory := Computer.heartRateHistory;
+      Computer.isFib := False;
+      Computer.history_avarage := 0;
+      for I in Index loop
+      Computer.history_avarage := Computer.history_avarage + currentHistory (I);
+      end loop;
+      Computer.history_avarage := Computer.history_avarage / currentHistory'length;
+      ---end calculating the average-----------
+      ---Calculate Variance--------------------
+      for I in Index loop
+      temp := Computer.history_avarage - currentHistory (I);
+      Computer.history_variance := temp * temp + Computer.history_variance;
+      end loop;
+      Computer.history_variance := Computer.history_variance / currentHistory'length;
+      ---End Calculating the variance----------
+
+    If Computer.history_variance > 20 then
+      Computer.isFib := true;
+    end if;
+
+    if currentHistory (1) = -1 or 
+      Computer.ticksToReEnableDetectionAgain > 0 then
+
+      Computer.ticksToReEnableDetectionAgain := 
+        Computer.ticksToReEnableDetectionAgain - 1;
+      Computer.isFib := false;
+    end if;
+
+   end Detect_Fibrillation;
+
 end ICD;
