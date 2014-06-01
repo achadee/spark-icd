@@ -23,8 +23,8 @@ package body ICD is
        -- and a Tarchycardia has not been detected
        -- start a treatment
        if Computer.IsOn and Computer.Rate > Computer.UpperBound 
-       and Computer.IsTar = False then
-          Computer.IsTar := True;
+       and Computer.state = normal then
+          Computer.state := tar;
           Computer.Count := MaxShocks;
           Computer.InProcess := True;
           Computer.Next := Computer.TickCount;
@@ -33,19 +33,19 @@ package body ICD is
        -- if the computer is inprocess and the tarch is detected
        -- and the count still has some shocks remaining
        -- keep the process running, else kill it
-       if Computer.InProcess and Computer.IsTar and Computer.Count > 0 then
+       if Computer.InProcess and Computer.state = tar and Computer.Count > 0 then
           -- continue process
           Computer.InProcess := True;
-          Computer.IsTar := True;
+          Computer.state := tar;
        else
-          Computer.IsTar := False;
+          Computer.state := normal;
           Computer.InProcess := False;
        end if;
    end Detect_Tarchycardia;
 
    procedure Set_Next(Computer : in out ICDType) is
    begin
-      if Computer.IsTar and Computer.Count > 0 and Computer.InProcess then
+      if Computer.state = tar and Computer.Count > 0 and Computer.InProcess then
          Computer.Next := Computer.TickCount + Integer(Float'Floor (600.0 / (Float(Computer.UpperBound) + ProjectedRate)));
       end if;
    end Set_Next;
@@ -53,24 +53,27 @@ package body ICD is
    procedure Set_Impulse(Computer : in out ICDType; Shock: in out ImpulseGenerator.GeneratorType) is
    begin
       -- self contained set impulse
-      if Computer.isFib and Shock.IsOn then
+      if Computer.state = fib and Shock.IsOn then
          --Ada.Text_IO.Put_Line("BIG SHOCK");
          ImpulseGenerator.SetImpulse(Shock, FibShock);
-      elsif Computer.IsTar and Computer.InProcess and Computer.count > 0 
+      elsif Computer.state = tar and Computer.InProcess and Computer.count > 0 
             and Computer.TickCount = Computer.Next and Shock.IsOn then
          --Ada.Text_IO.Put_Line("SHOCK");
          ImpulseGenerator.SetImpulse(Shock, TarShock);
          Computer.count := Computer.count - 1;
           Set_Next(Computer);
-      elsif not Computer.IsTar and not Computer.isFib then
+      elsif Computer.state = normal then
          ImpulseGenerator.SetImpulse(Shock, 0);
       end if;
    end Set_Impulse;
 
    procedure Init(Computer : in out ICDType) is
    begin
-        Computer.IsTar := False;
-        COmputer.IsFib := False;
+        --Computer.IsTar := False;
+        --COmputer.IsFib := False;
+
+        Computer.state := normal;
+
         Computer.UpperBound := 140;
         Computer.TickCount := 0;
         Computer.Count := 0;
@@ -113,9 +116,9 @@ package body ICD is
       end loop;
       Computer.history_variance := Computer.history_variance / currentHistory'length;
       ---End Calculating the variance----------
-      if Computer.isFib then
+      if Computer.state = fib then
         --Ada.Text_IO.Put_Line("fib is true");
-        Computer.isFib := false;
+        Computer.state := normal;
         Computer.ticksToReEnableDetectionAgain := 7;
       else
        if currentHistory (1) = -1 or 
@@ -126,7 +129,7 @@ package body ICD is
        else
             If Computer.history_variance > 3000 then
               --Ada.Text_IO.Put_Line(".");
-              Computer.isFib := true;
+              Computer.state := fib;
            end if;
        end if; 
     end if;

@@ -10,11 +10,14 @@ package ICD is
    subtype Index is Integer range 0 .. 6;
    type History is array (Index) of Measures.BPM;
 
+   type ICDStates is (normal, fib, tar);
+
    ProjectedRate : constant Float := 15.0;
    MaxShocks : constant Integer := 10;
 
    TarShock : constant Integer := 2;
    FibShock : constant Integer := 30;
+
 
    -- The record type for a heart rate monitor
    type ICDType is
@@ -24,8 +27,8 @@ package ICD is
       InProcess : Boolean;
       IsOn : Boolean;
 
-      IsFib : Boolean;
-      IsTar : Boolean;
+      
+      state : ICDStates;
 
       -- ICD settings
       UpperBound : Measures.BPM;
