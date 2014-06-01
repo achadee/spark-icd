@@ -1,0 +1,62 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 01-JUN-2014 19:41:14.25
+
+                   procedure ImpulseGenerator.SetImpulse
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 32:
+
+procedure_setimpulse_1.
+H1:    true .
+H2:    true .
+H3:    fld_impulse(generator) >= measures__joules__first .
+H4:    fld_impulse(generator) <= measures__joules__last .
+H5:    j >= measures__joules__first .
+H6:    j <= measures__joules__last .
+H7:    fld_ison(generator) .
+        ->
+C1:    j >= measures__joules__first .
+C2:    j <= measures__joules__last .
+ 
+
+For path(s) from start to finish:
+
+procedure_setimpulse_2.
+H1:    true .
+H2:    true .
+H3:    fld_impulse(generator) >= measures__joules__first .
+H4:    fld_impulse(generator) <= measures__joules__last .
+H5:    j >= measures__joules__first .
+H6:    j <= measures__joules__last .
+H7:    fld_ison(generator) .
+H8:    j >= measures__joules__first .
+H9:    j <= measures__joules__last .
+        ->
+C1:    fld_ison(upf_impulse(generator, j)) -> (fld_impulse(upf_impulse(
+           generator, j)) = j) .
+C2:    (not (fld_ison(upf_impulse(generator, j)))) -> (upf_impulse(
+           generator, j) = generator) .
+ 
+
+procedure_setimpulse_3.
+H1:    true .
+H2:    true .
+H3:    fld_impulse(generator) >= measures__joules__first .
+H4:    fld_impulse(generator) <= measures__joules__last .
+H5:    j >= measures__joules__first .
+H6:    j <= measures__joules__last .
+H7:    not (fld_ison(generator)) .
+        ->
+C1:    fld_ison(generator) -> (fld_impulse(generator) = j) .
+C2:    (not (fld_ison(generator))) -> (generator = 
+           generator) .
+ 
+

@@ -1,0 +1,128 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 01-JUN-2014 19:41:14.11
+
+                          function Measures.Limit
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 9:
+
+function_limit_1.
+H1:    fst <= lst .
+H2:    input >= integer__first .
+H3:    input <= integer__last .
+H4:    fst >= integer__first .
+H5:    fst <= integer__last .
+H6:    lst >= integer__first .
+H7:    lst <= integer__last .
+H8:    input < fst .
+        ->
+C1:    fst >= integer__first .
+C2:    fst <= integer__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 11:
+
+function_limit_2.
+H1:    fst <= lst .
+H2:    input >= integer__first .
+H3:    input <= integer__last .
+H4:    fst >= integer__first .
+H5:    fst <= integer__last .
+H6:    lst >= integer__first .
+H7:    lst <= integer__last .
+H8:    not (input < fst) .
+H9:    input > lst .
+        ->
+C1:    lst >= integer__first .
+C2:    lst <= integer__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 13:
+
+function_limit_3.
+H1:    fst <= lst .
+H2:    input >= integer__first .
+H3:    input <= integer__last .
+H4:    fst >= integer__first .
+H5:    fst <= integer__last .
+H6:    lst >= integer__first .
+H7:    lst <= integer__last .
+H8:    not (input < fst) .
+H9:    not (input > lst) .
+        ->
+C1:    input >= integer__first .
+C2:    input <= integer__last .
+ 
+
+For path(s) from start to finish:
+
+function_limit_4.
+H1:    fst <= lst .
+H2:    input >= integer__first .
+H3:    input <= integer__last .
+H4:    fst >= integer__first .
+H5:    fst <= integer__last .
+H6:    lst >= integer__first .
+H7:    lst <= integer__last .
+H8:    input < fst .
+H9:    fst >= integer__first .
+H10:   fst <= integer__last .
+H11:   fst >= integer__first .
+H12:   fst <= integer__last .
+        ->
+C1:    fst <= fst .
+C2:    fst <= lst .
+C3:    fst >= integer__first .
+C4:    fst <= integer__last .
+ 
+
+function_limit_5.
+H1:    fst <= lst .
+H2:    input >= integer__first .
+H3:    input <= integer__last .
+H4:    fst >= integer__first .
+H5:    fst <= integer__last .
+H6:    lst >= integer__first .
+H7:    lst <= integer__last .
+H8:    not (input < fst) .
+H9:    input > lst .
+H10:   lst >= integer__first .
+H11:   lst <= integer__last .
+H12:   lst >= integer__first .
+H13:   lst <= integer__last .
+        ->
+C1:    fst <= lst .
+C2:    lst <= lst .
+C3:    lst >= integer__first .
+C4:    lst <= integer__last .
+ 
+
+function_limit_6.
+H1:    fst <= lst .
+H2:    input >= integer__first .
+H3:    input <= integer__last .
+H4:    fst >= integer__first .
+H5:    fst <= integer__last .
+H6:    lst >= integer__first .
+H7:    lst <= integer__last .
+H8:    not (input < fst) .
+H9:    not (input > lst) .
+H10:   input >= integer__first .
+H11:   input <= integer__last .
+H12:   input >= integer__first .
+H13:   input <= integer__last .
+        ->
+C1:    fst <= input .
+C2:    input <= lst .
+C3:    input >= integer__first .
+C4:    input <= integer__last .
+ 
+

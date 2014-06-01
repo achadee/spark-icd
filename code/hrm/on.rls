@@ -1,0 +1,44 @@
+           /*********************************************************/
+                           /*Proof Rule Declarations*/
+                              /*Examiner GPL 2011*/
+             /*Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.*/
+           /*********************************************************/
+
+
+                        /*DATE : 01-JUN-2014 19:41:14.31*/
+
+                              /*procedure HRM.On*/
+
+
+rule_family on_rules:
+     X      requires [X:any] &
+     X <= Y requires [X:ire, Y:ire] &
+     X >= Y requires [X:ire, Y:ire].
+
+on_rules(1): integer__size >= 0 may_be_deduced.
+on_rules(2): integer__first may_be_replaced_by -2147483648.
+on_rules(3): integer__last may_be_replaced_by 2147483647.
+on_rules(4): integer__base__first may_be_replaced_by -2147483648.
+on_rules(5): integer__base__last may_be_replaced_by 2147483647.
+on_rules(6): measures__joules__size >= 0 may_be_deduced.
+on_rules(7): measures__joules__first may_be_replaced_by 0.
+on_rules(8): measures__joules__last may_be_replaced_by 45.
+on_rules(9): measures__joules__base__first may_be_replaced_by -2147483648.
+on_rules(10): measures__joules__base__last may_be_replaced_by 2147483647.
+on_rules(11): measures__bpm__size >= 0 may_be_deduced.
+on_rules(12): measures__bpm__first may_be_replaced_by -1.
+on_rules(13): measures__bpm__last may_be_replaced_by 300.
+on_rules(14): measures__bpm__base__first may_be_replaced_by -2147483648.
+on_rules(15): measures__bpm__base__last may_be_replaced_by 2147483647.
+on_rules(16): heart__hearttype__size >= 0 may_be_deduced.
+on_rules(17): A = B may_be_deduced_from
+     [goal(checktype(A,heart__hearttype)),
+      goal(checktype(B,heart__hearttype)),
+      fld_rate(A) = fld_rate(B),
+      fld_impulse(A) = fld_impulse(B)].
+on_rules(18): hrmtype__size >= 0 may_be_deduced.
+on_rules(19): A = B may_be_deduced_from
+     [goal(checktype(A,hrmtype)),
+      goal(checktype(B,hrmtype)),
+      fld_rate(A) = fld_rate(B),
+      fld_ison(A) = fld_ison(B)].

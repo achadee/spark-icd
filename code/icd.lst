@@ -1,0 +1,277 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 01-JUN-2014 19:41:14.93
+
+Line
+   1  with Measures;
+   2  with HRM;
+   3  with ImpulseGenerator;
+   4  --with Ada.Text_IO;
+   5  
+   6  package body ICD is
+   7  
+   8     NoShock : constant Measures.Joules := 0;
+   9  
+  10     procedure Init(Computer : out ICDType) is
+  11     begin
+  12          Computer.InProcess := False;
+  13          Computer.IsOn := False;
+  14  
+  15          Computer.UpperBound := 130;
+  16          Computer.Next := 600 / (Computer.UpperBound + ProjectedRate);
+  17          
+  18          Computer.history_avarage := 0;
+  19          Computer.history_variance := 0;
+  20  
+  21          Computer.state := normal;
+  22  
+  23          
+  24          Computer.TickCount := 0;
+  25          Computer.Count := 0;
+  26  
+  27          Computer.Rate := Measures.BPM'First;
+  28          Computer.heartRateHistory1 := Measures.BPM'First;
+  29          Computer.heartRateHistory2 := Measures.BPM'First;
+  30          Computer.heartRateHistory3 := Measures.BPM'First;
+  31          Computer.heartRateHistory4 := Measures.BPM'First;
+  32          Computer.heartRateHistory5 := Measures.BPM'First;
+  33          Computer.heartRateHistory6 := Measures.BPM'First;
+  34          Computer.ticksToReEnableDetectionAgain := 6;
+  35     end Init;
+
++++        Flow analysis of subprogram Init performed: no 
+           errors found.
+
+  36  
+  37     procedure On(Computer: in out ICDType) is
+  38     begin
+  39        Computer.IsOn := True;
+  40     end On;
+
++++        Flow analysis of subprogram On performed: no 
+           errors found.
+
+  41  
+  42     procedure Off(Computer: in out ICDType) is
+  43     begin
+  44        Computer.IsOn := False;
+  45     end Off;
+
++++        Flow analysis of subprogram Off performed: no 
+           errors found.
+
+  46  
+  47     procedure addRateToHistory(Computer : in out ICDType) is
+  48     begin
+  49            Computer.heartRateHistory1 := Computer.heartRateHistory2;
+  50            Computer.heartRateHistory2 := Computer.heartRateHistory3;
+  51            Computer.heartRateHistory3 := Computer.heartRateHistory4;
+  52            Computer.heartRateHistory4 := Computer.heartRateHistory5;
+  53            Computer.heartRateHistory5 := Computer.heartRateHistory6;
+  54            Computer.heartRateHistory6 := Computer.rate;
+  55     end addRateToHistory;
+
++++        Flow analysis of subprogram addRateToHistory 
+           performed: no errors found.
+
+  56     
+  57     procedure Detect_Tarchycardia(Computer : in out ICDType) is
+  58     begin
+  59         -- if the icd is on and the rate is above the upperbound
+  60         -- and a Tarchycardia has not been detected
+  61         -- start a treatment
+  62         if Computer.IsOn and Computer.Rate > Computer.UpperBound 
+  63         and Computer.state = normal then
+  64            Computer.state := tar;
+  65            Computer.Count := MaxShocks;
+  66            Computer.InProcess := True;
+  67            Computer.TickCount := Computer.Next;
+  68         end if;
+  69  
+  70         -- if the computer is inprocess and the tarch is detected
+  71         -- and the count still has some shocks remaining
+  72         -- keep the process running, else kill it
+  73         if Computer.InProcess and Computer.state = tar and Computer.Count > 0 then
+  74            -- continue process
+  75            Computer.InProcess := True;
+  76            Computer.state := tar;
+  77         else
+  78            Computer.state := normal;
+  79            Computer.InProcess := False;
+  80         end if;
+  81     end Detect_Tarchycardia;
+
++++        Flow analysis of subprogram Detect_Tarchycardia 
+           performed: no errors found.
+
+  82  
+  83     
+  84  
+  85     procedure Set_Impulse(Computer : in out ICDType; Shock: in out ImpulseGenerator.GeneratorType) is
+  86     begin
+  87        -- self contained set impulse
+  88        --Ada.Text_IO.Put_Line(Integer'Image(Computer.TickCount));
+  89        if Computer.state = fib and Shock.IsOn then
+  90           --Ada.Text_IO.Put_Line("BIG SHOCK");
+  91           ImpulseGenerator.SetImpulse(Shock, FibShock);
+  92        elsif Computer.state = tar and Computer.InProcess and Computer.count > 0 
+  93              and Computer.TickCount = 0 and Shock.IsOn then
+  94           --Ada.Text_IO.Put_Line("SHOCK");
+  95           ImpulseGenerator.SetImpulse(Shock, TarShock);
+  96           Computer.count := Computer.count - 1;
+  97           Computer.TickCount := Computer.Next;
+  98  
+  99        elsif Computer.state = normal then
+ 100           ImpulseGenerator.SetImpulse(Shock, 0);
+ 101        end if;
+ 102     end Set_Impulse;
+
++++        Flow analysis of subprogram Set_Impulse 
+           performed: no errors found.
+
+ 103  
+ 104     procedure CalculateAvarage(Computer : in out ICDType) is
+ 105     begin
+ 106  
+ 107        Computer.history_avarage := (((((Computer.heartRateHistory1 +
+ 108                                    Computer.heartRateHistory2) +
+ 109                                    Computer.heartRateHistory3) +
+ 110                                    Computer.heartRateHistory4) +
+ 111                                    Computer.heartRateHistory5) +
+ 112                                    Computer.heartRateHistory6)/ 6;
+ 113  
+ 114     end CalculateAvarage;
+
++++        Flow analysis of subprogram CalculateAvarage 
+           performed: no errors found.
+
+ 115  
+ 116     function power(num : in Integer) return Integer is
+ 117     result : Integer;
+ 118     begin
+ 119        result := Integer'Last;
+ 120        if num * num < Integer'Last and num * num > Integer'First then
+ 121          result := num * num;
+ 122        end if;
+ 123        return result;
+ 124     end power;
+
++++        Flow analysis of subprogram power performed: no 
+           errors found.
+
+ 125  
+ 126     function secureAdd(num1 : in Integer; num2 : in Integer) return Integer is
+ 127     result : Integer;
+ 128     begin
+ 129        result := Integer'Last;
+ 130        if num1 + num2 <= Integer'Last and num1 + num2 >= Integer'First then
+ 131          result := num1 + num2;
+ 132        end if;
+ 133        return result;
+ 134      end secureAdd;
+
++++        Flow analysis of subprogram secureAdd performed: 
+           no errors found.
+
+ 135  
+ 136     procedure CalculateVariance(Computer : in out ICDType) is
+ 137     begin
+ 138  
+ 139        ---Calculate Variance--------------------
+ 140  
+ 141        Computer.history_variance := 0;
+ 142        if (Computer.history_avarage - Computer.heartRateHistory1) <= Integer'Last and
+ 143        (Computer.history_avarage - Computer.heartRateHistory1) >= Integer'First and
+ 144        (Computer.history_avarage - Computer.heartRateHistory2) <= Integer'Last and
+ 145        (Computer.history_avarage - Computer.heartRateHistory2) >= Integer'First and
+ 146        (Computer.history_avarage - Computer.heartRateHistory3) <= Integer'Last and
+ 147        (Computer.history_avarage - Computer.heartRateHistory3) >= Integer'First and
+ 148        (Computer.history_avarage - Computer.heartRateHistory4) <= Integer'Last and
+ 149        (Computer.history_avarage - Computer.heartRateHistory4) >= Integer'First and
+ 150        (Computer.history_avarage - Computer.heartRateHistory5) <= Integer'Last and
+ 151        (Computer.history_avarage - Computer.heartRateHistory5) >= Integer'First and
+ 152        (Computer.history_avarage - Computer.heartRateHistory6) <= Integer'Last and
+ 153        (Computer.history_avarage - Computer.heartRateHistory6) >= Integer'First then
+ 154  
+ 155        Computer.history_variance := (secureAdd(secureAdd(secureAdd(secureAdd(secureAdd(power(Computer.history_avarage - Computer.heartRateHistory1), 
+ 156        power(Computer.history_avarage - Computer.heartRateHistory2)), 
+ 157        power(Computer.history_avarage - Computer.heartRateHistory3)), 
+ 158        power(Computer.history_avarage - Computer.heartRateHistory4)), 
+ 159        power(Computer.history_avarage - Computer.heartRateHistory5)), 
+ 160        power(Computer.history_avarage - Computer.heartRateHistory6))) / 6;
+ 161        end if;
+ 162        ---End Calculating the variance----------
+ 163     end CalculateVariance;
+
++++        Flow analysis of subprogram CalculateVariance 
+           performed: no errors found.
+
+ 164  
+ 165  
+ 166     procedure Detect_Fibrillation(Computer : in out ICDType) is
+ 167     begin
+ 168  
+ 169  
+ 170        if Computer.state = fib then
+ 171          --Ada.Text_IO.Put_Line("fib is true");
+ 172          Computer.state := normal;
+ 173          Computer.ticksToReEnableDetectionAgain := 7;
+ 174        else
+ 175         if Computer.heartRateHistory1 = -1 or 
+ 176              Computer.ticksToReEnableDetectionAgain > 0 then
+ 177              --Ada.Text_IO.Put_Line("fib nodetect");
+ 178              Computer.ticksToReEnableDetectionAgain := 
+ 179              Computer.ticksToReEnableDetectionAgain - 1;
+ 180         else
+ 181              If Computer.history_variance > 100 then
+ 182                --Ada.Text_IO.Put_Line(".");
+ 183                Computer.state := fib;
+ 184             end if;
+ 185         end if; 
+ 186      end if;
+ 187  
+ 188     end Detect_Fibrillation;
+
++++        Flow analysis of subprogram Detect_Fibrillation 
+           performed: no errors found.
+
+ 189  
+ 190     procedure Tick(Computer : in out ICDType; HeartRateMonitor : in HRM.HRMType; Shock : in out ImpulseGenerator.GeneratorType) is
+ 191     begin
+ 192  
+ 193        if Computer.IsOn then
+ 194              
+ 195          --Ada.Text_IO.Put_Line("Computer is on");
+ 196          -- read the heart rate from the HRM
+ 197          HRM.GetRate(HeartRateMonitor, Computer.Rate);
+ 198          addRateToHistory(Computer);
+ 199          CalculateAvarage(Computer);
+ 200          CalculateVariance(Computer);
+ 201          Detect_Fibrillation(Computer);
+ 202          Detect_Tarchycardia(Computer);
+ 203          Set_Impulse(Computer, Shock);
+ 204          if Computer.InProcess and Computer.state = tar then
+ 205            Computer.TickCount := Computer.TickCount - 1;
+ 206          end if;
+ 207        else
+ 208          --Ada.Text_IO.Put_Line("Computer is off");
+ 209        -- If the Computer is not on, return 0 for both values
+ 210          Computer.Rate := Measures.BPM'First;
+ 211        end if;
+ 212     end Tick;
+
++++        Flow analysis of subprogram Tick performed: no 
+           errors found.
+
+ 213  
+ 214  end ICD;
+No summarized warnings
+
+
+
+--End of file--------------------------------------------------

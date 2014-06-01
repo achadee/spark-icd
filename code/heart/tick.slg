@@ -1,0 +1,661 @@
+*****************************************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+*****************************************************************************
+
+
+CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:28
+
+SPARK Simplifier GPL 2011
+Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+
+procedure Heart.Tick
+
+
+
+
+
+
+@@@@@@@@@@  VC: procedure_tick_1.  @@@@@@@@@@
+-S-  Applied substitution rule tick_rules(5).
+     This was achieved by replacing all occurrences of integer__first by:
+          - 2147483648.
+<S>  New C1:  fld_rate(hrt) + defaultchange >= - 2147483648
+-S-  Applied substitution rule tick_rules(6).
+     This was achieved by replacing all occurrences of integer__last by:
+          2147483647.
+<S>  New C2:  fld_rate(hrt) + defaultchange <= 2147483647
+-S-  Applied substitution rule tick_rules(7).
+     This was achieved by replacing all occurrences of integer__base__first by:
+          - 2147483648.
+<S>  New C3:  fld_rate(hrt) + defaultchange >= - 2147483648
+-S-  Applied substitution rule tick_rules(8).
+     This was achieved by replacing all occurrences of integer__base__last by:
+          2147483647.
+<S>  New C4:  fld_rate(hrt) + defaultchange <= 2147483647
+-S-  Applied substitution rule tick_rules(1).
+     This was achieved by replacing all occurrences of noshock by:
+          0.
+<S>  New H8:  fld_impulse(hrt) = 0
+-S-  Applied substitution rule tick_rules(15).
+     This was achieved by replacing all occurrences of measures__joules__first 
+          by:
+          0.
+<S>  New H2:  fld_impulse(hrt) >= 0
+-S-  Applied substitution rule tick_rules(16).
+     This was achieved by replacing all occurrences of measures__joules__last 
+          by:
+          45.
+<S>  New H3:  fld_impulse(hrt) <= 45
+-S-  Applied substitution rule tick_rules(20).
+     This was achieved by replacing all occurrences of measures__bpm__first by:
+          - 1.
+<S>  New H4:  fld_rate(hrt) >= - 1
+<S>  New H6:  defaultchange >= - 1
+-S-  Applied substitution rule tick_rules(21).
+     This was achieved by replacing all occurrences of measures__bpm__last by:
+          300.
+<S>  New H5:  fld_rate(hrt) <= 300
+<S>  New H7:  defaultchange <= 300
+***  Proved C1:  fld_rate(hrt) + defaultchange >= - 2147483648
+     using hypotheses H4 & H6.
+***  Proved C2:  fld_rate(hrt) + defaultchange <= 2147483647
+     using hypotheses H5 & H7.
+***  Proved C3:  fld_rate(hrt) + defaultchange >= - 2147483648
+     using hypotheses H4 & H6.
+***  Proved C4:  fld_rate(hrt) + defaultchange <= 2147483647
+     using hypotheses H5 & H7.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_tick_2.  @@@@@@@@@@
+---  Hypothesis H16 has been replaced by "true".  (It is already present, as 
+          H14).
+***  Proved C1:  measures__limitbpm(fld_rate(hrt) + defaultchange) >= 
+          measures__bpm__first
+     using hypothesis H13.
+***  Proved C2:  measures__limitbpm(fld_rate(hrt) + defaultchange) <= 
+          measures__bpm__last
+     using hypothesis H14.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_tick_3.  @@@@@@@@@@
+-S-  Applied substitution rule tick_rules(5).
+     This was achieved by replacing all occurrences of integer__first by:
+          - 2147483648.
+<S>  New C1:  fld_rate(hrt) - fld_impulse(hrt) >= - 2147483648
+-S-  Applied substitution rule tick_rules(6).
+     This was achieved by replacing all occurrences of integer__last by:
+          2147483647.
+<S>  New C2:  fld_rate(hrt) - fld_impulse(hrt) <= 2147483647
+-S-  Applied substitution rule tick_rules(7).
+     This was achieved by replacing all occurrences of integer__base__first by:
+          - 2147483648.
+<S>  New C3:  fld_rate(hrt) - fld_impulse(hrt) >= - 2147483648
+-S-  Applied substitution rule tick_rules(8).
+     This was achieved by replacing all occurrences of integer__base__last by:
+          2147483647.
+<S>  New C4:  fld_rate(hrt) - fld_impulse(hrt) <= 2147483647
+>>>  Restructured hypothesis H8 into:
+     >>>  H8:  fld_impulse(hrt) <> noshock
+-S-  Applied substitution rule tick_rules(1).
+     This was achieved by replacing all occurrences of noshock by:
+          0.
+<S>  New H8:  fld_impulse(hrt) <> 0
+-S-  Applied substitution rule tick_rules(2).
+     This was achieved by replacing all occurrences of smallshock by:
+          5.
+<S>  New H9:  fld_impulse(hrt) < 5
+-S-  Applied substitution rule tick_rules(15).
+     This was achieved by replacing all occurrences of measures__joules__first 
+          by:
+          0.
+<S>  New H2:  fld_impulse(hrt) >= 0
+-S-  Applied substitution rule tick_rules(16).
+     This was achieved by replacing all occurrences of measures__joules__last 
+          by:
+          45.
+<S>  New H3:  fld_impulse(hrt) <= 45
+-S-  Applied substitution rule tick_rules(20).
+     This was achieved by replacing all occurrences of measures__bpm__first by:
+          - 1.
+<S>  New H4:  fld_rate(hrt) >= - 1
+<S>  New H6:  defaultchange >= - 1
+-S-  Applied substitution rule tick_rules(21).
+     This was achieved by replacing all occurrences of measures__bpm__last by:
+          300.
+<S>  New H5:  fld_rate(hrt) <= 300
+<S>  New H7:  defaultchange <= 300
+%%%  Hypotheses H2 & H8 together imply that
+          0 < fld_impulse(hrt).
+     H2 & H8 have therefore been deleted and a new H10 added to this effect.
+***  Proved C1:  fld_rate(hrt) - fld_impulse(hrt) >= - 2147483648
+     using hypotheses H3 & H4.
+***  Proved C2:  fld_rate(hrt) - fld_impulse(hrt) <= 2147483647
+     using hypotheses H5 & H10.
+***  Proved C3:  fld_rate(hrt) - fld_impulse(hrt) >= - 2147483648
+     using hypotheses H3 & H4.
+***  Proved C4:  fld_rate(hrt) - fld_impulse(hrt) <= 2147483647
+     using hypotheses H5 & H10.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_tick_4.  @@@@@@@@@@
+---  Hypothesis H17 has been replaced by "true".  (It is already present, as 
+          H15).
+***  Proved C1:  measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) >= 
+          measures__bpm__first
+     using hypothesis H14.
+***  Proved C2:  measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 
+          measures__bpm__last
+     using hypothesis H15.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_tick_5.  @@@@@@@@@@
+-S-  Applied substitution rule tick_rules(20).
+     This was achieved by replacing all occurrences of measures__bpm__first by:
+          - 1.
+<S>  New H4:  fld_rate(hrt) >= - 1
+<S>  New H6:  defaultchange >= - 1
+<S>  New C1:  true
+-S-  Applied substitution rule tick_rules(21).
+     This was achieved by replacing all occurrences of measures__bpm__last by:
+          300.
+<S>  New H5:  fld_rate(hrt) <= 300
+<S>  New H7:  defaultchange <= 300
+<S>  New C2:  true
+***  Proved C1:  true
+***  Proved C2:  true
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_tick_6.  @@@@@@@@@@
+***  Proved C1:  0 >= measures__bpm__first
+     using hypothesis H10.
+***  Proved C2:  0 <= measures__bpm__last
+     using hypothesis H11.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_tick_7.  @@@@@@@@@@
+---  Hypothesis H16 has been replaced by "true".  (It is already present, as 
+          H14).
+---  Hypothesis H17 has been replaced by "true".  (It is already present, as 
+          H13).
+---  Hypothesis H18 has been replaced by "true".  (It is already present, as 
+          H14).
+%%%  Simplified C3 on reading formula in, to give:
+     %%%  C3:  measures__limitbpm(fld_rate(hrt) + defaultchange) >= 
+          integer__first
+%%%  Simplified C4 on reading formula in, to give:
+     %%%  C4:  measures__limitbpm(fld_rate(hrt) + defaultchange) <= 
+          integer__last
+-S-  Applied substitution rule tick_rules(3).
+     This was achieved by replacing all occurrences of volatility by:
+          1 / 50.
+<S>  New C1:  1 / 50 >= float__first
+<S>  New C2:  1 / 50 <= float__last
+-S-  Applied substitution rule tick_rules(10).
+     This was achieved by replacing all occurrences of float__first by:
+          - 340282000000000000000000000000000000000.
+<S>  New C1:  true
+-S-  Applied substitution rule tick_rules(11).
+     This was achieved by replacing all occurrences of float__last by:
+          340282000000000000000000000000000000000.
+<S>  New C2:  true
+-S-  Applied substitution rule tick_rules(5).
+     This was achieved by replacing all occurrences of integer__first by:
+          - 2147483648.
+<S>  New H9:  fld_rate(hrt) + defaultchange >= - 2147483648
+<S>  New C3:  measures__limitbpm(fld_rate(hrt) + defaultchange) >= - 2147483648
+-S-  Applied substitution rule tick_rules(6).
+     This was achieved by replacing all occurrences of integer__last by:
+          2147483647.
+<S>  New H10:  fld_rate(hrt) + defaultchange <= 2147483647
+<S>  New C4:  measures__limitbpm(fld_rate(hrt) + defaultchange) <= 2147483647
+***  Proved C1:  true
+***  Proved C2:  true
+-S-  Applied substitution rule tick_rules(1).
+     This was achieved by replacing all occurrences of noshock by:
+          0.
+<S>  New H8:  fld_impulse(hrt) = 0
+-S-  Applied substitution rule tick_rules(7).
+     This was achieved by replacing all occurrences of integer__base__first by:
+          - 2147483648.
+<S>  New H11:  fld_rate(hrt) + defaultchange >= - 2147483648
+-S-  Applied substitution rule tick_rules(8).
+     This was achieved by replacing all occurrences of integer__base__last by:
+          2147483647.
+<S>  New H12:  fld_rate(hrt) + defaultchange <= 2147483647
+-S-  Applied substitution rule tick_rules(15).
+     This was achieved by replacing all occurrences of measures__joules__first 
+          by:
+          0.
+<S>  New H2:  fld_impulse(hrt) >= 0
+-S-  Applied substitution rule tick_rules(16).
+     This was achieved by replacing all occurrences of measures__joules__last 
+          by:
+          45.
+<S>  New H3:  fld_impulse(hrt) <= 45
+-S-  Applied substitution rule tick_rules(20).
+     This was achieved by replacing all occurrences of measures__bpm__first by:
+          - 1.
+<S>  New H4:  fld_rate(hrt) >= - 1
+<S>  New H6:  defaultchange >= - 1
+<S>  New H13:  measures__limitbpm(fld_rate(hrt) + defaultchange) >= - 1
+<S>  New H15:  - 1 <= measures__limitbpm(fld_rate(hrt) + defaultchange)
+-S-  Applied substitution rule tick_rules(21).
+     This was achieved by replacing all occurrences of measures__bpm__last by:
+          300.
+<S>  New H5:  fld_rate(hrt) <= 300
+<S>  New H7:  defaultchange <= 300
+<S>  New H14:  measures__limitbpm(fld_rate(hrt) + defaultchange) <= 300
+***  Proved C3:  measures__limitbpm(fld_rate(hrt) + defaultchange) >= - 
+          2147483648
+     using hypothesis H15.
+***  Proved C4:  measures__limitbpm(fld_rate(hrt) + defaultchange) <= 2147483647
+     using hypothesis H14.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_tick_8.  @@@@@@@@@@
+---  Hypothesis H17 has been replaced by "true".  (It is already present, as 
+          H15).
+---  Hypothesis H18 has been replaced by "true".  (It is already present, as 
+          H14).
+---  Hypothesis H19 has been replaced by "true".  (It is already present, as 
+          H15).
+%%%  Simplified C3 on reading formula in, to give:
+     %%%  C3:  measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) >= 
+          integer__first
+%%%  Simplified C4 on reading formula in, to give:
+     %%%  C4:  measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 
+          integer__last
+-S-  Applied substitution rule tick_rules(3).
+     This was achieved by replacing all occurrences of volatility by:
+          1 / 50.
+<S>  New C1:  1 / 50 >= float__first
+<S>  New C2:  1 / 50 <= float__last
+-S-  Applied substitution rule tick_rules(10).
+     This was achieved by replacing all occurrences of float__first by:
+          - 340282000000000000000000000000000000000.
+<S>  New C1:  true
+-S-  Applied substitution rule tick_rules(11).
+     This was achieved by replacing all occurrences of float__last by:
+          340282000000000000000000000000000000000.
+<S>  New C2:  true
+-S-  Applied substitution rule tick_rules(5).
+     This was achieved by replacing all occurrences of integer__first by:
+          - 2147483648.
+<S>  New H10:  fld_rate(hrt) - fld_impulse(hrt) >= - 2147483648
+<S>  New C3:  measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) >= - 
+          2147483648
+-S-  Applied substitution rule tick_rules(6).
+     This was achieved by replacing all occurrences of integer__last by:
+          2147483647.
+<S>  New H11:  fld_rate(hrt) - fld_impulse(hrt) <= 2147483647
+<S>  New C4:  measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 2147483647
+***  Proved C1:  true
+***  Proved C2:  true
+>>>  Restructured hypothesis H8 into:
+     >>>  H8:  fld_impulse(hrt) <> noshock
+-S-  Applied substitution rule tick_rules(1).
+     This was achieved by replacing all occurrences of noshock by:
+          0.
+<S>  New H8:  fld_impulse(hrt) <> 0
+-S-  Applied substitution rule tick_rules(2).
+     This was achieved by replacing all occurrences of smallshock by:
+          5.
+<S>  New H9:  fld_impulse(hrt) < 5
+-S-  Applied substitution rule tick_rules(7).
+     This was achieved by replacing all occurrences of integer__base__first by:
+          - 2147483648.
+<S>  New H12:  fld_rate(hrt) - fld_impulse(hrt) >= - 2147483648
+-S-  Applied substitution rule tick_rules(8).
+     This was achieved by replacing all occurrences of integer__base__last by:
+          2147483647.
+<S>  New H13:  fld_rate(hrt) - fld_impulse(hrt) <= 2147483647
+-S-  Applied substitution rule tick_rules(15).
+     This was achieved by replacing all occurrences of measures__joules__first 
+          by:
+          0.
+<S>  New H2:  fld_impulse(hrt) >= 0
+-S-  Applied substitution rule tick_rules(16).
+     This was achieved by replacing all occurrences of measures__joules__last 
+          by:
+          45.
+<S>  New H3:  fld_impulse(hrt) <= 45
+-S-  Applied substitution rule tick_rules(20).
+     This was achieved by replacing all occurrences of measures__bpm__first by:
+          - 1.
+<S>  New H4:  fld_rate(hrt) >= - 1
+<S>  New H6:  defaultchange >= - 1
+<S>  New H14:  measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) >= - 1
+<S>  New H16:  - 1 <= measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt))
+-S-  Applied substitution rule tick_rules(21).
+     This was achieved by replacing all occurrences of measures__bpm__last by:
+          300.
+<S>  New H5:  fld_rate(hrt) <= 300
+<S>  New H7:  defaultchange <= 300
+<S>  New H15:  measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 300
+%%%  Hypotheses H2 & H8 together imply that
+          0 < fld_impulse(hrt).
+     H2 & H8 have therefore been deleted and a new H20 added to this effect.
+***  Proved C3:  measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) >= - 
+          2147483648
+     using hypothesis H16.
+***  Proved C4:  measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 
+          2147483647
+     using hypothesis H15.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_tick_9.  @@@@@@@@@@
+---  Hypothesis H12 has been replaced by "true".  (It is already present, as 
+          H10).
+---  Hypothesis H13 has been replaced by "true".  (It is already present, as 
+          H11).
+%%%  Simplified C3 on reading formula in, to give:
+     %%%  C3:  0 >= integer__first
+%%%  Simplified C4 on reading formula in, to give:
+     %%%  C4:  0 <= integer__last
+-S-  Applied substitution rule tick_rules(3).
+     This was achieved by replacing all occurrences of volatility by:
+          1 / 50.
+<S>  New C1:  1 / 50 >= float__first
+<S>  New C2:  1 / 50 <= float__last
+-S-  Applied substitution rule tick_rules(10).
+     This was achieved by replacing all occurrences of float__first by:
+          - 340282000000000000000000000000000000000.
+<S>  New C1:  true
+-S-  Applied substitution rule tick_rules(11).
+     This was achieved by replacing all occurrences of float__last by:
+          340282000000000000000000000000000000000.
+<S>  New C2:  true
+-S-  Applied substitution rule tick_rules(5).
+     This was achieved by replacing all occurrences of integer__first by:
+          - 2147483648.
+<S>  New C3:  true
+-S-  Applied substitution rule tick_rules(6).
+     This was achieved by replacing all occurrences of integer__last by:
+          2147483647.
+<S>  New C4:  true
+***  Proved C1:  true
+***  Proved C2:  true
+***  Proved C3:  true
+***  Proved C4:  true
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_tick_10.  @@@@@@@@@@
+---  Hypothesis H16 has been replaced by "true".  (It is already present, as 
+          H14).
+---  Hypothesis H17 has been replaced by "true".  (It is already present, as 
+          H13).
+---  Hypothesis H18 has been replaced by "true".  (It is already present, as 
+          H14).
+%%%  Simplified H21 on reading formula in, to give:
+     %%%  H21:  measures__limitbpm(fld_rate(hrt) + defaultchange) >= 
+          integer__first
+%%%  Simplified H22 on reading formula in, to give:
+     %%%  H22:  measures__limitbpm(fld_rate(hrt) + defaultchange) <= 
+          integer__last
+%%%  Simplified H23 on reading formula in, to give:
+     %%%  H23:  randomnumber__uniformintegerwitherror(measures__limitbpm(
+          fld_rate(hrt) + defaultchange), volatility) >= integer__first
+%%%  Simplified H24 on reading formula in, to give:
+     %%%  H24:  randomnumber__uniformintegerwitherror(measures__limitbpm(
+          fld_rate(hrt) + defaultchange), volatility) <= integer__last
+%%%  Simplified C1 on reading formula in, to give:
+     %%%  C1:  randomnumber__uniformintegerwitherror(measures__limitbpm(
+          fld_rate(hrt) + defaultchange), volatility) >= integer__first
+%%%  Simplified C2 on reading formula in, to give:
+     %%%  C2:  randomnumber__uniformintegerwitherror(measures__limitbpm(
+          fld_rate(hrt) + defaultchange), volatility) <= integer__last
+***  Proved C1:  randomnumber__uniformintegerwitherror(measures__limitbpm(
+          fld_rate(hrt) + defaultchange), volatility) >= integer__first
+     using hypothesis H23.
+***  Proved C2:  randomnumber__uniformintegerwitherror(measures__limitbpm(
+          fld_rate(hrt) + defaultchange), volatility) <= integer__last
+     using hypothesis H24.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_tick_11.  @@@@@@@@@@
+---  Hypothesis H17 has been replaced by "true".  (It is already present, as 
+          H15).
+---  Hypothesis H18 has been replaced by "true".  (It is already present, as 
+          H14).
+---  Hypothesis H19 has been replaced by "true".  (It is already present, as 
+          H15).
+%%%  Simplified H22 on reading formula in, to give:
+     %%%  H22:  measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) >= 
+          integer__first
+%%%  Simplified H23 on reading formula in, to give:
+     %%%  H23:  measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 
+          integer__last
+%%%  Simplified H24 on reading formula in, to give:
+     %%%  H24:  randomnumber__uniformintegerwitherror(measures__limitbpm(
+          fld_rate(hrt) - fld_impulse(hrt)), volatility) >= integer__first
+%%%  Simplified H25 on reading formula in, to give:
+     %%%  H25:  randomnumber__uniformintegerwitherror(measures__limitbpm(
+          fld_rate(hrt) - fld_impulse(hrt)), volatility) <= integer__last
+%%%  Simplified C1 on reading formula in, to give:
+     %%%  C1:  randomnumber__uniformintegerwitherror(measures__limitbpm(
+          fld_rate(hrt) - fld_impulse(hrt)), volatility) >= integer__first
+%%%  Simplified C2 on reading formula in, to give:
+     %%%  C2:  randomnumber__uniformintegerwitherror(measures__limitbpm(
+          fld_rate(hrt) - fld_impulse(hrt)), volatility) <= integer__last
+***  Proved C1:  randomnumber__uniformintegerwitherror(measures__limitbpm(
+          fld_rate(hrt) - fld_impulse(hrt)), volatility) >= integer__first
+     using hypothesis H24.
+***  Proved C2:  randomnumber__uniformintegerwitherror(measures__limitbpm(
+          fld_rate(hrt) - fld_impulse(hrt)), volatility) <= integer__last
+     using hypothesis H25.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_tick_12.  @@@@@@@@@@
+---  Hypothesis H12 has been replaced by "true".  (It is already present, as 
+          H10).
+---  Hypothesis H13 has been replaced by "true".  (It is already present, as 
+          H11).
+%%%  Simplified H16 on reading formula in, to give:
+     %%%  H16:  0 >= integer__first
+%%%  Simplified H17 on reading formula in, to give:
+     %%%  H17:  0 <= integer__last
+%%%  Simplified H18 on reading formula in, to give:
+     %%%  H18:  randomnumber__uniformintegerwitherror(0, volatility) >= 
+          integer__first
+%%%  Simplified H19 on reading formula in, to give:
+     %%%  H19:  randomnumber__uniformintegerwitherror(0, volatility) <= 
+          integer__last
+%%%  Simplified C1 on reading formula in, to give:
+     %%%  C1:  randomnumber__uniformintegerwitherror(0, volatility) >= 
+          integer__first
+%%%  Simplified C2 on reading formula in, to give:
+     %%%  C2:  randomnumber__uniformintegerwitherror(0, volatility) <= 
+          integer__last
+***  Proved C1:  randomnumber__uniformintegerwitherror(0, volatility) >= 
+          integer__first
+     using hypothesis H18.
+***  Proved C2:  randomnumber__uniformintegerwitherror(0, volatility) <= 
+          integer__last
+     using hypothesis H19.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_tick_13.  @@@@@@@@@@
+---  Hypothesis H16 has been replaced by "true".  (It is already present, as 
+          H14).
+---  Hypothesis H17 has been replaced by "true".  (It is already present, as 
+          H13).
+---  Hypothesis H18 has been replaced by "true".  (It is already present, as 
+          H14).
+%%%  Simplified H21 on reading formula in, to give:
+     %%%  H21:  measures__limitbpm(fld_rate(hrt) + defaultchange) >= 
+          integer__first
+%%%  Simplified H22 on reading formula in, to give:
+     %%%  H22:  measures__limitbpm(fld_rate(hrt) + defaultchange) <= 
+          integer__last
+%%%  Simplified H23 on reading formula in, to give:
+     %%%  H23:  randomnumber__uniformintegerwitherror(measures__limitbpm(
+          fld_rate(hrt) + defaultchange), volatility) >= integer__first
+%%%  Simplified H24 on reading formula in, to give:
+     %%%  H24:  randomnumber__uniformintegerwitherror(measures__limitbpm(
+          fld_rate(hrt) + defaultchange), volatility) <= integer__last
+---  Hypothesis H25 has been replaced by "true".  (It is already present, as 
+          H23).
+---  Hypothesis H26 has been replaced by "true".  (It is already present, as 
+          H24).
+%%%  Simplified H27 on reading formula in, to give:
+     %%%  H27:  measures__limitbpm(randomnumber__uniformintegerwitherror(
+          measures__limitbpm(fld_rate(hrt) + defaultchange), volatility)) >= 
+          measures__bpm__first
+%%%  Simplified H28 on reading formula in, to give:
+     %%%  H28:  measures__limitbpm(randomnumber__uniformintegerwitherror(
+          measures__limitbpm(fld_rate(hrt) + defaultchange), volatility)) <= 
+          measures__bpm__last
+%%%  Simplified H29 on reading formula in, to give:
+     %%%  H29:  measures__bpm__first <= measures__limitbpm(
+          randomnumber__uniformintegerwitherror(measures__limitbpm(fld_rate(hrt)
+           + defaultchange), volatility))
+---  Hypothesis H30 has been replaced by "true".  (It is already present, as 
+          H28).
+%%%  Simplified C1 on reading formula in, to give:
+     %%%  C1:  measures__limitbpm(randomnumber__uniformintegerwitherror(
+          measures__limitbpm(fld_rate(hrt) + defaultchange), volatility)) >= 
+          measures__bpm__first
+%%%  Simplified C2 on reading formula in, to give:
+     %%%  C2:  measures__limitbpm(randomnumber__uniformintegerwitherror(
+          measures__limitbpm(fld_rate(hrt) + defaultchange), volatility)) <= 
+          measures__bpm__last
+***  Proved C1:  measures__limitbpm(randomnumber__uniformintegerwitherror(
+          measures__limitbpm(fld_rate(hrt) + defaultchange), volatility)) >= 
+          measures__bpm__first
+     using hypothesis H27.
+***  Proved C2:  measures__limitbpm(randomnumber__uniformintegerwitherror(
+          measures__limitbpm(fld_rate(hrt) + defaultchange), volatility)) <= 
+          measures__bpm__last
+     using hypothesis H28.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_tick_14.  @@@@@@@@@@
+---  Hypothesis H17 has been replaced by "true".  (It is already present, as 
+          H15).
+---  Hypothesis H18 has been replaced by "true".  (It is already present, as 
+          H14).
+---  Hypothesis H19 has been replaced by "true".  (It is already present, as 
+          H15).
+%%%  Simplified H22 on reading formula in, to give:
+     %%%  H22:  measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) >= 
+          integer__first
+%%%  Simplified H23 on reading formula in, to give:
+     %%%  H23:  measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)) <= 
+          integer__last
+%%%  Simplified H24 on reading formula in, to give:
+     %%%  H24:  randomnumber__uniformintegerwitherror(measures__limitbpm(
+          fld_rate(hrt) - fld_impulse(hrt)), volatility) >= integer__first
+%%%  Simplified H25 on reading formula in, to give:
+     %%%  H25:  randomnumber__uniformintegerwitherror(measures__limitbpm(
+          fld_rate(hrt) - fld_impulse(hrt)), volatility) <= integer__last
+---  Hypothesis H26 has been replaced by "true".  (It is already present, as 
+          H24).
+---  Hypothesis H27 has been replaced by "true".  (It is already present, as 
+          H25).
+%%%  Simplified H28 on reading formula in, to give:
+     %%%  H28:  measures__limitbpm(randomnumber__uniformintegerwitherror(
+          measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)), volatility)) >= 
+          measures__bpm__first
+%%%  Simplified H29 on reading formula in, to give:
+     %%%  H29:  measures__limitbpm(randomnumber__uniformintegerwitherror(
+          measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)), volatility)) <= 
+          measures__bpm__last
+%%%  Simplified H30 on reading formula in, to give:
+     %%%  H30:  measures__bpm__first <= measures__limitbpm(
+          randomnumber__uniformintegerwitherror(measures__limitbpm(fld_rate(hrt)
+           - fld_impulse(hrt)), volatility))
+---  Hypothesis H31 has been replaced by "true".  (It is already present, as 
+          H29).
+%%%  Simplified C1 on reading formula in, to give:
+     %%%  C1:  measures__limitbpm(randomnumber__uniformintegerwitherror(
+          measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)), volatility)) >= 
+          measures__bpm__first
+%%%  Simplified C2 on reading formula in, to give:
+     %%%  C2:  measures__limitbpm(randomnumber__uniformintegerwitherror(
+          measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)), volatility)) <= 
+          measures__bpm__last
+***  Proved C1:  measures__limitbpm(randomnumber__uniformintegerwitherror(
+          measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)), volatility)) >= 
+          measures__bpm__first
+     using hypothesis H28.
+***  Proved C2:  measures__limitbpm(randomnumber__uniformintegerwitherror(
+          measures__limitbpm(fld_rate(hrt) - fld_impulse(hrt)), volatility)) <= 
+          measures__bpm__last
+     using hypothesis H29.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_tick_15.  @@@@@@@@@@
+---  Hypothesis H12 has been replaced by "true".  (It is already present, as 
+          H10).
+---  Hypothesis H13 has been replaced by "true".  (It is already present, as 
+          H11).
+%%%  Simplified H16 on reading formula in, to give:
+     %%%  H16:  0 >= integer__first
+%%%  Simplified H17 on reading formula in, to give:
+     %%%  H17:  0 <= integer__last
+%%%  Simplified H18 on reading formula in, to give:
+     %%%  H18:  randomnumber__uniformintegerwitherror(0, volatility) >= 
+          integer__first
+%%%  Simplified H19 on reading formula in, to give:
+     %%%  H19:  randomnumber__uniformintegerwitherror(0, volatility) <= 
+          integer__last
+---  Hypothesis H20 has been replaced by "true".  (It is already present, as 
+          H18).
+---  Hypothesis H21 has been replaced by "true".  (It is already present, as 
+          H19).
+%%%  Simplified H22 on reading formula in, to give:
+     %%%  H22:  measures__limitbpm(randomnumber__uniformintegerwitherror(0, 
+          volatility)) >= measures__bpm__first
+%%%  Simplified H23 on reading formula in, to give:
+     %%%  H23:  measures__limitbpm(randomnumber__uniformintegerwitherror(0, 
+          volatility)) <= measures__bpm__last
+%%%  Simplified H24 on reading formula in, to give:
+     %%%  H24:  measures__bpm__first <= measures__limitbpm(
+          randomnumber__uniformintegerwitherror(0, volatility))
+---  Hypothesis H25 has been replaced by "true".  (It is already present, as 
+          H23).
+%%%  Simplified C1 on reading formula in, to give:
+     %%%  C1:  measures__limitbpm(randomnumber__uniformintegerwitherror(0, 
+          volatility)) >= measures__bpm__first
+%%%  Simplified C2 on reading formula in, to give:
+     %%%  C2:  measures__limitbpm(randomnumber__uniformintegerwitherror(0, 
+          volatility)) <= measures__bpm__last
+***  Proved C1:  measures__limitbpm(randomnumber__uniformintegerwitherror(0, 
+          volatility)) >= measures__bpm__first
+     using hypothesis H22.
+***  Proved C2:  measures__limitbpm(randomnumber__uniformintegerwitherror(0, 
+          volatility)) <= measures__bpm__last
+     using hypothesis H23.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_tick_16.  @@@@@@@@@@
+***  Proved C1:  true
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_tick_17.  @@@@@@@@@@
+***  Proved C1:  true
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_tick_18.  @@@@@@@@@@
+***  Proved C1:  true
+***  PROVED VC.
+

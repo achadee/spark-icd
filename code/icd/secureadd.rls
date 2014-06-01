@@ -1,0 +1,22 @@
+           /*********************************************************/
+                           /*Proof Rule Declarations*/
+                              /*Examiner GPL 2011*/
+             /*Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.*/
+           /*********************************************************/
+
+
+                        /*DATE : 01-JUN-2014 19:41:14.63*/
+
+                           /*function ICD.secureAdd*/
+
+
+rule_family secureadd_rules:
+     X      requires [X:any] &
+     X <= Y requires [X:ire, Y:ire] &
+     X >= Y requires [X:ire, Y:ire].
+
+secureadd_rules(1): integer__size >= 0 may_be_deduced.
+secureadd_rules(2): integer__first may_be_replaced_by -2147483648.
+secureadd_rules(3): integer__last may_be_replaced_by 2147483647.
+secureadd_rules(4): integer__base__first may_be_replaced_by -2147483648.
+secureadd_rules(5): integer__base__last may_be_replaced_by 2147483647.

@@ -1,0 +1,133 @@
+V "SPARK 2011"
+A -noswitch
+A -index_file=project.idx
+A -warning_file=spark.wrn
+A -notarget_compiler_data
+A -config_file=spark.cfg
+A -source_extension=ada
+A -listing_extension=lst
+A -nodictionary_file
+A -report_file=spark.rep
+A -nohtml
+A -vcg
+A -nostatistics
+A -fdl_identifiers=accept
+A -flow_analysis=information
+A -language=95
+A -profile=sequential
+A -annotation_character=#
+A -rules=none
+A -error_explanations=off
+A -justification_option=full
+A -output_directory=.
+A -output_directory (actual)=/Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/
+P
+R
+
+U ICD%b icd.adb
+U ICD%s icd.ads
+W Measures%s measures.adb measures.sli
+W Heart%s heart.adb heart.sli
+W RandomNumber%s randomnumber.adb randomnumber.sli
+W ImpulseGenerator%s impulsegenerator.adb impulsegenerator.sli
+W HRM%s hrm.adb hrm.sli
+
+D measures.ads 00000000000000 00000000
+D heart.ads 00000000000000 00000000
+D randomnumber.ads 00000000000000 00000000
+D impulsegenerator.ads 00000000000000 00000000
+D hrm.ads 00000000000000 00000000
+D icd.adb 00000000000000 00000000
+D icd.ads 00000000000000 00000000
+
+X 1 measures.ads
+3K9 Measures 2|11r27 32r13 33r25 8w13 4|7w13 5|25r28 47r41 53r29 7w13
+. 7|61r32 62r45 63r45 64r45 65r45 66r45 67r45 73r30 5w13
+9I12 Joules 29r26 29r63
+15I12 BPM 25r26 25r60 2|11r36 32r22 33r34 5|25r37 47r50 53r38 7|61r41
+. 62r54 63r54 64r54 65r54 66r54 67r54 73r39
+18i39 Fst 20r12 21r26
+18i57 Lst 20r19 21r54
+21i15 Output 21r33 21r44
+25i15 Output 25r39 25r50
+29i15 Output 29r42 29r53
+X 2 heart.ads
+10K9 Heart 4|9w13 5|9w13
+19i3 Rate 32r39 33r17 51r24
+22i3 Impulse 31r17 40r17 44r19
+28U14 Init 29<19
+28r19 Hrt 30m16 31r13 32r35 33r13
+38r25 Hrt 39m16 39r25 40r13
+38i49 Joules 39r30 40r27
+43r24 Hrt 44r15
+48r22 Hrt 50r26 51r20
+49i8 Rate 50m16 51r13
+54U14 Tick 55=22
+54r19 Hrt 56m16 56r25 57r50
+61i4 DefaultChange 30m21 57m16 11o11 12r19 29r19 34r13 55r22 56r30 57r35
+X 3 randomnumber.ads
+2K9 RandomNumber 2|9w13 4|8w13 5|8w13 7|6w13
+X 4 impulsegenerator.ads
+10K9 ImpulseGenerator 7|8w13
+17i3 Impulse 26r50 46r42
+20e3 IsOn 26r23 31r23 36r27 40r25 46r24 47r28 53r27
+24r19 Generator 25m16 26r13 26r40
+29r17 Generator 30m16 30r31 31r13
+34r18 Generator 35m16 35r31 36r17
+39r18 Generator 40r15
+43r25 Generator 45m16 45r31 46r14 46r32 47r18 47r36 47r48
+44i4 J 45r42 46r52
+50r19 Generator 52r25 53r17
+51r5 Hrt 52m16 52r36 53r35 53r41
+X 5 hrm.ads
+10K9 HRM 7|7w13
+16i3 Rate 25r21 45r45 53r22
+18e3 IsOn 24r21 30r21 35r25 39r23 45r22 47r26 52r25
+22r19 Monitor 23m16 24r13 25r13
+28r17 Monitor 29m16 30r13
+28r40 Hrt 29r29
+33r18 Monitor 34m16 34r29 35r17
+38r18 Monitor 39r15
+42r22 Monitor 44r26 45r14 45r37 47r18
+43i8 Rate 44m16 45r30 47r34
+50r19 Monitor 51m16 51r29 52r17 53r14
+50r45 Hrt 51r38
+X 7 icd.ads
+11n23 normal 57r33
+11n31 fib 110r31 110r59
+13i4 ProjectedRate 54r61
+24i5 Rate 61r25 73r23 90r52
+25e7 InProcess 52r27
+26e7 IsOn 53r25 72r31 77r27 81r27 109r21
+29e7 state 57r25 110r23 110r50
+32i7 UpperBound 54r48 58r25
+33i7 Count 60r25
+34i7 Next 54r25
+35i7 TickCount 59r25
+37i7 ticksToReEnableDetectionAgain 68r25 110r113
+39i7 heartRateHistory1 62r25 85r22 94r50 110r76
+40i7 heartRateHistory2 63r25 85r52 86r23 94r77
+41i7 heartRateHistory3 64r25 86r53 87r23 94r104
+42i7 heartRateHistory4 65r25 87r53 88r23 94r131
+43i7 heartRateHistory5 66r25 88r53 89r23 94r158
+44i7 heartRateHistory6 67r25 89r53 90r23 94r185
+46i7 history_avarage 55r25 94r22
+47i7 history_variance 56r25 110r160
+50r19 Computer 51m16 52r18 53r16 54r16 54r39 55r16 56r16 57r16 58r16
+. 59r16 60r16 61r16 62r16 63r16 64r16 65r16 66r16 67r16 68r16
+70r19 Computer 71m16 71r30 71r77 72r22 73r14
+70r46 HeartRateMonitor 71r40 71r94
+70r81 Shock 71m66 71r58 71r87
+75r17 Computer 76m16 76r30 77r18
+79r18 Computer 80m16 80r30 81r18
+83r31 Computer 84m16 84r30 85r13 85r42 86r14 86r43 87r14 87r43 88r14
+. 88r43 89r14 89r43 90r14 90r43
+92r31 Computer 93m16 93r30 94r13 94r41 94r68 94r95 94r122 94r149 94r176
+96i19 num 97r12 98r15 98r19
+100i23 num1 101r12 102r15
+100i42 num2 101r30 102r20
+104r32 Computer 105m16 105r30
+107r34 Computer 108m16 108r30 109r12 110r14 110r40 110r67 110r104 110r151
+113r34 Computer 114m16 114r30
+117r26 Computer 118m16 118r30 118r59
+117r53 Shock 118m48 118r40 118r69

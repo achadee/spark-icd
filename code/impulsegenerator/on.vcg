@@ -1,0 +1,25 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 01-JUN-2014 19:41:14.23
+
+                       procedure ImpulseGenerator.On
+
+
+
+
+For path(s) from start to finish:
+
+procedure_on_1.
+H1:    true .
+H2:    true .
+H3:    fld_impulse(generator) >= measures__joules__first .
+H4:    fld_impulse(generator) <= measures__joules__last .
+        ->
+C1:    fld_ison(upf_ison(generator, true)) .
+ 
+

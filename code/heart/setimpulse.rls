@@ -1,0 +1,38 @@
+           /*********************************************************/
+                           /*Proof Rule Declarations*/
+                              /*Examiner GPL 2011*/
+             /*Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.*/
+           /*********************************************************/
+
+
+                        /*DATE : 01-JUN-2014 19:41:14.16*/
+
+                         /*procedure Heart.SetImpulse*/
+
+
+rule_family setimpulse_rules:
+     X      requires [X:any] &
+     X <= Y requires [X:ire, Y:ire] &
+     X >= Y requires [X:ire, Y:ire].
+
+setimpulse_rules(1): integer__size >= 0 may_be_deduced.
+setimpulse_rules(2): integer__first may_be_replaced_by -2147483648.
+setimpulse_rules(3): integer__last may_be_replaced_by 2147483647.
+setimpulse_rules(4): integer__base__first may_be_replaced_by -2147483648.
+setimpulse_rules(5): integer__base__last may_be_replaced_by 2147483647.
+setimpulse_rules(6): measures__joules__size >= 0 may_be_deduced.
+setimpulse_rules(7): measures__joules__first may_be_replaced_by 0.
+setimpulse_rules(8): measures__joules__last may_be_replaced_by 45.
+setimpulse_rules(9): measures__joules__base__first may_be_replaced_by -2147483648.
+setimpulse_rules(10): measures__joules__base__last may_be_replaced_by 2147483647.
+setimpulse_rules(11): measures__bpm__size >= 0 may_be_deduced.
+setimpulse_rules(12): measures__bpm__first may_be_replaced_by -1.
+setimpulse_rules(13): measures__bpm__last may_be_replaced_by 300.
+setimpulse_rules(14): measures__bpm__base__first may_be_replaced_by -2147483648.
+setimpulse_rules(15): measures__bpm__base__last may_be_replaced_by 2147483647.
+setimpulse_rules(16): hearttype__size >= 0 may_be_deduced.
+setimpulse_rules(17): A = B may_be_deduced_from
+     [goal(checktype(A,hearttype)),
+      goal(checktype(B,hearttype)),
+      fld_rate(A) = fld_rate(B),
+      fld_impulse(A) = fld_impulse(B)].

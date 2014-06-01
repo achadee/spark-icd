@@ -1,0 +1,80 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 01-JUN-2014 19:41:14.26
+
+                      procedure ImpulseGenerator.Tick
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 46:
+
+procedure_tick_1.
+H1:    true .
+H2:    true .
+H3:    fld_impulse(generator) >= measures__joules__first .
+H4:    fld_impulse(generator) <= measures__joules__last .
+H5:    fld_impulse(hrt) >= measures__joules__first .
+H6:    fld_impulse(hrt) <= measures__joules__last .
+H7:    fld_rate(hrt) >= measures__bpm__first .
+H8:    fld_rate(hrt) <= measures__bpm__last .
+H9:    fld_ison(generator) .
+H10:   fld_impulse(hrt) >= measures__joules__first .
+H11:   fld_impulse(hrt) <= measures__joules__last .
+H12:   fld_rate(hrt) >= measures__bpm__first .
+H13:   fld_rate(hrt) <= measures__bpm__last .
+        ->
+C1:    fld_impulse(generator) >= measures__joules__first .
+C2:    fld_impulse(generator) <= measures__joules__last .
+ 
+
+For path(s) from start to finish:
+
+procedure_tick_2.
+H1:    true .
+H2:    true .
+H3:    fld_impulse(generator) >= measures__joules__first .
+H4:    fld_impulse(generator) <= measures__joules__last .
+H5:    fld_impulse(hrt) >= measures__joules__first .
+H6:    fld_impulse(hrt) <= measures__joules__last .
+H7:    fld_rate(hrt) >= measures__bpm__first .
+H8:    fld_rate(hrt) <= measures__bpm__last .
+H9:    fld_ison(generator) .
+H10:   fld_impulse(hrt) >= measures__joules__first .
+H11:   fld_impulse(hrt) <= measures__joules__last .
+H12:   fld_rate(hrt) >= measures__bpm__first .
+H13:   fld_rate(hrt) <= measures__bpm__last .
+H14:   fld_impulse(generator) >= measures__joules__first .
+H15:   fld_impulse(generator) <= measures__joules__last .
+H16:   fld_impulse(hrtvariable__1) = fld_impulse(generator) .
+H17:   fld_impulse(hrtvariable__1) >= measures__joules__first .
+H18:   fld_impulse(hrtvariable__1) <= measures__joules__last .
+H19:   fld_rate(hrtvariable__1) >= measures__bpm__first .
+H20:   fld_rate(hrtvariable__1) <= measures__bpm__last .
+H21:   fld_impulse(hrtvariable__1) >= measures__joules__first .
+H22:   fld_impulse(hrtvariable__1) <= measures__joules__last .
+H23:   fld_rate(hrtvariable__1) >= measures__bpm__first .
+H24:   fld_rate(hrtvariable__1) <= measures__bpm__last .
+        ->
+C1:    (not (fld_ison(generator))) -> (hrtvariable__1 = hrt) .
+ 
+
+procedure_tick_3.
+H1:    true .
+H2:    true .
+H3:    fld_impulse(generator) >= measures__joules__first .
+H4:    fld_impulse(generator) <= measures__joules__last .
+H5:    fld_impulse(hrt) >= measures__joules__first .
+H6:    fld_impulse(hrt) <= measures__joules__last .
+H7:    fld_rate(hrt) >= measures__bpm__first .
+H8:    fld_rate(hrt) <= measures__bpm__last .
+H9:    not (fld_ison(generator)) .
+        ->
+C1:    (not (fld_ison(generator))) -> (hrt = hrt) .
+ 
+

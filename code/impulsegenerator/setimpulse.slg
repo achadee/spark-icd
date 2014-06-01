@@ -1,0 +1,49 @@
+*****************************************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+*****************************************************************************
+
+
+CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:40
+
+SPARK Simplifier GPL 2011
+Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+
+procedure ImpulseGenerator.SetImpulse
+
+
+
+
+
+
+@@@@@@@@@@  VC: procedure_setimpulse_1.  @@@@@@@@@@
+***  Proved C1:  j >= measures__joules__first
+     using hypothesis H5.
+***  Proved C2:  j <= measures__joules__last
+     using hypothesis H6.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_setimpulse_2.  @@@@@@@@@@
+---  Hypothesis H8 has been replaced by "true".  (It is already present, as H5).
+---  Hypothesis H9 has been replaced by "true".  (It is already present, as H6).
+%%%  Simplified C1 on reading formula in, to give:
+     %%%  C1:  true
+%%%  Simplified C2 on reading formula in, to give:
+     %%%  C2:  not fld_ison(generator) -> upf_impulse(generator, j) = generator
+***  Proved C1:  true
+***  Proved C2:  not fld_ison(generator) -> upf_impulse(generator, j) = 
+          generator
+     using hypothesis H7.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_setimpulse_3.  @@@@@@@@@@
+%%%  Simplified C2 on reading formula in, to give:
+     %%%  C2:  true
+***  Proved C1:  fld_ison(generator) -> fld_impulse(generator) = j
+     using hypothesis H7.
+***  Proved C2:  true
+***  PROVED VC.
+

@@ -1,0 +1,39 @@
+           {*******************************************************}
+                               {FDL Declarations}
+                              {Examiner GPL 2011}
+             {Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.}
+           {*******************************************************}
+
+
+                        {DATE : 01-JUN-2014 19:41:14.16}
+
+                         {procedure Heart.SetImpulse}
+
+
+title procedure setimpulse;
+
+  function round__(real) : integer;
+  type hearttype = record
+        rate : integer;
+        impulse : integer
+     end;
+  const measures__bpm__base__first : integer = pending; 
+  const measures__bpm__base__last : integer = pending; 
+  const measures__joules__base__first : integer = pending; 
+  const measures__joules__base__last : integer = pending; 
+  const integer__base__first : integer = pending; 
+  const integer__base__last : integer = pending; 
+  const hearttype__size : integer = pending; 
+  const measures__bpm__first : integer = pending; 
+  const measures__bpm__last : integer = pending; 
+  const measures__bpm__size : integer = pending; 
+  const measures__joules__first : integer = pending; 
+  const measures__joules__last : integer = pending; 
+  const measures__joules__size : integer = pending; 
+  const integer__first : integer = pending; 
+  const integer__last : integer = pending; 
+  const integer__size : integer = pending; 
+  var hrt : hearttype;
+  var joules : integer;
+
+end;

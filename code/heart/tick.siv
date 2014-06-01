@@ -1,0 +1,109 @@
+*****************************************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+*****************************************************************************
+
+
+CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:28
+
+SPARK Simplifier GPL 2011
+Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+
+procedure Heart.Tick
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 51:
+
+procedure_tick_1.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 51:
+
+procedure_tick_2.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 55:
+
+procedure_tick_3.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 55:
+
+procedure_tick_4.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 57:
+
+procedure_tick_5.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 58:
+
+procedure_tick_6.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 62:
+
+procedure_tick_7.
+*** true .          /* all conclusions proved */
+
+
+procedure_tick_8.
+*** true .          /* all conclusions proved */
+
+
+procedure_tick_9.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 62:
+
+procedure_tick_10.
+*** true .          /* all conclusions proved */
+
+
+procedure_tick_11.
+*** true .          /* all conclusions proved */
+
+
+procedure_tick_12.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 62:
+
+procedure_tick_13.
+*** true .          /* all conclusions proved */
+
+
+procedure_tick_14.
+*** true .          /* all conclusions proved */
+
+
+procedure_tick_15.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to finish:
+
+procedure_tick_16.
+*** true .          /* all conclusions proved */
+
+
+procedure_tick_17.
+*** true .          /* all conclusions proved */
+
+
+procedure_tick_18.
+*** true .          /* all conclusions proved */
+
+

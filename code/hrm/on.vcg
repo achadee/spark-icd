@@ -1,0 +1,55 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 01-JUN-2014 19:41:14.31
+
+                              procedure HRM.On
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 18:
+
+procedure_on_1.
+H1:    true .
+H2:    fld_impulse(hrt) >= measures__joules__first .
+H3:    fld_impulse(hrt) <= measures__joules__last .
+H4:    fld_rate(hrt) >= measures__bpm__first .
+H5:    fld_rate(hrt) <= measures__bpm__last .
+H6:    fld_rate(monitor__1) = fld_rate(hrt) .
+H7:    fld_rate(monitor__1) >= measures__bpm__first .
+H8:    fld_rate(monitor__1) <= measures__bpm__last .
+H9:    fld_ison(monitor__1) = fld_ison(upf_ison(monitor, 
+           true)) .
+H10:   monitor__1 = upf_rate(upf_ison(monitor, true), fld_rate(
+           monitor__1)) .
+        ->
+C1:    fld_rate(monitor__1) >= measures__bpm__first .
+C2:    fld_rate(monitor__1) <= measures__bpm__last .
+ 
+
+For path(s) from start to finish:
+
+procedure_on_2.
+H1:    true .
+H2:    fld_impulse(hrt) >= measures__joules__first .
+H3:    fld_impulse(hrt) <= measures__joules__last .
+H4:    fld_rate(hrt) >= measures__bpm__first .
+H5:    fld_rate(hrt) <= measures__bpm__last .
+H6:    fld_rate(monitor__1) = fld_rate(hrt) .
+H7:    fld_rate(monitor__1) >= measures__bpm__first .
+H8:    fld_rate(monitor__1) <= measures__bpm__last .
+H9:    fld_ison(monitor__1) = fld_ison(upf_ison(monitor, 
+           true)) .
+H10:   monitor__1 = upf_rate(upf_ison(monitor, true), fld_rate(
+           monitor__1)) .
+H11:   fld_rate(monitor__1) >= measures__bpm__first .
+H12:   fld_rate(monitor__1) <= measures__bpm__last .
+        ->
+C1:    fld_ison(monitor__1) .
+ 
+

@@ -1,0 +1,55 @@
+           {*******************************************************}
+                               {FDL Declarations}
+                              {Examiner GPL 2011}
+             {Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.}
+           {*******************************************************}
+
+
+                        {DATE : 01-JUN-2014 19:41:14.41}
+
+                             {procedure ICD.Init}
+
+
+title procedure init;
+
+  function round__(real) : integer;
+  type icdstates = (normal, fib, tar);
+  type icdtype = record
+        rate : integer;
+        inprocess : boolean;
+        ison : boolean;
+        state : icdstates;
+        upperbound : integer;
+        count : integer;
+        next : integer;
+        tickcount : integer;
+        tickstoreenabledetectionagain : integer;
+        heartratehistory1 : integer;
+        heartratehistory2 : integer;
+        heartratehistory3 : integer;
+        heartratehistory4 : integer;
+        heartratehistory5 : integer;
+        heartratehistory6 : integer;
+        history_avarage : integer;
+        history_variance : integer
+     end;
+  const projectedrate : integer = pending;
+  const icdstates__base__first : icdstates = pending; 
+  const icdstates__base__last : icdstates = pending; 
+  const measures__bpm__base__first : integer = pending; 
+  const measures__bpm__base__last : integer = pending; 
+  const integer__base__first : integer = pending; 
+  const integer__base__last : integer = pending; 
+  const icdtype__size : integer = pending; 
+  const icdstates__first : icdstates = pending; 
+  const icdstates__last : icdstates = pending; 
+  const icdstates__size : integer = pending; 
+  const measures__bpm__first : integer = pending; 
+  const measures__bpm__last : integer = pending; 
+  const measures__bpm__size : integer = pending; 
+  const integer__first : integer = pending; 
+  const integer__last : integer = pending; 
+  const integer__size : integer = pending; 
+  var computer : icdtype;
+
+end;

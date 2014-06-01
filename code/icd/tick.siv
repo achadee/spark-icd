@@ -1,0 +1,1024 @@
+*****************************************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+*****************************************************************************
+
+
+CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:33
+
+SPARK Simplifier GPL 2011
+Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+
+procedure ICD.Tick
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 197:
+
+procedure_tick_1.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to precondition check associated with statement of line 
+          201:
+
+procedure_tick_2.
+H1:    fld_history_variance(computer) >= - 2147483648 .
+H2:    fld_history_variance(computer) <= 2147483647 .
+H3:    fld_history_avarage(computer) >= - 2147483648 .
+H4:    fld_history_avarage(computer) <= 2147483647 .
+H5:    fld_heartratehistory6(computer) >= - 1 .
+H6:    fld_heartratehistory6(computer) <= 300 .
+H7:    fld_heartratehistory5(computer) >= - 1 .
+H8:    fld_heartratehistory5(computer) <= 300 .
+H9:    fld_heartratehistory4(computer) >= - 1 .
+H10:   fld_heartratehistory4(computer) <= 300 .
+H11:   fld_heartratehistory3(computer) >= - 1 .
+H12:   fld_heartratehistory3(computer) <= 300 .
+H13:   fld_heartratehistory2(computer) >= - 1 .
+H14:   fld_heartratehistory2(computer) <= 300 .
+H15:   fld_heartratehistory1(computer) >= - 1 .
+H16:   fld_heartratehistory1(computer) <= 300 .
+H17:   fld_tickstoreenabledetectionagain(computer) >= - 2147483648 .
+H18:   fld_tickstoreenabledetectionagain(computer) <= 2147483647 .
+H19:   fld_tickcount(computer) >= - 2147483648 .
+H20:   fld_tickcount(computer) <= 2147483647 .
+H21:   fld_next(computer) >= - 2147483648 .
+H22:   fld_next(computer) <= 2147483647 .
+H23:   fld_count(computer) >= - 2147483648 .
+H24:   fld_count(computer) <= 2147483647 .
+H25:   fld_upperbound(computer) >= - 1 .
+H26:   fld_upperbound(computer) <= 300 .
+H27:   normal <= fld_state(computer) .
+H28:   fld_state(computer) <= tar .
+H29:   fld_rate(computer) >= - 1 .
+H30:   fld_rate(computer) <= 300 .
+H31:   fld_rate(heartratemonitor) >= - 1 .
+H32:   fld_rate(heartratemonitor) <= 300 .
+H33:   fld_impulse(shock) >= 0 .
+H34:   fld_impulse(shock) <= 45 .
+H35:   fld_ison(computer) .
+H36:   fld_ison(heartratemonitor) -> fld_rate(computer__1) = fld_rate(
+          heartratemonitor) .
+H37:   not fld_ison(heartratemonitor) -> fld_rate(computer__1) = - 1 .
+H38:   fld_rate(computer__1) >= - 1 .
+H39:   fld_rate(computer__1) <= 300 .
+H40:   fld_inprocess(computer__1) <-> fld_inprocess(computer) .
+H41:   fld_ison(computer) .
+H42:   fld_state(computer__1) = fld_state(computer) .
+H43:   fld_upperbound(computer__1) = fld_upperbound(computer) .
+H44:   fld_count(computer__1) = fld_count(computer) .
+H45:   fld_next(computer__1) = fld_next(computer) .
+H46:   fld_tickcount(computer__1) = fld_tickcount(computer) .
+H47:   fld_tickstoreenabledetectionagain(computer__1) = 
+          fld_tickstoreenabledetectionagain(computer) .
+H48:   fld_heartratehistory1(computer__1) = fld_heartratehistory1(computer) .
+H49:   fld_heartratehistory2(computer__1) = fld_heartratehistory2(computer) .
+H50:   fld_heartratehistory3(computer__1) = fld_heartratehistory3(computer) .
+H51:   fld_heartratehistory4(computer__1) = fld_heartratehistory4(computer) .
+H52:   fld_heartratehistory5(computer__1) = fld_heartratehistory5(computer) .
+H53:   fld_heartratehistory6(computer__1) = fld_heartratehistory6(computer) .
+H54:   fld_history_avarage(computer__1) = fld_history_avarage(computer) .
+H55:   fld_history_variance(computer__1) = fld_history_variance(computer) .
+H56:   computer__1 = upf_rate(computer, fld_rate(computer__1)) .
+H57:   fld_heartratehistory1(computer__2) = fld_heartratehistory2(computer) .
+H58:   fld_heartratehistory2(computer__2) = fld_heartratehistory3(computer) .
+H59:   fld_heartratehistory3(computer__2) = fld_heartratehistory4(computer) .
+H60:   fld_heartratehistory4(computer__2) = fld_heartratehistory5(computer) .
+H61:   fld_heartratehistory5(computer__2) = fld_heartratehistory6(computer) .
+H62:   fld_heartratehistory6(computer__2) = fld_rate(computer__2) .
+H63:   fld_history_variance(computer__2) >= - 2147483648 .
+H64:   fld_history_variance(computer__2) <= 2147483647 .
+H65:   fld_history_avarage(computer__2) >= - 2147483648 .
+H66:   fld_history_avarage(computer__2) <= 2147483647 .
+H67:   fld_heartratehistory6(computer__2) >= - 1 .
+H68:   fld_heartratehistory6(computer__2) <= 300 .
+H69:   fld_heartratehistory5(computer__2) >= - 1 .
+H70:   fld_heartratehistory5(computer__2) <= 300 .
+H71:   fld_heartratehistory4(computer__2) >= - 1 .
+H72:   fld_heartratehistory4(computer__2) <= 300 .
+H73:   fld_heartratehistory3(computer__2) >= - 1 .
+H74:   fld_heartratehistory3(computer__2) <= 300 .
+H75:   fld_heartratehistory2(computer__2) >= - 1 .
+H76:   fld_heartratehistory2(computer__2) <= 300 .
+H77:   fld_heartratehistory1(computer__2) >= - 1 .
+H78:   fld_heartratehistory1(computer__2) <= 300 .
+H79:   fld_tickstoreenabledetectionagain(computer__2) >= - 2147483648 .
+H80:   fld_tickstoreenabledetectionagain(computer__2) <= 2147483647 .
+H81:   fld_tickcount(computer__2) >= - 2147483648 .
+H82:   fld_tickcount(computer__2) <= 2147483647 .
+H83:   fld_next(computer__2) >= - 2147483648 .
+H84:   fld_next(computer__2) <= 2147483647 .
+H85:   fld_count(computer__2) >= - 2147483648 .
+H86:   fld_count(computer__2) <= 2147483647 .
+H87:   fld_upperbound(computer__2) >= - 1 .
+H88:   fld_upperbound(computer__2) <= 300 .
+H89:   normal <= fld_state(computer__2) .
+H90:   fld_state(computer__2) <= tar .
+H91:   fld_rate(computer__2) >= - 1 .
+H92:   fld_rate(computer__2) <= 300 .
+H93:   fld_history_avarage(computer__3) = (fld_heartratehistory1(computer__3) + 
+          fld_heartratehistory2(computer__3) + fld_heartratehistory3(
+          computer__3) + fld_heartratehistory4(computer__3) + 
+          fld_heartratehistory5(computer__3) + fld_heartratehistory6(
+          computer__3)) div 6 .
+H94:   fld_history_variance(computer__3) >= - 2147483648 .
+H95:   fld_history_variance(computer__3) <= 2147483647 .
+H96:   fld_history_avarage(computer__3) >= - 2147483648 .
+H97:   fld_history_avarage(computer__3) <= 2147483647 .
+H98:   fld_heartratehistory6(computer__3) >= - 1 .
+H99:   fld_heartratehistory6(computer__3) <= 300 .
+H100:  fld_heartratehistory5(computer__3) >= - 1 .
+H101:  fld_heartratehistory5(computer__3) <= 300 .
+H102:  fld_heartratehistory4(computer__3) >= - 1 .
+H103:  fld_heartratehistory4(computer__3) <= 300 .
+H104:  fld_heartratehistory3(computer__3) >= - 1 .
+H105:  fld_heartratehistory3(computer__3) <= 300 .
+H106:  fld_heartratehistory2(computer__3) >= - 1 .
+H107:  fld_heartratehistory2(computer__3) <= 300 .
+H108:  fld_heartratehistory1(computer__3) >= - 1 .
+H109:  fld_heartratehistory1(computer__3) <= 300 .
+H110:  fld_tickstoreenabledetectionagain(computer__3) >= - 2147483648 .
+H111:  fld_tickstoreenabledetectionagain(computer__3) <= 2147483647 .
+H112:  fld_tickcount(computer__3) >= - 2147483648 .
+H113:  fld_tickcount(computer__3) <= 2147483647 .
+H114:  fld_next(computer__3) >= - 2147483648 .
+H115:  fld_next(computer__3) <= 2147483647 .
+H116:  fld_count(computer__3) >= - 2147483648 .
+H117:  fld_count(computer__3) <= 2147483647 .
+H118:  fld_upperbound(computer__3) >= - 1 .
+H119:  fld_upperbound(computer__3) <= 300 .
+H120:  normal <= fld_state(computer__3) .
+H121:  fld_state(computer__3) <= tar .
+H122:  fld_rate(computer__3) >= - 1 .
+H123:  fld_rate(computer__3) <= 300 .
+H124:  fld_history_variance(computer__4) >= - 2147483648 .
+H125:  fld_history_variance(computer__4) <= 2147483647 .
+H126:  fld_history_avarage(computer__4) >= - 2147483648 .
+H127:  fld_history_avarage(computer__4) <= 2147483647 .
+H128:  fld_heartratehistory6(computer__4) >= - 1 .
+H129:  fld_heartratehistory6(computer__4) <= 300 .
+H130:  fld_heartratehistory5(computer__4) >= - 1 .
+H131:  fld_heartratehistory5(computer__4) <= 300 .
+H132:  fld_heartratehistory4(computer__4) >= - 1 .
+H133:  fld_heartratehistory4(computer__4) <= 300 .
+H134:  fld_heartratehistory3(computer__4) >= - 1 .
+H135:  fld_heartratehistory3(computer__4) <= 300 .
+H136:  fld_heartratehistory2(computer__4) >= - 1 .
+H137:  fld_heartratehistory2(computer__4) <= 300 .
+H138:  fld_heartratehistory1(computer__4) >= - 1 .
+H139:  fld_heartratehistory1(computer__4) <= 300 .
+H140:  fld_tickstoreenabledetectionagain(computer__4) >= - 2147483648 .
+H141:  fld_tickstoreenabledetectionagain(computer__4) <= 2147483647 .
+H142:  fld_tickcount(computer__4) >= - 2147483648 .
+H143:  fld_tickcount(computer__4) <= 2147483647 .
+H144:  fld_next(computer__4) >= - 2147483648 .
+H145:  fld_next(computer__4) <= 2147483647 .
+H146:  fld_count(computer__4) >= - 2147483648 .
+H147:  fld_count(computer__4) <= 2147483647 .
+H148:  fld_upperbound(computer__4) >= - 1 .
+H149:  fld_upperbound(computer__4) <= 300 .
+H150:  normal <= fld_state(computer__4) .
+H151:  fld_state(computer__4) <= tar .
+H152:  fld_rate(computer__4) >= - 1 .
+H153:  fld_rate(computer__4) <= 300 .
+H154:  fld_ison(computer) .
+H155:  integer__size >= 0 .
+H156:  measures__joules__size >= 0 .
+H157:  measures__bpm__size >= 0 .
+H158:  impulsegenerator__generatortype__size >= 0 .
+H159:  hrm__hrmtype__size >= 0 .
+H160:  icdstates__size >= 0 .
+H161:  icdtype__size >= 0 .
+       ->
+C1:    fld_ison(computer__4) .
+
+
+For path(s) from start to run-time check associated with statement of line 205:
+
+procedure_tick_3.
+H1:    fld_history_variance(computer) >= - 2147483648 .
+H2:    fld_history_variance(computer) <= 2147483647 .
+H3:    fld_history_avarage(computer) >= - 2147483648 .
+H4:    fld_history_avarage(computer) <= 2147483647 .
+H5:    fld_heartratehistory6(computer) >= - 1 .
+H6:    fld_heartratehistory6(computer) <= 300 .
+H7:    fld_heartratehistory5(computer) >= - 1 .
+H8:    fld_heartratehistory5(computer) <= 300 .
+H9:    fld_heartratehistory4(computer) >= - 1 .
+H10:   fld_heartratehistory4(computer) <= 300 .
+H11:   fld_heartratehistory3(computer) >= - 1 .
+H12:   fld_heartratehistory3(computer) <= 300 .
+H13:   fld_heartratehistory2(computer) >= - 1 .
+H14:   fld_heartratehistory2(computer) <= 300 .
+H15:   fld_heartratehistory1(computer) >= - 1 .
+H16:   fld_heartratehistory1(computer) <= 300 .
+H17:   fld_tickstoreenabledetectionagain(computer) >= - 2147483648 .
+H18:   fld_tickstoreenabledetectionagain(computer) <= 2147483647 .
+H19:   fld_tickcount(computer) >= - 2147483648 .
+H20:   fld_tickcount(computer) <= 2147483647 .
+H21:   fld_next(computer) >= - 2147483648 .
+H22:   fld_next(computer) <= 2147483647 .
+H23:   fld_count(computer) >= - 2147483648 .
+H24:   fld_count(computer) <= 2147483647 .
+H25:   fld_upperbound(computer) >= - 1 .
+H26:   fld_upperbound(computer) <= 300 .
+H27:   normal <= fld_state(computer) .
+H28:   fld_state(computer) <= tar .
+H29:   fld_rate(computer) >= - 1 .
+H30:   fld_rate(computer) <= 300 .
+H31:   fld_rate(heartratemonitor) >= - 1 .
+H32:   fld_rate(heartratemonitor) <= 300 .
+H33:   fld_impulse(shock) >= 0 .
+H34:   fld_impulse(shock) <= 45 .
+H35:   fld_ison(computer) .
+H36:   fld_ison(heartratemonitor) -> fld_rate(computer__1) = fld_rate(
+          heartratemonitor) .
+H37:   not fld_ison(heartratemonitor) -> fld_rate(computer__1) = - 1 .
+H38:   fld_rate(computer__1) >= - 1 .
+H39:   fld_rate(computer__1) <= 300 .
+H40:   fld_inprocess(computer__1) <-> fld_inprocess(computer) .
+H41:   fld_ison(computer) .
+H42:   fld_state(computer__1) = fld_state(computer) .
+H43:   fld_upperbound(computer__1) = fld_upperbound(computer) .
+H44:   fld_count(computer__1) = fld_count(computer) .
+H45:   fld_next(computer__1) = fld_next(computer) .
+H46:   fld_tickcount(computer__1) = fld_tickcount(computer) .
+H47:   fld_tickstoreenabledetectionagain(computer__1) = 
+          fld_tickstoreenabledetectionagain(computer) .
+H48:   fld_heartratehistory1(computer__1) = fld_heartratehistory1(computer) .
+H49:   fld_heartratehistory2(computer__1) = fld_heartratehistory2(computer) .
+H50:   fld_heartratehistory3(computer__1) = fld_heartratehistory3(computer) .
+H51:   fld_heartratehistory4(computer__1) = fld_heartratehistory4(computer) .
+H52:   fld_heartratehistory5(computer__1) = fld_heartratehistory5(computer) .
+H53:   fld_heartratehistory6(computer__1) = fld_heartratehistory6(computer) .
+H54:   fld_history_avarage(computer__1) = fld_history_avarage(computer) .
+H55:   fld_history_variance(computer__1) = fld_history_variance(computer) .
+H56:   computer__1 = upf_rate(computer, fld_rate(computer__1)) .
+H57:   fld_heartratehistory1(computer__2) = fld_heartratehistory2(computer) .
+H58:   fld_heartratehistory2(computer__2) = fld_heartratehistory3(computer) .
+H59:   fld_heartratehistory3(computer__2) = fld_heartratehistory4(computer) .
+H60:   fld_heartratehistory4(computer__2) = fld_heartratehistory5(computer) .
+H61:   fld_heartratehistory5(computer__2) = fld_heartratehistory6(computer) .
+H62:   fld_heartratehistory6(computer__2) = fld_rate(computer__2) .
+H63:   fld_history_variance(computer__2) >= - 2147483648 .
+H64:   fld_history_variance(computer__2) <= 2147483647 .
+H65:   fld_history_avarage(computer__2) >= - 2147483648 .
+H66:   fld_history_avarage(computer__2) <= 2147483647 .
+H67:   fld_heartratehistory6(computer__2) >= - 1 .
+H68:   fld_heartratehistory6(computer__2) <= 300 .
+H69:   fld_heartratehistory5(computer__2) >= - 1 .
+H70:   fld_heartratehistory5(computer__2) <= 300 .
+H71:   fld_heartratehistory4(computer__2) >= - 1 .
+H72:   fld_heartratehistory4(computer__2) <= 300 .
+H73:   fld_heartratehistory3(computer__2) >= - 1 .
+H74:   fld_heartratehistory3(computer__2) <= 300 .
+H75:   fld_heartratehistory2(computer__2) >= - 1 .
+H76:   fld_heartratehistory2(computer__2) <= 300 .
+H77:   fld_heartratehistory1(computer__2) >= - 1 .
+H78:   fld_heartratehistory1(computer__2) <= 300 .
+H79:   fld_tickstoreenabledetectionagain(computer__2) >= - 2147483648 .
+H80:   fld_tickstoreenabledetectionagain(computer__2) <= 2147483647 .
+H81:   fld_tickcount(computer__2) >= - 2147483648 .
+H82:   fld_tickcount(computer__2) <= 2147483647 .
+H83:   fld_next(computer__2) >= - 2147483648 .
+H84:   fld_next(computer__2) <= 2147483647 .
+H85:   fld_count(computer__2) >= - 2147483648 .
+H86:   fld_count(computer__2) <= 2147483647 .
+H87:   fld_upperbound(computer__2) >= - 1 .
+H88:   fld_upperbound(computer__2) <= 300 .
+H89:   normal <= fld_state(computer__2) .
+H90:   fld_state(computer__2) <= tar .
+H91:   fld_rate(computer__2) >= - 1 .
+H92:   fld_rate(computer__2) <= 300 .
+H93:   fld_history_avarage(computer__3) = (fld_heartratehistory1(computer__3) + 
+          fld_heartratehistory2(computer__3) + fld_heartratehistory3(
+          computer__3) + fld_heartratehistory4(computer__3) + 
+          fld_heartratehistory5(computer__3) + fld_heartratehistory6(
+          computer__3)) div 6 .
+H94:   fld_history_variance(computer__3) >= - 2147483648 .
+H95:   fld_history_variance(computer__3) <= 2147483647 .
+H96:   fld_history_avarage(computer__3) >= - 2147483648 .
+H97:   fld_history_avarage(computer__3) <= 2147483647 .
+H98:   fld_heartratehistory6(computer__3) >= - 1 .
+H99:   fld_heartratehistory6(computer__3) <= 300 .
+H100:  fld_heartratehistory5(computer__3) >= - 1 .
+H101:  fld_heartratehistory5(computer__3) <= 300 .
+H102:  fld_heartratehistory4(computer__3) >= - 1 .
+H103:  fld_heartratehistory4(computer__3) <= 300 .
+H104:  fld_heartratehistory3(computer__3) >= - 1 .
+H105:  fld_heartratehistory3(computer__3) <= 300 .
+H106:  fld_heartratehistory2(computer__3) >= - 1 .
+H107:  fld_heartratehistory2(computer__3) <= 300 .
+H108:  fld_heartratehistory1(computer__3) >= - 1 .
+H109:  fld_heartratehistory1(computer__3) <= 300 .
+H110:  fld_tickstoreenabledetectionagain(computer__3) >= - 2147483648 .
+H111:  fld_tickstoreenabledetectionagain(computer__3) <= 2147483647 .
+H112:  fld_tickcount(computer__3) >= - 2147483648 .
+H113:  fld_tickcount(computer__3) <= 2147483647 .
+H114:  fld_next(computer__3) >= - 2147483648 .
+H115:  fld_next(computer__3) <= 2147483647 .
+H116:  fld_count(computer__3) >= - 2147483648 .
+H117:  fld_count(computer__3) <= 2147483647 .
+H118:  fld_upperbound(computer__3) >= - 1 .
+H119:  fld_upperbound(computer__3) <= 300 .
+H120:  normal <= fld_state(computer__3) .
+H121:  fld_state(computer__3) <= tar .
+H122:  fld_rate(computer__3) >= - 1 .
+H123:  fld_rate(computer__3) <= 300 .
+H124:  fld_history_variance(computer__4) >= - 2147483648 .
+H125:  fld_history_variance(computer__4) <= 2147483647 .
+H126:  fld_history_avarage(computer__4) >= - 2147483648 .
+H127:  fld_history_avarage(computer__4) <= 2147483647 .
+H128:  fld_heartratehistory6(computer__4) >= - 1 .
+H129:  fld_heartratehistory6(computer__4) <= 300 .
+H130:  fld_heartratehistory5(computer__4) >= - 1 .
+H131:  fld_heartratehistory5(computer__4) <= 300 .
+H132:  fld_heartratehistory4(computer__4) >= - 1 .
+H133:  fld_heartratehistory4(computer__4) <= 300 .
+H134:  fld_heartratehistory3(computer__4) >= - 1 .
+H135:  fld_heartratehistory3(computer__4) <= 300 .
+H136:  fld_heartratehistory2(computer__4) >= - 1 .
+H137:  fld_heartratehistory2(computer__4) <= 300 .
+H138:  fld_heartratehistory1(computer__4) >= - 1 .
+H139:  fld_heartratehistory1(computer__4) <= 300 .
+H140:  fld_tickstoreenabledetectionagain(computer__4) >= - 2147483648 .
+H141:  fld_tickstoreenabledetectionagain(computer__4) <= 2147483647 .
+H142:  fld_tickcount(computer__4) >= - 2147483648 .
+H143:  fld_tickcount(computer__4) <= 2147483647 .
+H144:  fld_next(computer__4) >= - 2147483648 .
+H145:  fld_next(computer__4) <= 2147483647 .
+H146:  fld_count(computer__4) >= - 2147483648 .
+H147:  fld_count(computer__4) <= 2147483647 .
+H148:  fld_upperbound(computer__4) >= - 1 .
+H149:  fld_upperbound(computer__4) <= 300 .
+H150:  normal <= fld_state(computer__4) .
+H151:  fld_state(computer__4) <= tar .
+H152:  fld_rate(computer__4) >= - 1 .
+H153:  fld_rate(computer__4) <= 300 .
+H154:  fld_ison(computer__4) .
+H155:  fld_state(computer__5) = fib <-> fld_state(computer__4) <> fib and (
+          fld_heartratehistory1(computer__5) <> - 1 and 
+          fld_tickstoreenabledetectionagain(computer__5) = 0 and 
+          fld_history_variance(computer__5) > 100) .
+H156:  fld_history_variance(computer__5) >= - 2147483648 .
+H157:  fld_history_variance(computer__5) <= 2147483647 .
+H158:  fld_history_avarage(computer__5) >= - 2147483648 .
+H159:  fld_history_avarage(computer__5) <= 2147483647 .
+H160:  fld_heartratehistory6(computer__5) >= - 1 .
+H161:  fld_heartratehistory6(computer__5) <= 300 .
+H162:  fld_heartratehistory5(computer__5) >= - 1 .
+H163:  fld_heartratehistory5(computer__5) <= 300 .
+H164:  fld_heartratehistory4(computer__5) >= - 1 .
+H165:  fld_heartratehistory4(computer__5) <= 300 .
+H166:  fld_heartratehistory3(computer__5) >= - 1 .
+H167:  fld_heartratehistory3(computer__5) <= 300 .
+H168:  fld_heartratehistory2(computer__5) >= - 1 .
+H169:  fld_heartratehistory2(computer__5) <= 300 .
+H170:  fld_heartratehistory1(computer__5) >= - 1 .
+H171:  fld_heartratehistory1(computer__5) <= 300 .
+H172:  fld_tickstoreenabledetectionagain(computer__5) >= - 2147483648 .
+H173:  fld_tickstoreenabledetectionagain(computer__5) <= 2147483647 .
+H174:  fld_tickcount(computer__5) >= - 2147483648 .
+H175:  fld_tickcount(computer__5) <= 2147483647 .
+H176:  fld_next(computer__5) >= - 2147483648 .
+H177:  fld_next(computer__5) <= 2147483647 .
+H178:  fld_count(computer__5) >= - 2147483648 .
+H179:  fld_count(computer__5) <= 2147483647 .
+H180:  fld_upperbound(computer__5) >= - 1 .
+H181:  fld_upperbound(computer__5) <= 300 .
+H182:  normal <= fld_state(computer__5) .
+H183:  fld_state(computer__5) <= tar .
+H184:  fld_rate(computer__5) >= - 1 .
+H185:  fld_rate(computer__5) <= 300 .
+H186:  fld_history_variance(computer__6) >= - 2147483648 .
+H187:  fld_history_variance(computer__6) <= 2147483647 .
+H188:  fld_history_avarage(computer__6) >= - 2147483648 .
+H189:  fld_history_avarage(computer__6) <= 2147483647 .
+H190:  fld_heartratehistory6(computer__6) >= - 1 .
+H191:  fld_heartratehistory6(computer__6) <= 300 .
+H192:  fld_heartratehistory5(computer__6) >= - 1 .
+H193:  fld_heartratehistory5(computer__6) <= 300 .
+H194:  fld_heartratehistory4(computer__6) >= - 1 .
+H195:  fld_heartratehistory4(computer__6) <= 300 .
+H196:  fld_heartratehistory3(computer__6) >= - 1 .
+H197:  fld_heartratehistory3(computer__6) <= 300 .
+H198:  fld_heartratehistory2(computer__6) >= - 1 .
+H199:  fld_heartratehistory2(computer__6) <= 300 .
+H200:  fld_heartratehistory1(computer__6) >= - 1 .
+H201:  fld_heartratehistory1(computer__6) <= 300 .
+H202:  fld_tickstoreenabledetectionagain(computer__6) >= - 2147483648 .
+H203:  fld_tickstoreenabledetectionagain(computer__6) <= 2147483647 .
+H204:  fld_tickcount(computer__6) >= - 2147483648 .
+H205:  fld_tickcount(computer__6) <= 2147483647 .
+H206:  fld_next(computer__6) >= - 2147483648 .
+H207:  fld_next(computer__6) <= 2147483647 .
+H208:  fld_count(computer__6) >= - 2147483648 .
+H209:  fld_count(computer__6) <= 2147483647 .
+H210:  fld_upperbound(computer__6) >= - 1 .
+H211:  fld_upperbound(computer__6) <= 300 .
+H212:  normal <= fld_state(computer__6) .
+H213:  fld_state(computer__6) <= tar .
+H214:  fld_rate(computer__6) >= - 1 .
+H215:  fld_rate(computer__6) <= 300 .
+H216:  fld_history_variance(computer__7) >= - 2147483648 .
+H217:  fld_history_variance(computer__7) <= 2147483647 .
+H218:  fld_history_avarage(computer__7) >= - 2147483648 .
+H219:  fld_history_avarage(computer__7) <= 2147483647 .
+H220:  fld_heartratehistory6(computer__7) >= - 1 .
+H221:  fld_heartratehistory6(computer__7) <= 300 .
+H222:  fld_heartratehistory5(computer__7) >= - 1 .
+H223:  fld_heartratehistory5(computer__7) <= 300 .
+H224:  fld_heartratehistory4(computer__7) >= - 1 .
+H225:  fld_heartratehistory4(computer__7) <= 300 .
+H226:  fld_heartratehistory3(computer__7) >= - 1 .
+H227:  fld_heartratehistory3(computer__7) <= 300 .
+H228:  fld_heartratehistory2(computer__7) >= - 1 .
+H229:  fld_heartratehistory2(computer__7) <= 300 .
+H230:  fld_heartratehistory1(computer__7) >= - 1 .
+H231:  fld_heartratehistory1(computer__7) <= 300 .
+H232:  fld_tickstoreenabledetectionagain(computer__7) >= - 2147483648 .
+H233:  fld_tickstoreenabledetectionagain(computer__7) <= 2147483647 .
+H234:  fld_tickcount(computer__7) >= - 2147483648 .
+H235:  fld_tickcount(computer__7) <= 2147483647 .
+H236:  fld_next(computer__7) >= - 2147483648 .
+H237:  fld_next(computer__7) <= 2147483647 .
+H238:  fld_count(computer__7) >= - 2147483648 .
+H239:  fld_count(computer__7) <= 2147483647 .
+H240:  fld_upperbound(computer__7) >= - 1 .
+H241:  fld_upperbound(computer__7) <= 300 .
+H242:  normal <= fld_state(computer__7) .
+H243:  fld_state(computer__7) <= tar .
+H244:  fld_rate(computer__7) >= - 1 .
+H245:  fld_rate(computer__7) <= 300 .
+H246:  fld_impulse(shock__7) >= 0 .
+H247:  fld_impulse(shock__7) <= 45 .
+H248:  fld_inprocess(computer__7) .
+H249:  fld_state(computer__7) = tar .
+H250:  fld_ison(computer) .
+H251:  integer__size >= 0 .
+H252:  measures__joules__size >= 0 .
+H253:  measures__bpm__size >= 0 .
+H254:  impulsegenerator__generatortype__size >= 0 .
+H255:  hrm__hrmtype__size >= 0 .
+H256:  icdstates__size >= 0 .
+H257:  icdtype__size >= 0 .
+       ->
+C1:    fld_tickcount(computer__7) >= - 2147483647 .
+
+
+For path(s) from start to run-time check associated with statement of line 210:
+
+procedure_tick_4.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to finish:
+
+procedure_tick_5.
+H1:    fld_history_variance(computer) >= - 2147483648 .
+H2:    fld_history_variance(computer) <= 2147483647 .
+H3:    fld_history_avarage(computer) >= - 2147483648 .
+H4:    fld_history_avarage(computer) <= 2147483647 .
+H5:    fld_heartratehistory6(computer) >= - 1 .
+H6:    fld_heartratehistory6(computer) <= 300 .
+H7:    fld_heartratehistory5(computer) >= - 1 .
+H8:    fld_heartratehistory5(computer) <= 300 .
+H9:    fld_heartratehistory4(computer) >= - 1 .
+H10:   fld_heartratehistory4(computer) <= 300 .
+H11:   fld_heartratehistory3(computer) >= - 1 .
+H12:   fld_heartratehistory3(computer) <= 300 .
+H13:   fld_heartratehistory2(computer) >= - 1 .
+H14:   fld_heartratehistory2(computer) <= 300 .
+H15:   fld_heartratehistory1(computer) >= - 1 .
+H16:   fld_heartratehistory1(computer) <= 300 .
+H17:   fld_tickstoreenabledetectionagain(computer) >= - 2147483648 .
+H18:   fld_tickstoreenabledetectionagain(computer) <= 2147483647 .
+H19:   fld_tickcount(computer) >= - 2147483648 .
+H20:   fld_tickcount(computer) <= 2147483647 .
+H21:   fld_next(computer) >= - 2147483648 .
+H22:   fld_next(computer) <= 2147483647 .
+H23:   fld_count(computer) >= - 2147483648 .
+H24:   fld_count(computer) <= 2147483647 .
+H25:   fld_upperbound(computer) >= - 1 .
+H26:   fld_upperbound(computer) <= 300 .
+H27:   normal <= fld_state(computer) .
+H28:   fld_state(computer) <= tar .
+H29:   fld_rate(computer) >= - 1 .
+H30:   fld_rate(computer) <= 300 .
+H31:   fld_rate(heartratemonitor) >= - 1 .
+H32:   fld_rate(heartratemonitor) <= 300 .
+H33:   fld_impulse(shock) >= 0 .
+H34:   fld_impulse(shock) <= 45 .
+H35:   fld_ison(computer) .
+H36:   fld_ison(heartratemonitor) -> fld_rate(computer__1) = fld_rate(
+          heartratemonitor) .
+H37:   not fld_ison(heartratemonitor) -> fld_rate(computer__1) = - 1 .
+H38:   fld_rate(computer__1) >= - 1 .
+H39:   fld_rate(computer__1) <= 300 .
+H40:   fld_inprocess(computer__1) <-> fld_inprocess(computer) .
+H41:   fld_ison(computer) .
+H42:   fld_state(computer__1) = fld_state(computer) .
+H43:   fld_upperbound(computer__1) = fld_upperbound(computer) .
+H44:   fld_count(computer__1) = fld_count(computer) .
+H45:   fld_next(computer__1) = fld_next(computer) .
+H46:   fld_tickcount(computer__1) = fld_tickcount(computer) .
+H47:   fld_tickstoreenabledetectionagain(computer__1) = 
+          fld_tickstoreenabledetectionagain(computer) .
+H48:   fld_heartratehistory1(computer__1) = fld_heartratehistory1(computer) .
+H49:   fld_heartratehistory2(computer__1) = fld_heartratehistory2(computer) .
+H50:   fld_heartratehistory3(computer__1) = fld_heartratehistory3(computer) .
+H51:   fld_heartratehistory4(computer__1) = fld_heartratehistory4(computer) .
+H52:   fld_heartratehistory5(computer__1) = fld_heartratehistory5(computer) .
+H53:   fld_heartratehistory6(computer__1) = fld_heartratehistory6(computer) .
+H54:   fld_history_avarage(computer__1) = fld_history_avarage(computer) .
+H55:   fld_history_variance(computer__1) = fld_history_variance(computer) .
+H56:   computer__1 = upf_rate(computer, fld_rate(computer__1)) .
+H57:   fld_heartratehistory1(computer__2) = fld_heartratehistory2(computer) .
+H58:   fld_heartratehistory2(computer__2) = fld_heartratehistory3(computer) .
+H59:   fld_heartratehistory3(computer__2) = fld_heartratehistory4(computer) .
+H60:   fld_heartratehistory4(computer__2) = fld_heartratehistory5(computer) .
+H61:   fld_heartratehistory5(computer__2) = fld_heartratehistory6(computer) .
+H62:   fld_heartratehistory6(computer__2) = fld_rate(computer__2) .
+H63:   fld_history_variance(computer__2) >= - 2147483648 .
+H64:   fld_history_variance(computer__2) <= 2147483647 .
+H65:   fld_history_avarage(computer__2) >= - 2147483648 .
+H66:   fld_history_avarage(computer__2) <= 2147483647 .
+H67:   fld_heartratehistory6(computer__2) >= - 1 .
+H68:   fld_heartratehistory6(computer__2) <= 300 .
+H69:   fld_heartratehistory5(computer__2) >= - 1 .
+H70:   fld_heartratehistory5(computer__2) <= 300 .
+H71:   fld_heartratehistory4(computer__2) >= - 1 .
+H72:   fld_heartratehistory4(computer__2) <= 300 .
+H73:   fld_heartratehistory3(computer__2) >= - 1 .
+H74:   fld_heartratehistory3(computer__2) <= 300 .
+H75:   fld_heartratehistory2(computer__2) >= - 1 .
+H76:   fld_heartratehistory2(computer__2) <= 300 .
+H77:   fld_heartratehistory1(computer__2) >= - 1 .
+H78:   fld_heartratehistory1(computer__2) <= 300 .
+H79:   fld_tickstoreenabledetectionagain(computer__2) >= - 2147483648 .
+H80:   fld_tickstoreenabledetectionagain(computer__2) <= 2147483647 .
+H81:   fld_tickcount(computer__2) >= - 2147483648 .
+H82:   fld_tickcount(computer__2) <= 2147483647 .
+H83:   fld_next(computer__2) >= - 2147483648 .
+H84:   fld_next(computer__2) <= 2147483647 .
+H85:   fld_count(computer__2) >= - 2147483648 .
+H86:   fld_count(computer__2) <= 2147483647 .
+H87:   fld_upperbound(computer__2) >= - 1 .
+H88:   fld_upperbound(computer__2) <= 300 .
+H89:   normal <= fld_state(computer__2) .
+H90:   fld_state(computer__2) <= tar .
+H91:   fld_rate(computer__2) >= - 1 .
+H92:   fld_rate(computer__2) <= 300 .
+H93:   fld_history_avarage(computer__3) = (fld_heartratehistory1(computer__3) + 
+          fld_heartratehistory2(computer__3) + fld_heartratehistory3(
+          computer__3) + fld_heartratehistory4(computer__3) + 
+          fld_heartratehistory5(computer__3) + fld_heartratehistory6(
+          computer__3)) div 6 .
+H94:   fld_history_variance(computer__3) >= - 2147483648 .
+H95:   fld_history_variance(computer__3) <= 2147483647 .
+H96:   fld_history_avarage(computer__3) >= - 2147483648 .
+H97:   fld_history_avarage(computer__3) <= 2147483647 .
+H98:   fld_heartratehistory6(computer__3) >= - 1 .
+H99:   fld_heartratehistory6(computer__3) <= 300 .
+H100:  fld_heartratehistory5(computer__3) >= - 1 .
+H101:  fld_heartratehistory5(computer__3) <= 300 .
+H102:  fld_heartratehistory4(computer__3) >= - 1 .
+H103:  fld_heartratehistory4(computer__3) <= 300 .
+H104:  fld_heartratehistory3(computer__3) >= - 1 .
+H105:  fld_heartratehistory3(computer__3) <= 300 .
+H106:  fld_heartratehistory2(computer__3) >= - 1 .
+H107:  fld_heartratehistory2(computer__3) <= 300 .
+H108:  fld_heartratehistory1(computer__3) >= - 1 .
+H109:  fld_heartratehistory1(computer__3) <= 300 .
+H110:  fld_tickstoreenabledetectionagain(computer__3) >= - 2147483648 .
+H111:  fld_tickstoreenabledetectionagain(computer__3) <= 2147483647 .
+H112:  fld_tickcount(computer__3) >= - 2147483648 .
+H113:  fld_tickcount(computer__3) <= 2147483647 .
+H114:  fld_next(computer__3) >= - 2147483648 .
+H115:  fld_next(computer__3) <= 2147483647 .
+H116:  fld_count(computer__3) >= - 2147483648 .
+H117:  fld_count(computer__3) <= 2147483647 .
+H118:  fld_upperbound(computer__3) >= - 1 .
+H119:  fld_upperbound(computer__3) <= 300 .
+H120:  normal <= fld_state(computer__3) .
+H121:  fld_state(computer__3) <= tar .
+H122:  fld_rate(computer__3) >= - 1 .
+H123:  fld_rate(computer__3) <= 300 .
+H124:  fld_history_variance(computer__4) >= - 2147483648 .
+H125:  fld_history_variance(computer__4) <= 2147483647 .
+H126:  fld_history_avarage(computer__4) >= - 2147483648 .
+H127:  fld_history_avarage(computer__4) <= 2147483647 .
+H128:  fld_heartratehistory6(computer__4) >= - 1 .
+H129:  fld_heartratehistory6(computer__4) <= 300 .
+H130:  fld_heartratehistory5(computer__4) >= - 1 .
+H131:  fld_heartratehistory5(computer__4) <= 300 .
+H132:  fld_heartratehistory4(computer__4) >= - 1 .
+H133:  fld_heartratehistory4(computer__4) <= 300 .
+H134:  fld_heartratehistory3(computer__4) >= - 1 .
+H135:  fld_heartratehistory3(computer__4) <= 300 .
+H136:  fld_heartratehistory2(computer__4) >= - 1 .
+H137:  fld_heartratehistory2(computer__4) <= 300 .
+H138:  fld_heartratehistory1(computer__4) >= - 1 .
+H139:  fld_heartratehistory1(computer__4) <= 300 .
+H140:  fld_tickstoreenabledetectionagain(computer__4) >= - 2147483648 .
+H141:  fld_tickstoreenabledetectionagain(computer__4) <= 2147483647 .
+H142:  fld_tickcount(computer__4) >= - 2147483648 .
+H143:  fld_tickcount(computer__4) <= 2147483647 .
+H144:  fld_next(computer__4) >= - 2147483648 .
+H145:  fld_next(computer__4) <= 2147483647 .
+H146:  fld_count(computer__4) >= - 2147483648 .
+H147:  fld_count(computer__4) <= 2147483647 .
+H148:  fld_upperbound(computer__4) >= - 1 .
+H149:  fld_upperbound(computer__4) <= 300 .
+H150:  normal <= fld_state(computer__4) .
+H151:  fld_state(computer__4) <= tar .
+H152:  fld_rate(computer__4) >= - 1 .
+H153:  fld_rate(computer__4) <= 300 .
+H154:  fld_ison(computer__4) .
+H155:  fld_state(computer__5) = fib <-> fld_state(computer__4) <> fib and (
+          fld_heartratehistory1(computer__5) <> - 1 and 
+          fld_tickstoreenabledetectionagain(computer__5) = 0 and 
+          fld_history_variance(computer__5) > 100) .
+H156:  fld_history_variance(computer__5) >= - 2147483648 .
+H157:  fld_history_variance(computer__5) <= 2147483647 .
+H158:  fld_history_avarage(computer__5) >= - 2147483648 .
+H159:  fld_history_avarage(computer__5) <= 2147483647 .
+H160:  fld_heartratehistory6(computer__5) >= - 1 .
+H161:  fld_heartratehistory6(computer__5) <= 300 .
+H162:  fld_heartratehistory5(computer__5) >= - 1 .
+H163:  fld_heartratehistory5(computer__5) <= 300 .
+H164:  fld_heartratehistory4(computer__5) >= - 1 .
+H165:  fld_heartratehistory4(computer__5) <= 300 .
+H166:  fld_heartratehistory3(computer__5) >= - 1 .
+H167:  fld_heartratehistory3(computer__5) <= 300 .
+H168:  fld_heartratehistory2(computer__5) >= - 1 .
+H169:  fld_heartratehistory2(computer__5) <= 300 .
+H170:  fld_heartratehistory1(computer__5) >= - 1 .
+H171:  fld_heartratehistory1(computer__5) <= 300 .
+H172:  fld_tickstoreenabledetectionagain(computer__5) >= - 2147483648 .
+H173:  fld_tickstoreenabledetectionagain(computer__5) <= 2147483647 .
+H174:  fld_tickcount(computer__5) >= - 2147483648 .
+H175:  fld_tickcount(computer__5) <= 2147483647 .
+H176:  fld_next(computer__5) >= - 2147483648 .
+H177:  fld_next(computer__5) <= 2147483647 .
+H178:  fld_count(computer__5) >= - 2147483648 .
+H179:  fld_count(computer__5) <= 2147483647 .
+H180:  fld_upperbound(computer__5) >= - 1 .
+H181:  fld_upperbound(computer__5) <= 300 .
+H182:  normal <= fld_state(computer__5) .
+H183:  fld_state(computer__5) <= tar .
+H184:  fld_rate(computer__5) >= - 1 .
+H185:  fld_rate(computer__5) <= 300 .
+H186:  fld_history_variance(computer__6) >= - 2147483648 .
+H187:  fld_history_variance(computer__6) <= 2147483647 .
+H188:  fld_history_avarage(computer__6) >= - 2147483648 .
+H189:  fld_history_avarage(computer__6) <= 2147483647 .
+H190:  fld_heartratehistory6(computer__6) >= - 1 .
+H191:  fld_heartratehistory6(computer__6) <= 300 .
+H192:  fld_heartratehistory5(computer__6) >= - 1 .
+H193:  fld_heartratehistory5(computer__6) <= 300 .
+H194:  fld_heartratehistory4(computer__6) >= - 1 .
+H195:  fld_heartratehistory4(computer__6) <= 300 .
+H196:  fld_heartratehistory3(computer__6) >= - 1 .
+H197:  fld_heartratehistory3(computer__6) <= 300 .
+H198:  fld_heartratehistory2(computer__6) >= - 1 .
+H199:  fld_heartratehistory2(computer__6) <= 300 .
+H200:  fld_heartratehistory1(computer__6) >= - 1 .
+H201:  fld_heartratehistory1(computer__6) <= 300 .
+H202:  fld_tickstoreenabledetectionagain(computer__6) >= - 2147483648 .
+H203:  fld_tickstoreenabledetectionagain(computer__6) <= 2147483647 .
+H204:  fld_tickcount(computer__6) >= - 2147483648 .
+H205:  fld_tickcount(computer__6) <= 2147483647 .
+H206:  fld_next(computer__6) >= - 2147483648 .
+H207:  fld_next(computer__6) <= 2147483647 .
+H208:  fld_count(computer__6) >= - 2147483648 .
+H209:  fld_count(computer__6) <= 2147483647 .
+H210:  fld_upperbound(computer__6) >= - 1 .
+H211:  fld_upperbound(computer__6) <= 300 .
+H212:  normal <= fld_state(computer__6) .
+H213:  fld_state(computer__6) <= tar .
+H214:  fld_rate(computer__6) >= - 1 .
+H215:  fld_rate(computer__6) <= 300 .
+H216:  fld_history_variance(computer__7) >= - 2147483648 .
+H217:  fld_history_variance(computer__7) <= 2147483647 .
+H218:  fld_history_avarage(computer__7) >= - 2147483648 .
+H219:  fld_history_avarage(computer__7) <= 2147483647 .
+H220:  fld_heartratehistory6(computer__7) >= - 1 .
+H221:  fld_heartratehistory6(computer__7) <= 300 .
+H222:  fld_heartratehistory5(computer__7) >= - 1 .
+H223:  fld_heartratehistory5(computer__7) <= 300 .
+H224:  fld_heartratehistory4(computer__7) >= - 1 .
+H225:  fld_heartratehistory4(computer__7) <= 300 .
+H226:  fld_heartratehistory3(computer__7) >= - 1 .
+H227:  fld_heartratehistory3(computer__7) <= 300 .
+H228:  fld_heartratehistory2(computer__7) >= - 1 .
+H229:  fld_heartratehistory2(computer__7) <= 300 .
+H230:  fld_heartratehistory1(computer__7) >= - 1 .
+H231:  fld_heartratehistory1(computer__7) <= 300 .
+H232:  fld_tickstoreenabledetectionagain(computer__7) >= - 2147483648 .
+H233:  fld_tickstoreenabledetectionagain(computer__7) <= 2147483647 .
+H234:  fld_tickcount(computer__7) <= 2147483647 .
+H235:  fld_next(computer__7) >= - 2147483648 .
+H236:  fld_next(computer__7) <= 2147483647 .
+H237:  fld_count(computer__7) >= - 2147483648 .
+H238:  fld_count(computer__7) <= 2147483647 .
+H239:  fld_upperbound(computer__7) >= - 1 .
+H240:  fld_upperbound(computer__7) <= 300 .
+H241:  normal <= fld_state(computer__7) .
+H242:  fld_state(computer__7) <= tar .
+H243:  fld_rate(computer__7) >= - 1 .
+H244:  fld_rate(computer__7) <= 300 .
+H245:  fld_impulse(shock__7) >= 0 .
+H246:  fld_impulse(shock__7) <= 45 .
+H247:  fld_inprocess(computer__7) .
+H248:  fld_state(computer__7) = tar .
+H249:  fld_tickcount(computer__7) >= - 2147483647 .
+H250:  fld_ison(computer) .
+H251:  integer__size >= 0 .
+H252:  measures__joules__size >= 0 .
+H253:  measures__bpm__size >= 0 .
+H254:  impulsegenerator__generatortype__size >= 0 .
+H255:  hrm__hrmtype__size >= 0 .
+H256:  icdstates__size >= 0 .
+H257:  icdtype__size >= 0 .
+       ->
+C1:    not fld_ison(computer__7) -> fld_rate(computer__7) = - 1 .
+
+
+procedure_tick_6.
+H1:    fld_history_variance(computer) >= - 2147483648 .
+H2:    fld_history_variance(computer) <= 2147483647 .
+H3:    fld_history_avarage(computer) >= - 2147483648 .
+H4:    fld_history_avarage(computer) <= 2147483647 .
+H5:    fld_heartratehistory6(computer) >= - 1 .
+H6:    fld_heartratehistory6(computer) <= 300 .
+H7:    fld_heartratehistory5(computer) >= - 1 .
+H8:    fld_heartratehistory5(computer) <= 300 .
+H9:    fld_heartratehistory4(computer) >= - 1 .
+H10:   fld_heartratehistory4(computer) <= 300 .
+H11:   fld_heartratehistory3(computer) >= - 1 .
+H12:   fld_heartratehistory3(computer) <= 300 .
+H13:   fld_heartratehistory2(computer) >= - 1 .
+H14:   fld_heartratehistory2(computer) <= 300 .
+H15:   fld_heartratehistory1(computer) >= - 1 .
+H16:   fld_heartratehistory1(computer) <= 300 .
+H17:   fld_tickstoreenabledetectionagain(computer) >= - 2147483648 .
+H18:   fld_tickstoreenabledetectionagain(computer) <= 2147483647 .
+H19:   fld_tickcount(computer) >= - 2147483648 .
+H20:   fld_tickcount(computer) <= 2147483647 .
+H21:   fld_next(computer) >= - 2147483648 .
+H22:   fld_next(computer) <= 2147483647 .
+H23:   fld_count(computer) >= - 2147483648 .
+H24:   fld_count(computer) <= 2147483647 .
+H25:   fld_upperbound(computer) >= - 1 .
+H26:   fld_upperbound(computer) <= 300 .
+H27:   normal <= fld_state(computer) .
+H28:   fld_state(computer) <= tar .
+H29:   fld_rate(computer) >= - 1 .
+H30:   fld_rate(computer) <= 300 .
+H31:   fld_rate(heartratemonitor) >= - 1 .
+H32:   fld_rate(heartratemonitor) <= 300 .
+H33:   fld_impulse(shock) >= 0 .
+H34:   fld_impulse(shock) <= 45 .
+H35:   fld_ison(computer) .
+H36:   fld_ison(heartratemonitor) -> fld_rate(computer__1) = fld_rate(
+          heartratemonitor) .
+H37:   not fld_ison(heartratemonitor) -> fld_rate(computer__1) = - 1 .
+H38:   fld_rate(computer__1) >= - 1 .
+H39:   fld_rate(computer__1) <= 300 .
+H40:   fld_inprocess(computer__1) <-> fld_inprocess(computer) .
+H41:   fld_ison(computer) .
+H42:   fld_state(computer__1) = fld_state(computer) .
+H43:   fld_upperbound(computer__1) = fld_upperbound(computer) .
+H44:   fld_count(computer__1) = fld_count(computer) .
+H45:   fld_next(computer__1) = fld_next(computer) .
+H46:   fld_tickcount(computer__1) = fld_tickcount(computer) .
+H47:   fld_tickstoreenabledetectionagain(computer__1) = 
+          fld_tickstoreenabledetectionagain(computer) .
+H48:   fld_heartratehistory1(computer__1) = fld_heartratehistory1(computer) .
+H49:   fld_heartratehistory2(computer__1) = fld_heartratehistory2(computer) .
+H50:   fld_heartratehistory3(computer__1) = fld_heartratehistory3(computer) .
+H51:   fld_heartratehistory4(computer__1) = fld_heartratehistory4(computer) .
+H52:   fld_heartratehistory5(computer__1) = fld_heartratehistory5(computer) .
+H53:   fld_heartratehistory6(computer__1) = fld_heartratehistory6(computer) .
+H54:   fld_history_avarage(computer__1) = fld_history_avarage(computer) .
+H55:   fld_history_variance(computer__1) = fld_history_variance(computer) .
+H56:   computer__1 = upf_rate(computer, fld_rate(computer__1)) .
+H57:   fld_heartratehistory1(computer__2) = fld_heartratehistory2(computer) .
+H58:   fld_heartratehistory2(computer__2) = fld_heartratehistory3(computer) .
+H59:   fld_heartratehistory3(computer__2) = fld_heartratehistory4(computer) .
+H60:   fld_heartratehistory4(computer__2) = fld_heartratehistory5(computer) .
+H61:   fld_heartratehistory5(computer__2) = fld_heartratehistory6(computer) .
+H62:   fld_heartratehistory6(computer__2) = fld_rate(computer__2) .
+H63:   fld_history_variance(computer__2) >= - 2147483648 .
+H64:   fld_history_variance(computer__2) <= 2147483647 .
+H65:   fld_history_avarage(computer__2) >= - 2147483648 .
+H66:   fld_history_avarage(computer__2) <= 2147483647 .
+H67:   fld_heartratehistory6(computer__2) >= - 1 .
+H68:   fld_heartratehistory6(computer__2) <= 300 .
+H69:   fld_heartratehistory5(computer__2) >= - 1 .
+H70:   fld_heartratehistory5(computer__2) <= 300 .
+H71:   fld_heartratehistory4(computer__2) >= - 1 .
+H72:   fld_heartratehistory4(computer__2) <= 300 .
+H73:   fld_heartratehistory3(computer__2) >= - 1 .
+H74:   fld_heartratehistory3(computer__2) <= 300 .
+H75:   fld_heartratehistory2(computer__2) >= - 1 .
+H76:   fld_heartratehistory2(computer__2) <= 300 .
+H77:   fld_heartratehistory1(computer__2) >= - 1 .
+H78:   fld_heartratehistory1(computer__2) <= 300 .
+H79:   fld_tickstoreenabledetectionagain(computer__2) >= - 2147483648 .
+H80:   fld_tickstoreenabledetectionagain(computer__2) <= 2147483647 .
+H81:   fld_tickcount(computer__2) >= - 2147483648 .
+H82:   fld_tickcount(computer__2) <= 2147483647 .
+H83:   fld_next(computer__2) >= - 2147483648 .
+H84:   fld_next(computer__2) <= 2147483647 .
+H85:   fld_count(computer__2) >= - 2147483648 .
+H86:   fld_count(computer__2) <= 2147483647 .
+H87:   fld_upperbound(computer__2) >= - 1 .
+H88:   fld_upperbound(computer__2) <= 300 .
+H89:   normal <= fld_state(computer__2) .
+H90:   fld_state(computer__2) <= tar .
+H91:   fld_rate(computer__2) >= - 1 .
+H92:   fld_rate(computer__2) <= 300 .
+H93:   fld_history_avarage(computer__3) = (fld_heartratehistory1(computer__3) + 
+          fld_heartratehistory2(computer__3) + fld_heartratehistory3(
+          computer__3) + fld_heartratehistory4(computer__3) + 
+          fld_heartratehistory5(computer__3) + fld_heartratehistory6(
+          computer__3)) div 6 .
+H94:   fld_history_variance(computer__3) >= - 2147483648 .
+H95:   fld_history_variance(computer__3) <= 2147483647 .
+H96:   fld_history_avarage(computer__3) >= - 2147483648 .
+H97:   fld_history_avarage(computer__3) <= 2147483647 .
+H98:   fld_heartratehistory6(computer__3) >= - 1 .
+H99:   fld_heartratehistory6(computer__3) <= 300 .
+H100:  fld_heartratehistory5(computer__3) >= - 1 .
+H101:  fld_heartratehistory5(computer__3) <= 300 .
+H102:  fld_heartratehistory4(computer__3) >= - 1 .
+H103:  fld_heartratehistory4(computer__3) <= 300 .
+H104:  fld_heartratehistory3(computer__3) >= - 1 .
+H105:  fld_heartratehistory3(computer__3) <= 300 .
+H106:  fld_heartratehistory2(computer__3) >= - 1 .
+H107:  fld_heartratehistory2(computer__3) <= 300 .
+H108:  fld_heartratehistory1(computer__3) >= - 1 .
+H109:  fld_heartratehistory1(computer__3) <= 300 .
+H110:  fld_tickstoreenabledetectionagain(computer__3) >= - 2147483648 .
+H111:  fld_tickstoreenabledetectionagain(computer__3) <= 2147483647 .
+H112:  fld_tickcount(computer__3) >= - 2147483648 .
+H113:  fld_tickcount(computer__3) <= 2147483647 .
+H114:  fld_next(computer__3) >= - 2147483648 .
+H115:  fld_next(computer__3) <= 2147483647 .
+H116:  fld_count(computer__3) >= - 2147483648 .
+H117:  fld_count(computer__3) <= 2147483647 .
+H118:  fld_upperbound(computer__3) >= - 1 .
+H119:  fld_upperbound(computer__3) <= 300 .
+H120:  normal <= fld_state(computer__3) .
+H121:  fld_state(computer__3) <= tar .
+H122:  fld_rate(computer__3) >= - 1 .
+H123:  fld_rate(computer__3) <= 300 .
+H124:  fld_history_variance(computer__4) >= - 2147483648 .
+H125:  fld_history_variance(computer__4) <= 2147483647 .
+H126:  fld_history_avarage(computer__4) >= - 2147483648 .
+H127:  fld_history_avarage(computer__4) <= 2147483647 .
+H128:  fld_heartratehistory6(computer__4) >= - 1 .
+H129:  fld_heartratehistory6(computer__4) <= 300 .
+H130:  fld_heartratehistory5(computer__4) >= - 1 .
+H131:  fld_heartratehistory5(computer__4) <= 300 .
+H132:  fld_heartratehistory4(computer__4) >= - 1 .
+H133:  fld_heartratehistory4(computer__4) <= 300 .
+H134:  fld_heartratehistory3(computer__4) >= - 1 .
+H135:  fld_heartratehistory3(computer__4) <= 300 .
+H136:  fld_heartratehistory2(computer__4) >= - 1 .
+H137:  fld_heartratehistory2(computer__4) <= 300 .
+H138:  fld_heartratehistory1(computer__4) >= - 1 .
+H139:  fld_heartratehistory1(computer__4) <= 300 .
+H140:  fld_tickstoreenabledetectionagain(computer__4) >= - 2147483648 .
+H141:  fld_tickstoreenabledetectionagain(computer__4) <= 2147483647 .
+H142:  fld_tickcount(computer__4) >= - 2147483648 .
+H143:  fld_tickcount(computer__4) <= 2147483647 .
+H144:  fld_next(computer__4) >= - 2147483648 .
+H145:  fld_next(computer__4) <= 2147483647 .
+H146:  fld_count(computer__4) >= - 2147483648 .
+H147:  fld_count(computer__4) <= 2147483647 .
+H148:  fld_upperbound(computer__4) >= - 1 .
+H149:  fld_upperbound(computer__4) <= 300 .
+H150:  normal <= fld_state(computer__4) .
+H151:  fld_state(computer__4) <= tar .
+H152:  fld_rate(computer__4) >= - 1 .
+H153:  fld_rate(computer__4) <= 300 .
+H154:  fld_ison(computer__4) .
+H155:  fld_state(computer__5) = fib <-> fld_state(computer__4) <> fib and (
+          fld_heartratehistory1(computer__5) <> - 1 and 
+          fld_tickstoreenabledetectionagain(computer__5) = 0 and 
+          fld_history_variance(computer__5) > 100) .
+H156:  fld_history_variance(computer__5) >= - 2147483648 .
+H157:  fld_history_variance(computer__5) <= 2147483647 .
+H158:  fld_history_avarage(computer__5) >= - 2147483648 .
+H159:  fld_history_avarage(computer__5) <= 2147483647 .
+H160:  fld_heartratehistory6(computer__5) >= - 1 .
+H161:  fld_heartratehistory6(computer__5) <= 300 .
+H162:  fld_heartratehistory5(computer__5) >= - 1 .
+H163:  fld_heartratehistory5(computer__5) <= 300 .
+H164:  fld_heartratehistory4(computer__5) >= - 1 .
+H165:  fld_heartratehistory4(computer__5) <= 300 .
+H166:  fld_heartratehistory3(computer__5) >= - 1 .
+H167:  fld_heartratehistory3(computer__5) <= 300 .
+H168:  fld_heartratehistory2(computer__5) >= - 1 .
+H169:  fld_heartratehistory2(computer__5) <= 300 .
+H170:  fld_heartratehistory1(computer__5) >= - 1 .
+H171:  fld_heartratehistory1(computer__5) <= 300 .
+H172:  fld_tickstoreenabledetectionagain(computer__5) >= - 2147483648 .
+H173:  fld_tickstoreenabledetectionagain(computer__5) <= 2147483647 .
+H174:  fld_tickcount(computer__5) >= - 2147483648 .
+H175:  fld_tickcount(computer__5) <= 2147483647 .
+H176:  fld_next(computer__5) >= - 2147483648 .
+H177:  fld_next(computer__5) <= 2147483647 .
+H178:  fld_count(computer__5) >= - 2147483648 .
+H179:  fld_count(computer__5) <= 2147483647 .
+H180:  fld_upperbound(computer__5) >= - 1 .
+H181:  fld_upperbound(computer__5) <= 300 .
+H182:  normal <= fld_state(computer__5) .
+H183:  fld_state(computer__5) <= tar .
+H184:  fld_rate(computer__5) >= - 1 .
+H185:  fld_rate(computer__5) <= 300 .
+H186:  fld_history_variance(computer__6) >= - 2147483648 .
+H187:  fld_history_variance(computer__6) <= 2147483647 .
+H188:  fld_history_avarage(computer__6) >= - 2147483648 .
+H189:  fld_history_avarage(computer__6) <= 2147483647 .
+H190:  fld_heartratehistory6(computer__6) >= - 1 .
+H191:  fld_heartratehistory6(computer__6) <= 300 .
+H192:  fld_heartratehistory5(computer__6) >= - 1 .
+H193:  fld_heartratehistory5(computer__6) <= 300 .
+H194:  fld_heartratehistory4(computer__6) >= - 1 .
+H195:  fld_heartratehistory4(computer__6) <= 300 .
+H196:  fld_heartratehistory3(computer__6) >= - 1 .
+H197:  fld_heartratehistory3(computer__6) <= 300 .
+H198:  fld_heartratehistory2(computer__6) >= - 1 .
+H199:  fld_heartratehistory2(computer__6) <= 300 .
+H200:  fld_heartratehistory1(computer__6) >= - 1 .
+H201:  fld_heartratehistory1(computer__6) <= 300 .
+H202:  fld_tickstoreenabledetectionagain(computer__6) >= - 2147483648 .
+H203:  fld_tickstoreenabledetectionagain(computer__6) <= 2147483647 .
+H204:  fld_tickcount(computer__6) >= - 2147483648 .
+H205:  fld_tickcount(computer__6) <= 2147483647 .
+H206:  fld_next(computer__6) >= - 2147483648 .
+H207:  fld_next(computer__6) <= 2147483647 .
+H208:  fld_count(computer__6) >= - 2147483648 .
+H209:  fld_count(computer__6) <= 2147483647 .
+H210:  fld_upperbound(computer__6) >= - 1 .
+H211:  fld_upperbound(computer__6) <= 300 .
+H212:  normal <= fld_state(computer__6) .
+H213:  fld_state(computer__6) <= tar .
+H214:  fld_rate(computer__6) >= - 1 .
+H215:  fld_rate(computer__6) <= 300 .
+H216:  fld_history_variance(computer__7) >= - 2147483648 .
+H217:  fld_history_variance(computer__7) <= 2147483647 .
+H218:  fld_history_avarage(computer__7) >= - 2147483648 .
+H219:  fld_history_avarage(computer__7) <= 2147483647 .
+H220:  fld_heartratehistory6(computer__7) >= - 1 .
+H221:  fld_heartratehistory6(computer__7) <= 300 .
+H222:  fld_heartratehistory5(computer__7) >= - 1 .
+H223:  fld_heartratehistory5(computer__7) <= 300 .
+H224:  fld_heartratehistory4(computer__7) >= - 1 .
+H225:  fld_heartratehistory4(computer__7) <= 300 .
+H226:  fld_heartratehistory3(computer__7) >= - 1 .
+H227:  fld_heartratehistory3(computer__7) <= 300 .
+H228:  fld_heartratehistory2(computer__7) >= - 1 .
+H229:  fld_heartratehistory2(computer__7) <= 300 .
+H230:  fld_heartratehistory1(computer__7) >= - 1 .
+H231:  fld_heartratehistory1(computer__7) <= 300 .
+H232:  fld_tickstoreenabledetectionagain(computer__7) >= - 2147483648 .
+H233:  fld_tickstoreenabledetectionagain(computer__7) <= 2147483647 .
+H234:  fld_tickcount(computer__7) >= - 2147483648 .
+H235:  fld_tickcount(computer__7) <= 2147483647 .
+H236:  fld_next(computer__7) >= - 2147483648 .
+H237:  fld_next(computer__7) <= 2147483647 .
+H238:  fld_count(computer__7) >= - 2147483648 .
+H239:  fld_count(computer__7) <= 2147483647 .
+H240:  fld_upperbound(computer__7) >= - 1 .
+H241:  fld_upperbound(computer__7) <= 300 .
+H242:  normal <= fld_state(computer__7) .
+H243:  fld_state(computer__7) <= tar .
+H244:  fld_rate(computer__7) >= - 1 .
+H245:  fld_rate(computer__7) <= 300 .
+H246:  fld_impulse(shock__7) >= 0 .
+H247:  fld_impulse(shock__7) <= 45 .
+H248:  not fld_inprocess(computer__7) or fld_state(computer__7) <> tar .
+H249:  fld_ison(computer) .
+H250:  integer__size >= 0 .
+H251:  measures__joules__size >= 0 .
+H252:  measures__bpm__size >= 0 .
+H253:  impulsegenerator__generatortype__size >= 0 .
+H254:  hrm__hrmtype__size >= 0 .
+H255:  icdstates__size >= 0 .
+H256:  icdtype__size >= 0 .
+       ->
+C1:    not fld_ison(computer__7) -> fld_rate(computer__7) = - 1 .
+
+
+procedure_tick_7.
+*** true .          /* all conclusions proved */
+
+

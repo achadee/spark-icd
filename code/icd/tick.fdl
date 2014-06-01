@@ -1,0 +1,79 @@
+           {*******************************************************}
+                               {FDL Declarations}
+                              {Examiner GPL 2011}
+             {Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.}
+           {*******************************************************}
+
+
+                        {DATE : 01-JUN-2014 19:41:14.85}
+
+                             {procedure ICD.Tick}
+
+
+title procedure tick;
+
+  function round__(real) : integer;
+  type icdstates = (normal, fib, tar);
+  type impulsegenerator__generatortype = record
+        impulse : integer;
+        ison : boolean
+     end;
+  type hrm__hrmtype = record
+        rate : integer;
+        ison : boolean
+     end;
+  type icdtype = record
+        rate : integer;
+        inprocess : boolean;
+        ison : boolean;
+        state : icdstates;
+        upperbound : integer;
+        count : integer;
+        next : integer;
+        tickcount : integer;
+        tickstoreenabledetectionagain : integer;
+        heartratehistory1 : integer;
+        heartratehistory2 : integer;
+        heartratehistory3 : integer;
+        heartratehistory4 : integer;
+        heartratehistory5 : integer;
+        heartratehistory6 : integer;
+        history_avarage : integer;
+        history_variance : integer
+     end;
+  const icdstates__base__first : icdstates = pending; 
+  const icdstates__base__last : icdstates = pending; 
+  const measures__bpm__base__first : integer = pending; 
+  const measures__bpm__base__last : integer = pending; 
+  const measures__joules__base__first : integer = pending; 
+  const measures__joules__base__last : integer = pending; 
+  const integer__base__first : integer = pending; 
+  const integer__base__last : integer = pending; 
+  const icdtype__size : integer = pending; 
+  const icdstates__first : icdstates = pending; 
+  const icdstates__last : icdstates = pending; 
+  const icdstates__size : integer = pending; 
+  const hrm__hrmtype__size : integer = pending; 
+  const impulsegenerator__generatortype__size : integer = pending; 
+  const measures__bpm__first : integer = pending; 
+  const measures__bpm__last : integer = pending; 
+  const measures__bpm__size : integer = pending; 
+  const measures__joules__first : integer = pending; 
+  const measures__joules__last : integer = pending; 
+  const measures__joules__size : integer = pending; 
+  const integer__first : integer = pending; 
+  const integer__last : integer = pending; 
+  const integer__size : integer = pending; 
+  var computer : icdtype;
+  var heartratemonitor : hrm__hrmtype;
+  var shock : impulsegenerator__generatortype;
+  var shock__7 : impulsegenerator__generatortype;
+  var computer__7 : icdtype;
+  var computer__6 : icdtype;
+  var computer__5 : icdtype;
+  var computer__4 : icdtype;
+  var computer__3 : icdtype;
+  var computer__2 : icdtype;
+  var computer__1 : icdtype;
+
+end;

@@ -1,0 +1,40 @@
+*****************************************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+*****************************************************************************
+
+
+CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:28
+
+SPARK Simplifier GPL 2011
+Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+
+procedure HRM.On
+
+
+
+
+
+
+@@@@@@@@@@  VC: procedure_on_1.  @@@@@@@@@@
+%%%  Simplified H9 on reading formula in, to give:
+     %%%  H9:  fld_ison(monitor__1)
+***  Proved C1:  fld_rate(monitor__1) >= measures__bpm__first
+     using hypothesis H7.
+***  Proved C2:  fld_rate(monitor__1) <= measures__bpm__last
+     using hypothesis H8.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_on_2.  @@@@@@@@@@
+%%%  Simplified H9 on reading formula in, to give:
+     %%%  H9:  fld_ison(monitor__1)
+---  Hypothesis H11 has been replaced by "true".  (It is already present, as H7)
+          .
+---  Hypothesis H12 has been replaced by "true".  (It is already present, as H8)
+          .
+***  Proved C1:  fld_ison(monitor__1)
+     using hypothesis H9.
+***  PROVED VC.
+

@@ -1,0 +1,25 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 01-JUN-2014 19:41:14.33
+
+                             procedure HRM.Off
+
+
+
+
+For path(s) from start to finish:
+
+procedure_off_1.
+H1:    true .
+H2:    true .
+H3:    fld_rate(monitor) >= measures__bpm__first .
+H4:    fld_rate(monitor) <= measures__bpm__last .
+        ->
+C1:    not (fld_ison(upf_ison(monitor, false))) .
+ 
+

@@ -1,0 +1,98 @@
+           *******************************************************
+                            Listing of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 01-JUN-2014 19:41:14.38
+
+Line
+   1  with Heart;
+   2  with RandomNumber; 
+   3  
+   4  package body HRM is
+   5     
+   6     Error : constant Float := 0.02;  -- The error margin of the pump readings
+   7     
+   8     procedure Init(Monitor : out HRMType) is
+   9     begin
+  10        Monitor.IsOn := False;
+  11        Monitor.Rate := Measures.BPM'First;
+  12     end Init;
+
++++        Flow analysis of subprogram Init performed: no 
+           errors found.
+
+  13  
+  14     procedure On(Monitor : out HRMType; Hrt : in Heart.HeartType) is
+  15     begin
+  16       -- Get an initial reading for the heart
+  17        Monitor.IsOn := True;
+  18        Heart.GetRate(Hrt, Monitor.Rate);
+  19     end On;
+
++++        Flow analysis of subprogram On performed: no 
+           errors found.
+
+  20        
+  21     procedure Off(Monitor : in out HRMType) is
+  22     begin
+  23        Monitor.IsOn := False;
+  24     end Off;
+
++++        Flow analysis of subprogram Off performed: no 
+           errors found.
+
+  25     
+  26     function IsOn(Monitor : in HRMType) return Boolean is
+  27     begin
+  28        return Monitor.IsOn;
+  29     end IsOn;
+
++++        Flow analysis of subprogram IsOn performed: no 
+           errors found.
+
+  30     
+  31     procedure GetRate(Monitor : in HRMType;
+  32  		     Rate : out Measures.BPM) is
+  33     begin
+  34        if Monitor.IsOn then
+  35  	 Rate := Monitor.Rate;
+  36        else
+  37  	 Rate := Measures.BPM'First;
+  38        end if;
+  39     end GetRate;
+
++++        Flow analysis of subprogram GetRate performed: 
+           no errors found.
+
+  40     
+  41     procedure Tick(Monitor : in out HRMType; Hrt : in Heart.HeartType) is
+  42     begin
+  43        if Monitor.IsOn then
+  44  	 -- read the heart rate from the heart
+  45  	 Heart.GetRate(Hrt, Monitor.Rate);
+  46  	 
+  47  	 -- Insert some random variation
+  48  	 Monitor.Rate := 
+  49  	   Measures.LimitBPM(RandomNumber.UniformIntegerWithError(Monitor.Rate, 
+  50  								  Error));
+  51        else
+  52  	 -- If the monitor is not on, return 0 for both values
+  53  	 Monitor.Rate := Measures.BPM'First;
+  54        end if; 
+  55        
+  56     end Tick;
+
++++        Flow analysis of subprogram Tick performed: no 
+           errors found.
+
+  57  end HRM;
+1 summarized warning(s), comprising:
+     1 generation of RTCs on real numbers*
+(*Note: the above warnings may affect the validity of the analysis.)
+
+
+
+--End of file--------------------------------------------------

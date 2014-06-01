@@ -1,0 +1,70 @@
+*****************************************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+*****************************************************************************
+
+
+CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:40
+
+SPARK Simplifier GPL 2011
+Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+
+function Measures.LimitBPM
+
+
+
+
+
+
+@@@@@@@@@@  VC: function_limitbpm_1.  @@@@@@@@@@
+***  Proved C6:  input >= integer__first
+     using hypothesis H2.
+***  Proved C7:  input <= integer__last
+     using hypothesis H3.
+-S-  Applied substitution rule limitbpm_rules(7).
+     This was achieved by replacing all occurrences of bpm__first by:
+          - 1.
+<S>  New C1:  - 1 <= bpm__last
+<S>  New C4:  - 1 >= integer__first
+<S>  New C5:  - 1 <= integer__last
+-S-  Applied substitution rule limitbpm_rules(8).
+     This was achieved by replacing all occurrences of bpm__last by:
+          300.
+<S>  New C2:  300 >= integer__first
+<S>  New C3:  300 <= integer__last
+<S>  New C1:  true
+-S-  Applied substitution rule limitbpm_rules(2).
+     This was achieved by replacing all occurrences of integer__first by:
+          - 2147483648.
+<S>  New H2:  input >= - 2147483648
+<S>  New C4:  true
+<S>  New C2:  true
+-S-  Applied substitution rule limitbpm_rules(3).
+     This was achieved by replacing all occurrences of integer__last by:
+          2147483647.
+<S>  New H3:  input <= 2147483647
+<S>  New C5:  true
+<S>  New C3:  true
+***  Proved C1:  true
+***  Proved C4:  true
+***  Proved C2:  true
+***  Proved C5:  true
+***  Proved C3:  true
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: function_limitbpm_2.  @@@@@@@@@@
+---  Hypothesis H9 has been replaced by "true".  (It is already present, as H2).
+---  Hypothesis H10 has been replaced by "true".  (It is already present, as H3)
+          .
+***  Proved C1:  bpm__first <= limit(input, bpm__first, bpm__last)
+     using hypothesis H13.
+***  Proved C2:  limit(input, bpm__first, bpm__last) <= bpm__last
+     using hypothesis H14.
+***  Proved C3:  limit(input, bpm__first, bpm__last) >= bpm__first
+     using hypothesis H13.
+***  Proved C4:  limit(input, bpm__first, bpm__last) <= bpm__last
+     using hypothesis H14.
+***  PROVED VC.
+

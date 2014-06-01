@@ -1,0 +1,134 @@
+*****************************************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+*****************************************************************************
+
+
+CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:32
+
+SPARK Simplifier GPL 2011
+Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+
+function ICD.power
+
+
+
+
+
+
+@@@@@@@@@@  VC: function_power_1.  @@@@@@@@@@
+%%%  Simplified C2 on reading formula in, to give:
+     %%%  C2:  true
+***  Proved C1:  integer__last >= integer__first
+     using hypotheses H2 & H3.
+***  Proved C2:  true
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: function_power_2.  @@@@@@@@@@
+%%%  Simplified H5 on reading formula in, to give:
+     %%%  H5:  true
+-S-  Applied substitution rule power_rules(4).
+     This was achieved by replacing all occurrences of integer__base__first by:
+          - 2147483648.
+<S>  New C1:  num * num >= - 2147483648
+<S>  New C3:  num * num >= - 2147483648
+-S-  Applied substitution rule power_rules(5).
+     This was achieved by replacing all occurrences of integer__base__last by:
+          2147483647.
+<S>  New C2:  num * num <= 2147483647
+<S>  New C4:  num * num <= 2147483647
+-S-  Applied substitution rule power_rules(2).
+     This was achieved by replacing all occurrences of integer__first by:
+          - 2147483648.
+<S>  New H2:  num >= - 2147483648
+<S>  New H4:  integer__last >= - 2147483648
+-S-  Applied substitution rule power_rules(3).
+     This was achieved by replacing all occurrences of integer__last by:
+          2147483647.
+<S>  New H3:  num <= 2147483647
+<S>  New H4:  true
+---  Eliminated hypothesis H5 (true-hypothesis).
+---  Eliminated hypothesis H4 (true-hypothesis).
+---  Eliminated conclusion C3, which is a duplicate of C1.
+---  Eliminated conclusion C4, which is a duplicate of C2.
+     +++  New H6:  integer__size >= 0
+
+
+@@@@@@@@@@  VC: function_power_3.  @@@@@@@@@@
+%%%  Simplified H5 on reading formula in, to give:
+     %%%  H5:  true
+---  Hypothesis H8 has been replaced by "true".  (It is already present, as H6).
+---  Hypothesis H9 has been replaced by "true".  (It is already present, as H7).
+***  Proved C1:  num * num >= integer__first
+     using hypothesis H11.
+***  Proved C2:  num * num <= integer__last
+     using hypothesis H10.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: function_power_4.  @@@@@@@@@@
+%%%  Simplified H5 on reading formula in, to give:
+     %%%  H5:  true
+---  Hypothesis H8 has been replaced by "true".  (It is already present, as H6).
+---  Hypothesis H9 has been replaced by "true".  (It is already present, as H7).
+---  Hypothesis H14 has been replaced by "true".  (It is already present, as 
+          H12).
+---  Hypothesis H15 has been replaced by "true".  (It is already present, as 
+          H13).
+%%%  Simplified C1 on reading formula in, to give:
+     %%%  C1:  true
+***  Proved C1:  true
+***  Proved C2:  num * num >= integer__first
+     using hypothesis H12.
+***  Proved C3:  num * num <= integer__last
+     using hypothesis H13.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: function_power_5.  @@@@@@@@@@
+%%%  Simplified H5 on reading formula in, to give:
+     %%%  H5:  true
+---  Hypothesis H8 has been replaced by "true".  (It is already present, as H6).
+---  Hypothesis H9 has been replaced by "true".  (It is already present, as H7).
+---  Hypothesis H11 has been replaced by "true".  (It is already present, as H4)
+          .
+---  Hypothesis H12 has been replaced by "true".  (It is already present, as H5)
+          .
+%%%  Simplified C3 on reading formula in, to give:
+     %%%  C3:  true
+***  Proved C2:  integer__last >= integer__first
+     using hypothesis H4.
+***  Proved C3:  true
+>>>  Restructured hypothesis H10 into:
+     >>>  H10:  integer__last <= num * num or num * num <= integer__first
+-S-  Applied substitution rule power_rules(2).
+     This was achieved by replacing all occurrences of integer__first by:
+          - 2147483648.
+<S>  New H2:  num >= - 2147483648
+<S>  New H4:  integer__last >= - 2147483648
+<S>  New H10:  integer__last <= num * num or num * num <= - 2147483648
+-S-  Applied substitution rule power_rules(3).
+     This was achieved by replacing all occurrences of integer__last by:
+          2147483647.
+<S>  New H3:  num <= 2147483647
+<S>  New H4:  true
+<S>  New H10:  2147483647 <= num * num or num * num <= - 2147483648
+<S>  New C1:  2147483647 = num * num
+-S-  Applied substitution rule power_rules(4).
+     This was achieved by replacing all occurrences of integer__base__first by:
+          - 2147483648.
+<S>  New H6:  num * num >= - 2147483648
+-S-  Applied substitution rule power_rules(5).
+     This was achieved by replacing all occurrences of integer__base__last by:
+          2147483647.
+<S>  New H7:  num * num <= 2147483647
+---  Eliminated hypothesis H5 (true-hypothesis).
+---  Eliminated hypothesis H8 (true-hypothesis).
+---  Eliminated hypothesis H9 (true-hypothesis).
+---  Eliminated hypothesis H11 (true-hypothesis).
+---  Eliminated hypothesis H12 (true-hypothesis).
+---  Eliminated hypothesis H4 (true-hypothesis).
+     +++  New H13:  integer__size >= 0
+

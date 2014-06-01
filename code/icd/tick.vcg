@@ -1,0 +1,1346 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 01-JUN-2014 19:41:14.85
+
+                             procedure ICD.Tick
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 197:
+
+procedure_tick_1.
+H1:    true .
+H2:    fld_history_variance(computer) >= integer__first .
+H3:    fld_history_variance(computer) <= integer__last .
+H4:    fld_history_avarage(computer) >= integer__first .
+H5:    fld_history_avarage(computer) <= integer__last .
+H6:    fld_heartratehistory6(computer) >= measures__bpm__first .
+H7:    fld_heartratehistory6(computer) <= measures__bpm__last .
+H8:    fld_heartratehistory5(computer) >= measures__bpm__first .
+H9:    fld_heartratehistory5(computer) <= measures__bpm__last .
+H10:   fld_heartratehistory4(computer) >= measures__bpm__first .
+H11:   fld_heartratehistory4(computer) <= measures__bpm__last .
+H12:   fld_heartratehistory3(computer) >= measures__bpm__first .
+H13:   fld_heartratehistory3(computer) <= measures__bpm__last .
+H14:   fld_heartratehistory2(computer) >= measures__bpm__first .
+H15:   fld_heartratehistory2(computer) <= measures__bpm__last .
+H16:   fld_heartratehistory1(computer) >= measures__bpm__first .
+H17:   fld_heartratehistory1(computer) <= measures__bpm__last .
+H18:   fld_tickstoreenabledetectionagain(computer) >= 
+           integer__first .
+H19:   fld_tickstoreenabledetectionagain(computer) <= 
+           integer__last .
+H20:   fld_tickcount(computer) >= integer__first .
+H21:   fld_tickcount(computer) <= integer__last .
+H22:   fld_next(computer) >= integer__first .
+H23:   fld_next(computer) <= integer__last .
+H24:   fld_count(computer) >= integer__first .
+H25:   fld_count(computer) <= integer__last .
+H26:   fld_upperbound(computer) >= measures__bpm__first .
+H27:   fld_upperbound(computer) <= measures__bpm__last .
+H28:   fld_state(computer) >= icdstates__first .
+H29:   fld_state(computer) <= icdstates__last .
+H30:   true .
+H31:   true .
+H32:   fld_rate(computer) >= measures__bpm__first .
+H33:   fld_rate(computer) <= measures__bpm__last .
+H34:   true .
+H35:   fld_rate(heartratemonitor) >= measures__bpm__first .
+H36:   fld_rate(heartratemonitor) <= measures__bpm__last .
+H37:   true .
+H38:   fld_impulse(shock) >= measures__joules__first .
+H39:   fld_impulse(shock) <= measures__joules__last .
+H40:   fld_ison(computer) .
+H41:   fld_ison(heartratemonitor) -> (fld_rate(computer__1) = fld_rate(
+           heartratemonitor)) .
+H42:   (not (fld_ison(heartratemonitor))) -> (fld_rate(computer__1) = 
+           measures__bpm__first) .
+H43:   fld_rate(computer__1) >= measures__bpm__first .
+H44:   fld_rate(computer__1) <= measures__bpm__last .
+H45:   fld_inprocess(computer__1) = fld_inprocess(computer) .
+H46:   fld_ison(computer__1) = fld_ison(computer) .
+H47:   fld_state(computer__1) = fld_state(computer) .
+H48:   fld_upperbound(computer__1) = fld_upperbound(
+           computer) .
+H49:   fld_count(computer__1) = fld_count(computer) .
+H50:   fld_next(computer__1) = fld_next(computer) .
+H51:   fld_tickcount(computer__1) = fld_tickcount(computer) .
+H52:   fld_tickstoreenabledetectionagain(computer__1) = 
+           fld_tickstoreenabledetectionagain(computer) .
+H53:   fld_heartratehistory1(computer__1) = fld_heartratehistory1(
+           computer) .
+H54:   fld_heartratehistory2(computer__1) = fld_heartratehistory2(
+           computer) .
+H55:   fld_heartratehistory3(computer__1) = fld_heartratehistory3(
+           computer) .
+H56:   fld_heartratehistory4(computer__1) = fld_heartratehistory4(
+           computer) .
+H57:   fld_heartratehistory5(computer__1) = fld_heartratehistory5(
+           computer) .
+H58:   fld_heartratehistory6(computer__1) = fld_heartratehistory6(
+           computer) .
+H59:   fld_history_avarage(computer__1) = fld_history_avarage(
+           computer) .
+H60:   fld_history_variance(computer__1) = fld_history_variance(
+           computer) .
+H61:   computer__1 = upf_rate(computer, fld_rate(computer__1)) .
+        ->
+C1:    fld_rate(computer__1) >= measures__bpm__first .
+C2:    fld_rate(computer__1) <= measures__bpm__last .
+ 
+
+For path(s) from start to precondition check associated with statement of line 201:
+
+procedure_tick_2.
+H1:    true .
+H2:    fld_history_variance(computer) >= integer__first .
+H3:    fld_history_variance(computer) <= integer__last .
+H4:    fld_history_avarage(computer) >= integer__first .
+H5:    fld_history_avarage(computer) <= integer__last .
+H6:    fld_heartratehistory6(computer) >= measures__bpm__first .
+H7:    fld_heartratehistory6(computer) <= measures__bpm__last .
+H8:    fld_heartratehistory5(computer) >= measures__bpm__first .
+H9:    fld_heartratehistory5(computer) <= measures__bpm__last .
+H10:   fld_heartratehistory4(computer) >= measures__bpm__first .
+H11:   fld_heartratehistory4(computer) <= measures__bpm__last .
+H12:   fld_heartratehistory3(computer) >= measures__bpm__first .
+H13:   fld_heartratehistory3(computer) <= measures__bpm__last .
+H14:   fld_heartratehistory2(computer) >= measures__bpm__first .
+H15:   fld_heartratehistory2(computer) <= measures__bpm__last .
+H16:   fld_heartratehistory1(computer) >= measures__bpm__first .
+H17:   fld_heartratehistory1(computer) <= measures__bpm__last .
+H18:   fld_tickstoreenabledetectionagain(computer) >= 
+           integer__first .
+H19:   fld_tickstoreenabledetectionagain(computer) <= 
+           integer__last .
+H20:   fld_tickcount(computer) >= integer__first .
+H21:   fld_tickcount(computer) <= integer__last .
+H22:   fld_next(computer) >= integer__first .
+H23:   fld_next(computer) <= integer__last .
+H24:   fld_count(computer) >= integer__first .
+H25:   fld_count(computer) <= integer__last .
+H26:   fld_upperbound(computer) >= measures__bpm__first .
+H27:   fld_upperbound(computer) <= measures__bpm__last .
+H28:   fld_state(computer) >= icdstates__first .
+H29:   fld_state(computer) <= icdstates__last .
+H30:   true .
+H31:   true .
+H32:   fld_rate(computer) >= measures__bpm__first .
+H33:   fld_rate(computer) <= measures__bpm__last .
+H34:   true .
+H35:   fld_rate(heartratemonitor) >= measures__bpm__first .
+H36:   fld_rate(heartratemonitor) <= measures__bpm__last .
+H37:   true .
+H38:   fld_impulse(shock) >= measures__joules__first .
+H39:   fld_impulse(shock) <= measures__joules__last .
+H40:   fld_ison(computer) .
+H41:   fld_ison(heartratemonitor) -> (fld_rate(computer__1) = fld_rate(
+           heartratemonitor)) .
+H42:   (not (fld_ison(heartratemonitor))) -> (fld_rate(computer__1) = 
+           measures__bpm__first) .
+H43:   fld_rate(computer__1) >= measures__bpm__first .
+H44:   fld_rate(computer__1) <= measures__bpm__last .
+H45:   fld_inprocess(computer__1) = fld_inprocess(computer) .
+H46:   fld_ison(computer__1) = fld_ison(computer) .
+H47:   fld_state(computer__1) = fld_state(computer) .
+H48:   fld_upperbound(computer__1) = fld_upperbound(
+           computer) .
+H49:   fld_count(computer__1) = fld_count(computer) .
+H50:   fld_next(computer__1) = fld_next(computer) .
+H51:   fld_tickcount(computer__1) = fld_tickcount(computer) .
+H52:   fld_tickstoreenabledetectionagain(computer__1) = 
+           fld_tickstoreenabledetectionagain(computer) .
+H53:   fld_heartratehistory1(computer__1) = fld_heartratehistory1(
+           computer) .
+H54:   fld_heartratehistory2(computer__1) = fld_heartratehistory2(
+           computer) .
+H55:   fld_heartratehistory3(computer__1) = fld_heartratehistory3(
+           computer) .
+H56:   fld_heartratehistory4(computer__1) = fld_heartratehistory4(
+           computer) .
+H57:   fld_heartratehistory5(computer__1) = fld_heartratehistory5(
+           computer) .
+H58:   fld_heartratehistory6(computer__1) = fld_heartratehistory6(
+           computer) .
+H59:   fld_history_avarage(computer__1) = fld_history_avarage(
+           computer) .
+H60:   fld_history_variance(computer__1) = fld_history_variance(
+           computer) .
+H61:   computer__1 = upf_rate(computer, fld_rate(computer__1)) .
+H62:   fld_rate(computer__1) >= measures__bpm__first .
+H63:   fld_rate(computer__1) <= measures__bpm__last .
+H64:   fld_heartratehistory1(computer__2) = fld_heartratehistory2(
+           computer__1) .
+H65:   fld_heartratehistory2(computer__2) = fld_heartratehistory3(
+           computer__1) .
+H66:   fld_heartratehistory3(computer__2) = fld_heartratehistory4(
+           computer__1) .
+H67:   fld_heartratehistory4(computer__2) = fld_heartratehistory5(
+           computer__1) .
+H68:   fld_heartratehistory5(computer__2) = fld_heartratehistory6(
+           computer__1) .
+H69:   fld_heartratehistory6(computer__2) = fld_rate(computer__2) .
+H70:   fld_history_variance(computer__2) >= integer__first .
+H71:   fld_history_variance(computer__2) <= integer__last .
+H72:   fld_history_avarage(computer__2) >= integer__first .
+H73:   fld_history_avarage(computer__2) <= integer__last .
+H74:   fld_heartratehistory6(computer__2) >= measures__bpm__first .
+H75:   fld_heartratehistory6(computer__2) <= measures__bpm__last .
+H76:   fld_heartratehistory5(computer__2) >= measures__bpm__first .
+H77:   fld_heartratehistory5(computer__2) <= measures__bpm__last .
+H78:   fld_heartratehistory4(computer__2) >= measures__bpm__first .
+H79:   fld_heartratehistory4(computer__2) <= measures__bpm__last .
+H80:   fld_heartratehistory3(computer__2) >= measures__bpm__first .
+H81:   fld_heartratehistory3(computer__2) <= measures__bpm__last .
+H82:   fld_heartratehistory2(computer__2) >= measures__bpm__first .
+H83:   fld_heartratehistory2(computer__2) <= measures__bpm__last .
+H84:   fld_heartratehistory1(computer__2) >= measures__bpm__first .
+H85:   fld_heartratehistory1(computer__2) <= measures__bpm__last .
+H86:   fld_tickstoreenabledetectionagain(computer__2) >= 
+           integer__first .
+H87:   fld_tickstoreenabledetectionagain(computer__2) <= 
+           integer__last .
+H88:   fld_tickcount(computer__2) >= integer__first .
+H89:   fld_tickcount(computer__2) <= integer__last .
+H90:   fld_next(computer__2) >= integer__first .
+H91:   fld_next(computer__2) <= integer__last .
+H92:   fld_count(computer__2) >= integer__first .
+H93:   fld_count(computer__2) <= integer__last .
+H94:   fld_upperbound(computer__2) >= measures__bpm__first .
+H95:   fld_upperbound(computer__2) <= measures__bpm__last .
+H96:   fld_state(computer__2) >= icdstates__first .
+H97:   fld_state(computer__2) <= icdstates__last .
+H98:   true .
+H99:   true .
+H100:  fld_rate(computer__2) >= measures__bpm__first .
+H101:  fld_rate(computer__2) <= measures__bpm__last .
+H102:  fld_history_avarage(computer__3) = (fld_heartratehistory1(
+           computer__3) + fld_heartratehistory2(computer__3) + 
+           fld_heartratehistory3(computer__3) + fld_heartratehistory4(
+           computer__3) + fld_heartratehistory5(computer__3) + 
+           fld_heartratehistory6(computer__3)) div 6 .
+H103:  fld_history_variance(computer__3) >= integer__first .
+H104:  fld_history_variance(computer__3) <= integer__last .
+H105:  fld_history_avarage(computer__3) >= integer__first .
+H106:  fld_history_avarage(computer__3) <= integer__last .
+H107:  fld_heartratehistory6(computer__3) >= measures__bpm__first .
+H108:  fld_heartratehistory6(computer__3) <= measures__bpm__last .
+H109:  fld_heartratehistory5(computer__3) >= measures__bpm__first .
+H110:  fld_heartratehistory5(computer__3) <= measures__bpm__last .
+H111:  fld_heartratehistory4(computer__3) >= measures__bpm__first .
+H112:  fld_heartratehistory4(computer__3) <= measures__bpm__last .
+H113:  fld_heartratehistory3(computer__3) >= measures__bpm__first .
+H114:  fld_heartratehistory3(computer__3) <= measures__bpm__last .
+H115:  fld_heartratehistory2(computer__3) >= measures__bpm__first .
+H116:  fld_heartratehistory2(computer__3) <= measures__bpm__last .
+H117:  fld_heartratehistory1(computer__3) >= measures__bpm__first .
+H118:  fld_heartratehistory1(computer__3) <= measures__bpm__last .
+H119:  fld_tickstoreenabledetectionagain(computer__3) >= 
+           integer__first .
+H120:  fld_tickstoreenabledetectionagain(computer__3) <= 
+           integer__last .
+H121:  fld_tickcount(computer__3) >= integer__first .
+H122:  fld_tickcount(computer__3) <= integer__last .
+H123:  fld_next(computer__3) >= integer__first .
+H124:  fld_next(computer__3) <= integer__last .
+H125:  fld_count(computer__3) >= integer__first .
+H126:  fld_count(computer__3) <= integer__last .
+H127:  fld_upperbound(computer__3) >= measures__bpm__first .
+H128:  fld_upperbound(computer__3) <= measures__bpm__last .
+H129:  fld_state(computer__3) >= icdstates__first .
+H130:  fld_state(computer__3) <= icdstates__last .
+H131:  true .
+H132:  true .
+H133:  fld_rate(computer__3) >= measures__bpm__first .
+H134:  fld_rate(computer__3) <= measures__bpm__last .
+H135:  fld_history_variance(computer__4) >= integer__first .
+H136:  fld_history_variance(computer__4) <= integer__last .
+H137:  fld_history_avarage(computer__4) >= integer__first .
+H138:  fld_history_avarage(computer__4) <= integer__last .
+H139:  fld_heartratehistory6(computer__4) >= measures__bpm__first .
+H140:  fld_heartratehistory6(computer__4) <= measures__bpm__last .
+H141:  fld_heartratehistory5(computer__4) >= measures__bpm__first .
+H142:  fld_heartratehistory5(computer__4) <= measures__bpm__last .
+H143:  fld_heartratehistory4(computer__4) >= measures__bpm__first .
+H144:  fld_heartratehistory4(computer__4) <= measures__bpm__last .
+H145:  fld_heartratehistory3(computer__4) >= measures__bpm__first .
+H146:  fld_heartratehistory3(computer__4) <= measures__bpm__last .
+H147:  fld_heartratehistory2(computer__4) >= measures__bpm__first .
+H148:  fld_heartratehistory2(computer__4) <= measures__bpm__last .
+H149:  fld_heartratehistory1(computer__4) >= measures__bpm__first .
+H150:  fld_heartratehistory1(computer__4) <= measures__bpm__last .
+H151:  fld_tickstoreenabledetectionagain(computer__4) >= 
+           integer__first .
+H152:  fld_tickstoreenabledetectionagain(computer__4) <= 
+           integer__last .
+H153:  fld_tickcount(computer__4) >= integer__first .
+H154:  fld_tickcount(computer__4) <= integer__last .
+H155:  fld_next(computer__4) >= integer__first .
+H156:  fld_next(computer__4) <= integer__last .
+H157:  fld_count(computer__4) >= integer__first .
+H158:  fld_count(computer__4) <= integer__last .
+H159:  fld_upperbound(computer__4) >= measures__bpm__first .
+H160:  fld_upperbound(computer__4) <= measures__bpm__last .
+H161:  fld_state(computer__4) >= icdstates__first .
+H162:  fld_state(computer__4) <= icdstates__last .
+H163:  true .
+H164:  true .
+H165:  fld_rate(computer__4) >= measures__bpm__first .
+H166:  fld_rate(computer__4) <= measures__bpm__last .
+        ->
+C1:    fld_ison(computer__4) = true .
+ 
+
+For path(s) from start to run-time check associated with statement of line 205:
+
+procedure_tick_3.
+H1:    true .
+H2:    fld_history_variance(computer) >= integer__first .
+H3:    fld_history_variance(computer) <= integer__last .
+H4:    fld_history_avarage(computer) >= integer__first .
+H5:    fld_history_avarage(computer) <= integer__last .
+H6:    fld_heartratehistory6(computer) >= measures__bpm__first .
+H7:    fld_heartratehistory6(computer) <= measures__bpm__last .
+H8:    fld_heartratehistory5(computer) >= measures__bpm__first .
+H9:    fld_heartratehistory5(computer) <= measures__bpm__last .
+H10:   fld_heartratehistory4(computer) >= measures__bpm__first .
+H11:   fld_heartratehistory4(computer) <= measures__bpm__last .
+H12:   fld_heartratehistory3(computer) >= measures__bpm__first .
+H13:   fld_heartratehistory3(computer) <= measures__bpm__last .
+H14:   fld_heartratehistory2(computer) >= measures__bpm__first .
+H15:   fld_heartratehistory2(computer) <= measures__bpm__last .
+H16:   fld_heartratehistory1(computer) >= measures__bpm__first .
+H17:   fld_heartratehistory1(computer) <= measures__bpm__last .
+H18:   fld_tickstoreenabledetectionagain(computer) >= 
+           integer__first .
+H19:   fld_tickstoreenabledetectionagain(computer) <= 
+           integer__last .
+H20:   fld_tickcount(computer) >= integer__first .
+H21:   fld_tickcount(computer) <= integer__last .
+H22:   fld_next(computer) >= integer__first .
+H23:   fld_next(computer) <= integer__last .
+H24:   fld_count(computer) >= integer__first .
+H25:   fld_count(computer) <= integer__last .
+H26:   fld_upperbound(computer) >= measures__bpm__first .
+H27:   fld_upperbound(computer) <= measures__bpm__last .
+H28:   fld_state(computer) >= icdstates__first .
+H29:   fld_state(computer) <= icdstates__last .
+H30:   true .
+H31:   true .
+H32:   fld_rate(computer) >= measures__bpm__first .
+H33:   fld_rate(computer) <= measures__bpm__last .
+H34:   true .
+H35:   fld_rate(heartratemonitor) >= measures__bpm__first .
+H36:   fld_rate(heartratemonitor) <= measures__bpm__last .
+H37:   true .
+H38:   fld_impulse(shock) >= measures__joules__first .
+H39:   fld_impulse(shock) <= measures__joules__last .
+H40:   fld_ison(computer) .
+H41:   fld_ison(heartratemonitor) -> (fld_rate(computer__1) = fld_rate(
+           heartratemonitor)) .
+H42:   (not (fld_ison(heartratemonitor))) -> (fld_rate(computer__1) = 
+           measures__bpm__first) .
+H43:   fld_rate(computer__1) >= measures__bpm__first .
+H44:   fld_rate(computer__1) <= measures__bpm__last .
+H45:   fld_inprocess(computer__1) = fld_inprocess(computer) .
+H46:   fld_ison(computer__1) = fld_ison(computer) .
+H47:   fld_state(computer__1) = fld_state(computer) .
+H48:   fld_upperbound(computer__1) = fld_upperbound(
+           computer) .
+H49:   fld_count(computer__1) = fld_count(computer) .
+H50:   fld_next(computer__1) = fld_next(computer) .
+H51:   fld_tickcount(computer__1) = fld_tickcount(computer) .
+H52:   fld_tickstoreenabledetectionagain(computer__1) = 
+           fld_tickstoreenabledetectionagain(computer) .
+H53:   fld_heartratehistory1(computer__1) = fld_heartratehistory1(
+           computer) .
+H54:   fld_heartratehistory2(computer__1) = fld_heartratehistory2(
+           computer) .
+H55:   fld_heartratehistory3(computer__1) = fld_heartratehistory3(
+           computer) .
+H56:   fld_heartratehistory4(computer__1) = fld_heartratehistory4(
+           computer) .
+H57:   fld_heartratehistory5(computer__1) = fld_heartratehistory5(
+           computer) .
+H58:   fld_heartratehistory6(computer__1) = fld_heartratehistory6(
+           computer) .
+H59:   fld_history_avarage(computer__1) = fld_history_avarage(
+           computer) .
+H60:   fld_history_variance(computer__1) = fld_history_variance(
+           computer) .
+H61:   computer__1 = upf_rate(computer, fld_rate(computer__1)) .
+H62:   fld_rate(computer__1) >= measures__bpm__first .
+H63:   fld_rate(computer__1) <= measures__bpm__last .
+H64:   fld_heartratehistory1(computer__2) = fld_heartratehistory2(
+           computer__1) .
+H65:   fld_heartratehistory2(computer__2) = fld_heartratehistory3(
+           computer__1) .
+H66:   fld_heartratehistory3(computer__2) = fld_heartratehistory4(
+           computer__1) .
+H67:   fld_heartratehistory4(computer__2) = fld_heartratehistory5(
+           computer__1) .
+H68:   fld_heartratehistory5(computer__2) = fld_heartratehistory6(
+           computer__1) .
+H69:   fld_heartratehistory6(computer__2) = fld_rate(computer__2) .
+H70:   fld_history_variance(computer__2) >= integer__first .
+H71:   fld_history_variance(computer__2) <= integer__last .
+H72:   fld_history_avarage(computer__2) >= integer__first .
+H73:   fld_history_avarage(computer__2) <= integer__last .
+H74:   fld_heartratehistory6(computer__2) >= measures__bpm__first .
+H75:   fld_heartratehistory6(computer__2) <= measures__bpm__last .
+H76:   fld_heartratehistory5(computer__2) >= measures__bpm__first .
+H77:   fld_heartratehistory5(computer__2) <= measures__bpm__last .
+H78:   fld_heartratehistory4(computer__2) >= measures__bpm__first .
+H79:   fld_heartratehistory4(computer__2) <= measures__bpm__last .
+H80:   fld_heartratehistory3(computer__2) >= measures__bpm__first .
+H81:   fld_heartratehistory3(computer__2) <= measures__bpm__last .
+H82:   fld_heartratehistory2(computer__2) >= measures__bpm__first .
+H83:   fld_heartratehistory2(computer__2) <= measures__bpm__last .
+H84:   fld_heartratehistory1(computer__2) >= measures__bpm__first .
+H85:   fld_heartratehistory1(computer__2) <= measures__bpm__last .
+H86:   fld_tickstoreenabledetectionagain(computer__2) >= 
+           integer__first .
+H87:   fld_tickstoreenabledetectionagain(computer__2) <= 
+           integer__last .
+H88:   fld_tickcount(computer__2) >= integer__first .
+H89:   fld_tickcount(computer__2) <= integer__last .
+H90:   fld_next(computer__2) >= integer__first .
+H91:   fld_next(computer__2) <= integer__last .
+H92:   fld_count(computer__2) >= integer__first .
+H93:   fld_count(computer__2) <= integer__last .
+H94:   fld_upperbound(computer__2) >= measures__bpm__first .
+H95:   fld_upperbound(computer__2) <= measures__bpm__last .
+H96:   fld_state(computer__2) >= icdstates__first .
+H97:   fld_state(computer__2) <= icdstates__last .
+H98:   true .
+H99:   true .
+H100:  fld_rate(computer__2) >= measures__bpm__first .
+H101:  fld_rate(computer__2) <= measures__bpm__last .
+H102:  fld_history_avarage(computer__3) = (fld_heartratehistory1(
+           computer__3) + fld_heartratehistory2(computer__3) + 
+           fld_heartratehistory3(computer__3) + fld_heartratehistory4(
+           computer__3) + fld_heartratehistory5(computer__3) + 
+           fld_heartratehistory6(computer__3)) div 6 .
+H103:  fld_history_variance(computer__3) >= integer__first .
+H104:  fld_history_variance(computer__3) <= integer__last .
+H105:  fld_history_avarage(computer__3) >= integer__first .
+H106:  fld_history_avarage(computer__3) <= integer__last .
+H107:  fld_heartratehistory6(computer__3) >= measures__bpm__first .
+H108:  fld_heartratehistory6(computer__3) <= measures__bpm__last .
+H109:  fld_heartratehistory5(computer__3) >= measures__bpm__first .
+H110:  fld_heartratehistory5(computer__3) <= measures__bpm__last .
+H111:  fld_heartratehistory4(computer__3) >= measures__bpm__first .
+H112:  fld_heartratehistory4(computer__3) <= measures__bpm__last .
+H113:  fld_heartratehistory3(computer__3) >= measures__bpm__first .
+H114:  fld_heartratehistory3(computer__3) <= measures__bpm__last .
+H115:  fld_heartratehistory2(computer__3) >= measures__bpm__first .
+H116:  fld_heartratehistory2(computer__3) <= measures__bpm__last .
+H117:  fld_heartratehistory1(computer__3) >= measures__bpm__first .
+H118:  fld_heartratehistory1(computer__3) <= measures__bpm__last .
+H119:  fld_tickstoreenabledetectionagain(computer__3) >= 
+           integer__first .
+H120:  fld_tickstoreenabledetectionagain(computer__3) <= 
+           integer__last .
+H121:  fld_tickcount(computer__3) >= integer__first .
+H122:  fld_tickcount(computer__3) <= integer__last .
+H123:  fld_next(computer__3) >= integer__first .
+H124:  fld_next(computer__3) <= integer__last .
+H125:  fld_count(computer__3) >= integer__first .
+H126:  fld_count(computer__3) <= integer__last .
+H127:  fld_upperbound(computer__3) >= measures__bpm__first .
+H128:  fld_upperbound(computer__3) <= measures__bpm__last .
+H129:  fld_state(computer__3) >= icdstates__first .
+H130:  fld_state(computer__3) <= icdstates__last .
+H131:  true .
+H132:  true .
+H133:  fld_rate(computer__3) >= measures__bpm__first .
+H134:  fld_rate(computer__3) <= measures__bpm__last .
+H135:  fld_history_variance(computer__4) >= integer__first .
+H136:  fld_history_variance(computer__4) <= integer__last .
+H137:  fld_history_avarage(computer__4) >= integer__first .
+H138:  fld_history_avarage(computer__4) <= integer__last .
+H139:  fld_heartratehistory6(computer__4) >= measures__bpm__first .
+H140:  fld_heartratehistory6(computer__4) <= measures__bpm__last .
+H141:  fld_heartratehistory5(computer__4) >= measures__bpm__first .
+H142:  fld_heartratehistory5(computer__4) <= measures__bpm__last .
+H143:  fld_heartratehistory4(computer__4) >= measures__bpm__first .
+H144:  fld_heartratehistory4(computer__4) <= measures__bpm__last .
+H145:  fld_heartratehistory3(computer__4) >= measures__bpm__first .
+H146:  fld_heartratehistory3(computer__4) <= measures__bpm__last .
+H147:  fld_heartratehistory2(computer__4) >= measures__bpm__first .
+H148:  fld_heartratehistory2(computer__4) <= measures__bpm__last .
+H149:  fld_heartratehistory1(computer__4) >= measures__bpm__first .
+H150:  fld_heartratehistory1(computer__4) <= measures__bpm__last .
+H151:  fld_tickstoreenabledetectionagain(computer__4) >= 
+           integer__first .
+H152:  fld_tickstoreenabledetectionagain(computer__4) <= 
+           integer__last .
+H153:  fld_tickcount(computer__4) >= integer__first .
+H154:  fld_tickcount(computer__4) <= integer__last .
+H155:  fld_next(computer__4) >= integer__first .
+H156:  fld_next(computer__4) <= integer__last .
+H157:  fld_count(computer__4) >= integer__first .
+H158:  fld_count(computer__4) <= integer__last .
+H159:  fld_upperbound(computer__4) >= measures__bpm__first .
+H160:  fld_upperbound(computer__4) <= measures__bpm__last .
+H161:  fld_state(computer__4) >= icdstates__first .
+H162:  fld_state(computer__4) <= icdstates__last .
+H163:  true .
+H164:  true .
+H165:  fld_rate(computer__4) >= measures__bpm__first .
+H166:  fld_rate(computer__4) <= measures__bpm__last .
+H167:  fld_ison(computer__4) = true .
+H168:  (fld_state(computer__5) = fib) <-> ((fld_state(computer__4) <> 
+           fib) and (((fld_heartratehistory1(computer__5) <>  -1) and (
+           fld_tickstoreenabledetectionagain(computer__5) = 0)) and (
+           fld_history_variance(computer__5) > 100))) .
+H169:  fld_history_variance(computer__5) >= integer__first .
+H170:  fld_history_variance(computer__5) <= integer__last .
+H171:  fld_history_avarage(computer__5) >= integer__first .
+H172:  fld_history_avarage(computer__5) <= integer__last .
+H173:  fld_heartratehistory6(computer__5) >= measures__bpm__first .
+H174:  fld_heartratehistory6(computer__5) <= measures__bpm__last .
+H175:  fld_heartratehistory5(computer__5) >= measures__bpm__first .
+H176:  fld_heartratehistory5(computer__5) <= measures__bpm__last .
+H177:  fld_heartratehistory4(computer__5) >= measures__bpm__first .
+H178:  fld_heartratehistory4(computer__5) <= measures__bpm__last .
+H179:  fld_heartratehistory3(computer__5) >= measures__bpm__first .
+H180:  fld_heartratehistory3(computer__5) <= measures__bpm__last .
+H181:  fld_heartratehistory2(computer__5) >= measures__bpm__first .
+H182:  fld_heartratehistory2(computer__5) <= measures__bpm__last .
+H183:  fld_heartratehistory1(computer__5) >= measures__bpm__first .
+H184:  fld_heartratehistory1(computer__5) <= measures__bpm__last .
+H185:  fld_tickstoreenabledetectionagain(computer__5) >= 
+           integer__first .
+H186:  fld_tickstoreenabledetectionagain(computer__5) <= 
+           integer__last .
+H187:  fld_tickcount(computer__5) >= integer__first .
+H188:  fld_tickcount(computer__5) <= integer__last .
+H189:  fld_next(computer__5) >= integer__first .
+H190:  fld_next(computer__5) <= integer__last .
+H191:  fld_count(computer__5) >= integer__first .
+H192:  fld_count(computer__5) <= integer__last .
+H193:  fld_upperbound(computer__5) >= measures__bpm__first .
+H194:  fld_upperbound(computer__5) <= measures__bpm__last .
+H195:  fld_state(computer__5) >= icdstates__first .
+H196:  fld_state(computer__5) <= icdstates__last .
+H197:  true .
+H198:  true .
+H199:  fld_rate(computer__5) >= measures__bpm__first .
+H200:  fld_rate(computer__5) <= measures__bpm__last .
+H201:  fld_history_variance(computer__6) >= integer__first .
+H202:  fld_history_variance(computer__6) <= integer__last .
+H203:  fld_history_avarage(computer__6) >= integer__first .
+H204:  fld_history_avarage(computer__6) <= integer__last .
+H205:  fld_heartratehistory6(computer__6) >= measures__bpm__first .
+H206:  fld_heartratehistory6(computer__6) <= measures__bpm__last .
+H207:  fld_heartratehistory5(computer__6) >= measures__bpm__first .
+H208:  fld_heartratehistory5(computer__6) <= measures__bpm__last .
+H209:  fld_heartratehistory4(computer__6) >= measures__bpm__first .
+H210:  fld_heartratehistory4(computer__6) <= measures__bpm__last .
+H211:  fld_heartratehistory3(computer__6) >= measures__bpm__first .
+H212:  fld_heartratehistory3(computer__6) <= measures__bpm__last .
+H213:  fld_heartratehistory2(computer__6) >= measures__bpm__first .
+H214:  fld_heartratehistory2(computer__6) <= measures__bpm__last .
+H215:  fld_heartratehistory1(computer__6) >= measures__bpm__first .
+H216:  fld_heartratehistory1(computer__6) <= measures__bpm__last .
+H217:  fld_tickstoreenabledetectionagain(computer__6) >= 
+           integer__first .
+H218:  fld_tickstoreenabledetectionagain(computer__6) <= 
+           integer__last .
+H219:  fld_tickcount(computer__6) >= integer__first .
+H220:  fld_tickcount(computer__6) <= integer__last .
+H221:  fld_next(computer__6) >= integer__first .
+H222:  fld_next(computer__6) <= integer__last .
+H223:  fld_count(computer__6) >= integer__first .
+H224:  fld_count(computer__6) <= integer__last .
+H225:  fld_upperbound(computer__6) >= measures__bpm__first .
+H226:  fld_upperbound(computer__6) <= measures__bpm__last .
+H227:  fld_state(computer__6) >= icdstates__first .
+H228:  fld_state(computer__6) <= icdstates__last .
+H229:  true .
+H230:  true .
+H231:  fld_rate(computer__6) >= measures__bpm__first .
+H232:  fld_rate(computer__6) <= measures__bpm__last .
+H233:  fld_history_variance(computer__7) >= integer__first .
+H234:  fld_history_variance(computer__7) <= integer__last .
+H235:  fld_history_avarage(computer__7) >= integer__first .
+H236:  fld_history_avarage(computer__7) <= integer__last .
+H237:  fld_heartratehistory6(computer__7) >= measures__bpm__first .
+H238:  fld_heartratehistory6(computer__7) <= measures__bpm__last .
+H239:  fld_heartratehistory5(computer__7) >= measures__bpm__first .
+H240:  fld_heartratehistory5(computer__7) <= measures__bpm__last .
+H241:  fld_heartratehistory4(computer__7) >= measures__bpm__first .
+H242:  fld_heartratehistory4(computer__7) <= measures__bpm__last .
+H243:  fld_heartratehistory3(computer__7) >= measures__bpm__first .
+H244:  fld_heartratehistory3(computer__7) <= measures__bpm__last .
+H245:  fld_heartratehistory2(computer__7) >= measures__bpm__first .
+H246:  fld_heartratehistory2(computer__7) <= measures__bpm__last .
+H247:  fld_heartratehistory1(computer__7) >= measures__bpm__first .
+H248:  fld_heartratehistory1(computer__7) <= measures__bpm__last .
+H249:  fld_tickstoreenabledetectionagain(computer__7) >= 
+           integer__first .
+H250:  fld_tickstoreenabledetectionagain(computer__7) <= 
+           integer__last .
+H251:  fld_tickcount(computer__7) >= integer__first .
+H252:  fld_tickcount(computer__7) <= integer__last .
+H253:  fld_next(computer__7) >= integer__first .
+H254:  fld_next(computer__7) <= integer__last .
+H255:  fld_count(computer__7) >= integer__first .
+H256:  fld_count(computer__7) <= integer__last .
+H257:  fld_upperbound(computer__7) >= measures__bpm__first .
+H258:  fld_upperbound(computer__7) <= measures__bpm__last .
+H259:  fld_state(computer__7) >= icdstates__first .
+H260:  fld_state(computer__7) <= icdstates__last .
+H261:  true .
+H262:  true .
+H263:  fld_rate(computer__7) >= measures__bpm__first .
+H264:  fld_rate(computer__7) <= measures__bpm__last .
+H265:  true .
+H266:  fld_impulse(shock__7) >= measures__joules__first .
+H267:  fld_impulse(shock__7) <= measures__joules__last .
+H268:  fld_inprocess(computer__7) .
+H269:  fld_state(computer__7) = tar .
+        ->
+C1:    fld_tickcount(computer__7) - 1 >= integer__first .
+C2:    fld_tickcount(computer__7) - 1 <= integer__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 210:
+
+procedure_tick_4.
+H1:    true .
+H2:    fld_history_variance(computer) >= integer__first .
+H3:    fld_history_variance(computer) <= integer__last .
+H4:    fld_history_avarage(computer) >= integer__first .
+H5:    fld_history_avarage(computer) <= integer__last .
+H6:    fld_heartratehistory6(computer) >= measures__bpm__first .
+H7:    fld_heartratehistory6(computer) <= measures__bpm__last .
+H8:    fld_heartratehistory5(computer) >= measures__bpm__first .
+H9:    fld_heartratehistory5(computer) <= measures__bpm__last .
+H10:   fld_heartratehistory4(computer) >= measures__bpm__first .
+H11:   fld_heartratehistory4(computer) <= measures__bpm__last .
+H12:   fld_heartratehistory3(computer) >= measures__bpm__first .
+H13:   fld_heartratehistory3(computer) <= measures__bpm__last .
+H14:   fld_heartratehistory2(computer) >= measures__bpm__first .
+H15:   fld_heartratehistory2(computer) <= measures__bpm__last .
+H16:   fld_heartratehistory1(computer) >= measures__bpm__first .
+H17:   fld_heartratehistory1(computer) <= measures__bpm__last .
+H18:   fld_tickstoreenabledetectionagain(computer) >= 
+           integer__first .
+H19:   fld_tickstoreenabledetectionagain(computer) <= 
+           integer__last .
+H20:   fld_tickcount(computer) >= integer__first .
+H21:   fld_tickcount(computer) <= integer__last .
+H22:   fld_next(computer) >= integer__first .
+H23:   fld_next(computer) <= integer__last .
+H24:   fld_count(computer) >= integer__first .
+H25:   fld_count(computer) <= integer__last .
+H26:   fld_upperbound(computer) >= measures__bpm__first .
+H27:   fld_upperbound(computer) <= measures__bpm__last .
+H28:   fld_state(computer) >= icdstates__first .
+H29:   fld_state(computer) <= icdstates__last .
+H30:   true .
+H31:   true .
+H32:   fld_rate(computer) >= measures__bpm__first .
+H33:   fld_rate(computer) <= measures__bpm__last .
+H34:   true .
+H35:   fld_rate(heartratemonitor) >= measures__bpm__first .
+H36:   fld_rate(heartratemonitor) <= measures__bpm__last .
+H37:   true .
+H38:   fld_impulse(shock) >= measures__joules__first .
+H39:   fld_impulse(shock) <= measures__joules__last .
+H40:   not (fld_ison(computer)) .
+        ->
+C1:    measures__bpm__first >= measures__bpm__first .
+C2:    measures__bpm__first <= measures__bpm__last .
+ 
+
+For path(s) from start to finish:
+
+procedure_tick_5.
+H1:    true .
+H2:    fld_history_variance(computer) >= integer__first .
+H3:    fld_history_variance(computer) <= integer__last .
+H4:    fld_history_avarage(computer) >= integer__first .
+H5:    fld_history_avarage(computer) <= integer__last .
+H6:    fld_heartratehistory6(computer) >= measures__bpm__first .
+H7:    fld_heartratehistory6(computer) <= measures__bpm__last .
+H8:    fld_heartratehistory5(computer) >= measures__bpm__first .
+H9:    fld_heartratehistory5(computer) <= measures__bpm__last .
+H10:   fld_heartratehistory4(computer) >= measures__bpm__first .
+H11:   fld_heartratehistory4(computer) <= measures__bpm__last .
+H12:   fld_heartratehistory3(computer) >= measures__bpm__first .
+H13:   fld_heartratehistory3(computer) <= measures__bpm__last .
+H14:   fld_heartratehistory2(computer) >= measures__bpm__first .
+H15:   fld_heartratehistory2(computer) <= measures__bpm__last .
+H16:   fld_heartratehistory1(computer) >= measures__bpm__first .
+H17:   fld_heartratehistory1(computer) <= measures__bpm__last .
+H18:   fld_tickstoreenabledetectionagain(computer) >= 
+           integer__first .
+H19:   fld_tickstoreenabledetectionagain(computer) <= 
+           integer__last .
+H20:   fld_tickcount(computer) >= integer__first .
+H21:   fld_tickcount(computer) <= integer__last .
+H22:   fld_next(computer) >= integer__first .
+H23:   fld_next(computer) <= integer__last .
+H24:   fld_count(computer) >= integer__first .
+H25:   fld_count(computer) <= integer__last .
+H26:   fld_upperbound(computer) >= measures__bpm__first .
+H27:   fld_upperbound(computer) <= measures__bpm__last .
+H28:   fld_state(computer) >= icdstates__first .
+H29:   fld_state(computer) <= icdstates__last .
+H30:   true .
+H31:   true .
+H32:   fld_rate(computer) >= measures__bpm__first .
+H33:   fld_rate(computer) <= measures__bpm__last .
+H34:   true .
+H35:   fld_rate(heartratemonitor) >= measures__bpm__first .
+H36:   fld_rate(heartratemonitor) <= measures__bpm__last .
+H37:   true .
+H38:   fld_impulse(shock) >= measures__joules__first .
+H39:   fld_impulse(shock) <= measures__joules__last .
+H40:   fld_ison(computer) .
+H41:   fld_ison(heartratemonitor) -> (fld_rate(computer__1) = fld_rate(
+           heartratemonitor)) .
+H42:   (not (fld_ison(heartratemonitor))) -> (fld_rate(computer__1) = 
+           measures__bpm__first) .
+H43:   fld_rate(computer__1) >= measures__bpm__first .
+H44:   fld_rate(computer__1) <= measures__bpm__last .
+H45:   fld_inprocess(computer__1) = fld_inprocess(computer) .
+H46:   fld_ison(computer__1) = fld_ison(computer) .
+H47:   fld_state(computer__1) = fld_state(computer) .
+H48:   fld_upperbound(computer__1) = fld_upperbound(
+           computer) .
+H49:   fld_count(computer__1) = fld_count(computer) .
+H50:   fld_next(computer__1) = fld_next(computer) .
+H51:   fld_tickcount(computer__1) = fld_tickcount(computer) .
+H52:   fld_tickstoreenabledetectionagain(computer__1) = 
+           fld_tickstoreenabledetectionagain(computer) .
+H53:   fld_heartratehistory1(computer__1) = fld_heartratehistory1(
+           computer) .
+H54:   fld_heartratehistory2(computer__1) = fld_heartratehistory2(
+           computer) .
+H55:   fld_heartratehistory3(computer__1) = fld_heartratehistory3(
+           computer) .
+H56:   fld_heartratehistory4(computer__1) = fld_heartratehistory4(
+           computer) .
+H57:   fld_heartratehistory5(computer__1) = fld_heartratehistory5(
+           computer) .
+H58:   fld_heartratehistory6(computer__1) = fld_heartratehistory6(
+           computer) .
+H59:   fld_history_avarage(computer__1) = fld_history_avarage(
+           computer) .
+H60:   fld_history_variance(computer__1) = fld_history_variance(
+           computer) .
+H61:   computer__1 = upf_rate(computer, fld_rate(computer__1)) .
+H62:   fld_rate(computer__1) >= measures__bpm__first .
+H63:   fld_rate(computer__1) <= measures__bpm__last .
+H64:   fld_heartratehistory1(computer__2) = fld_heartratehistory2(
+           computer__1) .
+H65:   fld_heartratehistory2(computer__2) = fld_heartratehistory3(
+           computer__1) .
+H66:   fld_heartratehistory3(computer__2) = fld_heartratehistory4(
+           computer__1) .
+H67:   fld_heartratehistory4(computer__2) = fld_heartratehistory5(
+           computer__1) .
+H68:   fld_heartratehistory5(computer__2) = fld_heartratehistory6(
+           computer__1) .
+H69:   fld_heartratehistory6(computer__2) = fld_rate(computer__2) .
+H70:   fld_history_variance(computer__2) >= integer__first .
+H71:   fld_history_variance(computer__2) <= integer__last .
+H72:   fld_history_avarage(computer__2) >= integer__first .
+H73:   fld_history_avarage(computer__2) <= integer__last .
+H74:   fld_heartratehistory6(computer__2) >= measures__bpm__first .
+H75:   fld_heartratehistory6(computer__2) <= measures__bpm__last .
+H76:   fld_heartratehistory5(computer__2) >= measures__bpm__first .
+H77:   fld_heartratehistory5(computer__2) <= measures__bpm__last .
+H78:   fld_heartratehistory4(computer__2) >= measures__bpm__first .
+H79:   fld_heartratehistory4(computer__2) <= measures__bpm__last .
+H80:   fld_heartratehistory3(computer__2) >= measures__bpm__first .
+H81:   fld_heartratehistory3(computer__2) <= measures__bpm__last .
+H82:   fld_heartratehistory2(computer__2) >= measures__bpm__first .
+H83:   fld_heartratehistory2(computer__2) <= measures__bpm__last .
+H84:   fld_heartratehistory1(computer__2) >= measures__bpm__first .
+H85:   fld_heartratehistory1(computer__2) <= measures__bpm__last .
+H86:   fld_tickstoreenabledetectionagain(computer__2) >= 
+           integer__first .
+H87:   fld_tickstoreenabledetectionagain(computer__2) <= 
+           integer__last .
+H88:   fld_tickcount(computer__2) >= integer__first .
+H89:   fld_tickcount(computer__2) <= integer__last .
+H90:   fld_next(computer__2) >= integer__first .
+H91:   fld_next(computer__2) <= integer__last .
+H92:   fld_count(computer__2) >= integer__first .
+H93:   fld_count(computer__2) <= integer__last .
+H94:   fld_upperbound(computer__2) >= measures__bpm__first .
+H95:   fld_upperbound(computer__2) <= measures__bpm__last .
+H96:   fld_state(computer__2) >= icdstates__first .
+H97:   fld_state(computer__2) <= icdstates__last .
+H98:   true .
+H99:   true .
+H100:  fld_rate(computer__2) >= measures__bpm__first .
+H101:  fld_rate(computer__2) <= measures__bpm__last .
+H102:  fld_history_avarage(computer__3) = (fld_heartratehistory1(
+           computer__3) + fld_heartratehistory2(computer__3) + 
+           fld_heartratehistory3(computer__3) + fld_heartratehistory4(
+           computer__3) + fld_heartratehistory5(computer__3) + 
+           fld_heartratehistory6(computer__3)) div 6 .
+H103:  fld_history_variance(computer__3) >= integer__first .
+H104:  fld_history_variance(computer__3) <= integer__last .
+H105:  fld_history_avarage(computer__3) >= integer__first .
+H106:  fld_history_avarage(computer__3) <= integer__last .
+H107:  fld_heartratehistory6(computer__3) >= measures__bpm__first .
+H108:  fld_heartratehistory6(computer__3) <= measures__bpm__last .
+H109:  fld_heartratehistory5(computer__3) >= measures__bpm__first .
+H110:  fld_heartratehistory5(computer__3) <= measures__bpm__last .
+H111:  fld_heartratehistory4(computer__3) >= measures__bpm__first .
+H112:  fld_heartratehistory4(computer__3) <= measures__bpm__last .
+H113:  fld_heartratehistory3(computer__3) >= measures__bpm__first .
+H114:  fld_heartratehistory3(computer__3) <= measures__bpm__last .
+H115:  fld_heartratehistory2(computer__3) >= measures__bpm__first .
+H116:  fld_heartratehistory2(computer__3) <= measures__bpm__last .
+H117:  fld_heartratehistory1(computer__3) >= measures__bpm__first .
+H118:  fld_heartratehistory1(computer__3) <= measures__bpm__last .
+H119:  fld_tickstoreenabledetectionagain(computer__3) >= 
+           integer__first .
+H120:  fld_tickstoreenabledetectionagain(computer__3) <= 
+           integer__last .
+H121:  fld_tickcount(computer__3) >= integer__first .
+H122:  fld_tickcount(computer__3) <= integer__last .
+H123:  fld_next(computer__3) >= integer__first .
+H124:  fld_next(computer__3) <= integer__last .
+H125:  fld_count(computer__3) >= integer__first .
+H126:  fld_count(computer__3) <= integer__last .
+H127:  fld_upperbound(computer__3) >= measures__bpm__first .
+H128:  fld_upperbound(computer__3) <= measures__bpm__last .
+H129:  fld_state(computer__3) >= icdstates__first .
+H130:  fld_state(computer__3) <= icdstates__last .
+H131:  true .
+H132:  true .
+H133:  fld_rate(computer__3) >= measures__bpm__first .
+H134:  fld_rate(computer__3) <= measures__bpm__last .
+H135:  fld_history_variance(computer__4) >= integer__first .
+H136:  fld_history_variance(computer__4) <= integer__last .
+H137:  fld_history_avarage(computer__4) >= integer__first .
+H138:  fld_history_avarage(computer__4) <= integer__last .
+H139:  fld_heartratehistory6(computer__4) >= measures__bpm__first .
+H140:  fld_heartratehistory6(computer__4) <= measures__bpm__last .
+H141:  fld_heartratehistory5(computer__4) >= measures__bpm__first .
+H142:  fld_heartratehistory5(computer__4) <= measures__bpm__last .
+H143:  fld_heartratehistory4(computer__4) >= measures__bpm__first .
+H144:  fld_heartratehistory4(computer__4) <= measures__bpm__last .
+H145:  fld_heartratehistory3(computer__4) >= measures__bpm__first .
+H146:  fld_heartratehistory3(computer__4) <= measures__bpm__last .
+H147:  fld_heartratehistory2(computer__4) >= measures__bpm__first .
+H148:  fld_heartratehistory2(computer__4) <= measures__bpm__last .
+H149:  fld_heartratehistory1(computer__4) >= measures__bpm__first .
+H150:  fld_heartratehistory1(computer__4) <= measures__bpm__last .
+H151:  fld_tickstoreenabledetectionagain(computer__4) >= 
+           integer__first .
+H152:  fld_tickstoreenabledetectionagain(computer__4) <= 
+           integer__last .
+H153:  fld_tickcount(computer__4) >= integer__first .
+H154:  fld_tickcount(computer__4) <= integer__last .
+H155:  fld_next(computer__4) >= integer__first .
+H156:  fld_next(computer__4) <= integer__last .
+H157:  fld_count(computer__4) >= integer__first .
+H158:  fld_count(computer__4) <= integer__last .
+H159:  fld_upperbound(computer__4) >= measures__bpm__first .
+H160:  fld_upperbound(computer__4) <= measures__bpm__last .
+H161:  fld_state(computer__4) >= icdstates__first .
+H162:  fld_state(computer__4) <= icdstates__last .
+H163:  true .
+H164:  true .
+H165:  fld_rate(computer__4) >= measures__bpm__first .
+H166:  fld_rate(computer__4) <= measures__bpm__last .
+H167:  fld_ison(computer__4) = true .
+H168:  (fld_state(computer__5) = fib) <-> ((fld_state(computer__4) <> 
+           fib) and (((fld_heartratehistory1(computer__5) <>  -1) and (
+           fld_tickstoreenabledetectionagain(computer__5) = 0)) and (
+           fld_history_variance(computer__5) > 100))) .
+H169:  fld_history_variance(computer__5) >= integer__first .
+H170:  fld_history_variance(computer__5) <= integer__last .
+H171:  fld_history_avarage(computer__5) >= integer__first .
+H172:  fld_history_avarage(computer__5) <= integer__last .
+H173:  fld_heartratehistory6(computer__5) >= measures__bpm__first .
+H174:  fld_heartratehistory6(computer__5) <= measures__bpm__last .
+H175:  fld_heartratehistory5(computer__5) >= measures__bpm__first .
+H176:  fld_heartratehistory5(computer__5) <= measures__bpm__last .
+H177:  fld_heartratehistory4(computer__5) >= measures__bpm__first .
+H178:  fld_heartratehistory4(computer__5) <= measures__bpm__last .
+H179:  fld_heartratehistory3(computer__5) >= measures__bpm__first .
+H180:  fld_heartratehistory3(computer__5) <= measures__bpm__last .
+H181:  fld_heartratehistory2(computer__5) >= measures__bpm__first .
+H182:  fld_heartratehistory2(computer__5) <= measures__bpm__last .
+H183:  fld_heartratehistory1(computer__5) >= measures__bpm__first .
+H184:  fld_heartratehistory1(computer__5) <= measures__bpm__last .
+H185:  fld_tickstoreenabledetectionagain(computer__5) >= 
+           integer__first .
+H186:  fld_tickstoreenabledetectionagain(computer__5) <= 
+           integer__last .
+H187:  fld_tickcount(computer__5) >= integer__first .
+H188:  fld_tickcount(computer__5) <= integer__last .
+H189:  fld_next(computer__5) >= integer__first .
+H190:  fld_next(computer__5) <= integer__last .
+H191:  fld_count(computer__5) >= integer__first .
+H192:  fld_count(computer__5) <= integer__last .
+H193:  fld_upperbound(computer__5) >= measures__bpm__first .
+H194:  fld_upperbound(computer__5) <= measures__bpm__last .
+H195:  fld_state(computer__5) >= icdstates__first .
+H196:  fld_state(computer__5) <= icdstates__last .
+H197:  true .
+H198:  true .
+H199:  fld_rate(computer__5) >= measures__bpm__first .
+H200:  fld_rate(computer__5) <= measures__bpm__last .
+H201:  fld_history_variance(computer__6) >= integer__first .
+H202:  fld_history_variance(computer__6) <= integer__last .
+H203:  fld_history_avarage(computer__6) >= integer__first .
+H204:  fld_history_avarage(computer__6) <= integer__last .
+H205:  fld_heartratehistory6(computer__6) >= measures__bpm__first .
+H206:  fld_heartratehistory6(computer__6) <= measures__bpm__last .
+H207:  fld_heartratehistory5(computer__6) >= measures__bpm__first .
+H208:  fld_heartratehistory5(computer__6) <= measures__bpm__last .
+H209:  fld_heartratehistory4(computer__6) >= measures__bpm__first .
+H210:  fld_heartratehistory4(computer__6) <= measures__bpm__last .
+H211:  fld_heartratehistory3(computer__6) >= measures__bpm__first .
+H212:  fld_heartratehistory3(computer__6) <= measures__bpm__last .
+H213:  fld_heartratehistory2(computer__6) >= measures__bpm__first .
+H214:  fld_heartratehistory2(computer__6) <= measures__bpm__last .
+H215:  fld_heartratehistory1(computer__6) >= measures__bpm__first .
+H216:  fld_heartratehistory1(computer__6) <= measures__bpm__last .
+H217:  fld_tickstoreenabledetectionagain(computer__6) >= 
+           integer__first .
+H218:  fld_tickstoreenabledetectionagain(computer__6) <= 
+           integer__last .
+H219:  fld_tickcount(computer__6) >= integer__first .
+H220:  fld_tickcount(computer__6) <= integer__last .
+H221:  fld_next(computer__6) >= integer__first .
+H222:  fld_next(computer__6) <= integer__last .
+H223:  fld_count(computer__6) >= integer__first .
+H224:  fld_count(computer__6) <= integer__last .
+H225:  fld_upperbound(computer__6) >= measures__bpm__first .
+H226:  fld_upperbound(computer__6) <= measures__bpm__last .
+H227:  fld_state(computer__6) >= icdstates__first .
+H228:  fld_state(computer__6) <= icdstates__last .
+H229:  true .
+H230:  true .
+H231:  fld_rate(computer__6) >= measures__bpm__first .
+H232:  fld_rate(computer__6) <= measures__bpm__last .
+H233:  fld_history_variance(computer__7) >= integer__first .
+H234:  fld_history_variance(computer__7) <= integer__last .
+H235:  fld_history_avarage(computer__7) >= integer__first .
+H236:  fld_history_avarage(computer__7) <= integer__last .
+H237:  fld_heartratehistory6(computer__7) >= measures__bpm__first .
+H238:  fld_heartratehistory6(computer__7) <= measures__bpm__last .
+H239:  fld_heartratehistory5(computer__7) >= measures__bpm__first .
+H240:  fld_heartratehistory5(computer__7) <= measures__bpm__last .
+H241:  fld_heartratehistory4(computer__7) >= measures__bpm__first .
+H242:  fld_heartratehistory4(computer__7) <= measures__bpm__last .
+H243:  fld_heartratehistory3(computer__7) >= measures__bpm__first .
+H244:  fld_heartratehistory3(computer__7) <= measures__bpm__last .
+H245:  fld_heartratehistory2(computer__7) >= measures__bpm__first .
+H246:  fld_heartratehistory2(computer__7) <= measures__bpm__last .
+H247:  fld_heartratehistory1(computer__7) >= measures__bpm__first .
+H248:  fld_heartratehistory1(computer__7) <= measures__bpm__last .
+H249:  fld_tickstoreenabledetectionagain(computer__7) >= 
+           integer__first .
+H250:  fld_tickstoreenabledetectionagain(computer__7) <= 
+           integer__last .
+H251:  fld_tickcount(computer__7) >= integer__first .
+H252:  fld_tickcount(computer__7) <= integer__last .
+H253:  fld_next(computer__7) >= integer__first .
+H254:  fld_next(computer__7) <= integer__last .
+H255:  fld_count(computer__7) >= integer__first .
+H256:  fld_count(computer__7) <= integer__last .
+H257:  fld_upperbound(computer__7) >= measures__bpm__first .
+H258:  fld_upperbound(computer__7) <= measures__bpm__last .
+H259:  fld_state(computer__7) >= icdstates__first .
+H260:  fld_state(computer__7) <= icdstates__last .
+H261:  true .
+H262:  true .
+H263:  fld_rate(computer__7) >= measures__bpm__first .
+H264:  fld_rate(computer__7) <= measures__bpm__last .
+H265:  true .
+H266:  fld_impulse(shock__7) >= measures__joules__first .
+H267:  fld_impulse(shock__7) <= measures__joules__last .
+H268:  fld_inprocess(computer__7) .
+H269:  fld_state(computer__7) = tar .
+H270:  fld_tickcount(computer__7) - 1 >= integer__first .
+H271:  fld_tickcount(computer__7) - 1 <= integer__last .
+        ->
+C1:    (not (fld_ison(upf_tickcount(computer__7, fld_tickcount(
+           computer__7) - 1)))) -> (fld_rate(upf_tickcount(computer__7, 
+           fld_tickcount(computer__7) - 1)) = measures__bpm__first) .
+ 
+
+procedure_tick_6.
+H1:    true .
+H2:    fld_history_variance(computer) >= integer__first .
+H3:    fld_history_variance(computer) <= integer__last .
+H4:    fld_history_avarage(computer) >= integer__first .
+H5:    fld_history_avarage(computer) <= integer__last .
+H6:    fld_heartratehistory6(computer) >= measures__bpm__first .
+H7:    fld_heartratehistory6(computer) <= measures__bpm__last .
+H8:    fld_heartratehistory5(computer) >= measures__bpm__first .
+H9:    fld_heartratehistory5(computer) <= measures__bpm__last .
+H10:   fld_heartratehistory4(computer) >= measures__bpm__first .
+H11:   fld_heartratehistory4(computer) <= measures__bpm__last .
+H12:   fld_heartratehistory3(computer) >= measures__bpm__first .
+H13:   fld_heartratehistory3(computer) <= measures__bpm__last .
+H14:   fld_heartratehistory2(computer) >= measures__bpm__first .
+H15:   fld_heartratehistory2(computer) <= measures__bpm__last .
+H16:   fld_heartratehistory1(computer) >= measures__bpm__first .
+H17:   fld_heartratehistory1(computer) <= measures__bpm__last .
+H18:   fld_tickstoreenabledetectionagain(computer) >= 
+           integer__first .
+H19:   fld_tickstoreenabledetectionagain(computer) <= 
+           integer__last .
+H20:   fld_tickcount(computer) >= integer__first .
+H21:   fld_tickcount(computer) <= integer__last .
+H22:   fld_next(computer) >= integer__first .
+H23:   fld_next(computer) <= integer__last .
+H24:   fld_count(computer) >= integer__first .
+H25:   fld_count(computer) <= integer__last .
+H26:   fld_upperbound(computer) >= measures__bpm__first .
+H27:   fld_upperbound(computer) <= measures__bpm__last .
+H28:   fld_state(computer) >= icdstates__first .
+H29:   fld_state(computer) <= icdstates__last .
+H30:   true .
+H31:   true .
+H32:   fld_rate(computer) >= measures__bpm__first .
+H33:   fld_rate(computer) <= measures__bpm__last .
+H34:   true .
+H35:   fld_rate(heartratemonitor) >= measures__bpm__first .
+H36:   fld_rate(heartratemonitor) <= measures__bpm__last .
+H37:   true .
+H38:   fld_impulse(shock) >= measures__joules__first .
+H39:   fld_impulse(shock) <= measures__joules__last .
+H40:   fld_ison(computer) .
+H41:   fld_ison(heartratemonitor) -> (fld_rate(computer__1) = fld_rate(
+           heartratemonitor)) .
+H42:   (not (fld_ison(heartratemonitor))) -> (fld_rate(computer__1) = 
+           measures__bpm__first) .
+H43:   fld_rate(computer__1) >= measures__bpm__first .
+H44:   fld_rate(computer__1) <= measures__bpm__last .
+H45:   fld_inprocess(computer__1) = fld_inprocess(computer) .
+H46:   fld_ison(computer__1) = fld_ison(computer) .
+H47:   fld_state(computer__1) = fld_state(computer) .
+H48:   fld_upperbound(computer__1) = fld_upperbound(
+           computer) .
+H49:   fld_count(computer__1) = fld_count(computer) .
+H50:   fld_next(computer__1) = fld_next(computer) .
+H51:   fld_tickcount(computer__1) = fld_tickcount(computer) .
+H52:   fld_tickstoreenabledetectionagain(computer__1) = 
+           fld_tickstoreenabledetectionagain(computer) .
+H53:   fld_heartratehistory1(computer__1) = fld_heartratehistory1(
+           computer) .
+H54:   fld_heartratehistory2(computer__1) = fld_heartratehistory2(
+           computer) .
+H55:   fld_heartratehistory3(computer__1) = fld_heartratehistory3(
+           computer) .
+H56:   fld_heartratehistory4(computer__1) = fld_heartratehistory4(
+           computer) .
+H57:   fld_heartratehistory5(computer__1) = fld_heartratehistory5(
+           computer) .
+H58:   fld_heartratehistory6(computer__1) = fld_heartratehistory6(
+           computer) .
+H59:   fld_history_avarage(computer__1) = fld_history_avarage(
+           computer) .
+H60:   fld_history_variance(computer__1) = fld_history_variance(
+           computer) .
+H61:   computer__1 = upf_rate(computer, fld_rate(computer__1)) .
+H62:   fld_rate(computer__1) >= measures__bpm__first .
+H63:   fld_rate(computer__1) <= measures__bpm__last .
+H64:   fld_heartratehistory1(computer__2) = fld_heartratehistory2(
+           computer__1) .
+H65:   fld_heartratehistory2(computer__2) = fld_heartratehistory3(
+           computer__1) .
+H66:   fld_heartratehistory3(computer__2) = fld_heartratehistory4(
+           computer__1) .
+H67:   fld_heartratehistory4(computer__2) = fld_heartratehistory5(
+           computer__1) .
+H68:   fld_heartratehistory5(computer__2) = fld_heartratehistory6(
+           computer__1) .
+H69:   fld_heartratehistory6(computer__2) = fld_rate(computer__2) .
+H70:   fld_history_variance(computer__2) >= integer__first .
+H71:   fld_history_variance(computer__2) <= integer__last .
+H72:   fld_history_avarage(computer__2) >= integer__first .
+H73:   fld_history_avarage(computer__2) <= integer__last .
+H74:   fld_heartratehistory6(computer__2) >= measures__bpm__first .
+H75:   fld_heartratehistory6(computer__2) <= measures__bpm__last .
+H76:   fld_heartratehistory5(computer__2) >= measures__bpm__first .
+H77:   fld_heartratehistory5(computer__2) <= measures__bpm__last .
+H78:   fld_heartratehistory4(computer__2) >= measures__bpm__first .
+H79:   fld_heartratehistory4(computer__2) <= measures__bpm__last .
+H80:   fld_heartratehistory3(computer__2) >= measures__bpm__first .
+H81:   fld_heartratehistory3(computer__2) <= measures__bpm__last .
+H82:   fld_heartratehistory2(computer__2) >= measures__bpm__first .
+H83:   fld_heartratehistory2(computer__2) <= measures__bpm__last .
+H84:   fld_heartratehistory1(computer__2) >= measures__bpm__first .
+H85:   fld_heartratehistory1(computer__2) <= measures__bpm__last .
+H86:   fld_tickstoreenabledetectionagain(computer__2) >= 
+           integer__first .
+H87:   fld_tickstoreenabledetectionagain(computer__2) <= 
+           integer__last .
+H88:   fld_tickcount(computer__2) >= integer__first .
+H89:   fld_tickcount(computer__2) <= integer__last .
+H90:   fld_next(computer__2) >= integer__first .
+H91:   fld_next(computer__2) <= integer__last .
+H92:   fld_count(computer__2) >= integer__first .
+H93:   fld_count(computer__2) <= integer__last .
+H94:   fld_upperbound(computer__2) >= measures__bpm__first .
+H95:   fld_upperbound(computer__2) <= measures__bpm__last .
+H96:   fld_state(computer__2) >= icdstates__first .
+H97:   fld_state(computer__2) <= icdstates__last .
+H98:   true .
+H99:   true .
+H100:  fld_rate(computer__2) >= measures__bpm__first .
+H101:  fld_rate(computer__2) <= measures__bpm__last .
+H102:  fld_history_avarage(computer__3) = (fld_heartratehistory1(
+           computer__3) + fld_heartratehistory2(computer__3) + 
+           fld_heartratehistory3(computer__3) + fld_heartratehistory4(
+           computer__3) + fld_heartratehistory5(computer__3) + 
+           fld_heartratehistory6(computer__3)) div 6 .
+H103:  fld_history_variance(computer__3) >= integer__first .
+H104:  fld_history_variance(computer__3) <= integer__last .
+H105:  fld_history_avarage(computer__3) >= integer__first .
+H106:  fld_history_avarage(computer__3) <= integer__last .
+H107:  fld_heartratehistory6(computer__3) >= measures__bpm__first .
+H108:  fld_heartratehistory6(computer__3) <= measures__bpm__last .
+H109:  fld_heartratehistory5(computer__3) >= measures__bpm__first .
+H110:  fld_heartratehistory5(computer__3) <= measures__bpm__last .
+H111:  fld_heartratehistory4(computer__3) >= measures__bpm__first .
+H112:  fld_heartratehistory4(computer__3) <= measures__bpm__last .
+H113:  fld_heartratehistory3(computer__3) >= measures__bpm__first .
+H114:  fld_heartratehistory3(computer__3) <= measures__bpm__last .
+H115:  fld_heartratehistory2(computer__3) >= measures__bpm__first .
+H116:  fld_heartratehistory2(computer__3) <= measures__bpm__last .
+H117:  fld_heartratehistory1(computer__3) >= measures__bpm__first .
+H118:  fld_heartratehistory1(computer__3) <= measures__bpm__last .
+H119:  fld_tickstoreenabledetectionagain(computer__3) >= 
+           integer__first .
+H120:  fld_tickstoreenabledetectionagain(computer__3) <= 
+           integer__last .
+H121:  fld_tickcount(computer__3) >= integer__first .
+H122:  fld_tickcount(computer__3) <= integer__last .
+H123:  fld_next(computer__3) >= integer__first .
+H124:  fld_next(computer__3) <= integer__last .
+H125:  fld_count(computer__3) >= integer__first .
+H126:  fld_count(computer__3) <= integer__last .
+H127:  fld_upperbound(computer__3) >= measures__bpm__first .
+H128:  fld_upperbound(computer__3) <= measures__bpm__last .
+H129:  fld_state(computer__3) >= icdstates__first .
+H130:  fld_state(computer__3) <= icdstates__last .
+H131:  true .
+H132:  true .
+H133:  fld_rate(computer__3) >= measures__bpm__first .
+H134:  fld_rate(computer__3) <= measures__bpm__last .
+H135:  fld_history_variance(computer__4) >= integer__first .
+H136:  fld_history_variance(computer__4) <= integer__last .
+H137:  fld_history_avarage(computer__4) >= integer__first .
+H138:  fld_history_avarage(computer__4) <= integer__last .
+H139:  fld_heartratehistory6(computer__4) >= measures__bpm__first .
+H140:  fld_heartratehistory6(computer__4) <= measures__bpm__last .
+H141:  fld_heartratehistory5(computer__4) >= measures__bpm__first .
+H142:  fld_heartratehistory5(computer__4) <= measures__bpm__last .
+H143:  fld_heartratehistory4(computer__4) >= measures__bpm__first .
+H144:  fld_heartratehistory4(computer__4) <= measures__bpm__last .
+H145:  fld_heartratehistory3(computer__4) >= measures__bpm__first .
+H146:  fld_heartratehistory3(computer__4) <= measures__bpm__last .
+H147:  fld_heartratehistory2(computer__4) >= measures__bpm__first .
+H148:  fld_heartratehistory2(computer__4) <= measures__bpm__last .
+H149:  fld_heartratehistory1(computer__4) >= measures__bpm__first .
+H150:  fld_heartratehistory1(computer__4) <= measures__bpm__last .
+H151:  fld_tickstoreenabledetectionagain(computer__4) >= 
+           integer__first .
+H152:  fld_tickstoreenabledetectionagain(computer__4) <= 
+           integer__last .
+H153:  fld_tickcount(computer__4) >= integer__first .
+H154:  fld_tickcount(computer__4) <= integer__last .
+H155:  fld_next(computer__4) >= integer__first .
+H156:  fld_next(computer__4) <= integer__last .
+H157:  fld_count(computer__4) >= integer__first .
+H158:  fld_count(computer__4) <= integer__last .
+H159:  fld_upperbound(computer__4) >= measures__bpm__first .
+H160:  fld_upperbound(computer__4) <= measures__bpm__last .
+H161:  fld_state(computer__4) >= icdstates__first .
+H162:  fld_state(computer__4) <= icdstates__last .
+H163:  true .
+H164:  true .
+H165:  fld_rate(computer__4) >= measures__bpm__first .
+H166:  fld_rate(computer__4) <= measures__bpm__last .
+H167:  fld_ison(computer__4) = true .
+H168:  (fld_state(computer__5) = fib) <-> ((fld_state(computer__4) <> 
+           fib) and (((fld_heartratehistory1(computer__5) <>  -1) and (
+           fld_tickstoreenabledetectionagain(computer__5) = 0)) and (
+           fld_history_variance(computer__5) > 100))) .
+H169:  fld_history_variance(computer__5) >= integer__first .
+H170:  fld_history_variance(computer__5) <= integer__last .
+H171:  fld_history_avarage(computer__5) >= integer__first .
+H172:  fld_history_avarage(computer__5) <= integer__last .
+H173:  fld_heartratehistory6(computer__5) >= measures__bpm__first .
+H174:  fld_heartratehistory6(computer__5) <= measures__bpm__last .
+H175:  fld_heartratehistory5(computer__5) >= measures__bpm__first .
+H176:  fld_heartratehistory5(computer__5) <= measures__bpm__last .
+H177:  fld_heartratehistory4(computer__5) >= measures__bpm__first .
+H178:  fld_heartratehistory4(computer__5) <= measures__bpm__last .
+H179:  fld_heartratehistory3(computer__5) >= measures__bpm__first .
+H180:  fld_heartratehistory3(computer__5) <= measures__bpm__last .
+H181:  fld_heartratehistory2(computer__5) >= measures__bpm__first .
+H182:  fld_heartratehistory2(computer__5) <= measures__bpm__last .
+H183:  fld_heartratehistory1(computer__5) >= measures__bpm__first .
+H184:  fld_heartratehistory1(computer__5) <= measures__bpm__last .
+H185:  fld_tickstoreenabledetectionagain(computer__5) >= 
+           integer__first .
+H186:  fld_tickstoreenabledetectionagain(computer__5) <= 
+           integer__last .
+H187:  fld_tickcount(computer__5) >= integer__first .
+H188:  fld_tickcount(computer__5) <= integer__last .
+H189:  fld_next(computer__5) >= integer__first .
+H190:  fld_next(computer__5) <= integer__last .
+H191:  fld_count(computer__5) >= integer__first .
+H192:  fld_count(computer__5) <= integer__last .
+H193:  fld_upperbound(computer__5) >= measures__bpm__first .
+H194:  fld_upperbound(computer__5) <= measures__bpm__last .
+H195:  fld_state(computer__5) >= icdstates__first .
+H196:  fld_state(computer__5) <= icdstates__last .
+H197:  true .
+H198:  true .
+H199:  fld_rate(computer__5) >= measures__bpm__first .
+H200:  fld_rate(computer__5) <= measures__bpm__last .
+H201:  fld_history_variance(computer__6) >= integer__first .
+H202:  fld_history_variance(computer__6) <= integer__last .
+H203:  fld_history_avarage(computer__6) >= integer__first .
+H204:  fld_history_avarage(computer__6) <= integer__last .
+H205:  fld_heartratehistory6(computer__6) >= measures__bpm__first .
+H206:  fld_heartratehistory6(computer__6) <= measures__bpm__last .
+H207:  fld_heartratehistory5(computer__6) >= measures__bpm__first .
+H208:  fld_heartratehistory5(computer__6) <= measures__bpm__last .
+H209:  fld_heartratehistory4(computer__6) >= measures__bpm__first .
+H210:  fld_heartratehistory4(computer__6) <= measures__bpm__last .
+H211:  fld_heartratehistory3(computer__6) >= measures__bpm__first .
+H212:  fld_heartratehistory3(computer__6) <= measures__bpm__last .
+H213:  fld_heartratehistory2(computer__6) >= measures__bpm__first .
+H214:  fld_heartratehistory2(computer__6) <= measures__bpm__last .
+H215:  fld_heartratehistory1(computer__6) >= measures__bpm__first .
+H216:  fld_heartratehistory1(computer__6) <= measures__bpm__last .
+H217:  fld_tickstoreenabledetectionagain(computer__6) >= 
+           integer__first .
+H218:  fld_tickstoreenabledetectionagain(computer__6) <= 
+           integer__last .
+H219:  fld_tickcount(computer__6) >= integer__first .
+H220:  fld_tickcount(computer__6) <= integer__last .
+H221:  fld_next(computer__6) >= integer__first .
+H222:  fld_next(computer__6) <= integer__last .
+H223:  fld_count(computer__6) >= integer__first .
+H224:  fld_count(computer__6) <= integer__last .
+H225:  fld_upperbound(computer__6) >= measures__bpm__first .
+H226:  fld_upperbound(computer__6) <= measures__bpm__last .
+H227:  fld_state(computer__6) >= icdstates__first .
+H228:  fld_state(computer__6) <= icdstates__last .
+H229:  true .
+H230:  true .
+H231:  fld_rate(computer__6) >= measures__bpm__first .
+H232:  fld_rate(computer__6) <= measures__bpm__last .
+H233:  fld_history_variance(computer__7) >= integer__first .
+H234:  fld_history_variance(computer__7) <= integer__last .
+H235:  fld_history_avarage(computer__7) >= integer__first .
+H236:  fld_history_avarage(computer__7) <= integer__last .
+H237:  fld_heartratehistory6(computer__7) >= measures__bpm__first .
+H238:  fld_heartratehistory6(computer__7) <= measures__bpm__last .
+H239:  fld_heartratehistory5(computer__7) >= measures__bpm__first .
+H240:  fld_heartratehistory5(computer__7) <= measures__bpm__last .
+H241:  fld_heartratehistory4(computer__7) >= measures__bpm__first .
+H242:  fld_heartratehistory4(computer__7) <= measures__bpm__last .
+H243:  fld_heartratehistory3(computer__7) >= measures__bpm__first .
+H244:  fld_heartratehistory3(computer__7) <= measures__bpm__last .
+H245:  fld_heartratehistory2(computer__7) >= measures__bpm__first .
+H246:  fld_heartratehistory2(computer__7) <= measures__bpm__last .
+H247:  fld_heartratehistory1(computer__7) >= measures__bpm__first .
+H248:  fld_heartratehistory1(computer__7) <= measures__bpm__last .
+H249:  fld_tickstoreenabledetectionagain(computer__7) >= 
+           integer__first .
+H250:  fld_tickstoreenabledetectionagain(computer__7) <= 
+           integer__last .
+H251:  fld_tickcount(computer__7) >= integer__first .
+H252:  fld_tickcount(computer__7) <= integer__last .
+H253:  fld_next(computer__7) >= integer__first .
+H254:  fld_next(computer__7) <= integer__last .
+H255:  fld_count(computer__7) >= integer__first .
+H256:  fld_count(computer__7) <= integer__last .
+H257:  fld_upperbound(computer__7) >= measures__bpm__first .
+H258:  fld_upperbound(computer__7) <= measures__bpm__last .
+H259:  fld_state(computer__7) >= icdstates__first .
+H260:  fld_state(computer__7) <= icdstates__last .
+H261:  true .
+H262:  true .
+H263:  fld_rate(computer__7) >= measures__bpm__first .
+H264:  fld_rate(computer__7) <= measures__bpm__last .
+H265:  true .
+H266:  fld_impulse(shock__7) >= measures__joules__first .
+H267:  fld_impulse(shock__7) <= measures__joules__last .
+H268:  not (fld_inprocess(computer__7) and (fld_state(computer__7) = 
+           tar)) .
+        ->
+C1:    (not (fld_ison(computer__7))) -> (fld_rate(computer__7) = 
+           measures__bpm__first) .
+ 
+
+procedure_tick_7.
+H1:    true .
+H2:    fld_history_variance(computer) >= integer__first .
+H3:    fld_history_variance(computer) <= integer__last .
+H4:    fld_history_avarage(computer) >= integer__first .
+H5:    fld_history_avarage(computer) <= integer__last .
+H6:    fld_heartratehistory6(computer) >= measures__bpm__first .
+H7:    fld_heartratehistory6(computer) <= measures__bpm__last .
+H8:    fld_heartratehistory5(computer) >= measures__bpm__first .
+H9:    fld_heartratehistory5(computer) <= measures__bpm__last .
+H10:   fld_heartratehistory4(computer) >= measures__bpm__first .
+H11:   fld_heartratehistory4(computer) <= measures__bpm__last .
+H12:   fld_heartratehistory3(computer) >= measures__bpm__first .
+H13:   fld_heartratehistory3(computer) <= measures__bpm__last .
+H14:   fld_heartratehistory2(computer) >= measures__bpm__first .
+H15:   fld_heartratehistory2(computer) <= measures__bpm__last .
+H16:   fld_heartratehistory1(computer) >= measures__bpm__first .
+H17:   fld_heartratehistory1(computer) <= measures__bpm__last .
+H18:   fld_tickstoreenabledetectionagain(computer) >= 
+           integer__first .
+H19:   fld_tickstoreenabledetectionagain(computer) <= 
+           integer__last .
+H20:   fld_tickcount(computer) >= integer__first .
+H21:   fld_tickcount(computer) <= integer__last .
+H22:   fld_next(computer) >= integer__first .
+H23:   fld_next(computer) <= integer__last .
+H24:   fld_count(computer) >= integer__first .
+H25:   fld_count(computer) <= integer__last .
+H26:   fld_upperbound(computer) >= measures__bpm__first .
+H27:   fld_upperbound(computer) <= measures__bpm__last .
+H28:   fld_state(computer) >= icdstates__first .
+H29:   fld_state(computer) <= icdstates__last .
+H30:   true .
+H31:   true .
+H32:   fld_rate(computer) >= measures__bpm__first .
+H33:   fld_rate(computer) <= measures__bpm__last .
+H34:   true .
+H35:   fld_rate(heartratemonitor) >= measures__bpm__first .
+H36:   fld_rate(heartratemonitor) <= measures__bpm__last .
+H37:   true .
+H38:   fld_impulse(shock) >= measures__joules__first .
+H39:   fld_impulse(shock) <= measures__joules__last .
+H40:   not (fld_ison(computer)) .
+H41:   measures__bpm__first >= measures__bpm__first .
+H42:   measures__bpm__first <= measures__bpm__last .
+        ->
+C1:    (not (fld_ison(upf_rate(computer, measures__bpm__first)))) -> (
+           fld_rate(upf_rate(computer, measures__bpm__first)) = 
+           measures__bpm__first) .
+ 
+
