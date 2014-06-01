@@ -1,7 +1,7 @@
 with Measures;
 with HRM;
 with ImpulseGenerator;
-with Ada.Text_IO;
+--with Ada.Text_IO;
 
 package body ICD is
 
@@ -16,6 +16,13 @@ package body ICD is
    begin
       Computer.IsOn := True;
    end On;
+
+   procedure Set_Next(Computer : in out ICDType) is
+   begin
+      if Computer.state = tar and Computer.Count > 0 and Computer.InProcess then
+         Computer.Next := Integer(Float'Floor (600.0 / (Float(Computer.UpperBound) + ProjectedRate)));
+      end if;
+   end Set_Next;
 
    procedure Detect_Tarchycardia(Computer : in out ICDType) is
    begin
@@ -44,13 +51,6 @@ package body ICD is
        end if;
    end Detect_Tarchycardia;
 
-   procedure Set_Next(Computer : in out ICDType) is
-   begin
-      if Computer.state = tar and Computer.Count > 0 and Computer.InProcess then
-         Computer.Next := Integer(Float'Floor (600.0 / (Float(Computer.UpperBound) + ProjectedRate)));
-      end if;
-   end Set_Next;
-
    procedure Set_Impulse(Computer : in out ICDType; Shock: in out ImpulseGenerator.GeneratorType) is
    begin
       -- self contained set impulse
@@ -60,7 +60,7 @@ package body ICD is
          ImpulseGenerator.SetImpulse(Shock, FibShock);
       elsif Computer.state = tar and Computer.InProcess and Computer.count > 0 
             and Computer.TickCount = 0 and Shock.IsOn then
-         Ada.Text_IO.Put_Line("SHOCK");
+         --Ada.Text_IO.Put_Line("SHOCK");
          ImpulseGenerator.SetImpulse(Shock, TarShock);
          Computer.count := Computer.count - 1;
          Computer.TickCount := Computer.Next;
