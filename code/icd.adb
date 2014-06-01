@@ -3,10 +3,14 @@ with HRM;
 with ImpulseGenerator;
 --with Ada.Text_IO;
 
+-- ICD controls logic of the entire system
+
 package body ICD is
 
    NoShock : constant Measures.Joules := 0;
 
+
+   -- init the whole system
    procedure Init(Computer : out ICDType) is
    begin
         Computer.IsOn := False;
@@ -32,16 +36,19 @@ package body ICD is
         Computer.heartRateHistory6 := Measures.BPM'First;
    end Init;
 
+   -- turn the system on
    procedure On(Computer: in out ICDType) is
    begin
       Computer.IsOn := True;
    end On;
 
+   -- turn the system off
    procedure Off(Computer: in out ICDType) is
    begin
       Computer.IsOn := False;
    end Off;
 
+   -- record the history of the last 6 beats
    procedure addRateToHistory(Computer : in out ICDType) is
    begin
           Computer.heartRateHistory1 := Computer.heartRateHistory2;
@@ -52,6 +59,7 @@ package body ICD is
           Computer.heartRateHistory6 := Computer.rate;
    end addRateToHistory;
    
+   -- conditionally apply a shock based on the state
    procedure Set_Impulse(Computer : in out ICDType; Shock: in out ImpulseGenerator.GeneratorType) is
    begin
       -- self contained set impulse
@@ -71,6 +79,7 @@ package body ICD is
       end if;
    end Set_Impulse;
 
+   -- calculate the average between the last 5 beats
    procedure CalculateAvarage(Computer : in out ICDType) is
    begin
 
@@ -82,6 +91,7 @@ package body ICD is
                                   Computer.heartRateHistory6)/ 6;
    end CalculateAvarage;
 
+   -- power function
    function power(num : in Integer) return Integer is
    result : Integer;
    begin
@@ -92,6 +102,7 @@ package body ICD is
       return result;
    end power;
 
+   -- addition function
    function secureAdd(num1 : in Integer; num2 : in Integer) return Integer is
    result : Integer;
    begin
@@ -102,6 +113,7 @@ package body ICD is
       return result;
     end secureAdd;
 
+    -- calculate divation between last 5 beats
    procedure CalculateVariance(Computer : in out ICDType) is
    begin
 
@@ -131,7 +143,7 @@ package body ICD is
       ---End Calculating the variance----------
    end CalculateVariance;
 
-
+   -- detect if a fibrillation event occurs 
    procedure Detect_Fibrillation(Computer : in out ICDType) is
    begin
    if Computer.isOn then
@@ -145,6 +157,7 @@ package body ICD is
     end if;
    end Detect_Fibrillation;
 
+   -- detect if a tarchycardia event occurs
   procedure Detect_Tarchycardia(Computer : in out ICDType) is
    begin
        -- if the icd is on and the rate is above the upperbound
@@ -159,6 +172,7 @@ package body ICD is
        end if;
    end Detect_Tarchycardia;
 
+   -- ticks the system once
    procedure Tick(Computer : in out ICDType; HeartRateMonitor : in HRM.HRMType; Shock : in out ImpulseGenerator.GeneratorType) is
    begin
 
@@ -177,6 +191,7 @@ package body ICD is
           Computer.TickCount := Computer.TickCount - 1;
         end if;
       end if;
+
    end Tick;
 
 end ICD;
