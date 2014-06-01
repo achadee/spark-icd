@@ -5,6 +5,7 @@ with Measures; use Measures;
 with Heart;
 with HRM;
 with ImpulseGenerator;
+with ICD;
 
 -- This procedure demonstrates a simple composition of a heart rate
 --  monitor (HRM), heart, and impulse generator.
@@ -13,13 +14,15 @@ procedure ManualOperationExample is
    Monitor : HRM.HRMType;                -- The simulated heart rate monitor
    Generator : ImpulseGenerator.GeneratorType; -- The simulated generator
    HeartRate : BPM;
+   Sys : ICD.ICDType;
 begin
    -- Initialise the patient and turn the machines on
    Heart.Init(Hrt);
    HRM.Init(Monitor);
+   ICD.Init(Sys);
    ImpulseGenerator.Init(Generator);
-   
    HRM.On(Monitor, Hrt);
+   ICD.On(Sys);
    ImpulseGenerator.On(Generator);
    
    -- Set the new impulse to 0
@@ -37,6 +40,7 @@ begin
       -- Tick all components
       ImpulseGenerator.Tick(Generator, Hrt);
       HRM.Tick(Monitor, Hrt);
+      ICD.Tick(Sys, Monitor, Generator);
       Heart.Tick(Hrt);
       delay 0.1;
    end loop;
