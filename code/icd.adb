@@ -21,30 +21,47 @@ package body ICD is
    begin
        -- if the icd is on and the rate is above the upperbound
        -- and a Tarchycardia has not been detected
+       -- start a treatment
        if Computer.IsOn and Computer.Rate > Computer.UpperBound 
        and Computer.IsTar = False then
-          -- something bad is about to happen!
-          -- so start a treatment
-          --Ada.Text_IO.Put_Line("tarch detected");
-
           Computer.IsTar := True;
+          Computer.Count := MaxShocks;
+          Computer.InProcess := True;
+          Computer.Next := Computer.TickCount;
+       end if;
+
+       -- if the computer is inprocess and the tarch is detected
+       -- and the count still has some shocks remaining
+       -- keep the process running, else kill it
+       if Computer.InProcess and Computer.IsTar and Computer.Count > 0 then
+          -- continue process
+          Computer.InProcess := True;
+          Computer.IsTar := True;
+       else
+          Computer.IsTar := False;
+          Computer.InProcess := False;
        end if;
    end Detect_Tarchycardia;
 
    procedure Set_Next(Computer : in out ICDType) is
    begin
-      if Computer.IsTar and Computer.Count < MaxShocks then
-         Computer.Next := Computer.Rate + Integer(Float'Floor (600.0 / (Float(Computer.UpperBound) + ProjectedRate)));
+      if Computer.IsTar and Computer.Count > 0 and Computer.InProcess then
+         Computer.Next := Computer.TickCount + Integer(Float'Floor (600.0 / (Float(Computer.UpperBound) + ProjectedRate)));
       end if;
    end Set_Next;
 
-   procedure Set_Impulse(Computer : in ICDType; Shock: in out ImpulseGenerator.GeneratorType) is
+   procedure Set_Impulse(Computer : in out ICDType; Shock: in out ImpulseGenerator.GeneratorType) is
    begin
+      -- self contained set impulse
       if Computer.isFib and Shock.IsOn then
+         --Ada.Text_IO.Put_Line("BIG SHOCK");
          ImpulseGenerator.SetImpulse(Shock, FibShock);
-      elsif Computer.IsTar and Computer.count < MaxShocks 
-            and Computer.Rate = Computer.Next and Shock.IsOn then
+      elsif Computer.IsTar and Computer.InProcess and Computer.count > 0 
+            and Computer.TickCount = Computer.Next and Shock.IsOn then
+         --Ada.Text_IO.Put_Line("SHOCK");
          ImpulseGenerator.SetImpulse(Shock, TarShock);
+         Computer.count := Computer.count - 1;
+          Set_Next(Computer);
       elsif not Computer.IsTar and not Computer.isFib then
          ImpulseGenerator.SetImpulse(Shock, 0);
       end if;
@@ -55,6 +72,8 @@ package body ICD is
         Computer.IsTar := False;
         COmputer.IsFib := False;
         Computer.UpperBound := 140;
+        Computer.TickCount := 0;
+        Computer.Count := 0;
 
         Computer.Rate := Measures.BPM'First;
         for I in Index loop
@@ -125,6 +144,7 @@ package body ICD is
         Detect_Fibrillation(Computer);
         Detect_Tarchycardia(Computer);
         Set_Impulse(Computer, Shock);
+        Computer.TickCount := Computer.TickCount + 1;
       else
         --Ada.Text_IO.Put_Line("Computer is off");
       -- If the Computer is not on, return 0 for both values

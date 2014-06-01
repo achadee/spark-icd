@@ -31,6 +31,7 @@ package ICD is
       UpperBound : Measures.BPM;
       Count : Integer;
       Next : Integer;
+      TickCount : Integer;
 
       ticksToReEnableDetectionAgain : integer;
       heartRateHistory : History;
@@ -39,7 +40,7 @@ package ICD is
       end record;
 
    procedure Tick(Computer : in out ICDType; HeartRateMonitor : in HRM.HRMType; Shock : in out ImpulseGenerator.GeneratorType);
-   --# derives Computer from Computer, HeartRateMonitor & Shock from Computer, Shock, HeartRateMonitor;
+   --# derives Computer from Computer, HeartRateMonitor, Shock & Shock from Computer, Shock, HeartRateMonitor;
    --#      post not Computer.IsOn -> 
    --#      (Computer.Rate = Measures.BPM'First);
 
@@ -64,8 +65,11 @@ package ICD is
    procedure Set_Next(Computer : in out ICDType);
    --# derives Computer from Computer;
 
-   procedure Set_Impulse(Computer : in ICDType; Shock: in out ImpulseGenerator.GeneratorType);
-   --# derives Shock from Computer, Shock;
+   procedure Set_Impulse(Computer : in out ICDType; Shock: in out ImpulseGenerator.GeneratorType);
+   --# derives Computer from Computer, Shock & Shock from Computer, Shock;
+
+
+
 procedure addRateToHistory(Computer : in out ICDType);
    --# derives Computer from Computer;
 
