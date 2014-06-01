@@ -27,6 +27,13 @@ package ClosedLoop is
          IsOn : Boolean;
       end record;
 
+   procedure On(Sys : in out ClosedLoopType);
+   --# derives Sys from Sys;
+   --#      post Sys.Comp.IsOn = True and
+   --#           Sys.Monitor.isOn = True and
+   --#           Sys.Shock.isOn = True and
+   --#           Sys.isOn = True;
+
    procedure Tick(Sys : in out ClosedLoopType);
    --# derives Sys from Sys;
 
@@ -37,12 +44,9 @@ package ClosedLoop is
    --# derives Sys from Sys;
    --#      post Sys.Comp.IsOn = False and
    --#           Sys.Monitor.isOn = False and
-   --#           Sys.Shock.isOn = False;
+   --#           Sys.Shock.isOn = False and
+   --#           Sys.isOn = False;
 
-   procedure On(Sys : in out ClosedLoopType);
-   --# derives Sys from Sys;
-   --#      post Sys.Comp.IsOn = True and
-   --#           Sys.Monitor.isOn = True and
-   --#           Sys.Shock.isOn = True;
+   
 
 end ClosedLoop;

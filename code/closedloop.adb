@@ -15,20 +15,24 @@ package body ClosedLoop is
    -- Initialise the system, setting a heart rate from a normal
    -- probability distribution.
 
-   procedure Off(Sys: in out ClosedLoopType) is
-   begin
-      Icd.Off(Sys.Comp);
-      HRM.Off(Sys.Monitor);
-      ImpulseGenerator.Off(Sys.Shock);
-   end Off;
-
    procedure On(Sys: in out ClosedLoopType) is
    begin
       Icd.On(Sys.Comp);
       HRM.On(Sys.Monitor,Sys.Hrt);
       ImpulseGenerator.On(Sys.Shock);
+      Sys.isOn := True;
    end On;
 
+
+   procedure Off(Sys: in out ClosedLoopType) is
+   begin
+      Icd.Off(Sys.Comp);
+      HRM.Off(Sys.Monitor);
+      ImpulseGenerator.Off(Sys.Shock);
+      Sys.isOn := False;
+   end Off;
+
+   
    procedure Init(Sys: in out ClosedLoopType) is
    begin
       HRM.Init(Sys.Monitor);
@@ -39,14 +43,12 @@ package body ClosedLoop is
    -- Tick the system, providing an impulse to the heart.
    procedure Tick(Sys : in out ClosedLoopType) is
    begin
-      for I in Integer range 0..100 loop
          -- if the computer is on, tick through the entire system
-         if Sys.Comp.isOn then
+         if Sys.Comp.isOn and Sys.isOn and Sys.Monitor.isOn and Sys.Shock.isOn then
             HRM.Tick(Sys.Monitor,Sys.Hrt);
             ICD.Tick(Sys.Comp, Sys.Monitor, Sys.Shock);
             ImpulseGenerator.Tick(Sys.Shock, Sys.Hrt);
          end if;
-      end loop;
    end Tick;
 
 end ClosedLoop;
