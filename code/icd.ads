@@ -98,7 +98,8 @@ package ICD is
 
    procedure Detect_Fibrillation(Computer : in out ICDType);
    --# derives Computer from Computer;
-   --# post Computer.IsOn = True and ((Computer~.state /= fib and 
+   --# pre Computer.IsOn = True;
+   --# post ((Computer~.state /= fib and 
    --#        Computer.heartRateHistory1 /= Measures.BPM'First and
    --#        Computer.history_variance > 100) 
    --#        -> Computer.state = fib) and
@@ -108,7 +109,7 @@ package ICD is
    procedure Detect_Tarchycardia(Computer : in out ICDType);
    --# derives Computer from Computer;
    --# pre Computer.isOn = True;
-   --# post Computer.IsOn = True and ((Computer~.state = normal and 
+   --# post ((Computer~.state = normal and 
    --#        Computer.Rate > Computer.UpperBound) -> 
    --#      (Computer.state = tar and 
    --#      Computer.Count = MaxShocks)) and
@@ -116,7 +117,7 @@ package ICD is
 
 
    procedure Set_Impulse(Computer : in out ICDType; Shock: in out ImpulseGenerator.GeneratorType);
-   --# derives Computer from Computer, Shock & Shock from Computer, Shock;
+   --# derives Computer from Computer & Shock from Computer, Shock;
    --# pre Computer.isOn = True and Shock.isOn = True;
    --# post ((Computer.state = tar 
    --#         and Computer.count > 0 
@@ -125,7 +126,7 @@ package ICD is
    --#        and Computer.TickCount = Computer.TicksToNextShock));
 
    procedure Tick(Computer : in out ICDType; HeartRateMonitor : in HRM.HRMType; Shock : in out ImpulseGenerator.GeneratorType);
-   --# derives Computer from Computer, HeartRateMonitor, Shock & Shock from Computer, Shock, HeartRateMonitor;
+   --# derives Computer from Computer, HeartRateMonitor & Shock from Computer, Shock, HeartRateMonitor;
    --# pre HeartRateMonitor.isOn = True and Shock.IsOn = True and Computer.isOn = True;
 
 end ICD;

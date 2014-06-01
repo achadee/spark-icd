@@ -56,7 +56,7 @@ package body ICD is
    begin
       -- self contained set impulse
       --Ada.Text_IO.Put_Line(Integer'Image(Computer.TickCount));
-      if Computer.state = fib and Shock.IsOn then
+      if Computer.state = fib then
          --Ada.Text_IO.Put_Line("BIG SHOCK");
          ImpulseGenerator.SetImpulse(Shock, FibShock);
       elsif Computer.state = tar and Computer.count > 0 
@@ -96,7 +96,7 @@ package body ICD is
    result : Integer;
    begin
       result := Integer'Last;
-      if num1 + num2 <= Integer'Last and num1 + num2 >= Integer'First then
+      if (num1 + num2) < Integer'Last and (num1 + num2) > Integer'First then
         result := num1 + num2;
       end if;
       return result;
@@ -134,7 +134,7 @@ package body ICD is
 
    procedure Detect_Fibrillation(Computer : in out ICDType) is
    begin
-
+   if Computer.isOn then
     if Computer.state /= fib 
       and Computer.heartRateHistory1 /= Measures.BPM'First
       and Computer.history_variance > 100 then
@@ -142,6 +142,7 @@ package body ICD is
       elsif Computer.state = fib then
         Computer.state := normal;
       end if;
+    end if;
    end Detect_Fibrillation;
 
   procedure Detect_Tarchycardia(Computer : in out ICDType) is
