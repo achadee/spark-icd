@@ -1,7 +1,7 @@
 with Measures;
 with HRM;
 with ImpulseGenerator;
---with Ada.Text_IO;
+with Ada.Text_IO;
 
 package body ICD is
 
@@ -27,7 +27,8 @@ package body ICD is
           Computer.state := tar;
           Computer.Count := MaxShocks;
           Computer.InProcess := True;
-          Computer.Next := Computer.TickCount;
+          Set_Next(Computer);
+          Computer.TickCount := Computer.Next;
        end if;
 
        -- if the computer is inprocess and the tarch is detected
@@ -46,22 +47,24 @@ package body ICD is
    procedure Set_Next(Computer : in out ICDType) is
    begin
       if Computer.state = tar and Computer.Count > 0 and Computer.InProcess then
-         Computer.Next := Computer.TickCount + Integer(Float'Floor (600.0 / (Float(Computer.UpperBound) + ProjectedRate)));
+         Computer.Next := Integer(Float'Floor (600.0 / (Float(Computer.UpperBound) + ProjectedRate)));
       end if;
    end Set_Next;
 
    procedure Set_Impulse(Computer : in out ICDType; Shock: in out ImpulseGenerator.GeneratorType) is
    begin
       -- self contained set impulse
+      --Ada.Text_IO.Put_Line(Integer'Image(Computer.TickCount));
       if Computer.state = fib and Shock.IsOn then
          --Ada.Text_IO.Put_Line("BIG SHOCK");
          ImpulseGenerator.SetImpulse(Shock, FibShock);
       elsif Computer.state = tar and Computer.InProcess and Computer.count > 0 
-            and Computer.TickCount = Computer.Next and Shock.IsOn then
-         --Ada.Text_IO.Put_Line("SHOCK");
+            and Computer.TickCount = 0 and Shock.IsOn then
+         Ada.Text_IO.Put_Line("SHOCK");
          ImpulseGenerator.SetImpulse(Shock, TarShock);
          Computer.count := Computer.count - 1;
-          Set_Next(Computer);
+         Computer.TickCount := Computer.Next;
+
       elsif Computer.state = normal then
          ImpulseGenerator.SetImpulse(Shock, 0);
       end if;
@@ -74,7 +77,7 @@ package body ICD is
 
         Computer.state := normal;
 
-        Computer.UpperBound := 140;
+        Computer.UpperBound := 130;
         Computer.TickCount := 0;
         Computer.Count := 0;
 
@@ -147,7 +150,9 @@ package body ICD is
         Detect_Fibrillation(Computer);
         Detect_Tarchycardia(Computer);
         Set_Impulse(Computer, Shock);
-        Computer.TickCount := Computer.TickCount + 1;
+        if Computer.InProcess and Computer.state = tar then
+          Computer.TickCount := Computer.TickCount - 1;
+        end if;
       else
         --Ada.Text_IO.Put_Line("Computer is off");
       -- If the Computer is not on, return 0 for both values

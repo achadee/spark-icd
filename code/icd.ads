@@ -32,9 +32,9 @@ package ICD is
 
       -- ICD settings
       UpperBound : Measures.BPM;
-      Count : Integer;
+      Count : Integer; -- impulse count
       Next : Integer;
-      TickCount : Integer;
+      TickCount : Integer; 
 
       ticksToReEnableDetectionAgain : integer;
       heartRateHistory : History;
