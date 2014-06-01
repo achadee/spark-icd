@@ -5,7 +5,7 @@
 *****************************************************************************
 
 
-CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:32
+CREATED 01-JUN-2014, 22:28:21  SIMPLIFIED 01-JUN-2014, 22:28:31
 
 SPARK Simplifier GPL 2011
 Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
@@ -15,13 +15,13 @@ function ICD.secureAdd
 
 
 
-For path(s) from start to run-time check associated with statement of line 129:
+For path(s) from start to run-time check associated with statement of line 98:
 
 function_secureadd_1.
 *** true .          /* all conclusions proved */
 
 
-For path(s) from start to run-time check associated with statement of line 130:
+For path(s) from start to run-time check associated with statement of line 99:
 
 function_secureadd_2.
 H1:    integer__size > 0 .
@@ -35,7 +35,7 @@ C1:    num1 + num2 >= - 2147483648 .
 C2:    num1 + num2 <= 2147483647 .
 
 
-For path(s) from start to run-time check associated with statement of line 131:
+For path(s) from start to run-time check associated with statement of line 100:
 
 function_secureadd_3.
 *** true .          /* all conclusions proved */

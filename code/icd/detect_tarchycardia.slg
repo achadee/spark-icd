@@ -5,7 +5,7 @@
 *****************************************************************************
 
 
-CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:32
+CREATED 01-JUN-2014, 22:28:21  SIMPLIFIED 01-JUN-2014, 22:28:31
 
 SPARK Simplifier GPL 2011
 Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
@@ -18,26 +18,30 @@ procedure ICD.Detect_Tarchycardia
 
 
 @@@@@@@@@@  VC: procedure_detect_tarchycardia_1.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  icdstates__first <= tar
 ***  Proved C1:  icdstates__first <= tar
-     using hypotheses H28 & H36.
+     using hypotheses H26 & H32.
 -S-  Applied substitution rule detect_tarch_rules(14).
      This was achieved by replacing all occurrences of icdstates__last by:
           tar.
-<S>  New H29:  fld_state(computer) <= tar
+<S>  New H27:  fld_state(computer) <= tar
 <S>  New C2:  true
 ***  Proved C2:  true
 ***  PROVED VC.
 
 
 @@@@@@@@@@  VC: procedure_detect_tarchycardia_2.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  icdstates__first <= tar
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  icdstates__first <= tar
 -S-  Applied substitution rule detect_tarch_rules(1).
      This was achieved by replacing all occurrences of maxshocks by:
           10.
@@ -48,20 +52,18 @@ procedure ICD.Detect_Tarchycardia
           - 2147483648.
 <S>  New H2:  fld_history_variance(computer) >= - 2147483648
 <S>  New H4:  fld_history_avarage(computer) >= - 2147483648
-<S>  New H18:  fld_tickstoreenabledetectionagain(computer) >= - 2147483648
-<S>  New H20:  fld_tickcount(computer) >= - 2147483648
-<S>  New H22:  fld_next(computer) >= - 2147483648
-<S>  New H24:  fld_count(computer) >= - 2147483648
+<S>  New H18:  fld_tickcount(computer) >= - 2147483648
+<S>  New H20:  fld_tickstonextshock(computer) >= - 2147483648
+<S>  New H22:  fld_count(computer) >= - 2147483648
 <S>  New C1:  true
 -S-  Applied substitution rule detect_tarch_rules(4).
      This was achieved by replacing all occurrences of integer__last by:
           2147483647.
 <S>  New H3:  fld_history_variance(computer) <= 2147483647
 <S>  New H5:  fld_history_avarage(computer) <= 2147483647
-<S>  New H19:  fld_tickstoreenabledetectionagain(computer) <= 2147483647
-<S>  New H21:  fld_tickcount(computer) <= 2147483647
-<S>  New H23:  fld_next(computer) <= 2147483647
-<S>  New H25:  fld_count(computer) <= 2147483647
+<S>  New H19:  fld_tickcount(computer) <= 2147483647
+<S>  New H21:  fld_tickstonextshock(computer) <= 2147483647
+<S>  New H23:  fld_count(computer) <= 2147483647
 <S>  New C2:  true
 ***  Proved C1:  true
 ***  Proved C2:  true
@@ -69,113 +71,139 @@ procedure ICD.Detect_Tarchycardia
 
 
 @@@@@@@@@@  VC: procedure_detect_tarchycardia_3.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  icdstates__first <= tar
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
 %%%  Simplified C1 on reading formula in, to give:
-     %%%  C1:  fld_next(computer) >= integer__first
-%%%  Simplified C2 on reading formula in, to give:
-     %%%  C2:  fld_next(computer) <= integer__last
-***  Proved C1:  fld_next(computer) >= integer__first
-     using hypothesis H22.
-***  Proved C2:  fld_next(computer) <= integer__last
-     using hypothesis H23.
+     %%%  C1:  icdstates__first <= normal
+***  Proved C2:  normal <= icdstates__last
+     using hypotheses H27 & H32.
+-S-  Applied substitution rule detect_tarch_rules(13).
+     This was achieved by replacing all occurrences of icdstates__first by:
+          normal.
+<S>  New H26:  normal <= fld_state(computer)
+<S>  New C1:  true
+***  Proved C1:  true
 ***  PROVED VC.
 
 
 @@@@@@@@@@  VC: procedure_detect_tarchycardia_4.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  icdstates__first <= tar
-%%%  Simplified H41 on reading formula in, to give:
-     %%%  H41:  fld_next(computer) >= integer__first
-%%%  Simplified H42 on reading formula in, to give:
-     %%%  H42:  fld_next(computer) <= integer__last
-%%%  Simplified H43 on reading formula in, to give:
-     %%%  H43:  true
-%%%  Simplified H44 on reading formula in, to give:
-     %%%  H44:  true
-%%%  Simplified H45 on reading formula in, to give:
-     %%%  H45:  maxshocks > 0
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  icdstates__first <= tar
 %%%  Simplified C1 on reading formula in, to give:
-     %%%  C1:  icdstates__first <= tar
-***  Proved C1:  icdstates__first <= tar
-     using hypothesis H37.
-***  Proved C2:  tar <= icdstates__last
-     using hypothesis H38.
+     %%%  C1:  fld_ison(computer)
+%%%  Simplified C2 on reading formula in, to give:
+     %%%  C2:  true
+%%%  Simplified C3 on reading formula in, to give:
+     %%%  C3:  not (fld_state(computer) = tar and maxshocks = 0)
+***  Proved C1:  fld_ison(computer)
+     using hypothesis H1.
+***  Proved C2:  true
+***  Proved C3:  not (fld_state(computer) = tar and maxshocks = 0)
+     using hypothesis H32.
 ***  PROVED VC.
 
 
 @@@@@@@@@@  VC: procedure_detect_tarchycardia_5.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
+%%%  Simplified H34 on reading formula in, to give:
+     %%%  H34:  icdstates__first <= normal
 %%%  Simplified C1 on reading formula in, to give:
-     %%%  C1:  icdstates__first <= tar
-***  Proved C1:  icdstates__first <= tar
-     using hypotheses H28 & H36.
-***  Proved C2:  tar <= icdstates__last
-     using hypotheses H29 & H36.
+     %%%  C1:  fld_ison(computer)
+%%%  Simplified C2 on reading formula in, to give:
+     %%%  C2:  not (fld_state(computer) = normal and fld_rate(computer) > 
+          fld_upperbound(computer))
+%%%  Simplified C3 on reading formula in, to give:
+     %%%  C3:  true
+***  Proved C1:  fld_ison(computer)
+     using hypothesis H1.
+***  Proved C2:  not (fld_state(computer) = normal and fld_rate(computer) > 
+          fld_upperbound(computer))
+     using hypothesis H32.
+***  Proved C3:  true
 ***  PROVED VC.
 
 
 @@@@@@@@@@  VC: procedure_detect_tarchycardia_6.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  icdstates__first <= tar
-%%%  Simplified H41 on reading formula in, to give:
-     %%%  H41:  fld_next(computer) >= integer__first
-%%%  Simplified H42 on reading formula in, to give:
-     %%%  H42:  fld_next(computer) <= integer__last
-%%%  Simplified H43 on reading formula in, to give:
-     %%%  H43:  not maxshocks > 0
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
 %%%  Simplified C1 on reading formula in, to give:
-     %%%  C1:  icdstates__first <= normal
-***  Proved C1:  icdstates__first <= normal
-     using hypotheses H28 & H36.
-***  Proved C2:  normal <= icdstates__last
-     using hypothesis H38.
-***  PROVED VC.
-
-
-@@@@@@@@@@  VC: procedure_detect_tarchycardia_7.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified C1 on reading formula in, to give:
-     %%%  C1:  icdstates__first <= normal
+     %%%  C1:  fld_ison(computer)
+***  Proved C1:  fld_ison(computer)
+     using hypothesis H1.
+***  Proved C3:  fld_state(computer) = tar and fld_count(computer) = 0 -> 
+          fld_state(computer) = normal
+     using hypothesis H32.
+>>>  Restructured hypothesis H31 into:
+     >>>  H31:  fld_rate(computer) <= fld_upperbound(computer) or fld_state(
+          computer) <> normal
+>>>  Restructured hypothesis H32 into:
+     >>>  H32:  fld_state(computer) <> tar or fld_count(computer) <> 0
+-S-  Applied substitution rule detect_tarch_rules(1).
+     This was achieved by replacing all occurrences of maxshocks by:
+          10.
+<S>  New C2:  fld_state(computer) = normal and fld_rate(computer) > 
+          fld_upperbound(computer) -> fld_state(computer) = tar and fld_count(
+          computer) = 10
+-S-  Applied substitution rule detect_tarch_rules(3).
+     This was achieved by replacing all occurrences of integer__first by:
+          - 2147483648.
+<S>  New H2:  fld_history_variance(computer) >= - 2147483648
+<S>  New H4:  fld_history_avarage(computer) >= - 2147483648
+<S>  New H18:  fld_tickcount(computer) >= - 2147483648
+<S>  New H20:  fld_tickstonextshock(computer) >= - 2147483648
+<S>  New H22:  fld_count(computer) >= - 2147483648
+-S-  Applied substitution rule detect_tarch_rules(4).
+     This was achieved by replacing all occurrences of integer__last by:
+          2147483647.
+<S>  New H3:  fld_history_variance(computer) <= 2147483647
+<S>  New H5:  fld_history_avarage(computer) <= 2147483647
+<S>  New H19:  fld_tickcount(computer) <= 2147483647
+<S>  New H21:  fld_tickstonextshock(computer) <= 2147483647
+<S>  New H23:  fld_count(computer) <= 2147483647
+-S-  Applied substitution rule detect_tarch_rules(8).
+     This was achieved by replacing all occurrences of measures__bpm__first by:
+          - 1.
+<S>  New H6:  fld_heartratehistory6(computer) >= - 1
+<S>  New H8:  fld_heartratehistory5(computer) >= - 1
+<S>  New H10:  fld_heartratehistory4(computer) >= - 1
+<S>  New H12:  fld_heartratehistory3(computer) >= - 1
+<S>  New H14:  fld_heartratehistory2(computer) >= - 1
+<S>  New H16:  fld_heartratehistory1(computer) >= - 1
+<S>  New H24:  fld_upperbound(computer) >= - 1
+<S>  New H29:  fld_rate(computer) >= - 1
+-S-  Applied substitution rule detect_tarch_rules(9).
+     This was achieved by replacing all occurrences of measures__bpm__last by:
+          300.
+<S>  New H7:  fld_heartratehistory6(computer) <= 300
+<S>  New H9:  fld_heartratehistory5(computer) <= 300
+<S>  New H11:  fld_heartratehistory4(computer) <= 300
+<S>  New H13:  fld_heartratehistory3(computer) <= 300
+<S>  New H15:  fld_heartratehistory2(computer) <= 300
+<S>  New H17:  fld_heartratehistory1(computer) <= 300
+<S>  New H25:  fld_upperbound(computer) <= 300
+<S>  New H30:  fld_rate(computer) <= 300
 -S-  Applied substitution rule detect_tarch_rules(13).
      This was achieved by replacing all occurrences of icdstates__first by:
           normal.
-<S>  New H28:  normal <= fld_state(computer)
-<S>  New C1:  true
+<S>  New H26:  normal <= fld_state(computer)
 -S-  Applied substitution rule detect_tarch_rules(14).
      This was achieved by replacing all occurrences of icdstates__last by:
           tar.
-<S>  New H29:  fld_state(computer) <= tar
-<S>  New C2:  true
-***  Proved C1:  true
-***  Proved C2:  true
-***  PROVED VC.
-
-
-@@@@@@@@@@  VC: procedure_detect_tarchycardia_8.  @@@@@@@@@@
-***  Proved C1:  true
-***  PROVED VC.
-
-
-@@@@@@@@@@  VC: procedure_detect_tarchycardia_9.  @@@@@@@@@@
-***  Proved C1:  true
-***  PROVED VC.
-
-
-@@@@@@@@@@  VC: procedure_detect_tarchycardia_10.  @@@@@@@@@@
-***  Proved C1:  true
-***  PROVED VC.
-
-
-@@@@@@@@@@  VC: procedure_detect_tarchycardia_11.  @@@@@@@@@@
-***  Proved C1:  true
-***  PROVED VC.
+<S>  New H27:  fld_state(computer) <= tar
+---  Eliminated hypothesis H28 (true-hypothesis).
+     +++  New H33:  integer__size >= 0
+     +++  New H34:  measures__bpm__size >= 0
+     +++  New H35:  icdstates__size >= 0
+     +++  New H36:  icdtype__size >= 0
 

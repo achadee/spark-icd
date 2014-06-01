@@ -5,7 +5,7 @@
 *****************************************************************************
 
 
-CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:32
+CREATED 01-JUN-2014, 22:28:21  SIMPLIFIED 01-JUN-2014, 22:28:31
 
 SPARK Simplifier GPL 2011
 Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
@@ -18,8 +18,12 @@ procedure ICD.Set_Impulse
 
 
 @@@@@@@@@@  VC: procedure_set_impulse_1.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H2 on reading formula in, to give:
+     %%%  H2:  fld_ison(shock)
+%%%  Simplified H27 on reading formula in, to give:
+     %%%  H27:  icdstates__first <= fld_state(computer)
 -S-  Applied substitution rule set_impulse_rules(2).
      This was achieved by replacing all occurrences of fibshock by:
           30.
@@ -29,13 +33,13 @@ procedure ICD.Set_Impulse
      This was achieved by replacing all occurrences of measures__joules__first 
           by:
           0.
-<S>  New H35:  fld_impulse(shock) >= 0
+<S>  New H33:  fld_impulse(shock) >= 0
 <S>  New C1:  true
 -S-  Applied substitution rule set_impulse_rules(10).
      This was achieved by replacing all occurrences of measures__joules__last 
           by:
           45.
-<S>  New H36:  fld_impulse(shock) <= 45
+<S>  New H34:  fld_impulse(shock) <= 45
 <S>  New C2:  true
 ***  Proved C1:  true
 ***  Proved C2:  true
@@ -43,8 +47,12 @@ procedure ICD.Set_Impulse
 
 
 @@@@@@@@@@  VC: procedure_set_impulse_2.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H2 on reading formula in, to give:
+     %%%  H2:  fld_ison(shock)
+%%%  Simplified H27 on reading formula in, to give:
+     %%%  H27:  icdstates__first <= fld_state(computer)
 -S-  Applied substitution rule set_impulse_rules(1).
      This was achieved by replacing all occurrences of tarshock by:
           2.
@@ -54,13 +62,13 @@ procedure ICD.Set_Impulse
      This was achieved by replacing all occurrences of measures__joules__first 
           by:
           0.
-<S>  New H35:  fld_impulse(shock) >= 0
+<S>  New H33:  fld_impulse(shock) >= 0
 <S>  New C1:  true
 -S-  Applied substitution rule set_impulse_rules(10).
      This was achieved by replacing all occurrences of measures__joules__last 
           by:
           45.
-<S>  New H36:  fld_impulse(shock) <= 45
+<S>  New H34:  fld_impulse(shock) <= 45
 <S>  New C2:  true
 ***  Proved C1:  true
 ***  Proved C2:  true
@@ -68,53 +76,64 @@ procedure ICD.Set_Impulse
 
 
 @@@@@@@@@@  VC: procedure_set_impulse_3.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H2 on reading formula in, to give:
+     %%%  H2:  fld_ison(shock)
+%%%  Simplified H27 on reading formula in, to give:
+     %%%  H27:  icdstates__first <= fld_state(computer)
 ***  Proved C2:  fld_count(computer) - 1 <= integer__last
-     using hypothesis H25.
+     using hypothesis H24.
 -S-  Applied substitution rule set_impulse_rules(4).
      This was achieved by replacing all occurrences of integer__first by:
           - 2147483648.
-<S>  New H2:  fld_history_variance(computer) >= - 2147483648
-<S>  New H4:  fld_history_avarage(computer) >= - 2147483648
-<S>  New H18:  fld_tickstoreenabledetectionagain(computer) >= - 2147483648
-<S>  New H20:  fld_tickcount(computer) >= - 2147483648
-<S>  New H22:  fld_next(computer) >= - 2147483648
-<S>  New H24:  fld_count(computer) >= - 2147483648
+<S>  New H3:  fld_history_variance(computer) >= - 2147483648
+<S>  New H5:  fld_history_avarage(computer) >= - 2147483648
+<S>  New H19:  fld_tickcount(computer) >= - 2147483648
+<S>  New H21:  fld_tickstonextshock(computer) >= - 2147483648
+<S>  New H23:  fld_count(computer) >= - 2147483648
 <S>  New C1:  fld_count(computer) >= - 2147483647
 ***  Proved C1:  fld_count(computer) >= - 2147483647
-     using hypothesis H40.
+     using hypothesis H37.
 ***  PROVED VC.
 
 
 @@@@@@@@@@  VC: procedure_set_impulse_4.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H2 on reading formula in, to give:
+     %%%  H2:  fld_ison(shock)
+%%%  Simplified H27 on reading formula in, to give:
+     %%%  H27:  icdstates__first <= fld_state(computer)
 %%%  Simplified C1 on reading formula in, to give:
-     %%%  C1:  fld_next(computer) >= integer__first
+     %%%  C1:  fld_tickstonextshock(computer) >= integer__first
 %%%  Simplified C2 on reading formula in, to give:
-     %%%  C2:  fld_next(computer) <= integer__last
-***  Proved C1:  fld_next(computer) >= integer__first
+     %%%  C2:  fld_tickstonextshock(computer) <= integer__last
+***  Proved C1:  fld_tickstonextshock(computer) >= integer__first
+     using hypothesis H21.
+***  Proved C2:  fld_tickstonextshock(computer) <= integer__last
      using hypothesis H22.
-***  Proved C2:  fld_next(computer) <= integer__last
-     using hypothesis H23.
 ***  PROVED VC.
 
 
 @@@@@@@@@@  VC: procedure_set_impulse_5.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H2 on reading formula in, to give:
+     %%%  H2:  fld_ison(shock)
+%%%  Simplified H27 on reading formula in, to give:
+     %%%  H27:  icdstates__first <= fld_state(computer)
 -S-  Applied substitution rule set_impulse_rules(9).
      This was achieved by replacing all occurrences of measures__joules__first 
           by:
           0.
-<S>  New H35:  fld_impulse(shock) >= 0
+<S>  New H33:  fld_impulse(shock) >= 0
 <S>  New C1:  true
 -S-  Applied substitution rule set_impulse_rules(10).
      This was achieved by replacing all occurrences of measures__joules__last 
           by:
           45.
-<S>  New H36:  fld_impulse(shock) <= 45
+<S>  New H34:  fld_impulse(shock) <= 45
 <S>  New C2:  true
 ***  Proved C1:  true
 ***  Proved C2:  true
@@ -122,21 +141,63 @@ procedure ICD.Set_Impulse
 
 
 @@@@@@@@@@  VC: procedure_set_impulse_6.  @@@@@@@@@@
-***  Proved C1:  true
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H2 on reading formula in, to give:
+     %%%  H2:  fld_ison(shock)
+%%%  Simplified H27 on reading formula in, to give:
+     %%%  H27:  icdstates__first <= fld_state(computer)
+***  Proved C1:  fld_state(computer) = tar and (fld_count(computer) > 0 and 
+          fld_tickcount(computer) = 0) -> fld_count(computer) = fld_count(
+          computer) - 1 and fld_tickcount(computer) = fld_tickstonextshock(
+          computer)
+     using hypothesis H35.
 ***  PROVED VC.
 
 
 @@@@@@@@@@  VC: procedure_set_impulse_7.  @@@@@@@@@@
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H2 on reading formula in, to give:
+     %%%  H2:  fld_ison(shock)
+%%%  Simplified H27 on reading formula in, to give:
+     %%%  H27:  icdstates__first <= fld_state(computer)
+%%%  Simplified H48 on reading formula in, to give:
+     %%%  H48:  fld_tickstonextshock(computer) >= integer__first
+%%%  Simplified H49 on reading formula in, to give:
+     %%%  H49:  fld_tickstonextshock(computer) <= integer__last
+%%%  Simplified C1 on reading formula in, to give:
+     %%%  C1:  true
 ***  Proved C1:  true
 ***  PROVED VC.
 
 
 @@@@@@@@@@  VC: procedure_set_impulse_8.  @@@@@@@@@@
-***  Proved C1:  true
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H2 on reading formula in, to give:
+     %%%  H2:  fld_ison(shock)
+%%%  Simplified H27 on reading formula in, to give:
+     %%%  H27:  icdstates__first <= fld_state(computer)
+***  Proved C1:  fld_state(computer) = tar and (fld_count(computer) > 0 and 
+          fld_tickcount(computer) = 0) -> fld_count(computer) = fld_count(
+          computer) - 1 and fld_tickcount(computer) = fld_tickstonextshock(
+          computer)
+     using hypothesis H36.
 ***  PROVED VC.
 
 
 @@@@@@@@@@  VC: procedure_set_impulse_9.  @@@@@@@@@@
-***  Proved C1:  true
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H2 on reading formula in, to give:
+     %%%  H2:  fld_ison(shock)
+%%%  Simplified H27 on reading formula in, to give:
+     %%%  H27:  icdstates__first <= fld_state(computer)
+***  Proved C1:  fld_state(computer) = tar and (fld_count(computer) > 0 and 
+          fld_tickcount(computer) = 0) -> fld_count(computer) = fld_count(
+          computer) - 1 and fld_tickcount(computer) = fld_tickstonextshock(
+          computer)
+     using hypothesis H36.
 ***  PROVED VC.
 

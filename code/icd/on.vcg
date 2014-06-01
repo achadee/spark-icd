@@ -5,7 +5,7 @@
            *******************************************************
 
 
-                        DATE : 01-JUN-2014 19:41:14.51
+                        DATE : 01-JUN-2014 22:28:21.41
 
                               procedure ICD.On
 
@@ -32,24 +32,19 @@ H14:   fld_heartratehistory2(computer) >= measures__bpm__first .
 H15:   fld_heartratehistory2(computer) <= measures__bpm__last .
 H16:   fld_heartratehistory1(computer) >= measures__bpm__first .
 H17:   fld_heartratehistory1(computer) <= measures__bpm__last .
-H18:   fld_tickstoreenabledetectionagain(computer) >= 
-           integer__first .
-H19:   fld_tickstoreenabledetectionagain(computer) <= 
-           integer__last .
-H20:   fld_tickcount(computer) >= integer__first .
-H21:   fld_tickcount(computer) <= integer__last .
-H22:   fld_next(computer) >= integer__first .
-H23:   fld_next(computer) <= integer__last .
-H24:   fld_count(computer) >= integer__first .
-H25:   fld_count(computer) <= integer__last .
-H26:   fld_upperbound(computer) >= measures__bpm__first .
-H27:   fld_upperbound(computer) <= measures__bpm__last .
-H28:   fld_state(computer) >= icdstates__first .
-H29:   fld_state(computer) <= icdstates__last .
-H30:   true .
-H31:   true .
-H32:   fld_rate(computer) >= measures__bpm__first .
-H33:   fld_rate(computer) <= measures__bpm__last .
+H18:   fld_tickcount(computer) >= integer__first .
+H19:   fld_tickcount(computer) <= integer__last .
+H20:   fld_tickstonextshock(computer) >= integer__first .
+H21:   fld_tickstonextshock(computer) <= integer__last .
+H22:   fld_count(computer) >= integer__first .
+H23:   fld_count(computer) <= integer__last .
+H24:   fld_upperbound(computer) >= measures__bpm__first .
+H25:   fld_upperbound(computer) <= measures__bpm__last .
+H26:   fld_state(computer) >= icdstates__first .
+H27:   fld_state(computer) <= icdstates__last .
+H28:   true .
+H29:   fld_rate(computer) >= measures__bpm__first .
+H30:   fld_rate(computer) <= measures__bpm__last .
         ->
 C1:    fld_ison(upf_ison(computer, true)) = true .
  

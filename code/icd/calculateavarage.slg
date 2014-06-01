@@ -5,7 +5,7 @@
 *****************************************************************************
 
 
-CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:28
+CREATED 01-JUN-2014, 22:28:21  SIMPLIFIED 01-JUN-2014, 22:28:28
 
 SPARK Simplifier GPL 2011
 Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
@@ -18,8 +18,8 @@ procedure ICD.CalculateAvarage
 
 
 @@@@@@@@@@  VC: procedure_calculateavarage_1.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
 %%%  Simplified C3 on reading formula in, to give:
      %%%  C3:  true
 ***  Proved C3:  true
@@ -28,10 +28,9 @@ procedure ICD.CalculateAvarage
           - 2147483648.
 <S>  New H2:  fld_history_variance(computer) >= - 2147483648
 <S>  New H4:  fld_history_avarage(computer) >= - 2147483648
-<S>  New H18:  fld_tickstoreenabledetectionagain(computer) >= - 2147483648
-<S>  New H20:  fld_tickcount(computer) >= - 2147483648
-<S>  New H22:  fld_next(computer) >= - 2147483648
-<S>  New H24:  fld_count(computer) >= - 2147483648
+<S>  New H18:  fld_tickcount(computer) >= - 2147483648
+<S>  New H20:  fld_tickstonextshock(computer) >= - 2147483648
+<S>  New H22:  fld_count(computer) >= - 2147483648
 <S>  New C1:  (fld_heartratehistory1(computer) + fld_heartratehistory2(computer)
            + fld_heartratehistory3(computer) + fld_heartratehistory4(computer) 
           + fld_heartratehistory5(computer) + fld_heartratehistory6(computer)) 
@@ -41,10 +40,9 @@ procedure ICD.CalculateAvarage
           2147483647.
 <S>  New H3:  fld_history_variance(computer) <= 2147483647
 <S>  New H5:  fld_history_avarage(computer) <= 2147483647
-<S>  New H19:  fld_tickstoreenabledetectionagain(computer) <= 2147483647
-<S>  New H21:  fld_tickcount(computer) <= 2147483647
-<S>  New H23:  fld_next(computer) <= 2147483647
-<S>  New H25:  fld_count(computer) <= 2147483647
+<S>  New H19:  fld_tickcount(computer) <= 2147483647
+<S>  New H21:  fld_tickstonextshock(computer) <= 2147483647
+<S>  New H23:  fld_count(computer) <= 2147483647
 <S>  New C2:  (fld_heartratehistory1(computer) + fld_heartratehistory2(computer)
            + fld_heartratehistory3(computer) + fld_heartratehistory4(computer) 
           + fld_heartratehistory5(computer) + fld_heartratehistory6(computer)) 
@@ -92,8 +90,8 @@ procedure ICD.CalculateAvarage
 <S>  New H12:  fld_heartratehistory3(computer) >= - 1
 <S>  New H14:  fld_heartratehistory2(computer) >= - 1
 <S>  New H16:  fld_heartratehistory1(computer) >= - 1
-<S>  New H26:  fld_upperbound(computer) >= - 1
-<S>  New H32:  fld_rate(computer) >= - 1
+<S>  New H24:  fld_upperbound(computer) >= - 1
+<S>  New H29:  fld_rate(computer) >= - 1
 -S-  Applied substitution rule calculateava_rules(8).
      This was achieved by replacing all occurrences of measures__bpm__last by:
           300.
@@ -103,16 +101,16 @@ procedure ICD.CalculateAvarage
 <S>  New H13:  fld_heartratehistory3(computer) <= 300
 <S>  New H15:  fld_heartratehistory2(computer) <= 300
 <S>  New H17:  fld_heartratehistory1(computer) <= 300
-<S>  New H27:  fld_upperbound(computer) <= 300
-<S>  New H33:  fld_rate(computer) <= 300
+<S>  New H25:  fld_upperbound(computer) <= 300
+<S>  New H30:  fld_rate(computer) <= 300
 -S-  Applied substitution rule calculateava_rules(12).
      This was achieved by replacing all occurrences of icdstates__first by:
           normal.
-<S>  New H28:  normal <= fld_state(computer)
+<S>  New H26:  normal <= fld_state(computer)
 -S-  Applied substitution rule calculateava_rules(13).
      This was achieved by replacing all occurrences of icdstates__last by:
           tar.
-<S>  New H29:  fld_state(computer) <= tar
+<S>  New H27:  fld_state(computer) <= tar
 ***  Proved C4:  fld_heartratehistory1(computer) + fld_heartratehistory2(
           computer) + fld_heartratehistory3(computer) + fld_heartratehistory4(
           computer) + fld_heartratehistory5(computer) + fld_heartratehistory6(
@@ -152,8 +150,7 @@ procedure ICD.CalculateAvarage
           computer) <= 2147483647
      using hypotheses H15 & H17.
 ---  Eliminated hypothesis H1 (true-hypothesis).
----  Eliminated hypothesis H30 (true-hypothesis).
----  Eliminated hypothesis H31 (true-hypothesis).
+---  Eliminated hypothesis H28 (true-hypothesis).
 ***  Proved C1:  (fld_heartratehistory1(computer) + fld_heartratehistory2(
           computer) + fld_heartratehistory3(computer) + fld_heartratehistory4(
           computer) + fld_heartratehistory5(computer) + fld_heartratehistory6(
@@ -168,10 +165,10 @@ procedure ICD.CalculateAvarage
 
 
 @@@@@@@@@@  VC: procedure_calculateavarage_2.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  true
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  true
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  true
 ***  Proved C1:  true

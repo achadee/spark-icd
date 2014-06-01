@@ -36,14 +36,14 @@ Summary Dead Path files (.sdp)
 in the directory:
 /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code
 
-Summary produced: 01-JUN-2014 19:41:41.10
+Summary produced: 01-JUN-2014 22:28:32.80
 
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/heart/getimpulse.vcg
 function Heart.GetImpulse
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:27
+VCs simplified 01-JUN-2014 22:28:27
 
 VCs for function_getimpulse :
  -----------------------------------------------------------------------------
@@ -56,9 +56,9 @@ VCs for function_getimpulse :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/heart/getrate.vcg
 procedure Heart.GetRate
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:27
+VCs simplified 01-JUN-2014 22:28:27
 
 VCs for procedure_getrate :
  -----------------------------------------------------------------------------
@@ -72,9 +72,9 @@ VCs for procedure_getrate :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/heart/init.vcg
 procedure Heart.Init
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:27
+VCs simplified 01-JUN-2014 22:28:27
 
 VCs for procedure_init :
  -----------------------------------------------------------------------------
@@ -92,9 +92,9 @@ VCs for procedure_init :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/heart/setimpulse.vcg
 procedure Heart.SetImpulse
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:28
+VCs simplified 01-JUN-2014 22:28:27
 
 VCs for procedure_setimpulse :
  -----------------------------------------------------------------------------
@@ -108,9 +108,9 @@ VCs for procedure_setimpulse :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/heart/tick.vcg
 procedure Heart.Tick
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:28
+VCs simplified 01-JUN-2014 22:28:27
 
 VCs for procedure_tick :
  -----------------------------------------------------------------------------
@@ -140,9 +140,9 @@ VCs for procedure_tick :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/hrm/getrate.vcg
 procedure HRM.GetRate
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:28
+VCs simplified 01-JUN-2014 22:28:27
 
 VCs for procedure_getrate :
  -----------------------------------------------------------------------------
@@ -158,9 +158,9 @@ VCs for procedure_getrate :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/hrm/init.vcg
 procedure HRM.Init
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:28
+VCs simplified 01-JUN-2014 22:28:27
 
 VCs for procedure_init :
  -----------------------------------------------------------------------------
@@ -174,9 +174,9 @@ VCs for procedure_init :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/hrm/ison.vcg
 function HRM.IsOn
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:28
+VCs simplified 01-JUN-2014 22:28:27
 
 VCs for function_ison :
  -----------------------------------------------------------------------------
@@ -189,9 +189,9 @@ VCs for function_ison :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/hrm/off.vcg
 procedure HRM.Off
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:28
+VCs simplified 01-JUN-2014 22:28:28
 
 VCs for procedure_off :
  -----------------------------------------------------------------------------
@@ -204,9 +204,9 @@ VCs for procedure_off :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/hrm/on.vcg
 procedure HRM.On
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:28
+VCs simplified 01-JUN-2014 22:28:28
 
 VCs for procedure_on :
  -----------------------------------------------------------------------------
@@ -220,9 +220,9 @@ VCs for procedure_on :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/hrm/tick.vcg
 procedure HRM.Tick
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:28
+VCs simplified 01-JUN-2014 22:28:28
 
 VCs for procedure_tick :
  -----------------------------------------------------------------------------
@@ -241,20 +241,20 @@ VCs for procedure_tick :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/addratetohistory.vcg
 procedure ICD.addRateToHistory
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:28
+VCs simplified 01-JUN-2014 22:28:28
 
 VCs for procedure_addratetohistory :
  -----------------------------------------------------------------------------
 | #   | From  | To                  | Proved By          | Dead Path | Status |
 |-----------------------------------------------------------------------------
-| 1   | start | rtc check @ 49      | Inference          | No DPC    |   I-   |
-| 2   | start | rtc check @ 50      | Inference          | No DPC    |   I-   |
-| 3   | start | rtc check @ 51      | Inference          | No DPC    |   I-   |
-| 4   | start | rtc check @ 52      | Inference          | No DPC    |   I-   |
-| 5   | start | rtc check @ 53      | Inference          | No DPC    |   I-   |
-| 6   | start | rtc check @ 54      | Inference          | No DPC    |   I-   |
+| 1   | start | rtc check @ 47      | Inference          | No DPC    |   I-   |
+| 2   | start | rtc check @ 48      | Inference          | No DPC    |   I-   |
+| 3   | start | rtc check @ 49      | Inference          | No DPC    |   I-   |
+| 4   | start | rtc check @ 50      | Inference          | No DPC    |   I-   |
+| 5   | start | rtc check @ 51      | Inference          | No DPC    |   I-   |
+| 6   | start | rtc check @ 52      | Inference          | No DPC    |   I-   |
 | 7   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
  -----------------------------------------------------------------------------
 
@@ -262,15 +262,15 @@ VCs for procedure_addratetohistory :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/calculateavarage.vcg
 procedure ICD.CalculateAvarage
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:28
+VCs simplified 01-JUN-2014 22:28:28
 
 VCs for procedure_calculateavarage :
  -----------------------------------------------------------------------------
 | #   | From  | To                  | Proved By          | Dead Path | Status |
 |-----------------------------------------------------------------------------
-| 1   | start | rtc check @ 107     | Inference          | No DPC    |   I-   |
+| 1   | start | rtc check @ 77      | Inference          | No DPC    |   I-   |
 | 2   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
  -----------------------------------------------------------------------------
 
@@ -278,28 +278,28 @@ VCs for procedure_calculateavarage :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/calculatevariance.vcg
 procedure ICD.CalculateVariance
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:28
+VCs simplified 01-JUN-2014 22:28:28
 
 VCs for procedure_calculatevariance :
  -----------------------------------------------------------------------------
 | #   | From  | To                  | Proved By          | Dead Path | Status |
 |-----------------------------------------------------------------------------
-| 1   | start | rtc check @ 141     | Inference          | No DPC    |   I-   |
-| 2   | start | rtc check @ 142     | Undischarged       | No DPC    |   U-   |
-| 3   | start | pre check @ 155     | Undischarged       | No DPC    |   U-   |
-| 4   | start | pre check @ 155     | Inference          | No DPC    |   I-   |
-| 5   | start | pre check @ 155     | Inference          | No DPC    |   I-   |
-| 6   | start | pre check @ 155     | Inference          | No DPC    |   I-   |
-| 7   | start | pre check @ 155     | Inference          | No DPC    |   I-   |
-| 8   | start | pre check @ 155     | Inference          | No DPC    |   I-   |
-| 9   | start | pre check @ 155     | Inference          | No DPC    |   I-   |
-| 10  | start | pre check @ 155     | Inference          | No DPC    |   I-   |
-| 11  | start | pre check @ 155     | Inference          | No DPC    |   I-   |
-| 12  | start | pre check @ 155     | Inference          | No DPC    |   I-   |
-| 13  | start | pre check @ 155     | Inference          | No DPC    |   I-   |
-| 14  | start | rtc check @ 155     | Inference          | No DPC    |   I-   |
+| 1   | start | rtc check @ 110     | Inference          | No DPC    |   I-   |
+| 2   | start | rtc check @ 111     | Undischarged       | No DPC    |   U-   |
+| 3   | start | pre check @ 124     | Undischarged       | No DPC    |   U-   |
+| 4   | start | pre check @ 124     | Inference          | No DPC    |   I-   |
+| 5   | start | pre check @ 124     | Inference          | No DPC    |   I-   |
+| 6   | start | pre check @ 124     | Inference          | No DPC    |   I-   |
+| 7   | start | pre check @ 124     | Inference          | No DPC    |   I-   |
+| 8   | start | pre check @ 124     | Inference          | No DPC    |   I-   |
+| 9   | start | pre check @ 124     | Inference          | No DPC    |   I-   |
+| 10  | start | pre check @ 124     | Inference          | No DPC    |   I-   |
+| 11  | start | pre check @ 124     | Inference          | No DPC    |   I-   |
+| 12  | start | pre check @ 124     | Inference          | No DPC    |   I-   |
+| 13  | start | pre check @ 124     | Inference          | No DPC    |   I-   |
+| 14  | start | rtc check @ 124     | Inference          | No DPC    |   I-   |
 | 15  | start |    assert @ finish  | Examiner           | No DPC    |   E-   |
 | 16  | start |    assert @ finish  | Examiner           | No DPC    |   E-   |
  -----------------------------------------------------------------------------
@@ -308,87 +308,77 @@ VCs for procedure_calculatevariance :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/detect_fibrillation.vcg
 procedure ICD.Detect_Fibrillation
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:31
+VCs simplified 01-JUN-2014 22:28:30
 
 VCs for procedure_detect_fibrillation :
  -----------------------------------------------------------------------------
 | #   | From  | To                  | Proved By          | Dead Path | Status |
 |-----------------------------------------------------------------------------
-| 1   | start | rtc check @ 172     | Inference          | No DPC    |   I-   |
-| 2   | start | rtc check @ 173     | Inference          | No DPC    |   I-   |
-| 3   | start | rtc check @ 175     | Undischarged       | No DPC    |   U-   |
-| 4   | start | rtc check @ 178     | Undischarged       | No DPC    |   U-   |
-| 5   | start | rtc check @ 183     | Inference          | No DPC    |   I-   |
-| 6   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
-| 7   | start |    assert @ finish  | Undischarged       | No DPC    |   U-   |
-| 8   | start |    assert @ finish  | Undischarged       | No DPC    |   U-   |
-| 9   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+| 1   | start | rtc check @ 141     | Inference          | No DPC    |   I-   |
+| 2   | start | rtc check @ 143     | Inference          | No DPC    |   I-   |
+| 3   | start |    assert @ finish  | Undischarged       | No DPC    |   U-   |
+| 4   | start |    assert @ finish  | Undischarged       | No DPC    |   U-   |
+| 5   | start |    assert @ finish  | Undischarged       | No DPC    |   U-   |
  -----------------------------------------------------------------------------
 
 
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/detect_tarchycardia.vcg
 procedure ICD.Detect_Tarchycardia
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:32
+VCs simplified 01-JUN-2014 22:28:31
 
 VCs for procedure_detect_tarchycardia :
  -----------------------------------------------------------------------------
 | #   | From  | To                  | Proved By          | Dead Path | Status |
 |-----------------------------------------------------------------------------
-| 1   | start | rtc check @ 64      | Inference          | No DPC    |   I-   |
-| 2   | start | rtc check @ 65      | Inference          | No DPC    |   I-   |
-| 3   | start | rtc check @ 67      | Inference          | No DPC    |   I-   |
-| 4   | start | rtc check @ 76      | Inference          | No DPC    |   I-   |
-| 5   | start | rtc check @ 76      | Inference          | No DPC    |   I-   |
-| 6   | start | rtc check @ 78      | Inference          | No DPC    |   I-   |
-| 7   | start | rtc check @ 78      | Inference          | No DPC    |   I-   |
-| 8   | start |    assert @ finish  | Examiner           | No DPC    |   E-   |
-| 9   | start |    assert @ finish  | Examiner           | No DPC    |   E-   |
-| 10  | start |    assert @ finish  | Examiner           | No DPC    |   E-   |
-| 11  | start |    assert @ finish  | Examiner           | No DPC    |   E-   |
+| 1   | start | rtc check @ 154     | Inference          | No DPC    |   I-   |
+| 2   | start | rtc check @ 155     | Inference          | No DPC    |   I-   |
+| 3   | start | rtc check @ 157     | Inference          | No DPC    |   I-   |
+| 4   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+| 5   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+| 6   | start |    assert @ finish  | Undischarged       | No DPC    |   U-   |
  -----------------------------------------------------------------------------
 
 
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/init.vcg
 procedure ICD.Init
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:32
+VCs simplified 01-JUN-2014 22:28:31
 
 VCs for procedure_init :
  -----------------------------------------------------------------------------
 | #   | From  | To                  | Proved By          | Dead Path | Status |
 |-----------------------------------------------------------------------------
-| 1   | start | rtc check @ 15      | Inference          | No DPC    |   I-   |
-| 2   | start | rtc check @ 16      | Inference          | No DPC    |   I-   |
-| 3   | start | rtc check @ 18      | Inference          | No DPC    |   I-   |
-| 4   | start | rtc check @ 19      | Inference          | No DPC    |   I-   |
-| 5   | start | rtc check @ 21      | Inference          | No DPC    |   I-   |
-| 6   | start | rtc check @ 24      | Inference          | No DPC    |   I-   |
-| 7   | start | rtc check @ 25      | Inference          | No DPC    |   I-   |
-| 8   | start | rtc check @ 27      | Inference          | No DPC    |   I-   |
-| 9   | start | rtc check @ 28      | Inference          | No DPC    |   I-   |
-| 10  | start | rtc check @ 29      | Inference          | No DPC    |   I-   |
-| 11  | start | rtc check @ 30      | Inference          | No DPC    |   I-   |
-| 12  | start | rtc check @ 31      | Inference          | No DPC    |   I-   |
-| 13  | start | rtc check @ 32      | Inference          | No DPC    |   I-   |
-| 14  | start | rtc check @ 33      | Inference          | No DPC    |   I-   |
-| 15  | start | rtc check @ 34      | Inference          | No DPC    |   I-   |
-| 16  | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+| 1   | start | rtc check @ 14      | Inference          | No DPC    |   I-   |
+| 2   | start | rtc check @ 15      | Inference          | No DPC    |   I-   |
+| 3   | start | rtc check @ 17      | Inference          | No DPC    |   I-   |
+| 4   | start | rtc check @ 18      | Inference          | No DPC    |   I-   |
+| 5   | start | rtc check @ 20      | Inference          | No DPC    |   I-   |
+| 6   | start | rtc check @ 23      | Inference          | No DPC    |   I-   |
+| 7   | start | rtc check @ 24      | Inference          | No DPC    |   I-   |
+| 8   | start | rtc check @ 26      | Inference          | No DPC    |   I-   |
+| 9   | start | rtc check @ 27      | Inference          | No DPC    |   I-   |
+| 10  | start | rtc check @ 28      | Inference          | No DPC    |   I-   |
+| 11  | start | rtc check @ 29      | Inference          | No DPC    |   I-   |
+| 12  | start | rtc check @ 30      | Inference          | No DPC    |   I-   |
+| 13  | start | rtc check @ 31      | Inference          | No DPC    |   I-   |
+| 14  | start | rtc check @ 32      | Inference          | No DPC    |   I-   |
+| 15  | start |    assert @ finish  | Inference          | No DPC    |   I-   |
  -----------------------------------------------------------------------------
 
 
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/off.vcg
 procedure ICD.Off
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:32
+VCs simplified 01-JUN-2014 22:28:31
 
 VCs for procedure_off :
  -----------------------------------------------------------------------------
@@ -401,9 +391,9 @@ VCs for procedure_off :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/on.vcg
 procedure ICD.On
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:32
+VCs simplified 01-JUN-2014 22:28:31
 
 VCs for procedure_on :
  -----------------------------------------------------------------------------
@@ -416,17 +406,17 @@ VCs for procedure_on :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/power.vcg
 function ICD.power
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:32
+VCs simplified 01-JUN-2014 22:28:31
 
 VCs for function_power :
  -----------------------------------------------------------------------------
 | #   | From  | To                  | Proved By          | Dead Path | Status |
 |-----------------------------------------------------------------------------
-| 1   | start | rtc check @ 119     | Inference          | No DPC    |   I-   |
-| 2   | start | rtc check @ 120     | Undischarged       | No DPC    |   U-   |
-| 3   | start | rtc check @ 121     | Inference          | No DPC    |   I-   |
+| 1   | start | rtc check @ 88      | Inference          | No DPC    |   I-   |
+| 2   | start | rtc check @ 89      | Undischarged       | No DPC    |   U-   |
+| 3   | start | rtc check @ 90      | Inference          | No DPC    |   I-   |
 | 4   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
 | 5   | start |    assert @ finish  | Undischarged       | No DPC    |   U-   |
  -----------------------------------------------------------------------------
@@ -435,17 +425,17 @@ VCs for function_power :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/secureadd.vcg
 function ICD.secureAdd
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:32
+VCs simplified 01-JUN-2014 22:28:31
 
 VCs for function_secureadd :
  -----------------------------------------------------------------------------
 | #   | From  | To                  | Proved By          | Dead Path | Status |
 |-----------------------------------------------------------------------------
-| 1   | start | rtc check @ 129     | Inference          | No DPC    |   I-   |
-| 2   | start | rtc check @ 130     | Undischarged       | No DPC    |   U-   |
-| 3   | start | rtc check @ 131     | Inference          | No DPC    |   I-   |
+| 1   | start | rtc check @ 98      | Inference          | No DPC    |   I-   |
+| 2   | start | rtc check @ 99      | Undischarged       | No DPC    |   U-   |
+| 3   | start | rtc check @ 100     | Inference          | No DPC    |   I-   |
 | 4   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
 | 5   | start |    assert @ finish  | Contradiction      | No DPC    |   X-   |
  -----------------------------------------------------------------------------
@@ -454,53 +444,54 @@ VCs for function_secureadd :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/set_impulse.vcg
 procedure ICD.Set_Impulse
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:32
+VCs simplified 01-JUN-2014 22:28:31
 
 VCs for procedure_set_impulse :
  -----------------------------------------------------------------------------
 | #   | From  | To                  | Proved By          | Dead Path | Status |
 |-----------------------------------------------------------------------------
-| 1   | start | rtc check @ 91      | Inference          | No DPC    |   I-   |
-| 2   | start | rtc check @ 95      | Inference          | No DPC    |   I-   |
-| 3   | start | rtc check @ 96      | Inference          | No DPC    |   I-   |
-| 4   | start | rtc check @ 97      | Inference          | No DPC    |   I-   |
-| 5   | start | rtc check @ 100     | Inference          | No DPC    |   I-   |
-| 6   | start |    assert @ finish  | Examiner           | No DPC    |   E-   |
-| 7   | start |    assert @ finish  | Examiner           | No DPC    |   E-   |
-| 8   | start |    assert @ finish  | Examiner           | No DPC    |   E-   |
-| 9   | start |    assert @ finish  | Examiner           | No DPC    |   E-   |
+| 1   | start | rtc check @ 61      | Inference          | No DPC    |   I-   |
+| 2   | start | rtc check @ 65      | Inference          | No DPC    |   I-   |
+| 3   | start | rtc check @ 66      | Inference          | No DPC    |   I-   |
+| 4   | start | rtc check @ 67      | Inference          | No DPC    |   I-   |
+| 5   | start | rtc check @ 70      | Inference          | No DPC    |   I-   |
+| 6   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+| 7   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+| 8   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+| 9   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
  -----------------------------------------------------------------------------
 
 
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/tick.vcg
 procedure ICD.Tick
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:33
+VCs simplified 01-JUN-2014 22:28:31
 
 VCs for procedure_tick :
  -----------------------------------------------------------------------------
 | #   | From  | To                  | Proved By          | Dead Path | Status |
 |-----------------------------------------------------------------------------
-| 1   | start | rtc check @ 197     | Inference          | No DPC    |   I-   |
-| 2   | start | pre check @ 201     | Undischarged       | No DPC    |   U-   |
-| 3   | start | rtc check @ 205     | Undischarged       | No DPC    |   U-   |
-| 4   | start | rtc check @ 210     | Inference          | No DPC    |   I-   |
-| 5   | start |    assert @ finish  | Undischarged       | No DPC    |   U-   |
-| 6   | start |    assert @ finish  | Undischarged       | No DPC    |   U-   |
-| 7   | start |    assert @ finish  | Inference          | No DPC    |   I-   |
+| 1   | start | rtc check @ 168     | Inference          | No DPC    |   I-   |
+| 2   | start | pre check @ 169     | Inference          | No DPC    |   I-   |
+| 3   | start | pre check @ 173     | Inference          | No DPC    |   I-   |
+| 4   | start | pre check @ 174     | Inference          | No DPC    |   I-   |
+| 5   | start | rtc check @ 176     | Inference          | No DPC    |   I-   |
+| 6   | start |    assert @ finish  | Examiner           | No DPC    |   E-   |
+| 7   | start |    assert @ finish  | Examiner           | No DPC    |   E-   |
+| 8   | start |    assert @ finish  | Examiner           | No DPC    |   E-   |
  -----------------------------------------------------------------------------
 
 
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/impulsegenerator/init.vcg
 procedure ImpulseGenerator.Init
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:40
+VCs simplified 01-JUN-2014 22:28:32
 
 VCs for procedure_init :
  -----------------------------------------------------------------------------
@@ -514,9 +505,9 @@ VCs for procedure_init :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/impulsegenerator/ison.vcg
 function ImpulseGenerator.IsOn
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:40
+VCs simplified 01-JUN-2014 22:28:32
 
 VCs for function_ison :
  -----------------------------------------------------------------------------
@@ -529,9 +520,9 @@ VCs for function_ison :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/impulsegenerator/off.vcg
 procedure ImpulseGenerator.Off
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:40
+VCs simplified 01-JUN-2014 22:28:32
 
 VCs for procedure_off :
  -----------------------------------------------------------------------------
@@ -544,9 +535,9 @@ VCs for procedure_off :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/impulsegenerator/on.vcg
 procedure ImpulseGenerator.On
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:40
+VCs simplified 01-JUN-2014 22:28:32
 
 VCs for procedure_on :
  -----------------------------------------------------------------------------
@@ -559,9 +550,9 @@ VCs for procedure_on :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/impulsegenerator/setimpulse.vcg
 procedure ImpulseGenerator.SetImpulse
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:40
+VCs simplified 01-JUN-2014 22:28:32
 
 VCs for procedure_setimpulse :
  -----------------------------------------------------------------------------
@@ -576,9 +567,9 @@ VCs for procedure_setimpulse :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/impulsegenerator/tick.vcg
 procedure ImpulseGenerator.Tick
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:40
+VCs simplified 01-JUN-2014 22:28:32
 
 VCs for procedure_tick :
  -----------------------------------------------------------------------------
@@ -593,9 +584,9 @@ VCs for procedure_tick :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/measures/limit.vcg
 function Measures.Limit
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:40
+VCs simplified 01-JUN-2014 22:28:32
 
 VCs for function_limit :
  -----------------------------------------------------------------------------
@@ -613,9 +604,9 @@ VCs for function_limit :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/measures/limitbpm.vcg
 function Measures.LimitBPM
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:40
+VCs simplified 01-JUN-2014 22:28:32
 
 VCs for function_limitbpm :
  -----------------------------------------------------------------------------
@@ -629,9 +620,9 @@ VCs for function_limitbpm :
 File /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/measures/limitjoules.vcg
 function Measures.LimitJoules
 
-VCs generated 01-JUN-2014 19:41:14
+VCs generated 01-JUN-2014 22:28:21
 
-VCs simplified 01-JUN-2014 19:41:40
+VCs simplified 01-JUN-2014 22:28:32
 
 VCs for function_limitjoules :
  -----------------------------------------------------------------------------
@@ -652,14 +643,14 @@ The following subprograms have VCs proved by contradiction:
 The following subprograms have undischarged VCs (excluding those proved false):
 
    2  /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/calculatevariance.vcg
-   4  /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/detect_fibrillation.vcg
+   3  /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/detect_fibrillation.vcg
+   1  /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/detect_tarchycardia.vcg
    2  /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/power.vcg
    1  /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/secureadd.vcg
-   4  /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd/tick.vcg
 
 Proof strategies used by subprograms
 -------------------------------------------------------------------------
-Total subprograms with at least one VC proved by examiner:              4
+Total subprograms with at least one VC proved by examiner:              3
 Total subprograms with at least one VC proved by simplifier:           32
 Total subprograms with at least one VC proved by contradiction:         1
 Total subprograms with at least one VC proved with user proof rule:     0
@@ -700,13 +691,13 @@ Note: (User) denotes where the Simplifier has proved VCs using one or
 Total VCs by type:                                       
                        -----------Proved By Or Using-----------
                 Total Examnr   Simp (User) ViCToR Checkr Review  False Undisc
-Assert/Post        54     13     36             0      0      0      0      5
-Precondition       14      0     12             0      0      0      0      2
+Assert/Post        52      8     39             0      0      0      0      5
+Precondition       16      0     15             0      0      0      0      1
 Check stmnt.        0      0      0             0      0      0      0      0
-Runtime check      88      0     82             0      0      0      0      6
+Runtime check      79      0     76             0      0      0      0      3
 Refinem. VCs        0      0      0             0      0      0      0      0
 Inherit. VCs        0      0      0             0      0      0      0      0
 ===============================================================================
-Totals:           156     13    130             0      0      0      0     13 <<<
-%Totals:                  8%    83%            0%     0%     0%     0%     8%
+Totals:           147      8    130             0      0      0      0      9 <<<
+%Totals:                  5%    88%            0%     0%     0%     0%     6%
 ===================== End of Semantic Analysis Summary ========================

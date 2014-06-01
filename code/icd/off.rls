@@ -5,7 +5,7 @@
            /*********************************************************/
 
 
-                        /*DATE : 01-JUN-2014 19:41:14.52*/
+                        /*DATE : 01-JUN-2014 22:28:21.42*/
 
                              /*procedure ICD.Off*/
 
@@ -71,14 +71,12 @@ off_rules(37): A = B may_be_deduced_from
      [goal(checktype(A,icdtype)),
       goal(checktype(B,icdtype)),
       fld_rate(A) = fld_rate(B),
-      fld_inprocess(A) = fld_inprocess(B),
       fld_ison(A) = fld_ison(B),
       fld_state(A) = fld_state(B),
       fld_upperbound(A) = fld_upperbound(B),
       fld_count(A) = fld_count(B),
-      fld_next(A) = fld_next(B),
+      fld_tickstonextshock(A) = fld_tickstonextshock(B),
       fld_tickcount(A) = fld_tickcount(B),
-      fld_tickstoreenabledetectionagain(A) = fld_tickstoreenabledetectionagain(B),
       fld_heartratehistory1(A) = fld_heartratehistory1(B),
       fld_heartratehistory2(A) = fld_heartratehistory2(B),
       fld_heartratehistory3(A) = fld_heartratehistory3(B),

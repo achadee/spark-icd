@@ -22,7 +22,6 @@ package ICD is
       record
 	 -- The measure heart rate for the heart
 	   Rate : Measures.BPM;
-      InProcess : Boolean;
       IsOn : Boolean;
 
       
@@ -31,10 +30,8 @@ package ICD is
       -- ICD settings
       UpperBound : Measures.BPM;
       Count : Integer; -- impulse count
-      Next : Integer;
+      TicksToNextShock : Integer;
       TickCount : Integer; 
-
-      ticksToReEnableDetectionAgain : integer;
 
       heartRateHistory1 : Measures.BPM;
       heartRateHistory2 : Measures.BPM;
@@ -49,9 +46,8 @@ package ICD is
 
    procedure Init(Computer : out ICDType);
    --# derives Computer from ;
-   --#      post Computer.InProcess = False
-   --#     and Computer.IsOn = False
-   --#     and Computer.Next = 600 / (Computer.UpperBound + ProjectedRate)       
+   --#      post Computer.IsOn = False
+   --#     and Computer.TicksToNextShock = 600 / (Computer.UpperBound + ProjectedRate)       
    --#     and Computer.history_avarage = 0
    --#     and Computer.history_variance = 0
    --#     and Computer.state = normal
@@ -64,14 +60,9 @@ package ICD is
    --#     and Computer.heartRateHistory3 = Measures.BPM'First
    --#     and Computer.heartRateHistory4 = Measures.BPM'First
    --#     and Computer.heartRateHistory5 = Measures.BPM'First
-   --#     and Computer.heartRateHistory6 = Measures.BPM'First
-   --#     and Computer.ticksToReEnableDetectionAgain = 6;
+   --#     and Computer.heartRateHistory6 = Measures.BPM'First;
    
-   procedure Tick(Computer : in out ICDType; HeartRateMonitor : in HRM.HRMType; Shock : in out ImpulseGenerator.GeneratorType);
-   --# derives Computer from Computer, HeartRateMonitor, Shock & Shock from Computer, Shock, HeartRateMonitor;
-   --#      post not Computer.IsOn -> 
-   --#      (Computer.Rate = Measures.BPM'First);
-
+   
    procedure On(Computer : in out ICDType);
    --# derives Computer from Computer;
    --#      post Computer.IsOn = True;
@@ -82,7 +73,8 @@ package ICD is
 
    procedure addRateToHistory(Computer : in out ICDType);
    --# derives Computer from Computer;
-   --# post Computer.heartRateHistory1 = Computer~.heartRateHistory2
+   --#   pre Computer.isOn = True;
+   --#   post Computer.heartRateHistory1 = Computer~.heartRateHistory2
    --#   and Computer.heartRateHistory2 = Computer~.heartRateHistory3
    --#   and Computer.heartRateHistory3 = Computer~.heartRateHistory4
    --#   and Computer.heartRateHistory4 = Computer~.heartRateHistory5
@@ -106,16 +98,34 @@ package ICD is
 
    procedure Detect_Fibrillation(Computer : in out ICDType);
    --# derives Computer from Computer;
-   --# pre Computer.IsOn = True;
-   --# post (Computer.state = fib <-> (Computer~.state /= fib and Computer.heartRateHistory1 /= -1 and Computer.ticksToReEnableDetectionAgain = 0 and Computer.history_variance > 100));
+   --# post Computer.IsOn = True and ((Computer~.state /= fib and 
+   --#        Computer.heartRateHistory1 /= Measures.BPM'First and
+   --#        Computer.history_variance > 100) 
+   --#        -> Computer.state = fib) and
+   --#        (Computer~.state = fib -> Computer.state = normal);
 
 
    procedure Detect_Tarchycardia(Computer : in out ICDType);
    --# derives Computer from Computer;
+   --# pre Computer.isOn = True;
+   --# post Computer.IsOn = True and ((Computer~.state = normal and 
+   --#        Computer.Rate > Computer.UpperBound) -> 
+   --#      (Computer.state = tar and 
+   --#      Computer.Count = MaxShocks)) and
+   --#      ((Computer~.state = tar and Computer.Count = 0) -> Computer.state = normal);
 
 
    procedure Set_Impulse(Computer : in out ICDType; Shock: in out ImpulseGenerator.GeneratorType);
    --# derives Computer from Computer, Shock & Shock from Computer, Shock;
+   --# pre Computer.isOn = True and Shock.isOn = True;
+   --# post ((Computer.state = tar 
+   --#         and Computer.count > 0 
+   --#         and Computer.TickCount = 0) 
+   --#         -> (Computer.count = Computer~.count - 1
+   --#        and Computer.TickCount = Computer.TicksToNextShock));
 
-   
+   procedure Tick(Computer : in out ICDType; HeartRateMonitor : in HRM.HRMType; Shock : in out ImpulseGenerator.GeneratorType);
+   --# derives Computer from Computer, HeartRateMonitor, Shock & Shock from Computer, Shock, HeartRateMonitor;
+   --# pre HeartRateMonitor.isOn = True and Shock.IsOn = True and Computer.isOn = True;
+
 end ICD;

@@ -5,7 +5,7 @@
 *****************************************************************************
 
 
-CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:31
+CREATED 01-JUN-2014, 22:28:21  SIMPLIFIED 01-JUN-2014, 22:28:30
 
 SPARK Simplifier GPL 2011
 Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
@@ -18,84 +18,71 @@ procedure ICD.Detect_Fibrillation
 
 
 @@@@@@@@@@  VC: procedure_detect_fibrillation_1.  @@@@@@@@@@
-%%%  Simplified H1 on reading formula in, to give:
-     %%%  H1:  fld_ison(computer)
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
 %%%  Simplified C1 on reading formula in, to give:
-     %%%  C1:  icdstates__first <= normal
-***  Proved C2:  normal <= icdstates__last
-     using hypotheses H29 & H34.
+     %%%  C1:  icdstates__first <= fib
 -S-  Applied substitution rule detect_fibri_rules(12).
      This was achieved by replacing all occurrences of icdstates__first by:
           normal.
-<S>  New H28:  normal <= fld_state(computer)
+<S>  New H26:  normal <= fld_state(computer)
 <S>  New C1:  true
-***  Proved C1:  true
-***  PROVED VC.
-
-
-@@@@@@@@@@  VC: procedure_detect_fibrillation_2.  @@@@@@@@@@
-%%%  Simplified H1 on reading formula in, to give:
-     %%%  H1:  fld_ison(computer)
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  icdstates__first <= normal
--S-  Applied substitution rule detect_fibri_rules(2).
-     This was achieved by replacing all occurrences of integer__first by:
-          - 2147483648.
-<S>  New H2:  fld_history_variance(computer) >= - 2147483648
-<S>  New H4:  fld_history_avarage(computer) >= - 2147483648
-<S>  New H18:  fld_tickstoreenabledetectionagain(computer) >= - 2147483648
-<S>  New H20:  fld_tickcount(computer) >= - 2147483648
-<S>  New H22:  fld_next(computer) >= - 2147483648
-<S>  New H24:  fld_count(computer) >= - 2147483648
-<S>  New C1:  true
--S-  Applied substitution rule detect_fibri_rules(3).
-     This was achieved by replacing all occurrences of integer__last by:
-          2147483647.
-<S>  New H3:  fld_history_variance(computer) <= 2147483647
-<S>  New H5:  fld_history_avarage(computer) <= 2147483647
-<S>  New H19:  fld_tickstoreenabledetectionagain(computer) <= 2147483647
-<S>  New H21:  fld_tickcount(computer) <= 2147483647
-<S>  New H23:  fld_next(computer) <= 2147483647
-<S>  New H25:  fld_count(computer) <= 2147483647
+-S-  Applied substitution rule detect_fibri_rules(13).
+     This was achieved by replacing all occurrences of icdstates__last by:
+          tar.
+<S>  New H27:  fld_state(computer) <= tar
 <S>  New C2:  true
 ***  Proved C1:  true
 ***  Proved C2:  true
 ***  PROVED VC.
 
 
-@@@@@@@@@@  VC: procedure_detect_fibrillation_3.  @@@@@@@@@@
-%%%  Simplified H1 on reading formula in, to give:
-     %%%  H1:  fld_ison(computer)
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
+@@@@@@@@@@  VC: procedure_detect_fibrillation_2.  @@@@@@@@@@
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
 %%%  Simplified C1 on reading formula in, to give:
-     %%%  C1:  - 1 >= system__min_int
+     %%%  C1:  icdstates__first <= normal
+***  Proved C2:  normal <= icdstates__last
+     using hypotheses H27 & H32.
+-S-  Applied substitution rule detect_fibri_rules(12).
+     This was achieved by replacing all occurrences of icdstates__first by:
+          normal.
+<S>  New H26:  normal <= fld_state(computer)
+<S>  New C1:  true
+***  Proved C1:  true
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_detect_fibrillation_3.  @@@@@@@@@@
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
+%%%  Simplified H34 on reading formula in, to give:
+     %%%  H34:  icdstates__first <= fib
+%%%  Simplified C1 on reading formula in, to give:
+     %%%  C1:  fld_ison(computer)
 %%%  Simplified C2 on reading formula in, to give:
-     %%%  C2:  - 1 <= system__max_int
->>>  Restructured hypothesis H34 into:
-     >>>  H34:  fld_state(computer) <> fib
+     %%%  C2:  true
+%%%  Simplified C3 on reading formula in, to give:
+     %%%  C3:  not fld_state(computer) = fib
+***  Proved C2:  true
+***  Proved C3:  not fld_state(computer) = fib
+     using hypothesis H31.
 -S-  Applied substitution rule detect_fibri_rules(2).
      This was achieved by replacing all occurrences of integer__first by:
           - 2147483648.
 <S>  New H2:  fld_history_variance(computer) >= - 2147483648
 <S>  New H4:  fld_history_avarage(computer) >= - 2147483648
-<S>  New H18:  fld_tickstoreenabledetectionagain(computer) >= - 2147483648
-<S>  New H20:  fld_tickcount(computer) >= - 2147483648
-<S>  New H22:  fld_next(computer) >= - 2147483648
-<S>  New H24:  fld_count(computer) >= - 2147483648
+<S>  New H18:  fld_tickcount(computer) >= - 2147483648
+<S>  New H20:  fld_tickstonextshock(computer) >= - 2147483648
+<S>  New H22:  fld_count(computer) >= - 2147483648
 -S-  Applied substitution rule detect_fibri_rules(3).
      This was achieved by replacing all occurrences of integer__last by:
           2147483647.
 <S>  New H3:  fld_history_variance(computer) <= 2147483647
 <S>  New H5:  fld_history_avarage(computer) <= 2147483647
-<S>  New H19:  fld_tickstoreenabledetectionagain(computer) <= 2147483647
-<S>  New H21:  fld_tickcount(computer) <= 2147483647
-<S>  New H23:  fld_next(computer) <= 2147483647
-<S>  New H25:  fld_count(computer) <= 2147483647
+<S>  New H19:  fld_tickcount(computer) <= 2147483647
+<S>  New H21:  fld_tickstonextshock(computer) <= 2147483647
+<S>  New H23:  fld_count(computer) <= 2147483647
 -S-  Applied substitution rule detect_fibri_rules(7).
      This was achieved by replacing all occurrences of measures__bpm__first by:
           - 1.
@@ -105,8 +92,9 @@ procedure ICD.Detect_Fibrillation
 <S>  New H12:  fld_heartratehistory3(computer) >= - 1
 <S>  New H14:  fld_heartratehistory2(computer) >= - 1
 <S>  New H16:  fld_heartratehistory1(computer) >= - 1
-<S>  New H26:  fld_upperbound(computer) >= - 1
-<S>  New H32:  fld_rate(computer) >= - 1
+<S>  New H24:  fld_upperbound(computer) >= - 1
+<S>  New H29:  fld_rate(computer) >= - 1
+<S>  New H32:  fld_heartratehistory1(computer) <> - 1
 -S-  Applied substitution rule detect_fibri_rules(8).
      This was achieved by replacing all occurrences of measures__bpm__last by:
           300.
@@ -116,179 +104,146 @@ procedure ICD.Detect_Fibrillation
 <S>  New H13:  fld_heartratehistory3(computer) <= 300
 <S>  New H15:  fld_heartratehistory2(computer) <= 300
 <S>  New H17:  fld_heartratehistory1(computer) <= 300
-<S>  New H27:  fld_upperbound(computer) <= 300
-<S>  New H33:  fld_rate(computer) <= 300
+<S>  New H25:  fld_upperbound(computer) <= 300
+<S>  New H30:  fld_rate(computer) <= 300
 -S-  Applied substitution rule detect_fibri_rules(12).
      This was achieved by replacing all occurrences of icdstates__first by:
           normal.
-<S>  New H28:  normal <= fld_state(computer)
+<S>  New H26:  normal <= fld_state(computer)
+<S>  New H34:  true
 -S-  Applied substitution rule detect_fibri_rules(13).
      This was achieved by replacing all occurrences of icdstates__last by:
           tar.
-<S>  New H29:  fld_state(computer) <= tar
----  Eliminated hypothesis H30 (true-hypothesis).
----  Eliminated hypothesis H31 (true-hypothesis).
+<S>  New H27:  fld_state(computer) <= tar
+<S>  New H35:  true
+%%%  Hypotheses H16 & H32 together imply that
+          - 1 < fld_heartratehistory1(computer).
+     H16 & H32 have therefore been deleted and a new H36 added to this effect.
+---  Eliminated hypothesis H1 (true-hypothesis).
+---  Eliminated hypothesis H28 (true-hypothesis).
+---  Eliminated hypothesis H34 (true-hypothesis).
+---  Eliminated hypothesis H35 (true-hypothesis).
+---  Eliminated hypothesis H2 (redundant, given H33).
+     +++  New H37:  integer__size >= 0
+     +++  New H38:  measures__bpm__size >= 0
+     +++  New H39:  icdstates__size >= 0
+     +++  New H40:  icdtype__size >= 0
+
+
+@@@@@@@@@@  VC: procedure_detect_fibrillation_4.  @@@@@@@@@@
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  icdstates__first <= normal
+%%%  Simplified C1 on reading formula in, to give:
+     %%%  C1:  fld_ison(computer)
+%%%  Simplified C2 on reading formula in, to give:
+     %%%  C2:  not (fld_state(computer) <> fib and (fld_heartratehistory1(
+          computer) <> measures__bpm__first and fld_history_variance(computer) 
+          > 100))
+%%%  Simplified C3 on reading formula in, to give:
+     %%%  C3:  true
+***  Proved C2:  not (fld_state(computer) <> fib and (fld_heartratehistory1(
+          computer) <> measures__bpm__first and fld_history_variance(computer) 
+          > 100))
+     using hypothesis H31.
+***  Proved C3:  true
+>>>  Restructured hypothesis H31 into:
+     >>>  H31:  fld_state(computer) = fib or (fld_heartratehistory1(computer) = 
+          measures__bpm__first or fld_history_variance(computer) <= 100)
+-S-  Applied substitution rule detect_fibri_rules(2).
+     This was achieved by replacing all occurrences of integer__first by:
+          - 2147483648.
+<S>  New H2:  fld_history_variance(computer) >= - 2147483648
+<S>  New H4:  fld_history_avarage(computer) >= - 2147483648
+<S>  New H18:  fld_tickcount(computer) >= - 2147483648
+<S>  New H20:  fld_tickstonextshock(computer) >= - 2147483648
+<S>  New H22:  fld_count(computer) >= - 2147483648
+-S-  Applied substitution rule detect_fibri_rules(3).
+     This was achieved by replacing all occurrences of integer__last by:
+          2147483647.
+<S>  New H3:  fld_history_variance(computer) <= 2147483647
+<S>  New H5:  fld_history_avarage(computer) <= 2147483647
+<S>  New H19:  fld_tickcount(computer) <= 2147483647
+<S>  New H21:  fld_tickstonextshock(computer) <= 2147483647
+<S>  New H23:  fld_count(computer) <= 2147483647
+-S-  Applied substitution rule detect_fibri_rules(7).
+     This was achieved by replacing all occurrences of measures__bpm__first by:
+          - 1.
+<S>  New H6:  fld_heartratehistory6(computer) >= - 1
+<S>  New H8:  fld_heartratehistory5(computer) >= - 1
+<S>  New H10:  fld_heartratehistory4(computer) >= - 1
+<S>  New H12:  fld_heartratehistory3(computer) >= - 1
+<S>  New H14:  fld_heartratehistory2(computer) >= - 1
+<S>  New H16:  fld_heartratehistory1(computer) >= - 1
+<S>  New H24:  fld_upperbound(computer) >= - 1
+<S>  New H29:  fld_rate(computer) >= - 1
+<S>  New H31:  fld_state(computer) = fib or (fld_heartratehistory1(computer) = 
+          - 1 or fld_history_variance(computer) <= 100)
+-S-  Applied substitution rule detect_fibri_rules(8).
+     This was achieved by replacing all occurrences of measures__bpm__last by:
+          300.
+<S>  New H7:  fld_heartratehistory6(computer) <= 300
+<S>  New H9:  fld_heartratehistory5(computer) <= 300
+<S>  New H11:  fld_heartratehistory4(computer) <= 300
+<S>  New H13:  fld_heartratehistory3(computer) <= 300
+<S>  New H15:  fld_heartratehistory2(computer) <= 300
+<S>  New H17:  fld_heartratehistory1(computer) <= 300
+<S>  New H25:  fld_upperbound(computer) <= 300
+<S>  New H30:  fld_rate(computer) <= 300
+-S-  Applied substitution rule detect_fibri_rules(12).
+     This was achieved by replacing all occurrences of icdstates__first by:
+          normal.
+<S>  New H26:  normal <= fld_state(computer)
+<S>  New H33:  true
+-S-  Applied substitution rule detect_fibri_rules(13).
+     This was achieved by replacing all occurrences of icdstates__last by:
+          tar.
+<S>  New H27:  fld_state(computer) <= tar
+<S>  New H34:  true
+---  Eliminated hypothesis H1 (true-hypothesis).
+---  Eliminated hypothesis H28 (true-hypothesis).
+---  Eliminated hypothesis H33 (true-hypothesis).
+---  Eliminated hypothesis H34 (true-hypothesis).
+---  Eliminated hypothesis H31 (true-disjunction).
      +++  New H35:  integer__size >= 0
      +++  New H36:  measures__bpm__size >= 0
      +++  New H37:  icdstates__size >= 0
      +++  New H38:  icdtype__size >= 0
 
 
-@@@@@@@@@@  VC: procedure_detect_fibrillation_4.  @@@@@@@@@@
-%%%  Simplified H1 on reading formula in, to give:
-     %%%  H1:  fld_ison(computer)
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  - 1 >= system__min_int
-%%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  - 1 <= system__max_int
-%%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  fld_heartratehistory1(computer) = - 1 or 
-          fld_tickstoreenabledetectionagain(computer) > 0
-***  Proved C2:  fld_tickstoreenabledetectionagain(computer) - 1 <= 
-          integer__last
-     using hypothesis H19.
--S-  Applied substitution rule detect_fibri_rules(2).
-     This was achieved by replacing all occurrences of integer__first by:
-          - 2147483648.
-<S>  New H2:  fld_history_variance(computer) >= - 2147483648
-<S>  New H4:  fld_history_avarage(computer) >= - 2147483648
-<S>  New H18:  fld_tickstoreenabledetectionagain(computer) >= - 2147483648
-<S>  New H20:  fld_tickcount(computer) >= - 2147483648
-<S>  New H22:  fld_next(computer) >= - 2147483648
-<S>  New H24:  fld_count(computer) >= - 2147483648
-<S>  New C1:  fld_tickstoreenabledetectionagain(computer) >= - 2147483647
->>>  Restructured hypothesis H34 into:
-     >>>  H34:  fld_state(computer) <> fib
--S-  Applied substitution rule detect_fibri_rules(3).
-     This was achieved by replacing all occurrences of integer__last by:
-          2147483647.
-<S>  New H3:  fld_history_variance(computer) <= 2147483647
-<S>  New H5:  fld_history_avarage(computer) <= 2147483647
-<S>  New H19:  fld_tickstoreenabledetectionagain(computer) <= 2147483647
-<S>  New H21:  fld_tickcount(computer) <= 2147483647
-<S>  New H23:  fld_next(computer) <= 2147483647
-<S>  New H25:  fld_count(computer) <= 2147483647
--S-  Applied substitution rule detect_fibri_rules(7).
-     This was achieved by replacing all occurrences of measures__bpm__first by:
-          - 1.
-<S>  New H6:  fld_heartratehistory6(computer) >= - 1
-<S>  New H8:  fld_heartratehistory5(computer) >= - 1
-<S>  New H10:  fld_heartratehistory4(computer) >= - 1
-<S>  New H12:  fld_heartratehistory3(computer) >= - 1
-<S>  New H14:  fld_heartratehistory2(computer) >= - 1
-<S>  New H16:  fld_heartratehistory1(computer) >= - 1
-<S>  New H26:  fld_upperbound(computer) >= - 1
-<S>  New H32:  fld_rate(computer) >= - 1
--S-  Applied substitution rule detect_fibri_rules(8).
-     This was achieved by replacing all occurrences of measures__bpm__last by:
-          300.
-<S>  New H7:  fld_heartratehistory6(computer) <= 300
-<S>  New H9:  fld_heartratehistory5(computer) <= 300
-<S>  New H11:  fld_heartratehistory4(computer) <= 300
-<S>  New H13:  fld_heartratehistory3(computer) <= 300
-<S>  New H15:  fld_heartratehistory2(computer) <= 300
-<S>  New H17:  fld_heartratehistory1(computer) <= 300
-<S>  New H27:  fld_upperbound(computer) <= 300
-<S>  New H33:  fld_rate(computer) <= 300
--S-  Applied substitution rule detect_fibri_rules(12).
-     This was achieved by replacing all occurrences of icdstates__first by:
-          normal.
-<S>  New H28:  normal <= fld_state(computer)
--S-  Applied substitution rule detect_fibri_rules(13).
-     This was achieved by replacing all occurrences of icdstates__last by:
-          tar.
-<S>  New H29:  fld_state(computer) <= tar
----  Eliminated hypothesis H30 (true-hypothesis).
----  Eliminated hypothesis H31 (true-hypothesis).
-     +++  New H38:  integer__size >= 0
-     +++  New H39:  measures__bpm__size >= 0
-     +++  New H40:  icdstates__size >= 0
-     +++  New H41:  icdtype__size >= 0
-
-
 @@@@@@@@@@  VC: procedure_detect_fibrillation_5.  @@@@@@@@@@
-%%%  Simplified H1 on reading formula in, to give:
-     %%%  H1:  fld_ison(computer)
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  - 1 >= system__min_int
-%%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  - 1 <= system__max_int
-%%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  not (fld_heartratehistory1(computer) = - 1 or 
-          fld_tickstoreenabledetectionagain(computer) > 0)
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
 %%%  Simplified C1 on reading formula in, to give:
-     %%%  C1:  icdstates__first <= fib
--S-  Applied substitution rule detect_fibri_rules(12).
-     This was achieved by replacing all occurrences of icdstates__first by:
-          normal.
-<S>  New H28:  normal <= fld_state(computer)
-<S>  New C1:  true
--S-  Applied substitution rule detect_fibri_rules(13).
-     This was achieved by replacing all occurrences of icdstates__last by:
-          tar.
-<S>  New H29:  fld_state(computer) <= tar
-<S>  New C2:  true
-***  Proved C1:  true
-***  Proved C2:  true
-***  PROVED VC.
-
-
-@@@@@@@@@@  VC: procedure_detect_fibrillation_6.  @@@@@@@@@@
-%%%  Simplified H1 on reading formula in, to give:
-     %%%  H1:  fld_ison(computer)
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  icdstates__first <= normal
-%%%  Simplified C1 on reading formula in, to give:
-     %%%  C1:  true
-***  Proved C1:  true
-***  PROVED VC.
-
-
-@@@@@@@@@@  VC: procedure_detect_fibrillation_7.  @@@@@@@@@@
-%%%  Simplified H1 on reading formula in, to give:
-     %%%  H1:  fld_ison(computer)
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  - 1 >= system__min_int
-%%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  - 1 <= system__max_int
-%%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  fld_heartratehistory1(computer) = - 1 or 
-          fld_tickstoreenabledetectionagain(computer) > 0
-%%%  Simplified C1 on reading formula in, to give:
-     %%%  C1:  fld_state(computer) = fib <-> fld_state(computer) <> fib and (
-          fld_heartratehistory1(computer) <> - 1 and 
-          fld_tickstoreenabledetectionagain(computer) = 1 and 
-          fld_history_variance(computer) > 100)
->>>  Restructured hypothesis H34 into:
-     >>>  H34:  fld_state(computer) <> fib
+     %%%  C1:  fld_ison(computer)
+***  Proved C2:  fld_state(computer) <> fib and (fld_heartratehistory1(computer)
+           <> measures__bpm__first and fld_history_variance(computer) > 100) -> 
+          fld_state(computer) = fib
+     using hypothesis H31.
+***  Proved C3:  fld_state(computer) = fib -> fld_state(computer) = normal
+     using hypothesis H32.
+>>>  Restructured hypothesis H31 into:
+     >>>  H31:  fld_state(computer) = fib or (fld_heartratehistory1(computer) = 
+          measures__bpm__first or fld_history_variance(computer) <= 100)
+>>>  Restructured hypothesis H32 into:
+     >>>  H32:  fld_state(computer) <> fib
 -S-  Applied substitution rule detect_fibri_rules(2).
      This was achieved by replacing all occurrences of integer__first by:
           - 2147483648.
 <S>  New H2:  fld_history_variance(computer) >= - 2147483648
 <S>  New H4:  fld_history_avarage(computer) >= - 2147483648
-<S>  New H18:  fld_tickstoreenabledetectionagain(computer) >= - 2147483648
-<S>  New H20:  fld_tickcount(computer) >= - 2147483648
-<S>  New H22:  fld_next(computer) >= - 2147483648
-<S>  New H24:  fld_count(computer) >= - 2147483648
-<S>  New H38:  fld_tickstoreenabledetectionagain(computer) >= - 2147483647
+<S>  New H18:  fld_tickcount(computer) >= - 2147483648
+<S>  New H20:  fld_tickstonextshock(computer) >= - 2147483648
+<S>  New H22:  fld_count(computer) >= - 2147483648
 -S-  Applied substitution rule detect_fibri_rules(3).
      This was achieved by replacing all occurrences of integer__last by:
           2147483647.
 <S>  New H3:  fld_history_variance(computer) <= 2147483647
 <S>  New H5:  fld_history_avarage(computer) <= 2147483647
-<S>  New H19:  fld_tickstoreenabledetectionagain(computer) <= 2147483647
-<S>  New H21:  fld_tickcount(computer) <= 2147483647
-<S>  New H23:  fld_next(computer) <= 2147483647
-<S>  New H25:  fld_count(computer) <= 2147483647
-<S>  New H39:  fld_tickstoreenabledetectionagain(computer) <= 2147483648
+<S>  New H19:  fld_tickcount(computer) <= 2147483647
+<S>  New H21:  fld_tickstonextshock(computer) <= 2147483647
+<S>  New H23:  fld_count(computer) <= 2147483647
 -S-  Applied substitution rule detect_fibri_rules(7).
      This was achieved by replacing all occurrences of measures__bpm__first by:
           - 1.
@@ -298,8 +253,10 @@ procedure ICD.Detect_Fibrillation
 <S>  New H12:  fld_heartratehistory3(computer) >= - 1
 <S>  New H14:  fld_heartratehistory2(computer) >= - 1
 <S>  New H16:  fld_heartratehistory1(computer) >= - 1
-<S>  New H26:  fld_upperbound(computer) >= - 1
-<S>  New H32:  fld_rate(computer) >= - 1
+<S>  New H24:  fld_upperbound(computer) >= - 1
+<S>  New H29:  fld_rate(computer) >= - 1
+<S>  New H31:  fld_state(computer) = fib or (fld_heartratehistory1(computer) = 
+          - 1 or fld_history_variance(computer) <= 100)
 -S-  Applied substitution rule detect_fibri_rules(8).
      This was achieved by replacing all occurrences of measures__bpm__last by:
           300.
@@ -309,156 +266,23 @@ procedure ICD.Detect_Fibrillation
 <S>  New H13:  fld_heartratehistory3(computer) <= 300
 <S>  New H15:  fld_heartratehistory2(computer) <= 300
 <S>  New H17:  fld_heartratehistory1(computer) <= 300
-<S>  New H27:  fld_upperbound(computer) <= 300
-<S>  New H33:  fld_rate(computer) <= 300
+<S>  New H25:  fld_upperbound(computer) <= 300
+<S>  New H30:  fld_rate(computer) <= 300
 -S-  Applied substitution rule detect_fibri_rules(12).
      This was achieved by replacing all occurrences of icdstates__first by:
           normal.
-<S>  New H28:  normal <= fld_state(computer)
+<S>  New H26:  normal <= fld_state(computer)
 -S-  Applied substitution rule detect_fibri_rules(13).
      This was achieved by replacing all occurrences of icdstates__last by:
           tar.
-<S>  New H29:  fld_state(computer) <= tar
----  Eliminated hypothesis H30 (true-hypothesis).
----  Eliminated hypothesis H31 (true-hypothesis).
----  Eliminated hypothesis H18 (redundant, given H38).
----  Eliminated hypothesis H39 (redundant, given H19).
-     +++  New H40:  integer__size >= 0
-     +++  New H41:  measures__bpm__size >= 0
-     +++  New H42:  icdstates__size >= 0
-     +++  New H43:  icdtype__size >= 0
-
-
-@@@@@@@@@@  VC: procedure_detect_fibrillation_8.  @@@@@@@@@@
-%%%  Simplified H1 on reading formula in, to give:
-     %%%  H1:  fld_ison(computer)
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  - 1 >= system__min_int
-%%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  - 1 <= system__max_int
-%%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  not (fld_heartratehistory1(computer) = - 1 or 
-          fld_tickstoreenabledetectionagain(computer) > 0)
-%%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  icdstates__first <= fib
-%%%  Simplified C1 on reading formula in, to give:
-     %%%  C1:  fld_state(computer) <> fib and (fld_heartratehistory1(computer) 
-          <> - 1 and fld_tickstoreenabledetectionagain(computer) = 0 and 
-          fld_history_variance(computer) > 100)
->>>  Restructured hypothesis H34 into:
-     >>>  H34:  fld_state(computer) <> fib
->>>  Restructured hypothesis H37 into:
-     >>>  H37:  fld_heartratehistory1(computer) <> - 1 and 
-          fld_tickstoreenabledetectionagain(computer) <= 0
->>>  Hypothesis H37 has now been split into two, giving:
-     >>>  H41:  fld_heartratehistory1(computer) <> - 1
-     >>>  H42:  fld_tickstoreenabledetectionagain(computer) <= 0
->>>  Conclusion C1 has now been split into two, giving:
-     >>>  C1:  fld_state(computer) <> fib
-     >>>  C2:  fld_heartratehistory1(computer) <> - 1 and 
-          fld_tickstoreenabledetectionagain(computer) = 0 and 
-          fld_history_variance(computer) > 100
->>>  Conclusion C2 has now been split into two, giving:
-     >>>  C2:  fld_heartratehistory1(computer) <> - 1 and 
-          fld_tickstoreenabledetectionagain(computer) = 0
-     >>>  C3:  fld_history_variance(computer) > 100
->>>  Conclusion C2 has now been split into two, giving:
-     >>>  C2:  fld_heartratehistory1(computer) <> - 1
-     >>>  C4:  fld_tickstoreenabledetectionagain(computer) = 0
--S-  Applied substitution rule detect_fibri_rules(2).
-     This was achieved by replacing all occurrences of integer__first by:
-          - 2147483648.
-<S>  New H2:  fld_history_variance(computer) >= - 2147483648
-<S>  New H4:  fld_history_avarage(computer) >= - 2147483648
-<S>  New H18:  fld_tickstoreenabledetectionagain(computer) >= - 2147483648
-<S>  New H20:  fld_tickcount(computer) >= - 2147483648
-<S>  New H22:  fld_next(computer) >= - 2147483648
-<S>  New H24:  fld_count(computer) >= - 2147483648
--S-  Applied substitution rule detect_fibri_rules(3).
-     This was achieved by replacing all occurrences of integer__last by:
-          2147483647.
-<S>  New H3:  fld_history_variance(computer) <= 2147483647
-<S>  New H5:  fld_history_avarage(computer) <= 2147483647
-<S>  New H19:  fld_tickstoreenabledetectionagain(computer) <= 2147483647
-<S>  New H21:  fld_tickcount(computer) <= 2147483647
-<S>  New H23:  fld_next(computer) <= 2147483647
-<S>  New H25:  fld_count(computer) <= 2147483647
--S-  Applied substitution rule detect_fibri_rules(7).
-     This was achieved by replacing all occurrences of measures__bpm__first by:
-          - 1.
-<S>  New H6:  fld_heartratehistory6(computer) >= - 1
-<S>  New H8:  fld_heartratehistory5(computer) >= - 1
-<S>  New H10:  fld_heartratehistory4(computer) >= - 1
-<S>  New H12:  fld_heartratehistory3(computer) >= - 1
-<S>  New H14:  fld_heartratehistory2(computer) >= - 1
-<S>  New H16:  fld_heartratehistory1(computer) >= - 1
-<S>  New H26:  fld_upperbound(computer) >= - 1
-<S>  New H32:  fld_rate(computer) >= - 1
--S-  Applied substitution rule detect_fibri_rules(8).
-     This was achieved by replacing all occurrences of measures__bpm__last by:
-          300.
-<S>  New H7:  fld_heartratehistory6(computer) <= 300
-<S>  New H9:  fld_heartratehistory5(computer) <= 300
-<S>  New H11:  fld_heartratehistory4(computer) <= 300
-<S>  New H13:  fld_heartratehistory3(computer) <= 300
-<S>  New H15:  fld_heartratehistory2(computer) <= 300
-<S>  New H17:  fld_heartratehistory1(computer) <= 300
-<S>  New H27:  fld_upperbound(computer) <= 300
-<S>  New H33:  fld_rate(computer) <= 300
--S-  Applied substitution rule detect_fibri_rules(12).
-     This was achieved by replacing all occurrences of icdstates__first by:
-          normal.
-<S>  New H28:  normal <= fld_state(computer)
-<S>  New H39:  true
--S-  Applied substitution rule detect_fibri_rules(13).
-     This was achieved by replacing all occurrences of icdstates__last by:
-          tar.
-<S>  New H29:  fld_state(computer) <= tar
-<S>  New H40:  true
-%%%  Hypotheses H16 & H41 together imply that
-          - 1 < fld_heartratehistory1(computer).
-     H16 & H41 have therefore been deleted and a new H43 added to this effect.
-***  Proved C1:  fld_state(computer) <> fib
-     using hypothesis H34.
-***  Proved C3:  fld_history_variance(computer) > 100
-     using hypothesis H38.
-***  Proved C2:  fld_heartratehistory1(computer) <> - 1
-     using hypothesis H43.
----  Eliminated hypothesis H30 (true-hypothesis).
----  Eliminated hypothesis H31 (true-hypothesis).
----  Eliminated hypothesis H39 (true-hypothesis).
----  Eliminated hypothesis H40 (true-hypothesis).
----  Eliminated hypothesis H2 (redundant, given H38).
----  Eliminated hypothesis H19 (redundant, given H42).
-     +++  New H44:  integer__size >= 0
-     +++  New H45:  measures__bpm__size >= 0
-     +++  New H46:  icdstates__size >= 0
-     +++  New H47:  icdtype__size >= 0
-
-
-@@@@@@@@@@  VC: procedure_detect_fibrillation_9.  @@@@@@@@@@
-%%%  Simplified H1 on reading formula in, to give:
-     %%%  H1:  fld_ison(computer)
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  - 1 >= system__min_int
-%%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  - 1 <= system__max_int
-%%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  not (fld_heartratehistory1(computer) = - 1 or 
-          fld_tickstoreenabledetectionagain(computer) > 0)
-%%%  Simplified C1 on reading formula in, to give:
-     %%%  C1:  fld_state(computer) = fib <-> fld_state(computer) <> fib and (
-          fld_heartratehistory1(computer) <> - 1 and 
-          fld_tickstoreenabledetectionagain(computer) = 0 and 
-          fld_history_variance(computer) > 100)
-***  Proved C1:  fld_state(computer) = fib <-> fld_state(computer) <> fib and (
-          fld_heartratehistory1(computer) <> - 1 and 
-          fld_tickstoreenabledetectionagain(computer) = 0 and 
-          fld_history_variance(computer) > 100)
-     using hypotheses H34 & H38.
-***  PROVED VC.
+<S>  New H27:  fld_state(computer) <= tar
+---  Eliminated hypothesis H1 (true-hypothesis).
+---  Eliminated hypothesis H28 (true-hypothesis).
+%%%  Simplified H31 further (given H32), to give:
+     %%%  H31:  fld_heartratehistory1(computer) = - 1 or fld_history_variance(
+          computer) <= 100
+     +++  New H33:  integer__size >= 0
+     +++  New H34:  measures__bpm__size >= 0
+     +++  New H35:  icdstates__size >= 0
+     +++  New H36:  icdtype__size >= 0
 

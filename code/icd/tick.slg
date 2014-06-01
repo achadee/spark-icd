@@ -5,7 +5,7 @@
 *****************************************************************************
 
 
-CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:33
+CREATED 01-JUN-2014, 22:28:21  SIMPLIFIED 01-JUN-2014, 22:28:31
 
 SPARK Simplifier GPL 2011
 Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
@@ -18,1345 +18,290 @@ procedure ICD.Tick
 
 
 @@@@@@@@@@  VC: procedure_tick_1.  @@@@@@@@@@
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(heartratemonitor)
+%%%  Simplified H2 on reading formula in, to give:
+     %%%  H2:  fld_ison(shock)
+%%%  Simplified H3 on reading formula in, to give:
+     %%%  H3:  fld_ison(computer)
 %%%  Simplified H28 on reading formula in, to give:
      %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified H45 on reading formula in, to give:
-     %%%  H45:  fld_inprocess(computer__1) <-> fld_inprocess(computer)
-%%%  Simplified H46 on reading formula in, to give:
-     %%%  H46:  fld_ison(computer__1) <-> fld_ison(computer)
+%%%  Simplified H44 on reading formula in, to give:
+     %%%  H44:  fld_ison(computer__1) <-> fld_ison(computer)
 ***  Proved C1:  fld_rate(computer__1) >= measures__bpm__first
-     using hypothesis H43.
+     using hypothesis H42.
 ***  Proved C2:  fld_rate(computer__1) <= measures__bpm__last
-     using hypothesis H44.
+     using hypothesis H43.
 ***  PROVED VC.
 
 
 @@@@@@@@@@  VC: procedure_tick_2.  @@@@@@@@@@
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(heartratemonitor)
+%%%  Simplified H2 on reading formula in, to give:
+     %%%  H2:  fld_ison(shock)
+%%%  Simplified H3 on reading formula in, to give:
+     %%%  H3:  fld_ison(computer)
 %%%  Simplified H28 on reading formula in, to give:
      %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified H45 on reading formula in, to give:
-     %%%  H45:  fld_inprocess(computer__1) <-> fld_inprocess(computer)
-%%%  Simplified H46 on reading formula in, to give:
-     %%%  H46:  fld_ison(computer__1) <-> fld_ison(computer)
----  Hypothesis H62 has been replaced by "true".  (It is already present, as 
+%%%  Simplified H44 on reading formula in, to give:
+     %%%  H44:  fld_ison(computer__1) <-> fld_ison(computer)
+---  Hypothesis H59 has been replaced by "true".  (It is already present, as 
+          H42).
+---  Hypothesis H60 has been replaced by "true".  (It is already present, as 
           H43).
----  Hypothesis H63 has been replaced by "true".  (It is already present, as 
-          H44).
-%%%  Simplified H96 on reading formula in, to give:
-     %%%  H96:  icdstates__first <= fld_state(computer__2)
-%%%  Simplified H129 on reading formula in, to give:
-     %%%  H129:  icdstates__first <= fld_state(computer__3)
-%%%  Simplified H161 on reading formula in, to give:
-     %%%  H161:  icdstates__first <= fld_state(computer__4)
 %%%  Simplified C1 on reading formula in, to give:
-     %%%  C1:  fld_ison(computer__4)
-+++  Using "A->B, A |- B" on hypotheses H46 & H40 yields a new hypothesis:
-     +++  H167:  fld_ison(computer__1)
--S-  Applied substitution rule tick_rules(2).
+     %%%  C1:  fld_ison(computer__1)
++++  Using "A->B, A |- B" on hypotheses H40 & H1 yields a new hypothesis:
+     +++  H61:  fld_rate(computer__1) = fld_rate(heartratemonitor)
++++  Using "A->B, A |- B" on hypotheses H44 & H3 yields a new hypothesis:
+     +++  H62:  fld_ison(computer__1)
+---  Attempted addition of new hypothesis:
+          fld_ison(computer__1)
+     eliminated: this already exists (as H62).
++++  Using "A->B, A |- B" on hypotheses H44 & H39 yields a new hypothesis:
+     +++  H62:  fld_ison(computer__1)
+-S-  Applied substitution rule tick_rules(3).
      This was achieved by replacing all occurrences of integer__first by:
           - 2147483648.
-<S>  New H2:  fld_history_variance(computer) >= - 2147483648
-<S>  New H4:  fld_history_avarage(computer) >= - 2147483648
-<S>  New H18:  fld_tickstoreenabledetectionagain(computer) >= - 2147483648
+<S>  New H4:  fld_history_variance(computer) >= - 2147483648
+<S>  New H6:  fld_history_avarage(computer) >= - 2147483648
 <S>  New H20:  fld_tickcount(computer) >= - 2147483648
-<S>  New H22:  fld_next(computer) >= - 2147483648
+<S>  New H22:  fld_tickstonextshock(computer) >= - 2147483648
 <S>  New H24:  fld_count(computer) >= - 2147483648
-<S>  New H70:  fld_history_variance(computer__2) >= - 2147483648
-<S>  New H72:  fld_history_avarage(computer__2) >= - 2147483648
-<S>  New H86:  fld_tickstoreenabledetectionagain(computer__2) >= - 2147483648
-<S>  New H88:  fld_tickcount(computer__2) >= - 2147483648
-<S>  New H90:  fld_next(computer__2) >= - 2147483648
-<S>  New H92:  fld_count(computer__2) >= - 2147483648
-<S>  New H103:  fld_history_variance(computer__3) >= - 2147483648
-<S>  New H105:  fld_history_avarage(computer__3) >= - 2147483648
-<S>  New H119:  fld_tickstoreenabledetectionagain(computer__3) >= - 2147483648
-<S>  New H121:  fld_tickcount(computer__3) >= - 2147483648
-<S>  New H123:  fld_next(computer__3) >= - 2147483648
-<S>  New H125:  fld_count(computer__3) >= - 2147483648
-<S>  New H135:  fld_history_variance(computer__4) >= - 2147483648
-<S>  New H137:  fld_history_avarage(computer__4) >= - 2147483648
-<S>  New H151:  fld_tickstoreenabledetectionagain(computer__4) >= - 2147483648
-<S>  New H153:  fld_tickcount(computer__4) >= - 2147483648
-<S>  New H155:  fld_next(computer__4) >= - 2147483648
-<S>  New H157:  fld_count(computer__4) >= - 2147483648
--S-  Applied substitution rule tick_rules(3).
+-S-  Applied substitution rule tick_rules(4).
      This was achieved by replacing all occurrences of integer__last by:
           2147483647.
-<S>  New H3:  fld_history_variance(computer) <= 2147483647
-<S>  New H5:  fld_history_avarage(computer) <= 2147483647
-<S>  New H19:  fld_tickstoreenabledetectionagain(computer) <= 2147483647
+<S>  New H5:  fld_history_variance(computer) <= 2147483647
+<S>  New H7:  fld_history_avarage(computer) <= 2147483647
 <S>  New H21:  fld_tickcount(computer) <= 2147483647
-<S>  New H23:  fld_next(computer) <= 2147483647
+<S>  New H23:  fld_tickstonextshock(computer) <= 2147483647
 <S>  New H25:  fld_count(computer) <= 2147483647
-<S>  New H71:  fld_history_variance(computer__2) <= 2147483647
-<S>  New H73:  fld_history_avarage(computer__2) <= 2147483647
-<S>  New H87:  fld_tickstoreenabledetectionagain(computer__2) <= 2147483647
-<S>  New H89:  fld_tickcount(computer__2) <= 2147483647
-<S>  New H91:  fld_next(computer__2) <= 2147483647
-<S>  New H93:  fld_count(computer__2) <= 2147483647
-<S>  New H104:  fld_history_variance(computer__3) <= 2147483647
-<S>  New H106:  fld_history_avarage(computer__3) <= 2147483647
-<S>  New H120:  fld_tickstoreenabledetectionagain(computer__3) <= 2147483647
-<S>  New H122:  fld_tickcount(computer__3) <= 2147483647
-<S>  New H124:  fld_next(computer__3) <= 2147483647
-<S>  New H126:  fld_count(computer__3) <= 2147483647
-<S>  New H136:  fld_history_variance(computer__4) <= 2147483647
-<S>  New H138:  fld_history_avarage(computer__4) <= 2147483647
-<S>  New H152:  fld_tickstoreenabledetectionagain(computer__4) <= 2147483647
-<S>  New H154:  fld_tickcount(computer__4) <= 2147483647
-<S>  New H156:  fld_next(computer__4) <= 2147483647
-<S>  New H158:  fld_count(computer__4) <= 2147483647
--S-  Applied substitution rule tick_rules(7).
+-S-  Applied substitution rule tick_rules(8).
      This was achieved by replacing all occurrences of measures__joules__first 
           by:
           0.
-<S>  New H38:  fld_impulse(shock) >= 0
--S-  Applied substitution rule tick_rules(8).
+<S>  New H37:  fld_impulse(shock) >= 0
+-S-  Applied substitution rule tick_rules(9).
      This was achieved by replacing all occurrences of measures__joules__last 
           by:
           45.
-<S>  New H39:  fld_impulse(shock) <= 45
--S-  Applied substitution rule tick_rules(12).
+<S>  New H38:  fld_impulse(shock) <= 45
+-S-  Applied substitution rule tick_rules(13).
      This was achieved by replacing all occurrences of measures__bpm__first by:
           - 1.
-<S>  New H6:  fld_heartratehistory6(computer) >= - 1
-<S>  New H8:  fld_heartratehistory5(computer) >= - 1
-<S>  New H10:  fld_heartratehistory4(computer) >= - 1
-<S>  New H12:  fld_heartratehistory3(computer) >= - 1
-<S>  New H14:  fld_heartratehistory2(computer) >= - 1
-<S>  New H16:  fld_heartratehistory1(computer) >= - 1
+<S>  New H8:  fld_heartratehistory6(computer) >= - 1
+<S>  New H10:  fld_heartratehistory5(computer) >= - 1
+<S>  New H12:  fld_heartratehistory4(computer) >= - 1
+<S>  New H14:  fld_heartratehistory3(computer) >= - 1
+<S>  New H16:  fld_heartratehistory2(computer) >= - 1
+<S>  New H18:  fld_heartratehistory1(computer) >= - 1
 <S>  New H26:  fld_upperbound(computer) >= - 1
-<S>  New H32:  fld_rate(computer) >= - 1
-<S>  New H35:  fld_rate(heartratemonitor) >= - 1
-<S>  New H42:  not fld_ison(heartratemonitor) -> fld_rate(computer__1) = - 1
-<S>  New H43:  fld_rate(computer__1) >= - 1
-<S>  New H74:  fld_heartratehistory6(computer__2) >= - 1
-<S>  New H76:  fld_heartratehistory5(computer__2) >= - 1
-<S>  New H78:  fld_heartratehistory4(computer__2) >= - 1
-<S>  New H80:  fld_heartratehistory3(computer__2) >= - 1
-<S>  New H82:  fld_heartratehistory2(computer__2) >= - 1
-<S>  New H84:  fld_heartratehistory1(computer__2) >= - 1
-<S>  New H94:  fld_upperbound(computer__2) >= - 1
-<S>  New H100:  fld_rate(computer__2) >= - 1
-<S>  New H107:  fld_heartratehistory6(computer__3) >= - 1
-<S>  New H109:  fld_heartratehistory5(computer__3) >= - 1
-<S>  New H111:  fld_heartratehistory4(computer__3) >= - 1
-<S>  New H113:  fld_heartratehistory3(computer__3) >= - 1
-<S>  New H115:  fld_heartratehistory2(computer__3) >= - 1
-<S>  New H117:  fld_heartratehistory1(computer__3) >= - 1
-<S>  New H127:  fld_upperbound(computer__3) >= - 1
-<S>  New H133:  fld_rate(computer__3) >= - 1
-<S>  New H139:  fld_heartratehistory6(computer__4) >= - 1
-<S>  New H141:  fld_heartratehistory5(computer__4) >= - 1
-<S>  New H143:  fld_heartratehistory4(computer__4) >= - 1
-<S>  New H145:  fld_heartratehistory3(computer__4) >= - 1
-<S>  New H147:  fld_heartratehistory2(computer__4) >= - 1
-<S>  New H149:  fld_heartratehistory1(computer__4) >= - 1
-<S>  New H159:  fld_upperbound(computer__4) >= - 1
-<S>  New H165:  fld_rate(computer__4) >= - 1
--S-  Applied substitution rule tick_rules(13).
+<S>  New H31:  fld_rate(computer) >= - 1
+<S>  New H34:  fld_rate(heartratemonitor) >= - 1
+<S>  New H41:  not fld_ison(heartratemonitor) -> fld_rate(computer__1) = - 1
+<S>  New H42:  fld_rate(computer__1) >= - 1
+-S-  Applied substitution rule tick_rules(14).
      This was achieved by replacing all occurrences of measures__bpm__last by:
           300.
-<S>  New H7:  fld_heartratehistory6(computer) <= 300
-<S>  New H9:  fld_heartratehistory5(computer) <= 300
-<S>  New H11:  fld_heartratehistory4(computer) <= 300
-<S>  New H13:  fld_heartratehistory3(computer) <= 300
-<S>  New H15:  fld_heartratehistory2(computer) <= 300
-<S>  New H17:  fld_heartratehistory1(computer) <= 300
+<S>  New H9:  fld_heartratehistory6(computer) <= 300
+<S>  New H11:  fld_heartratehistory5(computer) <= 300
+<S>  New H13:  fld_heartratehistory4(computer) <= 300
+<S>  New H15:  fld_heartratehistory3(computer) <= 300
+<S>  New H17:  fld_heartratehistory2(computer) <= 300
+<S>  New H19:  fld_heartratehistory1(computer) <= 300
 <S>  New H27:  fld_upperbound(computer) <= 300
-<S>  New H33:  fld_rate(computer) <= 300
-<S>  New H36:  fld_rate(heartratemonitor) <= 300
-<S>  New H44:  fld_rate(computer__1) <= 300
-<S>  New H75:  fld_heartratehistory6(computer__2) <= 300
-<S>  New H77:  fld_heartratehistory5(computer__2) <= 300
-<S>  New H79:  fld_heartratehistory4(computer__2) <= 300
-<S>  New H81:  fld_heartratehistory3(computer__2) <= 300
-<S>  New H83:  fld_heartratehistory2(computer__2) <= 300
-<S>  New H85:  fld_heartratehistory1(computer__2) <= 300
-<S>  New H95:  fld_upperbound(computer__2) <= 300
-<S>  New H101:  fld_rate(computer__2) <= 300
-<S>  New H108:  fld_heartratehistory6(computer__3) <= 300
-<S>  New H110:  fld_heartratehistory5(computer__3) <= 300
-<S>  New H112:  fld_heartratehistory4(computer__3) <= 300
-<S>  New H114:  fld_heartratehistory3(computer__3) <= 300
-<S>  New H116:  fld_heartratehistory2(computer__3) <= 300
-<S>  New H118:  fld_heartratehistory1(computer__3) <= 300
-<S>  New H128:  fld_upperbound(computer__3) <= 300
-<S>  New H134:  fld_rate(computer__3) <= 300
-<S>  New H140:  fld_heartratehistory6(computer__4) <= 300
-<S>  New H142:  fld_heartratehistory5(computer__4) <= 300
-<S>  New H144:  fld_heartratehistory4(computer__4) <= 300
-<S>  New H146:  fld_heartratehistory3(computer__4) <= 300
-<S>  New H148:  fld_heartratehistory2(computer__4) <= 300
-<S>  New H150:  fld_heartratehistory1(computer__4) <= 300
-<S>  New H160:  fld_upperbound(computer__4) <= 300
-<S>  New H166:  fld_rate(computer__4) <= 300
--S-  Applied substitution rule tick_rules(21).
+<S>  New H32:  fld_rate(computer) <= 300
+<S>  New H35:  fld_rate(heartratemonitor) <= 300
+<S>  New H43:  fld_rate(computer__1) <= 300
+-S-  Applied substitution rule tick_rules(22).
      This was achieved by replacing all occurrences of icdstates__first by:
           normal.
 <S>  New H28:  normal <= fld_state(computer)
-<S>  New H96:  normal <= fld_state(computer__2)
-<S>  New H129:  normal <= fld_state(computer__3)
-<S>  New H161:  normal <= fld_state(computer__4)
--S-  Applied substitution rule tick_rules(22).
+-S-  Applied substitution rule tick_rules(23).
      This was achieved by replacing all occurrences of icdstates__last by:
           tar.
 <S>  New H29:  fld_state(computer) <= tar
-<S>  New H97:  fld_state(computer__2) <= tar
-<S>  New H130:  fld_state(computer__3) <= tar
-<S>  New H162:  fld_state(computer__4) <= tar
----  Eliminated hypothesis H1 (true-hypothesis).
----  Eliminated hypothesis H30 (true-hypothesis).
----  Eliminated hypothesis H31 (true-hypothesis).
----  Eliminated hypothesis H34 (true-hypothesis).
----  Eliminated hypothesis H37 (true-hypothesis).
----  Eliminated hypothesis H62 (true-hypothesis).
----  Eliminated hypothesis H63 (true-hypothesis).
----  Eliminated hypothesis H98 (true-hypothesis).
----  Eliminated hypothesis H99 (true-hypothesis).
----  Eliminated hypothesis H131 (true-hypothesis).
----  Eliminated hypothesis H132 (true-hypothesis).
----  Eliminated hypothesis H163 (true-hypothesis).
----  Eliminated hypothesis H164 (true-hypothesis).
->>>  Using "A->B, A |- B" on H46, given H167, we simplify the former to:
-     >>>  H46:  fld_ison(computer)
----  Substituted hypothesis H47, which specifies an equivalence for fld_state(
-          computer__1).
----  Substituted hypothesis H48, which specifies an equivalence for 
-          fld_upperbound(computer__1).
----  Substituted hypothesis H49, which specifies an equivalence for fld_count(
-          computer__1).
----  Substituted hypothesis H50, which specifies an equivalence for fld_next(
-          computer__1).
----  Substituted hypothesis H51, which specifies an equivalence for 
-          fld_tickcount(computer__1).
----  Substituted hypothesis H52, which specifies an equivalence for 
-          fld_tickstoreenabledetectionagain(computer__1).
----  Substituted hypothesis H53, which specifies an equivalence for 
-          fld_heartratehistory1(computer__1).
--S-  Substituted hypothesis H54.
-     This was achieved by replacing all occurrences of fld_heartratehistory2(
-          computer__1) by:
-          fld_heartratehistory2(computer).
--S-  Substituted hypothesis H55.
-     This was achieved by replacing all occurrences of fld_heartratehistory3(
-          computer__1) by:
-          fld_heartratehistory3(computer).
--S-  Substituted hypothesis H56.
-     This was achieved by replacing all occurrences of fld_heartratehistory4(
-          computer__1) by:
-          fld_heartratehistory4(computer).
--S-  Substituted hypothesis H57.
-     This was achieved by replacing all occurrences of fld_heartratehistory5(
-          computer__1) by:
-          fld_heartratehistory5(computer).
--S-  Substituted hypothesis H58.
-     This was achieved by replacing all occurrences of fld_heartratehistory6(
-          computer__1) by:
-          fld_heartratehistory6(computer).
----  Substituted hypothesis H59, which specifies an equivalence for 
-          fld_history_avarage(computer__1).
----  Substituted hypothesis H60, which specifies an equivalence for 
-          fld_history_variance(computer__1).
----  Substituted hypothesis H45, which specifies an equivalence for 
-          fld_inprocess(computer__1).
--S-  Substituted hypothesis H46.
-     This was achieved by replacing all occurrences of fld_ison(computer__1) by:
-          fld_ison(computer).
-     +++  New H168:  integer__size >= 0
-     +++  New H169:  measures__joules__size >= 0
-     +++  New H170:  measures__bpm__size >= 0
-     +++  New H171:  impulsegenerator__generatortype__size >= 0
-     +++  New H172:  hrm__hrmtype__size >= 0
-     +++  New H173:  icdstates__size >= 0
-     +++  New H174:  icdtype__size >= 0
+***  Proved C1:  fld_ison(computer__1)
+     using hypothesis H62.
+***  PROVED VC.
 
 
 @@@@@@@@@@  VC: procedure_tick_3.  @@@@@@@@@@
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(heartratemonitor)
+%%%  Simplified H2 on reading formula in, to give:
+     %%%  H2:  fld_ison(shock)
+%%%  Simplified H3 on reading formula in, to give:
+     %%%  H3:  fld_ison(computer)
 %%%  Simplified H28 on reading formula in, to give:
      %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified H45 on reading formula in, to give:
-     %%%  H45:  fld_inprocess(computer__1) <-> fld_inprocess(computer)
-%%%  Simplified H46 on reading formula in, to give:
-     %%%  H46:  fld_ison(computer__1) <-> fld_ison(computer)
----  Hypothesis H62 has been replaced by "true".  (It is already present, as 
+%%%  Simplified H44 on reading formula in, to give:
+     %%%  H44:  fld_ison(computer__1) <-> fld_ison(computer)
+---  Hypothesis H59 has been replaced by "true".  (It is already present, as 
+          H42).
+---  Hypothesis H60 has been replaced by "true".  (It is already present, as 
           H43).
----  Hypothesis H63 has been replaced by "true".  (It is already present, as 
-          H44).
-%%%  Simplified H96 on reading formula in, to give:
-     %%%  H96:  icdstates__first <= fld_state(computer__2)
-%%%  Simplified H129 on reading formula in, to give:
-     %%%  H129:  icdstates__first <= fld_state(computer__3)
-%%%  Simplified H161 on reading formula in, to give:
-     %%%  H161:  icdstates__first <= fld_state(computer__4)
-%%%  Simplified H167 on reading formula in, to give:
-     %%%  H167:  fld_ison(computer__4)
-%%%  Simplified H168 on reading formula in, to give:
-     %%%  H168:  fld_state(computer__5) = fib <-> fld_state(computer__4) <> fib 
-          and (fld_heartratehistory1(computer__5) <> - 1 and 
-          fld_tickstoreenabledetectionagain(computer__5) = 0 and 
-          fld_history_variance(computer__5) > 100)
-%%%  Simplified H195 on reading formula in, to give:
-     %%%  H195:  icdstates__first <= fld_state(computer__5)
-%%%  Simplified H227 on reading formula in, to give:
-     %%%  H227:  icdstates__first <= fld_state(computer__6)
-%%%  Simplified H259 on reading formula in, to give:
-     %%%  H259:  icdstates__first <= fld_state(computer__7)
-***  Proved C2:  fld_tickcount(computer__7) - 1 <= integer__last
-     using hypothesis H252.
--S-  Applied substitution rule tick_rules(2).
-     This was achieved by replacing all occurrences of integer__first by:
-          - 2147483648.
-<S>  New H2:  fld_history_variance(computer) >= - 2147483648
-<S>  New H4:  fld_history_avarage(computer) >= - 2147483648
-<S>  New H18:  fld_tickstoreenabledetectionagain(computer) >= - 2147483648
-<S>  New H20:  fld_tickcount(computer) >= - 2147483648
-<S>  New H22:  fld_next(computer) >= - 2147483648
-<S>  New H24:  fld_count(computer) >= - 2147483648
-<S>  New H70:  fld_history_variance(computer__2) >= - 2147483648
-<S>  New H72:  fld_history_avarage(computer__2) >= - 2147483648
-<S>  New H86:  fld_tickstoreenabledetectionagain(computer__2) >= - 2147483648
-<S>  New H88:  fld_tickcount(computer__2) >= - 2147483648
-<S>  New H90:  fld_next(computer__2) >= - 2147483648
-<S>  New H92:  fld_count(computer__2) >= - 2147483648
-<S>  New H103:  fld_history_variance(computer__3) >= - 2147483648
-<S>  New H105:  fld_history_avarage(computer__3) >= - 2147483648
-<S>  New H119:  fld_tickstoreenabledetectionagain(computer__3) >= - 2147483648
-<S>  New H121:  fld_tickcount(computer__3) >= - 2147483648
-<S>  New H123:  fld_next(computer__3) >= - 2147483648
-<S>  New H125:  fld_count(computer__3) >= - 2147483648
-<S>  New H135:  fld_history_variance(computer__4) >= - 2147483648
-<S>  New H137:  fld_history_avarage(computer__4) >= - 2147483648
-<S>  New H151:  fld_tickstoreenabledetectionagain(computer__4) >= - 2147483648
-<S>  New H153:  fld_tickcount(computer__4) >= - 2147483648
-<S>  New H155:  fld_next(computer__4) >= - 2147483648
-<S>  New H157:  fld_count(computer__4) >= - 2147483648
-<S>  New H169:  fld_history_variance(computer__5) >= - 2147483648
-<S>  New H171:  fld_history_avarage(computer__5) >= - 2147483648
-<S>  New H185:  fld_tickstoreenabledetectionagain(computer__5) >= - 2147483648
-<S>  New H187:  fld_tickcount(computer__5) >= - 2147483648
-<S>  New H189:  fld_next(computer__5) >= - 2147483648
-<S>  New H191:  fld_count(computer__5) >= - 2147483648
-<S>  New H201:  fld_history_variance(computer__6) >= - 2147483648
-<S>  New H203:  fld_history_avarage(computer__6) >= - 2147483648
-<S>  New H217:  fld_tickstoreenabledetectionagain(computer__6) >= - 2147483648
-<S>  New H219:  fld_tickcount(computer__6) >= - 2147483648
-<S>  New H221:  fld_next(computer__6) >= - 2147483648
-<S>  New H223:  fld_count(computer__6) >= - 2147483648
-<S>  New H233:  fld_history_variance(computer__7) >= - 2147483648
-<S>  New H235:  fld_history_avarage(computer__7) >= - 2147483648
-<S>  New H249:  fld_tickstoreenabledetectionagain(computer__7) >= - 2147483648
-<S>  New H251:  fld_tickcount(computer__7) >= - 2147483648
-<S>  New H253:  fld_next(computer__7) >= - 2147483648
-<S>  New H255:  fld_count(computer__7) >= - 2147483648
-<S>  New C1:  fld_tickcount(computer__7) >= - 2147483647
-+++  Using "A->B, A |- B" on hypotheses H46 & H40 yields a new hypothesis:
-     +++  H270:  fld_ison(computer__1)
--S-  Applied substitution rule tick_rules(3).
-     This was achieved by replacing all occurrences of integer__last by:
-          2147483647.
-<S>  New H3:  fld_history_variance(computer) <= 2147483647
-<S>  New H5:  fld_history_avarage(computer) <= 2147483647
-<S>  New H19:  fld_tickstoreenabledetectionagain(computer) <= 2147483647
-<S>  New H21:  fld_tickcount(computer) <= 2147483647
-<S>  New H23:  fld_next(computer) <= 2147483647
-<S>  New H25:  fld_count(computer) <= 2147483647
-<S>  New H71:  fld_history_variance(computer__2) <= 2147483647
-<S>  New H73:  fld_history_avarage(computer__2) <= 2147483647
-<S>  New H87:  fld_tickstoreenabledetectionagain(computer__2) <= 2147483647
-<S>  New H89:  fld_tickcount(computer__2) <= 2147483647
-<S>  New H91:  fld_next(computer__2) <= 2147483647
-<S>  New H93:  fld_count(computer__2) <= 2147483647
-<S>  New H104:  fld_history_variance(computer__3) <= 2147483647
-<S>  New H106:  fld_history_avarage(computer__3) <= 2147483647
-<S>  New H120:  fld_tickstoreenabledetectionagain(computer__3) <= 2147483647
-<S>  New H122:  fld_tickcount(computer__3) <= 2147483647
-<S>  New H124:  fld_next(computer__3) <= 2147483647
-<S>  New H126:  fld_count(computer__3) <= 2147483647
-<S>  New H136:  fld_history_variance(computer__4) <= 2147483647
-<S>  New H138:  fld_history_avarage(computer__4) <= 2147483647
-<S>  New H152:  fld_tickstoreenabledetectionagain(computer__4) <= 2147483647
-<S>  New H154:  fld_tickcount(computer__4) <= 2147483647
-<S>  New H156:  fld_next(computer__4) <= 2147483647
-<S>  New H158:  fld_count(computer__4) <= 2147483647
-<S>  New H170:  fld_history_variance(computer__5) <= 2147483647
-<S>  New H172:  fld_history_avarage(computer__5) <= 2147483647
-<S>  New H186:  fld_tickstoreenabledetectionagain(computer__5) <= 2147483647
-<S>  New H188:  fld_tickcount(computer__5) <= 2147483647
-<S>  New H190:  fld_next(computer__5) <= 2147483647
-<S>  New H192:  fld_count(computer__5) <= 2147483647
-<S>  New H202:  fld_history_variance(computer__6) <= 2147483647
-<S>  New H204:  fld_history_avarage(computer__6) <= 2147483647
-<S>  New H218:  fld_tickstoreenabledetectionagain(computer__6) <= 2147483647
-<S>  New H220:  fld_tickcount(computer__6) <= 2147483647
-<S>  New H222:  fld_next(computer__6) <= 2147483647
-<S>  New H224:  fld_count(computer__6) <= 2147483647
-<S>  New H234:  fld_history_variance(computer__7) <= 2147483647
-<S>  New H236:  fld_history_avarage(computer__7) <= 2147483647
-<S>  New H250:  fld_tickstoreenabledetectionagain(computer__7) <= 2147483647
-<S>  New H252:  fld_tickcount(computer__7) <= 2147483647
-<S>  New H254:  fld_next(computer__7) <= 2147483647
-<S>  New H256:  fld_count(computer__7) <= 2147483647
--S-  Applied substitution rule tick_rules(7).
-     This was achieved by replacing all occurrences of measures__joules__first 
-          by:
-          0.
-<S>  New H38:  fld_impulse(shock) >= 0
-<S>  New H266:  fld_impulse(shock__7) >= 0
--S-  Applied substitution rule tick_rules(8).
-     This was achieved by replacing all occurrences of measures__joules__last 
-          by:
-          45.
-<S>  New H39:  fld_impulse(shock) <= 45
-<S>  New H267:  fld_impulse(shock__7) <= 45
--S-  Applied substitution rule tick_rules(12).
-     This was achieved by replacing all occurrences of measures__bpm__first by:
-          - 1.
-<S>  New H6:  fld_heartratehistory6(computer) >= - 1
-<S>  New H8:  fld_heartratehistory5(computer) >= - 1
-<S>  New H10:  fld_heartratehistory4(computer) >= - 1
-<S>  New H12:  fld_heartratehistory3(computer) >= - 1
-<S>  New H14:  fld_heartratehistory2(computer) >= - 1
-<S>  New H16:  fld_heartratehistory1(computer) >= - 1
-<S>  New H26:  fld_upperbound(computer) >= - 1
-<S>  New H32:  fld_rate(computer) >= - 1
-<S>  New H35:  fld_rate(heartratemonitor) >= - 1
-<S>  New H42:  not fld_ison(heartratemonitor) -> fld_rate(computer__1) = - 1
-<S>  New H43:  fld_rate(computer__1) >= - 1
-<S>  New H74:  fld_heartratehistory6(computer__2) >= - 1
-<S>  New H76:  fld_heartratehistory5(computer__2) >= - 1
-<S>  New H78:  fld_heartratehistory4(computer__2) >= - 1
-<S>  New H80:  fld_heartratehistory3(computer__2) >= - 1
-<S>  New H82:  fld_heartratehistory2(computer__2) >= - 1
-<S>  New H84:  fld_heartratehistory1(computer__2) >= - 1
-<S>  New H94:  fld_upperbound(computer__2) >= - 1
-<S>  New H100:  fld_rate(computer__2) >= - 1
-<S>  New H107:  fld_heartratehistory6(computer__3) >= - 1
-<S>  New H109:  fld_heartratehistory5(computer__3) >= - 1
-<S>  New H111:  fld_heartratehistory4(computer__3) >= - 1
-<S>  New H113:  fld_heartratehistory3(computer__3) >= - 1
-<S>  New H115:  fld_heartratehistory2(computer__3) >= - 1
-<S>  New H117:  fld_heartratehistory1(computer__3) >= - 1
-<S>  New H127:  fld_upperbound(computer__3) >= - 1
-<S>  New H133:  fld_rate(computer__3) >= - 1
-<S>  New H139:  fld_heartratehistory6(computer__4) >= - 1
-<S>  New H141:  fld_heartratehistory5(computer__4) >= - 1
-<S>  New H143:  fld_heartratehistory4(computer__4) >= - 1
-<S>  New H145:  fld_heartratehistory3(computer__4) >= - 1
-<S>  New H147:  fld_heartratehistory2(computer__4) >= - 1
-<S>  New H149:  fld_heartratehistory1(computer__4) >= - 1
-<S>  New H159:  fld_upperbound(computer__4) >= - 1
-<S>  New H165:  fld_rate(computer__4) >= - 1
-<S>  New H173:  fld_heartratehistory6(computer__5) >= - 1
-<S>  New H175:  fld_heartratehistory5(computer__5) >= - 1
-<S>  New H177:  fld_heartratehistory4(computer__5) >= - 1
-<S>  New H179:  fld_heartratehistory3(computer__5) >= - 1
-<S>  New H181:  fld_heartratehistory2(computer__5) >= - 1
-<S>  New H183:  fld_heartratehistory1(computer__5) >= - 1
-<S>  New H193:  fld_upperbound(computer__5) >= - 1
-<S>  New H199:  fld_rate(computer__5) >= - 1
-<S>  New H205:  fld_heartratehistory6(computer__6) >= - 1
-<S>  New H207:  fld_heartratehistory5(computer__6) >= - 1
-<S>  New H209:  fld_heartratehistory4(computer__6) >= - 1
-<S>  New H211:  fld_heartratehistory3(computer__6) >= - 1
-<S>  New H213:  fld_heartratehistory2(computer__6) >= - 1
-<S>  New H215:  fld_heartratehistory1(computer__6) >= - 1
-<S>  New H225:  fld_upperbound(computer__6) >= - 1
-<S>  New H231:  fld_rate(computer__6) >= - 1
-<S>  New H237:  fld_heartratehistory6(computer__7) >= - 1
-<S>  New H239:  fld_heartratehistory5(computer__7) >= - 1
-<S>  New H241:  fld_heartratehistory4(computer__7) >= - 1
-<S>  New H243:  fld_heartratehistory3(computer__7) >= - 1
-<S>  New H245:  fld_heartratehistory2(computer__7) >= - 1
-<S>  New H247:  fld_heartratehistory1(computer__7) >= - 1
-<S>  New H257:  fld_upperbound(computer__7) >= - 1
-<S>  New H263:  fld_rate(computer__7) >= - 1
--S-  Applied substitution rule tick_rules(13).
-     This was achieved by replacing all occurrences of measures__bpm__last by:
-          300.
-<S>  New H7:  fld_heartratehistory6(computer) <= 300
-<S>  New H9:  fld_heartratehistory5(computer) <= 300
-<S>  New H11:  fld_heartratehistory4(computer) <= 300
-<S>  New H13:  fld_heartratehistory3(computer) <= 300
-<S>  New H15:  fld_heartratehistory2(computer) <= 300
-<S>  New H17:  fld_heartratehistory1(computer) <= 300
-<S>  New H27:  fld_upperbound(computer) <= 300
-<S>  New H33:  fld_rate(computer) <= 300
-<S>  New H36:  fld_rate(heartratemonitor) <= 300
-<S>  New H44:  fld_rate(computer__1) <= 300
-<S>  New H75:  fld_heartratehistory6(computer__2) <= 300
-<S>  New H77:  fld_heartratehistory5(computer__2) <= 300
-<S>  New H79:  fld_heartratehistory4(computer__2) <= 300
-<S>  New H81:  fld_heartratehistory3(computer__2) <= 300
-<S>  New H83:  fld_heartratehistory2(computer__2) <= 300
-<S>  New H85:  fld_heartratehistory1(computer__2) <= 300
-<S>  New H95:  fld_upperbound(computer__2) <= 300
-<S>  New H101:  fld_rate(computer__2) <= 300
-<S>  New H108:  fld_heartratehistory6(computer__3) <= 300
-<S>  New H110:  fld_heartratehistory5(computer__3) <= 300
-<S>  New H112:  fld_heartratehistory4(computer__3) <= 300
-<S>  New H114:  fld_heartratehistory3(computer__3) <= 300
-<S>  New H116:  fld_heartratehistory2(computer__3) <= 300
-<S>  New H118:  fld_heartratehistory1(computer__3) <= 300
-<S>  New H128:  fld_upperbound(computer__3) <= 300
-<S>  New H134:  fld_rate(computer__3) <= 300
-<S>  New H140:  fld_heartratehistory6(computer__4) <= 300
-<S>  New H142:  fld_heartratehistory5(computer__4) <= 300
-<S>  New H144:  fld_heartratehistory4(computer__4) <= 300
-<S>  New H146:  fld_heartratehistory3(computer__4) <= 300
-<S>  New H148:  fld_heartratehistory2(computer__4) <= 300
-<S>  New H150:  fld_heartratehistory1(computer__4) <= 300
-<S>  New H160:  fld_upperbound(computer__4) <= 300
-<S>  New H166:  fld_rate(computer__4) <= 300
-<S>  New H174:  fld_heartratehistory6(computer__5) <= 300
-<S>  New H176:  fld_heartratehistory5(computer__5) <= 300
-<S>  New H178:  fld_heartratehistory4(computer__5) <= 300
-<S>  New H180:  fld_heartratehistory3(computer__5) <= 300
-<S>  New H182:  fld_heartratehistory2(computer__5) <= 300
-<S>  New H184:  fld_heartratehistory1(computer__5) <= 300
-<S>  New H194:  fld_upperbound(computer__5) <= 300
-<S>  New H200:  fld_rate(computer__5) <= 300
-<S>  New H206:  fld_heartratehistory6(computer__6) <= 300
-<S>  New H208:  fld_heartratehistory5(computer__6) <= 300
-<S>  New H210:  fld_heartratehistory4(computer__6) <= 300
-<S>  New H212:  fld_heartratehistory3(computer__6) <= 300
-<S>  New H214:  fld_heartratehistory2(computer__6) <= 300
-<S>  New H216:  fld_heartratehistory1(computer__6) <= 300
-<S>  New H226:  fld_upperbound(computer__6) <= 300
-<S>  New H232:  fld_rate(computer__6) <= 300
-<S>  New H238:  fld_heartratehistory6(computer__7) <= 300
-<S>  New H240:  fld_heartratehistory5(computer__7) <= 300
-<S>  New H242:  fld_heartratehistory4(computer__7) <= 300
-<S>  New H244:  fld_heartratehistory3(computer__7) <= 300
-<S>  New H246:  fld_heartratehistory2(computer__7) <= 300
-<S>  New H248:  fld_heartratehistory1(computer__7) <= 300
-<S>  New H258:  fld_upperbound(computer__7) <= 300
-<S>  New H264:  fld_rate(computer__7) <= 300
--S-  Applied substitution rule tick_rules(21).
-     This was achieved by replacing all occurrences of icdstates__first by:
-          normal.
-<S>  New H28:  normal <= fld_state(computer)
-<S>  New H96:  normal <= fld_state(computer__2)
-<S>  New H129:  normal <= fld_state(computer__3)
-<S>  New H161:  normal <= fld_state(computer__4)
-<S>  New H195:  normal <= fld_state(computer__5)
-<S>  New H227:  normal <= fld_state(computer__6)
-<S>  New H259:  normal <= fld_state(computer__7)
--S-  Applied substitution rule tick_rules(22).
-     This was achieved by replacing all occurrences of icdstates__last by:
-          tar.
-<S>  New H29:  fld_state(computer) <= tar
-<S>  New H97:  fld_state(computer__2) <= tar
-<S>  New H130:  fld_state(computer__3) <= tar
-<S>  New H162:  fld_state(computer__4) <= tar
-<S>  New H196:  fld_state(computer__5) <= tar
-<S>  New H228:  fld_state(computer__6) <= tar
-<S>  New H260:  fld_state(computer__7) <= tar
----  Eliminated hypothesis H1 (true-hypothesis).
----  Eliminated hypothesis H30 (true-hypothesis).
----  Eliminated hypothesis H31 (true-hypothesis).
----  Eliminated hypothesis H34 (true-hypothesis).
----  Eliminated hypothesis H37 (true-hypothesis).
----  Eliminated hypothesis H62 (true-hypothesis).
----  Eliminated hypothesis H63 (true-hypothesis).
----  Eliminated hypothesis H98 (true-hypothesis).
----  Eliminated hypothesis H99 (true-hypothesis).
----  Eliminated hypothesis H131 (true-hypothesis).
----  Eliminated hypothesis H132 (true-hypothesis).
----  Eliminated hypothesis H163 (true-hypothesis).
----  Eliminated hypothesis H164 (true-hypothesis).
----  Eliminated hypothesis H197 (true-hypothesis).
----  Eliminated hypothesis H198 (true-hypothesis).
----  Eliminated hypothesis H229 (true-hypothesis).
----  Eliminated hypothesis H230 (true-hypothesis).
----  Eliminated hypothesis H261 (true-hypothesis).
----  Eliminated hypothesis H262 (true-hypothesis).
----  Eliminated hypothesis H265 (true-hypothesis).
->>>  Using "A->B, A |- B" on H46, given H270, we simplify the former to:
-     >>>  H46:  fld_ison(computer)
----  Substituted hypothesis H47, which specifies an equivalence for fld_state(
-          computer__1).
----  Substituted hypothesis H48, which specifies an equivalence for 
-          fld_upperbound(computer__1).
----  Substituted hypothesis H49, which specifies an equivalence for fld_count(
-          computer__1).
----  Substituted hypothesis H50, which specifies an equivalence for fld_next(
-          computer__1).
----  Substituted hypothesis H51, which specifies an equivalence for 
-          fld_tickcount(computer__1).
----  Substituted hypothesis H52, which specifies an equivalence for 
-          fld_tickstoreenabledetectionagain(computer__1).
----  Substituted hypothesis H53, which specifies an equivalence for 
-          fld_heartratehistory1(computer__1).
--S-  Substituted hypothesis H54.
-     This was achieved by replacing all occurrences of fld_heartratehistory2(
-          computer__1) by:
-          fld_heartratehistory2(computer).
--S-  Substituted hypothesis H55.
-     This was achieved by replacing all occurrences of fld_heartratehistory3(
-          computer__1) by:
-          fld_heartratehistory3(computer).
--S-  Substituted hypothesis H56.
-     This was achieved by replacing all occurrences of fld_heartratehistory4(
-          computer__1) by:
-          fld_heartratehistory4(computer).
--S-  Substituted hypothesis H57.
-     This was achieved by replacing all occurrences of fld_heartratehistory5(
-          computer__1) by:
-          fld_heartratehistory5(computer).
--S-  Substituted hypothesis H58.
-     This was achieved by replacing all occurrences of fld_heartratehistory6(
-          computer__1) by:
-          fld_heartratehistory6(computer).
----  Substituted hypothesis H59, which specifies an equivalence for 
-          fld_history_avarage(computer__1).
----  Substituted hypothesis H60, which specifies an equivalence for 
-          fld_history_variance(computer__1).
----  Substituted hypothesis H45, which specifies an equivalence for 
-          fld_inprocess(computer__1).
--S-  Substituted hypothesis H46.
-     This was achieved by replacing all occurrences of fld_ison(computer__1) by:
-          fld_ison(computer).
-     +++  New H271:  integer__size >= 0
-     +++  New H272:  measures__joules__size >= 0
-     +++  New H273:  measures__bpm__size >= 0
-     +++  New H274:  impulsegenerator__generatortype__size >= 0
-     +++  New H275:  hrm__hrmtype__size >= 0
-     +++  New H276:  icdstates__size >= 0
-     +++  New H277:  icdtype__size >= 0
+%%%  Simplified H61 on reading formula in, to give:
+     %%%  H61:  fld_ison(computer__1)
+%%%  Simplified H92 on reading formula in, to give:
+     %%%  H92:  icdstates__first <= fld_state(computer__2)
+%%%  Simplified H122 on reading formula in, to give:
+     %%%  H122:  icdstates__first <= fld_state(computer__3)
+%%%  Simplified H151 on reading formula in, to give:
+     %%%  H151:  icdstates__first <= fld_state(computer__4)
+%%%  Simplified H156 on reading formula in, to give:
+     %%%  H156:  fld_ison(computer__5)
+%%%  Simplified H183 on reading formula in, to give:
+     %%%  H183:  icdstates__first <= fld_state(computer__5)
+%%%  Simplified C1 on reading formula in, to give:
+     %%%  C1:  fld_ison(computer__5)
+***  Proved C1:  fld_ison(computer__5)
+     using hypothesis H156.
+***  PROVED VC.
 
 
 @@@@@@@@@@  VC: procedure_tick_4.  @@@@@@@@@@
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(heartratemonitor)
+%%%  Simplified H2 on reading formula in, to give:
+     %%%  H2:  fld_ison(shock)
+%%%  Simplified H3 on reading formula in, to give:
+     %%%  H3:  fld_ison(computer)
 %%%  Simplified H28 on reading formula in, to give:
      %%%  H28:  icdstates__first <= fld_state(computer)
+%%%  Simplified H44 on reading formula in, to give:
+     %%%  H44:  fld_ison(computer__1) <-> fld_ison(computer)
+---  Hypothesis H59 has been replaced by "true".  (It is already present, as 
+          H42).
+---  Hypothesis H60 has been replaced by "true".  (It is already present, as 
+          H43).
+%%%  Simplified H61 on reading formula in, to give:
+     %%%  H61:  fld_ison(computer__1)
+%%%  Simplified H92 on reading formula in, to give:
+     %%%  H92:  icdstates__first <= fld_state(computer__2)
+%%%  Simplified H122 on reading formula in, to give:
+     %%%  H122:  icdstates__first <= fld_state(computer__3)
+%%%  Simplified H151 on reading formula in, to give:
+     %%%  H151:  icdstates__first <= fld_state(computer__4)
+%%%  Simplified H156 on reading formula in, to give:
+     %%%  H156:  fld_ison(computer__5)
+%%%  Simplified H183 on reading formula in, to give:
+     %%%  H183:  icdstates__first <= fld_state(computer__5)
+---  Hypothesis H188 has been replaced by "true".  (It is already present, as 
+          H156).
+%%%  Simplified H189 on reading formula in, to give:
+     %%%  H189:  fld_ison(computer__6)
+%%%  Simplified H216 on reading formula in, to give:
+     %%%  H216:  icdstates__first <= fld_state(computer__6)
 %%%  Simplified C1 on reading formula in, to give:
-     %%%  C1:  true
-***  Proved C1:  true
-***  Proved C2:  measures__bpm__first <= measures__bpm__last
-     using hypotheses H6 & H7.
+     %%%  C1:  fld_ison(computer__6)
+%%%  Simplified C2 on reading formula in, to give:
+     %%%  C2:  fld_ison(shock)
+***  Proved C1:  fld_ison(computer__6)
+     using hypothesis H189.
+***  Proved C2:  fld_ison(shock)
+     using hypothesis H2.
 ***  PROVED VC.
 
 
 @@@@@@@@@@  VC: procedure_tick_5.  @@@@@@@@@@
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(heartratemonitor)
+%%%  Simplified H2 on reading formula in, to give:
+     %%%  H2:  fld_ison(shock)
+%%%  Simplified H3 on reading formula in, to give:
+     %%%  H3:  fld_ison(computer)
 %%%  Simplified H28 on reading formula in, to give:
      %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified H45 on reading formula in, to give:
-     %%%  H45:  fld_inprocess(computer__1) <-> fld_inprocess(computer)
-%%%  Simplified H46 on reading formula in, to give:
-     %%%  H46:  fld_ison(computer__1) <-> fld_ison(computer)
----  Hypothesis H62 has been replaced by "true".  (It is already present, as 
+%%%  Simplified H44 on reading formula in, to give:
+     %%%  H44:  fld_ison(computer__1) <-> fld_ison(computer)
+---  Hypothesis H59 has been replaced by "true".  (It is already present, as 
+          H42).
+---  Hypothesis H60 has been replaced by "true".  (It is already present, as 
           H43).
----  Hypothesis H63 has been replaced by "true".  (It is already present, as 
-          H44).
-%%%  Simplified H96 on reading formula in, to give:
-     %%%  H96:  icdstates__first <= fld_state(computer__2)
-%%%  Simplified H129 on reading formula in, to give:
-     %%%  H129:  icdstates__first <= fld_state(computer__3)
-%%%  Simplified H161 on reading formula in, to give:
-     %%%  H161:  icdstates__first <= fld_state(computer__4)
-%%%  Simplified H167 on reading formula in, to give:
-     %%%  H167:  fld_ison(computer__4)
-%%%  Simplified H168 on reading formula in, to give:
-     %%%  H168:  fld_state(computer__5) = fib <-> fld_state(computer__4) <> fib 
-          and (fld_heartratehistory1(computer__5) <> - 1 and 
-          fld_tickstoreenabledetectionagain(computer__5) = 0 and 
-          fld_history_variance(computer__5) > 100)
-%%%  Simplified H195 on reading formula in, to give:
-     %%%  H195:  icdstates__first <= fld_state(computer__5)
-%%%  Simplified H227 on reading formula in, to give:
-     %%%  H227:  icdstates__first <= fld_state(computer__6)
-%%%  Simplified H259 on reading formula in, to give:
-     %%%  H259:  icdstates__first <= fld_state(computer__7)
-%%%  Simplified C1 on reading formula in, to give:
-     %%%  C1:  not fld_ison(computer__7) -> fld_rate(computer__7) = 
-          measures__bpm__first
-+++  Using "A->B, A |- B" on hypotheses H46 & H40 yields a new hypothesis:
-     +++  H272:  fld_ison(computer__1)
--S-  Applied substitution rule tick_rules(2).
+%%%  Simplified H61 on reading formula in, to give:
+     %%%  H61:  fld_ison(computer__1)
+%%%  Simplified H92 on reading formula in, to give:
+     %%%  H92:  icdstates__first <= fld_state(computer__2)
+%%%  Simplified H122 on reading formula in, to give:
+     %%%  H122:  icdstates__first <= fld_state(computer__3)
+%%%  Simplified H151 on reading formula in, to give:
+     %%%  H151:  icdstates__first <= fld_state(computer__4)
+%%%  Simplified H156 on reading formula in, to give:
+     %%%  H156:  fld_ison(computer__5)
+%%%  Simplified H183 on reading formula in, to give:
+     %%%  H183:  icdstates__first <= fld_state(computer__5)
+---  Hypothesis H188 has been replaced by "true".  (It is already present, as 
+          H156).
+%%%  Simplified H189 on reading formula in, to give:
+     %%%  H189:  fld_ison(computer__6)
+%%%  Simplified H216 on reading formula in, to give:
+     %%%  H216:  icdstates__first <= fld_state(computer__6)
+---  Hypothesis H221 has been replaced by "true".  (It is already present, as 
+          H189).
+---  Hypothesis H222 has been replaced by "true".  (It is already present, as 
+          H2).
+%%%  Simplified H248 on reading formula in, to give:
+     %%%  H248:  icdstates__first <= fld_state(computer__7)
+***  Proved C2:  fld_tickcount(computer__7) - 1 <= integer__last
+     using hypothesis H241.
+-S-  Applied substitution rule tick_rules(3).
      This was achieved by replacing all occurrences of integer__first by:
           - 2147483648.
-<S>  New H2:  fld_history_variance(computer) >= - 2147483648
-<S>  New H4:  fld_history_avarage(computer) >= - 2147483648
-<S>  New H18:  fld_tickstoreenabledetectionagain(computer) >= - 2147483648
+<S>  New H4:  fld_history_variance(computer) >= - 2147483648
+<S>  New H6:  fld_history_avarage(computer) >= - 2147483648
 <S>  New H20:  fld_tickcount(computer) >= - 2147483648
-<S>  New H22:  fld_next(computer) >= - 2147483648
+<S>  New H22:  fld_tickstonextshock(computer) >= - 2147483648
 <S>  New H24:  fld_count(computer) >= - 2147483648
-<S>  New H70:  fld_history_variance(computer__2) >= - 2147483648
-<S>  New H72:  fld_history_avarage(computer__2) >= - 2147483648
-<S>  New H86:  fld_tickstoreenabledetectionagain(computer__2) >= - 2147483648
-<S>  New H88:  fld_tickcount(computer__2) >= - 2147483648
-<S>  New H90:  fld_next(computer__2) >= - 2147483648
-<S>  New H92:  fld_count(computer__2) >= - 2147483648
-<S>  New H103:  fld_history_variance(computer__3) >= - 2147483648
-<S>  New H105:  fld_history_avarage(computer__3) >= - 2147483648
-<S>  New H119:  fld_tickstoreenabledetectionagain(computer__3) >= - 2147483648
-<S>  New H121:  fld_tickcount(computer__3) >= - 2147483648
-<S>  New H123:  fld_next(computer__3) >= - 2147483648
-<S>  New H125:  fld_count(computer__3) >= - 2147483648
-<S>  New H135:  fld_history_variance(computer__4) >= - 2147483648
-<S>  New H137:  fld_history_avarage(computer__4) >= - 2147483648
-<S>  New H151:  fld_tickstoreenabledetectionagain(computer__4) >= - 2147483648
-<S>  New H153:  fld_tickcount(computer__4) >= - 2147483648
-<S>  New H155:  fld_next(computer__4) >= - 2147483648
-<S>  New H157:  fld_count(computer__4) >= - 2147483648
-<S>  New H169:  fld_history_variance(computer__5) >= - 2147483648
-<S>  New H171:  fld_history_avarage(computer__5) >= - 2147483648
-<S>  New H185:  fld_tickstoreenabledetectionagain(computer__5) >= - 2147483648
-<S>  New H187:  fld_tickcount(computer__5) >= - 2147483648
-<S>  New H189:  fld_next(computer__5) >= - 2147483648
-<S>  New H191:  fld_count(computer__5) >= - 2147483648
-<S>  New H201:  fld_history_variance(computer__6) >= - 2147483648
-<S>  New H203:  fld_history_avarage(computer__6) >= - 2147483648
-<S>  New H217:  fld_tickstoreenabledetectionagain(computer__6) >= - 2147483648
-<S>  New H219:  fld_tickcount(computer__6) >= - 2147483648
-<S>  New H221:  fld_next(computer__6) >= - 2147483648
-<S>  New H223:  fld_count(computer__6) >= - 2147483648
-<S>  New H233:  fld_history_variance(computer__7) >= - 2147483648
-<S>  New H235:  fld_history_avarage(computer__7) >= - 2147483648
-<S>  New H249:  fld_tickstoreenabledetectionagain(computer__7) >= - 2147483648
-<S>  New H251:  fld_tickcount(computer__7) >= - 2147483648
-<S>  New H253:  fld_next(computer__7) >= - 2147483648
-<S>  New H255:  fld_count(computer__7) >= - 2147483648
-<S>  New H270:  fld_tickcount(computer__7) >= - 2147483647
--S-  Applied substitution rule tick_rules(3).
-     This was achieved by replacing all occurrences of integer__last by:
-          2147483647.
-<S>  New H3:  fld_history_variance(computer) <= 2147483647
-<S>  New H5:  fld_history_avarage(computer) <= 2147483647
-<S>  New H19:  fld_tickstoreenabledetectionagain(computer) <= 2147483647
-<S>  New H21:  fld_tickcount(computer) <= 2147483647
-<S>  New H23:  fld_next(computer) <= 2147483647
-<S>  New H25:  fld_count(computer) <= 2147483647
-<S>  New H71:  fld_history_variance(computer__2) <= 2147483647
-<S>  New H73:  fld_history_avarage(computer__2) <= 2147483647
-<S>  New H87:  fld_tickstoreenabledetectionagain(computer__2) <= 2147483647
-<S>  New H89:  fld_tickcount(computer__2) <= 2147483647
-<S>  New H91:  fld_next(computer__2) <= 2147483647
-<S>  New H93:  fld_count(computer__2) <= 2147483647
-<S>  New H104:  fld_history_variance(computer__3) <= 2147483647
-<S>  New H106:  fld_history_avarage(computer__3) <= 2147483647
-<S>  New H120:  fld_tickstoreenabledetectionagain(computer__3) <= 2147483647
-<S>  New H122:  fld_tickcount(computer__3) <= 2147483647
-<S>  New H124:  fld_next(computer__3) <= 2147483647
-<S>  New H126:  fld_count(computer__3) <= 2147483647
-<S>  New H136:  fld_history_variance(computer__4) <= 2147483647
-<S>  New H138:  fld_history_avarage(computer__4) <= 2147483647
-<S>  New H152:  fld_tickstoreenabledetectionagain(computer__4) <= 2147483647
-<S>  New H154:  fld_tickcount(computer__4) <= 2147483647
-<S>  New H156:  fld_next(computer__4) <= 2147483647
-<S>  New H158:  fld_count(computer__4) <= 2147483647
-<S>  New H170:  fld_history_variance(computer__5) <= 2147483647
-<S>  New H172:  fld_history_avarage(computer__5) <= 2147483647
-<S>  New H186:  fld_tickstoreenabledetectionagain(computer__5) <= 2147483647
-<S>  New H188:  fld_tickcount(computer__5) <= 2147483647
-<S>  New H190:  fld_next(computer__5) <= 2147483647
-<S>  New H192:  fld_count(computer__5) <= 2147483647
-<S>  New H202:  fld_history_variance(computer__6) <= 2147483647
-<S>  New H204:  fld_history_avarage(computer__6) <= 2147483647
-<S>  New H218:  fld_tickstoreenabledetectionagain(computer__6) <= 2147483647
-<S>  New H220:  fld_tickcount(computer__6) <= 2147483647
-<S>  New H222:  fld_next(computer__6) <= 2147483647
-<S>  New H224:  fld_count(computer__6) <= 2147483647
-<S>  New H234:  fld_history_variance(computer__7) <= 2147483647
-<S>  New H236:  fld_history_avarage(computer__7) <= 2147483647
-<S>  New H250:  fld_tickstoreenabledetectionagain(computer__7) <= 2147483647
-<S>  New H252:  fld_tickcount(computer__7) <= 2147483647
-<S>  New H254:  fld_next(computer__7) <= 2147483647
-<S>  New H256:  fld_count(computer__7) <= 2147483647
-<S>  New H271:  fld_tickcount(computer__7) <= 2147483648
--S-  Applied substitution rule tick_rules(7).
-     This was achieved by replacing all occurrences of measures__joules__first 
-          by:
-          0.
-<S>  New H38:  fld_impulse(shock) >= 0
-<S>  New H266:  fld_impulse(shock__7) >= 0
--S-  Applied substitution rule tick_rules(8).
-     This was achieved by replacing all occurrences of measures__joules__last 
-          by:
-          45.
-<S>  New H39:  fld_impulse(shock) <= 45
-<S>  New H267:  fld_impulse(shock__7) <= 45
--S-  Applied substitution rule tick_rules(12).
-     This was achieved by replacing all occurrences of measures__bpm__first by:
-          - 1.
-<S>  New H6:  fld_heartratehistory6(computer) >= - 1
-<S>  New H8:  fld_heartratehistory5(computer) >= - 1
-<S>  New H10:  fld_heartratehistory4(computer) >= - 1
-<S>  New H12:  fld_heartratehistory3(computer) >= - 1
-<S>  New H14:  fld_heartratehistory2(computer) >= - 1
-<S>  New H16:  fld_heartratehistory1(computer) >= - 1
-<S>  New H26:  fld_upperbound(computer) >= - 1
-<S>  New H32:  fld_rate(computer) >= - 1
-<S>  New H35:  fld_rate(heartratemonitor) >= - 1
-<S>  New H42:  not fld_ison(heartratemonitor) -> fld_rate(computer__1) = - 1
-<S>  New H43:  fld_rate(computer__1) >= - 1
-<S>  New H74:  fld_heartratehistory6(computer__2) >= - 1
-<S>  New H76:  fld_heartratehistory5(computer__2) >= - 1
-<S>  New H78:  fld_heartratehistory4(computer__2) >= - 1
-<S>  New H80:  fld_heartratehistory3(computer__2) >= - 1
-<S>  New H82:  fld_heartratehistory2(computer__2) >= - 1
-<S>  New H84:  fld_heartratehistory1(computer__2) >= - 1
-<S>  New H94:  fld_upperbound(computer__2) >= - 1
-<S>  New H100:  fld_rate(computer__2) >= - 1
-<S>  New H107:  fld_heartratehistory6(computer__3) >= - 1
-<S>  New H109:  fld_heartratehistory5(computer__3) >= - 1
-<S>  New H111:  fld_heartratehistory4(computer__3) >= - 1
-<S>  New H113:  fld_heartratehistory3(computer__3) >= - 1
-<S>  New H115:  fld_heartratehistory2(computer__3) >= - 1
-<S>  New H117:  fld_heartratehistory1(computer__3) >= - 1
-<S>  New H127:  fld_upperbound(computer__3) >= - 1
-<S>  New H133:  fld_rate(computer__3) >= - 1
-<S>  New H139:  fld_heartratehistory6(computer__4) >= - 1
-<S>  New H141:  fld_heartratehistory5(computer__4) >= - 1
-<S>  New H143:  fld_heartratehistory4(computer__4) >= - 1
-<S>  New H145:  fld_heartratehistory3(computer__4) >= - 1
-<S>  New H147:  fld_heartratehistory2(computer__4) >= - 1
-<S>  New H149:  fld_heartratehistory1(computer__4) >= - 1
-<S>  New H159:  fld_upperbound(computer__4) >= - 1
-<S>  New H165:  fld_rate(computer__4) >= - 1
-<S>  New H173:  fld_heartratehistory6(computer__5) >= - 1
-<S>  New H175:  fld_heartratehistory5(computer__5) >= - 1
-<S>  New H177:  fld_heartratehistory4(computer__5) >= - 1
-<S>  New H179:  fld_heartratehistory3(computer__5) >= - 1
-<S>  New H181:  fld_heartratehistory2(computer__5) >= - 1
-<S>  New H183:  fld_heartratehistory1(computer__5) >= - 1
-<S>  New H193:  fld_upperbound(computer__5) >= - 1
-<S>  New H199:  fld_rate(computer__5) >= - 1
-<S>  New H205:  fld_heartratehistory6(computer__6) >= - 1
-<S>  New H207:  fld_heartratehistory5(computer__6) >= - 1
-<S>  New H209:  fld_heartratehistory4(computer__6) >= - 1
-<S>  New H211:  fld_heartratehistory3(computer__6) >= - 1
-<S>  New H213:  fld_heartratehistory2(computer__6) >= - 1
-<S>  New H215:  fld_heartratehistory1(computer__6) >= - 1
-<S>  New H225:  fld_upperbound(computer__6) >= - 1
-<S>  New H231:  fld_rate(computer__6) >= - 1
-<S>  New H237:  fld_heartratehistory6(computer__7) >= - 1
-<S>  New H239:  fld_heartratehistory5(computer__7) >= - 1
-<S>  New H241:  fld_heartratehistory4(computer__7) >= - 1
-<S>  New H243:  fld_heartratehistory3(computer__7) >= - 1
-<S>  New H245:  fld_heartratehistory2(computer__7) >= - 1
-<S>  New H247:  fld_heartratehistory1(computer__7) >= - 1
-<S>  New H257:  fld_upperbound(computer__7) >= - 1
-<S>  New H263:  fld_rate(computer__7) >= - 1
-<S>  New C1:  not fld_ison(computer__7) -> fld_rate(computer__7) = - 1
--S-  Applied substitution rule tick_rules(13).
-     This was achieved by replacing all occurrences of measures__bpm__last by:
-          300.
-<S>  New H7:  fld_heartratehistory6(computer) <= 300
-<S>  New H9:  fld_heartratehistory5(computer) <= 300
-<S>  New H11:  fld_heartratehistory4(computer) <= 300
-<S>  New H13:  fld_heartratehistory3(computer) <= 300
-<S>  New H15:  fld_heartratehistory2(computer) <= 300
-<S>  New H17:  fld_heartratehistory1(computer) <= 300
-<S>  New H27:  fld_upperbound(computer) <= 300
-<S>  New H33:  fld_rate(computer) <= 300
-<S>  New H36:  fld_rate(heartratemonitor) <= 300
-<S>  New H44:  fld_rate(computer__1) <= 300
-<S>  New H75:  fld_heartratehistory6(computer__2) <= 300
-<S>  New H77:  fld_heartratehistory5(computer__2) <= 300
-<S>  New H79:  fld_heartratehistory4(computer__2) <= 300
-<S>  New H81:  fld_heartratehistory3(computer__2) <= 300
-<S>  New H83:  fld_heartratehistory2(computer__2) <= 300
-<S>  New H85:  fld_heartratehistory1(computer__2) <= 300
-<S>  New H95:  fld_upperbound(computer__2) <= 300
-<S>  New H101:  fld_rate(computer__2) <= 300
-<S>  New H108:  fld_heartratehistory6(computer__3) <= 300
-<S>  New H110:  fld_heartratehistory5(computer__3) <= 300
-<S>  New H112:  fld_heartratehistory4(computer__3) <= 300
-<S>  New H114:  fld_heartratehistory3(computer__3) <= 300
-<S>  New H116:  fld_heartratehistory2(computer__3) <= 300
-<S>  New H118:  fld_heartratehistory1(computer__3) <= 300
-<S>  New H128:  fld_upperbound(computer__3) <= 300
-<S>  New H134:  fld_rate(computer__3) <= 300
-<S>  New H140:  fld_heartratehistory6(computer__4) <= 300
-<S>  New H142:  fld_heartratehistory5(computer__4) <= 300
-<S>  New H144:  fld_heartratehistory4(computer__4) <= 300
-<S>  New H146:  fld_heartratehistory3(computer__4) <= 300
-<S>  New H148:  fld_heartratehistory2(computer__4) <= 300
-<S>  New H150:  fld_heartratehistory1(computer__4) <= 300
-<S>  New H160:  fld_upperbound(computer__4) <= 300
-<S>  New H166:  fld_rate(computer__4) <= 300
-<S>  New H174:  fld_heartratehistory6(computer__5) <= 300
-<S>  New H176:  fld_heartratehistory5(computer__5) <= 300
-<S>  New H178:  fld_heartratehistory4(computer__5) <= 300
-<S>  New H180:  fld_heartratehistory3(computer__5) <= 300
-<S>  New H182:  fld_heartratehistory2(computer__5) <= 300
-<S>  New H184:  fld_heartratehistory1(computer__5) <= 300
-<S>  New H194:  fld_upperbound(computer__5) <= 300
-<S>  New H200:  fld_rate(computer__5) <= 300
-<S>  New H206:  fld_heartratehistory6(computer__6) <= 300
-<S>  New H208:  fld_heartratehistory5(computer__6) <= 300
-<S>  New H210:  fld_heartratehistory4(computer__6) <= 300
-<S>  New H212:  fld_heartratehistory3(computer__6) <= 300
-<S>  New H214:  fld_heartratehistory2(computer__6) <= 300
-<S>  New H216:  fld_heartratehistory1(computer__6) <= 300
-<S>  New H226:  fld_upperbound(computer__6) <= 300
-<S>  New H232:  fld_rate(computer__6) <= 300
-<S>  New H238:  fld_heartratehistory6(computer__7) <= 300
-<S>  New H240:  fld_heartratehistory5(computer__7) <= 300
-<S>  New H242:  fld_heartratehistory4(computer__7) <= 300
-<S>  New H244:  fld_heartratehistory3(computer__7) <= 300
-<S>  New H246:  fld_heartratehistory2(computer__7) <= 300
-<S>  New H248:  fld_heartratehistory1(computer__7) <= 300
-<S>  New H258:  fld_upperbound(computer__7) <= 300
-<S>  New H264:  fld_rate(computer__7) <= 300
--S-  Applied substitution rule tick_rules(21).
-     This was achieved by replacing all occurrences of icdstates__first by:
-          normal.
-<S>  New H28:  normal <= fld_state(computer)
-<S>  New H96:  normal <= fld_state(computer__2)
-<S>  New H129:  normal <= fld_state(computer__3)
-<S>  New H161:  normal <= fld_state(computer__4)
-<S>  New H195:  normal <= fld_state(computer__5)
-<S>  New H227:  normal <= fld_state(computer__6)
-<S>  New H259:  normal <= fld_state(computer__7)
--S-  Applied substitution rule tick_rules(22).
-     This was achieved by replacing all occurrences of icdstates__last by:
-          tar.
-<S>  New H29:  fld_state(computer) <= tar
-<S>  New H97:  fld_state(computer__2) <= tar
-<S>  New H130:  fld_state(computer__3) <= tar
-<S>  New H162:  fld_state(computer__4) <= tar
-<S>  New H196:  fld_state(computer__5) <= tar
-<S>  New H228:  fld_state(computer__6) <= tar
-<S>  New H260:  fld_state(computer__7) <= tar
----  Eliminated hypothesis H1 (true-hypothesis).
----  Eliminated hypothesis H30 (true-hypothesis).
----  Eliminated hypothesis H31 (true-hypothesis).
----  Eliminated hypothesis H34 (true-hypothesis).
----  Eliminated hypothesis H37 (true-hypothesis).
----  Eliminated hypothesis H62 (true-hypothesis).
----  Eliminated hypothesis H63 (true-hypothesis).
----  Eliminated hypothesis H98 (true-hypothesis).
----  Eliminated hypothesis H99 (true-hypothesis).
----  Eliminated hypothesis H131 (true-hypothesis).
----  Eliminated hypothesis H132 (true-hypothesis).
----  Eliminated hypothesis H163 (true-hypothesis).
----  Eliminated hypothesis H164 (true-hypothesis).
----  Eliminated hypothesis H197 (true-hypothesis).
----  Eliminated hypothesis H198 (true-hypothesis).
----  Eliminated hypothesis H229 (true-hypothesis).
----  Eliminated hypothesis H230 (true-hypothesis).
----  Eliminated hypothesis H261 (true-hypothesis).
----  Eliminated hypothesis H262 (true-hypothesis).
----  Eliminated hypothesis H265 (true-hypothesis).
->>>  Using "A->B, A |- B" on H46, given H272, we simplify the former to:
-     >>>  H46:  fld_ison(computer)
----  Eliminated hypothesis H251 (redundant, given H270).
----  Eliminated hypothesis H271 (redundant, given H252).
----  Substituted hypothesis H47, which specifies an equivalence for fld_state(
-          computer__1).
----  Substituted hypothesis H48, which specifies an equivalence for 
-          fld_upperbound(computer__1).
----  Substituted hypothesis H49, which specifies an equivalence for fld_count(
-          computer__1).
----  Substituted hypothesis H50, which specifies an equivalence for fld_next(
-          computer__1).
----  Substituted hypothesis H51, which specifies an equivalence for 
-          fld_tickcount(computer__1).
----  Substituted hypothesis H52, which specifies an equivalence for 
-          fld_tickstoreenabledetectionagain(computer__1).
----  Substituted hypothesis H53, which specifies an equivalence for 
-          fld_heartratehistory1(computer__1).
--S-  Substituted hypothesis H54.
-     This was achieved by replacing all occurrences of fld_heartratehistory2(
-          computer__1) by:
-          fld_heartratehistory2(computer).
--S-  Substituted hypothesis H55.
-     This was achieved by replacing all occurrences of fld_heartratehistory3(
-          computer__1) by:
-          fld_heartratehistory3(computer).
--S-  Substituted hypothesis H56.
-     This was achieved by replacing all occurrences of fld_heartratehistory4(
-          computer__1) by:
-          fld_heartratehistory4(computer).
--S-  Substituted hypothesis H57.
-     This was achieved by replacing all occurrences of fld_heartratehistory5(
-          computer__1) by:
-          fld_heartratehistory5(computer).
--S-  Substituted hypothesis H58.
-     This was achieved by replacing all occurrences of fld_heartratehistory6(
-          computer__1) by:
-          fld_heartratehistory6(computer).
----  Substituted hypothesis H59, which specifies an equivalence for 
-          fld_history_avarage(computer__1).
----  Substituted hypothesis H60, which specifies an equivalence for 
-          fld_history_variance(computer__1).
----  Substituted hypothesis H45, which specifies an equivalence for 
-          fld_inprocess(computer__1).
--S-  Substituted hypothesis H46.
-     This was achieved by replacing all occurrences of fld_ison(computer__1) by:
-          fld_ison(computer).
-     +++  New H273:  integer__size >= 0
-     +++  New H274:  measures__joules__size >= 0
-     +++  New H275:  measures__bpm__size >= 0
-     +++  New H276:  impulsegenerator__generatortype__size >= 0
-     +++  New H277:  hrm__hrmtype__size >= 0
-     +++  New H278:  icdstates__size >= 0
-     +++  New H279:  icdtype__size >= 0
+<S>  New H68:  fld_history_variance(computer__2) >= - 2147483648
+<S>  New H70:  fld_history_avarage(computer__2) >= - 2147483648
+<S>  New H84:  fld_tickcount(computer__2) >= - 2147483648
+<S>  New H86:  fld_tickstonextshock(computer__2) >= - 2147483648
+<S>  New H88:  fld_count(computer__2) >= - 2147483648
+<S>  New H98:  fld_history_variance(computer__3) >= - 2147483648
+<S>  New H100:  fld_history_avarage(computer__3) >= - 2147483648
+<S>  New H114:  fld_tickcount(computer__3) >= - 2147483648
+<S>  New H116:  fld_tickstonextshock(computer__3) >= - 2147483648
+<S>  New H118:  fld_count(computer__3) >= - 2147483648
+<S>  New H127:  fld_history_variance(computer__4) >= - 2147483648
+<S>  New H129:  fld_history_avarage(computer__4) >= - 2147483648
+<S>  New H143:  fld_tickcount(computer__4) >= - 2147483648
+<S>  New H145:  fld_tickstonextshock(computer__4) >= - 2147483648
+<S>  New H147:  fld_count(computer__4) >= - 2147483648
+<S>  New H159:  fld_history_variance(computer__5) >= - 2147483648
+<S>  New H161:  fld_history_avarage(computer__5) >= - 2147483648
+<S>  New H175:  fld_tickcount(computer__5) >= - 2147483648
+<S>  New H177:  fld_tickstonextshock(computer__5) >= - 2147483648
+<S>  New H179:  fld_count(computer__5) >= - 2147483648
+<S>  New H192:  fld_history_variance(computer__6) >= - 2147483648
+<S>  New H194:  fld_history_avarage(computer__6) >= - 2147483648
+<S>  New H208:  fld_tickcount(computer__6) >= - 2147483648
+<S>  New H210:  fld_tickstonextshock(computer__6) >= - 2147483648
+<S>  New H212:  fld_count(computer__6) >= - 2147483648
+<S>  New H224:  fld_history_variance(computer__7) >= - 2147483648
+<S>  New H226:  fld_history_avarage(computer__7) >= - 2147483648
+<S>  New H240:  fld_tickcount(computer__7) >= - 2147483648
+<S>  New H242:  fld_tickstonextshock(computer__7) >= - 2147483648
+<S>  New H244:  fld_count(computer__7) >= - 2147483648
+<S>  New H257:  fld_tickcount(computer__7) > - 2147483648
+<S>  New C1:  fld_tickcount(computer__7) >= - 2147483647
+***  Proved C1:  fld_tickcount(computer__7) >= - 2147483647
+     using hypothesis H257.
+***  PROVED VC.
 
 
 @@@@@@@@@@  VC: procedure_tick_6.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified H45 on reading formula in, to give:
-     %%%  H45:  fld_inprocess(computer__1) <-> fld_inprocess(computer)
-%%%  Simplified H46 on reading formula in, to give:
-     %%%  H46:  fld_ison(computer__1) <-> fld_ison(computer)
----  Hypothesis H62 has been replaced by "true".  (It is already present, as 
-          H43).
----  Hypothesis H63 has been replaced by "true".  (It is already present, as 
-          H44).
-%%%  Simplified H96 on reading formula in, to give:
-     %%%  H96:  icdstates__first <= fld_state(computer__2)
-%%%  Simplified H129 on reading formula in, to give:
-     %%%  H129:  icdstates__first <= fld_state(computer__3)
-%%%  Simplified H161 on reading formula in, to give:
-     %%%  H161:  icdstates__first <= fld_state(computer__4)
-%%%  Simplified H167 on reading formula in, to give:
-     %%%  H167:  fld_ison(computer__4)
-%%%  Simplified H168 on reading formula in, to give:
-     %%%  H168:  fld_state(computer__5) = fib <-> fld_state(computer__4) <> fib 
-          and (fld_heartratehistory1(computer__5) <> - 1 and 
-          fld_tickstoreenabledetectionagain(computer__5) = 0 and 
-          fld_history_variance(computer__5) > 100)
-%%%  Simplified H195 on reading formula in, to give:
-     %%%  H195:  icdstates__first <= fld_state(computer__5)
-%%%  Simplified H227 on reading formula in, to give:
-     %%%  H227:  icdstates__first <= fld_state(computer__6)
-%%%  Simplified H259 on reading formula in, to give:
-     %%%  H259:  icdstates__first <= fld_state(computer__7)
->>>  Restructured hypothesis H268 into:
-     >>>  H268:  not fld_inprocess(computer__7) or fld_state(computer__7) <> tar
-+++  Using "A->B, A |- B" on hypotheses H46 & H40 yields a new hypothesis:
-     +++  H269:  fld_ison(computer__1)
--S-  Applied substitution rule tick_rules(2).
-     This was achieved by replacing all occurrences of integer__first by:
-          - 2147483648.
-<S>  New H2:  fld_history_variance(computer) >= - 2147483648
-<S>  New H4:  fld_history_avarage(computer) >= - 2147483648
-<S>  New H18:  fld_tickstoreenabledetectionagain(computer) >= - 2147483648
-<S>  New H20:  fld_tickcount(computer) >= - 2147483648
-<S>  New H22:  fld_next(computer) >= - 2147483648
-<S>  New H24:  fld_count(computer) >= - 2147483648
-<S>  New H70:  fld_history_variance(computer__2) >= - 2147483648
-<S>  New H72:  fld_history_avarage(computer__2) >= - 2147483648
-<S>  New H86:  fld_tickstoreenabledetectionagain(computer__2) >= - 2147483648
-<S>  New H88:  fld_tickcount(computer__2) >= - 2147483648
-<S>  New H90:  fld_next(computer__2) >= - 2147483648
-<S>  New H92:  fld_count(computer__2) >= - 2147483648
-<S>  New H103:  fld_history_variance(computer__3) >= - 2147483648
-<S>  New H105:  fld_history_avarage(computer__3) >= - 2147483648
-<S>  New H119:  fld_tickstoreenabledetectionagain(computer__3) >= - 2147483648
-<S>  New H121:  fld_tickcount(computer__3) >= - 2147483648
-<S>  New H123:  fld_next(computer__3) >= - 2147483648
-<S>  New H125:  fld_count(computer__3) >= - 2147483648
-<S>  New H135:  fld_history_variance(computer__4) >= - 2147483648
-<S>  New H137:  fld_history_avarage(computer__4) >= - 2147483648
-<S>  New H151:  fld_tickstoreenabledetectionagain(computer__4) >= - 2147483648
-<S>  New H153:  fld_tickcount(computer__4) >= - 2147483648
-<S>  New H155:  fld_next(computer__4) >= - 2147483648
-<S>  New H157:  fld_count(computer__4) >= - 2147483648
-<S>  New H169:  fld_history_variance(computer__5) >= - 2147483648
-<S>  New H171:  fld_history_avarage(computer__5) >= - 2147483648
-<S>  New H185:  fld_tickstoreenabledetectionagain(computer__5) >= - 2147483648
-<S>  New H187:  fld_tickcount(computer__5) >= - 2147483648
-<S>  New H189:  fld_next(computer__5) >= - 2147483648
-<S>  New H191:  fld_count(computer__5) >= - 2147483648
-<S>  New H201:  fld_history_variance(computer__6) >= - 2147483648
-<S>  New H203:  fld_history_avarage(computer__6) >= - 2147483648
-<S>  New H217:  fld_tickstoreenabledetectionagain(computer__6) >= - 2147483648
-<S>  New H219:  fld_tickcount(computer__6) >= - 2147483648
-<S>  New H221:  fld_next(computer__6) >= - 2147483648
-<S>  New H223:  fld_count(computer__6) >= - 2147483648
-<S>  New H233:  fld_history_variance(computer__7) >= - 2147483648
-<S>  New H235:  fld_history_avarage(computer__7) >= - 2147483648
-<S>  New H249:  fld_tickstoreenabledetectionagain(computer__7) >= - 2147483648
-<S>  New H251:  fld_tickcount(computer__7) >= - 2147483648
-<S>  New H253:  fld_next(computer__7) >= - 2147483648
-<S>  New H255:  fld_count(computer__7) >= - 2147483648
--S-  Applied substitution rule tick_rules(3).
-     This was achieved by replacing all occurrences of integer__last by:
-          2147483647.
-<S>  New H3:  fld_history_variance(computer) <= 2147483647
-<S>  New H5:  fld_history_avarage(computer) <= 2147483647
-<S>  New H19:  fld_tickstoreenabledetectionagain(computer) <= 2147483647
-<S>  New H21:  fld_tickcount(computer) <= 2147483647
-<S>  New H23:  fld_next(computer) <= 2147483647
-<S>  New H25:  fld_count(computer) <= 2147483647
-<S>  New H71:  fld_history_variance(computer__2) <= 2147483647
-<S>  New H73:  fld_history_avarage(computer__2) <= 2147483647
-<S>  New H87:  fld_tickstoreenabledetectionagain(computer__2) <= 2147483647
-<S>  New H89:  fld_tickcount(computer__2) <= 2147483647
-<S>  New H91:  fld_next(computer__2) <= 2147483647
-<S>  New H93:  fld_count(computer__2) <= 2147483647
-<S>  New H104:  fld_history_variance(computer__3) <= 2147483647
-<S>  New H106:  fld_history_avarage(computer__3) <= 2147483647
-<S>  New H120:  fld_tickstoreenabledetectionagain(computer__3) <= 2147483647
-<S>  New H122:  fld_tickcount(computer__3) <= 2147483647
-<S>  New H124:  fld_next(computer__3) <= 2147483647
-<S>  New H126:  fld_count(computer__3) <= 2147483647
-<S>  New H136:  fld_history_variance(computer__4) <= 2147483647
-<S>  New H138:  fld_history_avarage(computer__4) <= 2147483647
-<S>  New H152:  fld_tickstoreenabledetectionagain(computer__4) <= 2147483647
-<S>  New H154:  fld_tickcount(computer__4) <= 2147483647
-<S>  New H156:  fld_next(computer__4) <= 2147483647
-<S>  New H158:  fld_count(computer__4) <= 2147483647
-<S>  New H170:  fld_history_variance(computer__5) <= 2147483647
-<S>  New H172:  fld_history_avarage(computer__5) <= 2147483647
-<S>  New H186:  fld_tickstoreenabledetectionagain(computer__5) <= 2147483647
-<S>  New H188:  fld_tickcount(computer__5) <= 2147483647
-<S>  New H190:  fld_next(computer__5) <= 2147483647
-<S>  New H192:  fld_count(computer__5) <= 2147483647
-<S>  New H202:  fld_history_variance(computer__6) <= 2147483647
-<S>  New H204:  fld_history_avarage(computer__6) <= 2147483647
-<S>  New H218:  fld_tickstoreenabledetectionagain(computer__6) <= 2147483647
-<S>  New H220:  fld_tickcount(computer__6) <= 2147483647
-<S>  New H222:  fld_next(computer__6) <= 2147483647
-<S>  New H224:  fld_count(computer__6) <= 2147483647
-<S>  New H234:  fld_history_variance(computer__7) <= 2147483647
-<S>  New H236:  fld_history_avarage(computer__7) <= 2147483647
-<S>  New H250:  fld_tickstoreenabledetectionagain(computer__7) <= 2147483647
-<S>  New H252:  fld_tickcount(computer__7) <= 2147483647
-<S>  New H254:  fld_next(computer__7) <= 2147483647
-<S>  New H256:  fld_count(computer__7) <= 2147483647
--S-  Applied substitution rule tick_rules(7).
-     This was achieved by replacing all occurrences of measures__joules__first 
-          by:
-          0.
-<S>  New H38:  fld_impulse(shock) >= 0
-<S>  New H266:  fld_impulse(shock__7) >= 0
--S-  Applied substitution rule tick_rules(8).
-     This was achieved by replacing all occurrences of measures__joules__last 
-          by:
-          45.
-<S>  New H39:  fld_impulse(shock) <= 45
-<S>  New H267:  fld_impulse(shock__7) <= 45
--S-  Applied substitution rule tick_rules(12).
-     This was achieved by replacing all occurrences of measures__bpm__first by:
-          - 1.
-<S>  New H6:  fld_heartratehistory6(computer) >= - 1
-<S>  New H8:  fld_heartratehistory5(computer) >= - 1
-<S>  New H10:  fld_heartratehistory4(computer) >= - 1
-<S>  New H12:  fld_heartratehistory3(computer) >= - 1
-<S>  New H14:  fld_heartratehistory2(computer) >= - 1
-<S>  New H16:  fld_heartratehistory1(computer) >= - 1
-<S>  New H26:  fld_upperbound(computer) >= - 1
-<S>  New H32:  fld_rate(computer) >= - 1
-<S>  New H35:  fld_rate(heartratemonitor) >= - 1
-<S>  New H42:  not fld_ison(heartratemonitor) -> fld_rate(computer__1) = - 1
-<S>  New H43:  fld_rate(computer__1) >= - 1
-<S>  New H74:  fld_heartratehistory6(computer__2) >= - 1
-<S>  New H76:  fld_heartratehistory5(computer__2) >= - 1
-<S>  New H78:  fld_heartratehistory4(computer__2) >= - 1
-<S>  New H80:  fld_heartratehistory3(computer__2) >= - 1
-<S>  New H82:  fld_heartratehistory2(computer__2) >= - 1
-<S>  New H84:  fld_heartratehistory1(computer__2) >= - 1
-<S>  New H94:  fld_upperbound(computer__2) >= - 1
-<S>  New H100:  fld_rate(computer__2) >= - 1
-<S>  New H107:  fld_heartratehistory6(computer__3) >= - 1
-<S>  New H109:  fld_heartratehistory5(computer__3) >= - 1
-<S>  New H111:  fld_heartratehistory4(computer__3) >= - 1
-<S>  New H113:  fld_heartratehistory3(computer__3) >= - 1
-<S>  New H115:  fld_heartratehistory2(computer__3) >= - 1
-<S>  New H117:  fld_heartratehistory1(computer__3) >= - 1
-<S>  New H127:  fld_upperbound(computer__3) >= - 1
-<S>  New H133:  fld_rate(computer__3) >= - 1
-<S>  New H139:  fld_heartratehistory6(computer__4) >= - 1
-<S>  New H141:  fld_heartratehistory5(computer__4) >= - 1
-<S>  New H143:  fld_heartratehistory4(computer__4) >= - 1
-<S>  New H145:  fld_heartratehistory3(computer__4) >= - 1
-<S>  New H147:  fld_heartratehistory2(computer__4) >= - 1
-<S>  New H149:  fld_heartratehistory1(computer__4) >= - 1
-<S>  New H159:  fld_upperbound(computer__4) >= - 1
-<S>  New H165:  fld_rate(computer__4) >= - 1
-<S>  New H173:  fld_heartratehistory6(computer__5) >= - 1
-<S>  New H175:  fld_heartratehistory5(computer__5) >= - 1
-<S>  New H177:  fld_heartratehistory4(computer__5) >= - 1
-<S>  New H179:  fld_heartratehistory3(computer__5) >= - 1
-<S>  New H181:  fld_heartratehistory2(computer__5) >= - 1
-<S>  New H183:  fld_heartratehistory1(computer__5) >= - 1
-<S>  New H193:  fld_upperbound(computer__5) >= - 1
-<S>  New H199:  fld_rate(computer__5) >= - 1
-<S>  New H205:  fld_heartratehistory6(computer__6) >= - 1
-<S>  New H207:  fld_heartratehistory5(computer__6) >= - 1
-<S>  New H209:  fld_heartratehistory4(computer__6) >= - 1
-<S>  New H211:  fld_heartratehistory3(computer__6) >= - 1
-<S>  New H213:  fld_heartratehistory2(computer__6) >= - 1
-<S>  New H215:  fld_heartratehistory1(computer__6) >= - 1
-<S>  New H225:  fld_upperbound(computer__6) >= - 1
-<S>  New H231:  fld_rate(computer__6) >= - 1
-<S>  New H237:  fld_heartratehistory6(computer__7) >= - 1
-<S>  New H239:  fld_heartratehistory5(computer__7) >= - 1
-<S>  New H241:  fld_heartratehistory4(computer__7) >= - 1
-<S>  New H243:  fld_heartratehistory3(computer__7) >= - 1
-<S>  New H245:  fld_heartratehistory2(computer__7) >= - 1
-<S>  New H247:  fld_heartratehistory1(computer__7) >= - 1
-<S>  New H257:  fld_upperbound(computer__7) >= - 1
-<S>  New H263:  fld_rate(computer__7) >= - 1
-<S>  New C1:  not fld_ison(computer__7) -> fld_rate(computer__7) = - 1
--S-  Applied substitution rule tick_rules(13).
-     This was achieved by replacing all occurrences of measures__bpm__last by:
-          300.
-<S>  New H7:  fld_heartratehistory6(computer) <= 300
-<S>  New H9:  fld_heartratehistory5(computer) <= 300
-<S>  New H11:  fld_heartratehistory4(computer) <= 300
-<S>  New H13:  fld_heartratehistory3(computer) <= 300
-<S>  New H15:  fld_heartratehistory2(computer) <= 300
-<S>  New H17:  fld_heartratehistory1(computer) <= 300
-<S>  New H27:  fld_upperbound(computer) <= 300
-<S>  New H33:  fld_rate(computer) <= 300
-<S>  New H36:  fld_rate(heartratemonitor) <= 300
-<S>  New H44:  fld_rate(computer__1) <= 300
-<S>  New H75:  fld_heartratehistory6(computer__2) <= 300
-<S>  New H77:  fld_heartratehistory5(computer__2) <= 300
-<S>  New H79:  fld_heartratehistory4(computer__2) <= 300
-<S>  New H81:  fld_heartratehistory3(computer__2) <= 300
-<S>  New H83:  fld_heartratehistory2(computer__2) <= 300
-<S>  New H85:  fld_heartratehistory1(computer__2) <= 300
-<S>  New H95:  fld_upperbound(computer__2) <= 300
-<S>  New H101:  fld_rate(computer__2) <= 300
-<S>  New H108:  fld_heartratehistory6(computer__3) <= 300
-<S>  New H110:  fld_heartratehistory5(computer__3) <= 300
-<S>  New H112:  fld_heartratehistory4(computer__3) <= 300
-<S>  New H114:  fld_heartratehistory3(computer__3) <= 300
-<S>  New H116:  fld_heartratehistory2(computer__3) <= 300
-<S>  New H118:  fld_heartratehistory1(computer__3) <= 300
-<S>  New H128:  fld_upperbound(computer__3) <= 300
-<S>  New H134:  fld_rate(computer__3) <= 300
-<S>  New H140:  fld_heartratehistory6(computer__4) <= 300
-<S>  New H142:  fld_heartratehistory5(computer__4) <= 300
-<S>  New H144:  fld_heartratehistory4(computer__4) <= 300
-<S>  New H146:  fld_heartratehistory3(computer__4) <= 300
-<S>  New H148:  fld_heartratehistory2(computer__4) <= 300
-<S>  New H150:  fld_heartratehistory1(computer__4) <= 300
-<S>  New H160:  fld_upperbound(computer__4) <= 300
-<S>  New H166:  fld_rate(computer__4) <= 300
-<S>  New H174:  fld_heartratehistory6(computer__5) <= 300
-<S>  New H176:  fld_heartratehistory5(computer__5) <= 300
-<S>  New H178:  fld_heartratehistory4(computer__5) <= 300
-<S>  New H180:  fld_heartratehistory3(computer__5) <= 300
-<S>  New H182:  fld_heartratehistory2(computer__5) <= 300
-<S>  New H184:  fld_heartratehistory1(computer__5) <= 300
-<S>  New H194:  fld_upperbound(computer__5) <= 300
-<S>  New H200:  fld_rate(computer__5) <= 300
-<S>  New H206:  fld_heartratehistory6(computer__6) <= 300
-<S>  New H208:  fld_heartratehistory5(computer__6) <= 300
-<S>  New H210:  fld_heartratehistory4(computer__6) <= 300
-<S>  New H212:  fld_heartratehistory3(computer__6) <= 300
-<S>  New H214:  fld_heartratehistory2(computer__6) <= 300
-<S>  New H216:  fld_heartratehistory1(computer__6) <= 300
-<S>  New H226:  fld_upperbound(computer__6) <= 300
-<S>  New H232:  fld_rate(computer__6) <= 300
-<S>  New H238:  fld_heartratehistory6(computer__7) <= 300
-<S>  New H240:  fld_heartratehistory5(computer__7) <= 300
-<S>  New H242:  fld_heartratehistory4(computer__7) <= 300
-<S>  New H244:  fld_heartratehistory3(computer__7) <= 300
-<S>  New H246:  fld_heartratehistory2(computer__7) <= 300
-<S>  New H248:  fld_heartratehistory1(computer__7) <= 300
-<S>  New H258:  fld_upperbound(computer__7) <= 300
-<S>  New H264:  fld_rate(computer__7) <= 300
--S-  Applied substitution rule tick_rules(21).
-     This was achieved by replacing all occurrences of icdstates__first by:
-          normal.
-<S>  New H28:  normal <= fld_state(computer)
-<S>  New H96:  normal <= fld_state(computer__2)
-<S>  New H129:  normal <= fld_state(computer__3)
-<S>  New H161:  normal <= fld_state(computer__4)
-<S>  New H195:  normal <= fld_state(computer__5)
-<S>  New H227:  normal <= fld_state(computer__6)
-<S>  New H259:  normal <= fld_state(computer__7)
--S-  Applied substitution rule tick_rules(22).
-     This was achieved by replacing all occurrences of icdstates__last by:
-          tar.
-<S>  New H29:  fld_state(computer) <= tar
-<S>  New H97:  fld_state(computer__2) <= tar
-<S>  New H130:  fld_state(computer__3) <= tar
-<S>  New H162:  fld_state(computer__4) <= tar
-<S>  New H196:  fld_state(computer__5) <= tar
-<S>  New H228:  fld_state(computer__6) <= tar
-<S>  New H260:  fld_state(computer__7) <= tar
----  Eliminated hypothesis H1 (true-hypothesis).
----  Eliminated hypothesis H30 (true-hypothesis).
----  Eliminated hypothesis H31 (true-hypothesis).
----  Eliminated hypothesis H34 (true-hypothesis).
----  Eliminated hypothesis H37 (true-hypothesis).
----  Eliminated hypothesis H62 (true-hypothesis).
----  Eliminated hypothesis H63 (true-hypothesis).
----  Eliminated hypothesis H98 (true-hypothesis).
----  Eliminated hypothesis H99 (true-hypothesis).
----  Eliminated hypothesis H131 (true-hypothesis).
----  Eliminated hypothesis H132 (true-hypothesis).
----  Eliminated hypothesis H163 (true-hypothesis).
----  Eliminated hypothesis H164 (true-hypothesis).
----  Eliminated hypothesis H197 (true-hypothesis).
----  Eliminated hypothesis H198 (true-hypothesis).
----  Eliminated hypothesis H229 (true-hypothesis).
----  Eliminated hypothesis H230 (true-hypothesis).
----  Eliminated hypothesis H261 (true-hypothesis).
----  Eliminated hypothesis H262 (true-hypothesis).
----  Eliminated hypothesis H265 (true-hypothesis).
->>>  Using "A->B, A |- B" on H46, given H269, we simplify the former to:
-     >>>  H46:  fld_ison(computer)
----  Substituted hypothesis H47, which specifies an equivalence for fld_state(
-          computer__1).
----  Substituted hypothesis H48, which specifies an equivalence for 
-          fld_upperbound(computer__1).
----  Substituted hypothesis H49, which specifies an equivalence for fld_count(
-          computer__1).
----  Substituted hypothesis H50, which specifies an equivalence for fld_next(
-          computer__1).
----  Substituted hypothesis H51, which specifies an equivalence for 
-          fld_tickcount(computer__1).
----  Substituted hypothesis H52, which specifies an equivalence for 
-          fld_tickstoreenabledetectionagain(computer__1).
----  Substituted hypothesis H53, which specifies an equivalence for 
-          fld_heartratehistory1(computer__1).
--S-  Substituted hypothesis H54.
-     This was achieved by replacing all occurrences of fld_heartratehistory2(
-          computer__1) by:
-          fld_heartratehistory2(computer).
--S-  Substituted hypothesis H55.
-     This was achieved by replacing all occurrences of fld_heartratehistory3(
-          computer__1) by:
-          fld_heartratehistory3(computer).
--S-  Substituted hypothesis H56.
-     This was achieved by replacing all occurrences of fld_heartratehistory4(
-          computer__1) by:
-          fld_heartratehistory4(computer).
--S-  Substituted hypothesis H57.
-     This was achieved by replacing all occurrences of fld_heartratehistory5(
-          computer__1) by:
-          fld_heartratehistory5(computer).
--S-  Substituted hypothesis H58.
-     This was achieved by replacing all occurrences of fld_heartratehistory6(
-          computer__1) by:
-          fld_heartratehistory6(computer).
----  Substituted hypothesis H59, which specifies an equivalence for 
-          fld_history_avarage(computer__1).
----  Substituted hypothesis H60, which specifies an equivalence for 
-          fld_history_variance(computer__1).
----  Substituted hypothesis H45, which specifies an equivalence for 
-          fld_inprocess(computer__1).
--S-  Substituted hypothesis H46.
-     This was achieved by replacing all occurrences of fld_ison(computer__1) by:
-          fld_ison(computer).
-     +++  New H270:  integer__size >= 0
-     +++  New H271:  measures__joules__size >= 0
-     +++  New H272:  measures__bpm__size >= 0
-     +++  New H273:  impulsegenerator__generatortype__size >= 0
-     +++  New H274:  hrm__hrmtype__size >= 0
-     +++  New H275:  icdstates__size >= 0
-     +++  New H276:  icdtype__size >= 0
+***  Proved C1:  true
+***  PROVED VC.
 
 
 @@@@@@@@@@  VC: procedure_tick_7.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
-%%%  Simplified H41 on reading formula in, to give:
-     %%%  H41:  true
-%%%  Simplified C1 on reading formula in, to give:
-     %%%  C1:  true
+***  Proved C1:  true
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_tick_8.  @@@@@@@@@@
 ***  Proved C1:  true
 ***  PROVED VC.
 

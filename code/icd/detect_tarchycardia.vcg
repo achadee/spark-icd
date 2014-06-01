@@ -5,17 +5,17 @@
            *******************************************************
 
 
-                        DATE : 01-JUN-2014 19:41:14.57
+                        DATE : 01-JUN-2014 22:28:21.69
 
                      procedure ICD.Detect_Tarchycardia
 
 
 
 
-For path(s) from start to run-time check associated with statement of line 64:
+For path(s) from start to run-time check associated with statement of line 154:
 
 procedure_detect_tarchycardia_1.
-H1:    true .
+H1:    fld_ison(computer) = true .
 H2:    fld_history_variance(computer) >= integer__first .
 H3:    fld_history_variance(computer) <= integer__last .
 H4:    fld_history_avarage(computer) >= integer__first .
@@ -32,36 +32,30 @@ H14:   fld_heartratehistory2(computer) >= measures__bpm__first .
 H15:   fld_heartratehistory2(computer) <= measures__bpm__last .
 H16:   fld_heartratehistory1(computer) >= measures__bpm__first .
 H17:   fld_heartratehistory1(computer) <= measures__bpm__last .
-H18:   fld_tickstoreenabledetectionagain(computer) >= 
-           integer__first .
-H19:   fld_tickstoreenabledetectionagain(computer) <= 
-           integer__last .
-H20:   fld_tickcount(computer) >= integer__first .
-H21:   fld_tickcount(computer) <= integer__last .
-H22:   fld_next(computer) >= integer__first .
-H23:   fld_next(computer) <= integer__last .
-H24:   fld_count(computer) >= integer__first .
-H25:   fld_count(computer) <= integer__last .
-H26:   fld_upperbound(computer) >= measures__bpm__first .
-H27:   fld_upperbound(computer) <= measures__bpm__last .
-H28:   fld_state(computer) >= icdstates__first .
-H29:   fld_state(computer) <= icdstates__last .
-H30:   true .
-H31:   true .
-H32:   fld_rate(computer) >= measures__bpm__first .
-H33:   fld_rate(computer) <= measures__bpm__last .
-H34:   fld_ison(computer) .
-H35:   fld_rate(computer) > fld_upperbound(computer) .
-H36:   fld_state(computer) = normal .
+H18:   fld_tickcount(computer) >= integer__first .
+H19:   fld_tickcount(computer) <= integer__last .
+H20:   fld_tickstonextshock(computer) >= integer__first .
+H21:   fld_tickstonextshock(computer) <= integer__last .
+H22:   fld_count(computer) >= integer__first .
+H23:   fld_count(computer) <= integer__last .
+H24:   fld_upperbound(computer) >= measures__bpm__first .
+H25:   fld_upperbound(computer) <= measures__bpm__last .
+H26:   fld_state(computer) >= icdstates__first .
+H27:   fld_state(computer) <= icdstates__last .
+H28:   true .
+H29:   fld_rate(computer) >= measures__bpm__first .
+H30:   fld_rate(computer) <= measures__bpm__last .
+H31:   fld_rate(computer) > fld_upperbound(computer) .
+H32:   fld_state(computer) = normal .
         ->
 C1:    tar >= icdstates__first .
 C2:    tar <= icdstates__last .
  
 
-For path(s) from start to run-time check associated with statement of line 65:
+For path(s) from start to run-time check associated with statement of line 155:
 
 procedure_detect_tarchycardia_2.
-H1:    true .
+H1:    fld_ison(computer) = true .
 H2:    fld_history_variance(computer) >= integer__first .
 H3:    fld_history_variance(computer) <= integer__last .
 H4:    fld_history_avarage(computer) >= integer__first .
@@ -78,38 +72,32 @@ H14:   fld_heartratehistory2(computer) >= measures__bpm__first .
 H15:   fld_heartratehistory2(computer) <= measures__bpm__last .
 H16:   fld_heartratehistory1(computer) >= measures__bpm__first .
 H17:   fld_heartratehistory1(computer) <= measures__bpm__last .
-H18:   fld_tickstoreenabledetectionagain(computer) >= 
-           integer__first .
-H19:   fld_tickstoreenabledetectionagain(computer) <= 
-           integer__last .
-H20:   fld_tickcount(computer) >= integer__first .
-H21:   fld_tickcount(computer) <= integer__last .
-H22:   fld_next(computer) >= integer__first .
-H23:   fld_next(computer) <= integer__last .
-H24:   fld_count(computer) >= integer__first .
-H25:   fld_count(computer) <= integer__last .
-H26:   fld_upperbound(computer) >= measures__bpm__first .
-H27:   fld_upperbound(computer) <= measures__bpm__last .
-H28:   fld_state(computer) >= icdstates__first .
-H29:   fld_state(computer) <= icdstates__last .
-H30:   true .
-H31:   true .
-H32:   fld_rate(computer) >= measures__bpm__first .
-H33:   fld_rate(computer) <= measures__bpm__last .
-H34:   fld_ison(computer) .
-H35:   fld_rate(computer) > fld_upperbound(computer) .
-H36:   fld_state(computer) = normal .
-H37:   tar >= icdstates__first .
-H38:   tar <= icdstates__last .
+H18:   fld_tickcount(computer) >= integer__first .
+H19:   fld_tickcount(computer) <= integer__last .
+H20:   fld_tickstonextshock(computer) >= integer__first .
+H21:   fld_tickstonextshock(computer) <= integer__last .
+H22:   fld_count(computer) >= integer__first .
+H23:   fld_count(computer) <= integer__last .
+H24:   fld_upperbound(computer) >= measures__bpm__first .
+H25:   fld_upperbound(computer) <= measures__bpm__last .
+H26:   fld_state(computer) >= icdstates__first .
+H27:   fld_state(computer) <= icdstates__last .
+H28:   true .
+H29:   fld_rate(computer) >= measures__bpm__first .
+H30:   fld_rate(computer) <= measures__bpm__last .
+H31:   fld_rate(computer) > fld_upperbound(computer) .
+H32:   fld_state(computer) = normal .
+H33:   tar >= icdstates__first .
+H34:   tar <= icdstates__last .
         ->
 C1:    maxshocks >= integer__first .
 C2:    maxshocks <= integer__last .
  
 
-For path(s) from start to run-time check associated with statement of line 67:
+For path(s) from start to run-time check associated with statement of line 157:
 
 procedure_detect_tarchycardia_3.
-H1:    true .
+H1:    fld_ison(computer) = true .
 H2:    fld_history_variance(computer) >= integer__first .
 H3:    fld_history_variance(computer) <= integer__last .
 H4:    fld_history_avarage(computer) >= integer__first .
@@ -126,257 +114,23 @@ H14:   fld_heartratehistory2(computer) >= measures__bpm__first .
 H15:   fld_heartratehistory2(computer) <= measures__bpm__last .
 H16:   fld_heartratehistory1(computer) >= measures__bpm__first .
 H17:   fld_heartratehistory1(computer) <= measures__bpm__last .
-H18:   fld_tickstoreenabledetectionagain(computer) >= 
-           integer__first .
-H19:   fld_tickstoreenabledetectionagain(computer) <= 
-           integer__last .
-H20:   fld_tickcount(computer) >= integer__first .
-H21:   fld_tickcount(computer) <= integer__last .
-H22:   fld_next(computer) >= integer__first .
-H23:   fld_next(computer) <= integer__last .
-H24:   fld_count(computer) >= integer__first .
-H25:   fld_count(computer) <= integer__last .
-H26:   fld_upperbound(computer) >= measures__bpm__first .
-H27:   fld_upperbound(computer) <= measures__bpm__last .
-H28:   fld_state(computer) >= icdstates__first .
-H29:   fld_state(computer) <= icdstates__last .
-H30:   true .
-H31:   true .
-H32:   fld_rate(computer) >= measures__bpm__first .
-H33:   fld_rate(computer) <= measures__bpm__last .
-H34:   fld_ison(computer) .
-H35:   fld_rate(computer) > fld_upperbound(computer) .
-H36:   fld_state(computer) = normal .
-H37:   tar >= icdstates__first .
-H38:   tar <= icdstates__last .
-H39:   maxshocks >= integer__first .
-H40:   maxshocks <= integer__last .
-        ->
-C1:    fld_next(upf_inprocess(upf_count(upf_state(computer, 
-           tar), maxshocks), true)) >= integer__first .
-C2:    fld_next(upf_inprocess(upf_count(upf_state(computer, 
-           tar), maxshocks), true)) <= integer__last .
- 
-
-For path(s) from start to run-time check associated with statement of line 76:
-
-procedure_detect_tarchycardia_4.
-H1:    true .
-H2:    fld_history_variance(computer) >= integer__first .
-H3:    fld_history_variance(computer) <= integer__last .
-H4:    fld_history_avarage(computer) >= integer__first .
-H5:    fld_history_avarage(computer) <= integer__last .
-H6:    fld_heartratehistory6(computer) >= measures__bpm__first .
-H7:    fld_heartratehistory6(computer) <= measures__bpm__last .
-H8:    fld_heartratehistory5(computer) >= measures__bpm__first .
-H9:    fld_heartratehistory5(computer) <= measures__bpm__last .
-H10:   fld_heartratehistory4(computer) >= measures__bpm__first .
-H11:   fld_heartratehistory4(computer) <= measures__bpm__last .
-H12:   fld_heartratehistory3(computer) >= measures__bpm__first .
-H13:   fld_heartratehistory3(computer) <= measures__bpm__last .
-H14:   fld_heartratehistory2(computer) >= measures__bpm__first .
-H15:   fld_heartratehistory2(computer) <= measures__bpm__last .
-H16:   fld_heartratehistory1(computer) >= measures__bpm__first .
-H17:   fld_heartratehistory1(computer) <= measures__bpm__last .
-H18:   fld_tickstoreenabledetectionagain(computer) >= 
-           integer__first .
-H19:   fld_tickstoreenabledetectionagain(computer) <= 
-           integer__last .
-H20:   fld_tickcount(computer) >= integer__first .
-H21:   fld_tickcount(computer) <= integer__last .
-H22:   fld_next(computer) >= integer__first .
-H23:   fld_next(computer) <= integer__last .
-H24:   fld_count(computer) >= integer__first .
-H25:   fld_count(computer) <= integer__last .
-H26:   fld_upperbound(computer) >= measures__bpm__first .
-H27:   fld_upperbound(computer) <= measures__bpm__last .
-H28:   fld_state(computer) >= icdstates__first .
-H29:   fld_state(computer) <= icdstates__last .
-H30:   true .
-H31:   true .
-H32:   fld_rate(computer) >= measures__bpm__first .
-H33:   fld_rate(computer) <= measures__bpm__last .
-H34:   fld_ison(computer) .
-H35:   fld_rate(computer) > fld_upperbound(computer) .
-H36:   fld_state(computer) = normal .
-H37:   tar >= icdstates__first .
-H38:   tar <= icdstates__last .
-H39:   maxshocks >= integer__first .
-H40:   maxshocks <= integer__last .
-H41:   fld_next(upf_inprocess(upf_count(upf_state(computer, 
-           tar), maxshocks), true)) >= integer__first .
-H42:   fld_next(upf_inprocess(upf_count(upf_state(computer, 
-           tar), maxshocks), true)) <= integer__last .
-H43:   fld_inprocess(upf_tickcount(upf_inprocess(upf_count(upf_state(
-           computer, tar), maxshocks), true), fld_next(upf_inprocess(
-           upf_count(upf_state(computer, tar), maxshocks), 
-           true)))) .
-H44:   fld_state(upf_tickcount(upf_inprocess(upf_count(upf_state(
-           computer, tar), maxshocks), true), fld_next(upf_inprocess(
-           upf_count(upf_state(computer, tar), maxshocks), 
-           true)))) = tar .
-H45:   fld_count(upf_tickcount(upf_inprocess(upf_count(upf_state(
-           computer, tar), maxshocks), true), fld_next(upf_inprocess(
-           upf_count(upf_state(computer, tar), maxshocks), 
-           true)))) > 0 .
-        ->
-C1:    tar >= icdstates__first .
-C2:    tar <= icdstates__last .
- 
-
-procedure_detect_tarchycardia_5.
-H1:    true .
-H2:    fld_history_variance(computer) >= integer__first .
-H3:    fld_history_variance(computer) <= integer__last .
-H4:    fld_history_avarage(computer) >= integer__first .
-H5:    fld_history_avarage(computer) <= integer__last .
-H6:    fld_heartratehistory6(computer) >= measures__bpm__first .
-H7:    fld_heartratehistory6(computer) <= measures__bpm__last .
-H8:    fld_heartratehistory5(computer) >= measures__bpm__first .
-H9:    fld_heartratehistory5(computer) <= measures__bpm__last .
-H10:   fld_heartratehistory4(computer) >= measures__bpm__first .
-H11:   fld_heartratehistory4(computer) <= measures__bpm__last .
-H12:   fld_heartratehistory3(computer) >= measures__bpm__first .
-H13:   fld_heartratehistory3(computer) <= measures__bpm__last .
-H14:   fld_heartratehistory2(computer) >= measures__bpm__first .
-H15:   fld_heartratehistory2(computer) <= measures__bpm__last .
-H16:   fld_heartratehistory1(computer) >= measures__bpm__first .
-H17:   fld_heartratehistory1(computer) <= measures__bpm__last .
-H18:   fld_tickstoreenabledetectionagain(computer) >= 
-           integer__first .
-H19:   fld_tickstoreenabledetectionagain(computer) <= 
-           integer__last .
-H20:   fld_tickcount(computer) >= integer__first .
-H21:   fld_tickcount(computer) <= integer__last .
-H22:   fld_next(computer) >= integer__first .
-H23:   fld_next(computer) <= integer__last .
-H24:   fld_count(computer) >= integer__first .
-H25:   fld_count(computer) <= integer__last .
-H26:   fld_upperbound(computer) >= measures__bpm__first .
-H27:   fld_upperbound(computer) <= measures__bpm__last .
-H28:   fld_state(computer) >= icdstates__first .
-H29:   fld_state(computer) <= icdstates__last .
-H30:   true .
-H31:   true .
-H32:   fld_rate(computer) >= measures__bpm__first .
-H33:   fld_rate(computer) <= measures__bpm__last .
-H34:   not (fld_ison(computer) and ((fld_rate(computer) > 
-           fld_upperbound(computer)) and (fld_state(
-           computer) = normal))) .
-H35:   fld_inprocess(computer) .
-H36:   fld_state(computer) = tar .
-H37:   fld_count(computer) > 0 .
-        ->
-C1:    tar >= icdstates__first .
-C2:    tar <= icdstates__last .
- 
-
-For path(s) from start to run-time check associated with statement of line 78:
-
-procedure_detect_tarchycardia_6.
-H1:    true .
-H2:    fld_history_variance(computer) >= integer__first .
-H3:    fld_history_variance(computer) <= integer__last .
-H4:    fld_history_avarage(computer) >= integer__first .
-H5:    fld_history_avarage(computer) <= integer__last .
-H6:    fld_heartratehistory6(computer) >= measures__bpm__first .
-H7:    fld_heartratehistory6(computer) <= measures__bpm__last .
-H8:    fld_heartratehistory5(computer) >= measures__bpm__first .
-H9:    fld_heartratehistory5(computer) <= measures__bpm__last .
-H10:   fld_heartratehistory4(computer) >= measures__bpm__first .
-H11:   fld_heartratehistory4(computer) <= measures__bpm__last .
-H12:   fld_heartratehistory3(computer) >= measures__bpm__first .
-H13:   fld_heartratehistory3(computer) <= measures__bpm__last .
-H14:   fld_heartratehistory2(computer) >= measures__bpm__first .
-H15:   fld_heartratehistory2(computer) <= measures__bpm__last .
-H16:   fld_heartratehistory1(computer) >= measures__bpm__first .
-H17:   fld_heartratehistory1(computer) <= measures__bpm__last .
-H18:   fld_tickstoreenabledetectionagain(computer) >= 
-           integer__first .
-H19:   fld_tickstoreenabledetectionagain(computer) <= 
-           integer__last .
-H20:   fld_tickcount(computer) >= integer__first .
-H21:   fld_tickcount(computer) <= integer__last .
-H22:   fld_next(computer) >= integer__first .
-H23:   fld_next(computer) <= integer__last .
-H24:   fld_count(computer) >= integer__first .
-H25:   fld_count(computer) <= integer__last .
-H26:   fld_upperbound(computer) >= measures__bpm__first .
-H27:   fld_upperbound(computer) <= measures__bpm__last .
-H28:   fld_state(computer) >= icdstates__first .
-H29:   fld_state(computer) <= icdstates__last .
-H30:   true .
-H31:   true .
-H32:   fld_rate(computer) >= measures__bpm__first .
-H33:   fld_rate(computer) <= measures__bpm__last .
-H34:   fld_ison(computer) .
-H35:   fld_rate(computer) > fld_upperbound(computer) .
-H36:   fld_state(computer) = normal .
-H37:   tar >= icdstates__first .
-H38:   tar <= icdstates__last .
-H39:   maxshocks >= integer__first .
-H40:   maxshocks <= integer__last .
-H41:   fld_next(upf_inprocess(upf_count(upf_state(computer, 
-           tar), maxshocks), true)) >= integer__first .
-H42:   fld_next(upf_inprocess(upf_count(upf_state(computer, 
-           tar), maxshocks), true)) <= integer__last .
-H43:   not (fld_inprocess(upf_tickcount(upf_inprocess(upf_count(
-           upf_state(computer, tar), maxshocks), true), fld_next(
-           upf_inprocess(upf_count(upf_state(computer, tar), 
-           maxshocks), true)))) and ((fld_state(upf_tickcount(
-           upf_inprocess(upf_count(upf_state(computer, tar), 
-           maxshocks), true), fld_next(upf_inprocess(upf_count(
-           upf_state(computer, tar), maxshocks), true)))) = 
-           tar) and (fld_count(upf_tickcount(upf_inprocess(upf_count(
-           upf_state(computer, tar), maxshocks), true), fld_next(
-           upf_inprocess(upf_count(upf_state(computer, tar), 
-           maxshocks), true)))) > 0))) .
-        ->
-C1:    normal >= icdstates__first .
-C2:    normal <= icdstates__last .
- 
-
-procedure_detect_tarchycardia_7.
-H1:    true .
-H2:    fld_history_variance(computer) >= integer__first .
-H3:    fld_history_variance(computer) <= integer__last .
-H4:    fld_history_avarage(computer) >= integer__first .
-H5:    fld_history_avarage(computer) <= integer__last .
-H6:    fld_heartratehistory6(computer) >= measures__bpm__first .
-H7:    fld_heartratehistory6(computer) <= measures__bpm__last .
-H8:    fld_heartratehistory5(computer) >= measures__bpm__first .
-H9:    fld_heartratehistory5(computer) <= measures__bpm__last .
-H10:   fld_heartratehistory4(computer) >= measures__bpm__first .
-H11:   fld_heartratehistory4(computer) <= measures__bpm__last .
-H12:   fld_heartratehistory3(computer) >= measures__bpm__first .
-H13:   fld_heartratehistory3(computer) <= measures__bpm__last .
-H14:   fld_heartratehistory2(computer) >= measures__bpm__first .
-H15:   fld_heartratehistory2(computer) <= measures__bpm__last .
-H16:   fld_heartratehistory1(computer) >= measures__bpm__first .
-H17:   fld_heartratehistory1(computer) <= measures__bpm__last .
-H18:   fld_tickstoreenabledetectionagain(computer) >= 
-           integer__first .
-H19:   fld_tickstoreenabledetectionagain(computer) <= 
-           integer__last .
-H20:   fld_tickcount(computer) >= integer__first .
-H21:   fld_tickcount(computer) <= integer__last .
-H22:   fld_next(computer) >= integer__first .
-H23:   fld_next(computer) <= integer__last .
-H24:   fld_count(computer) >= integer__first .
-H25:   fld_count(computer) <= integer__last .
-H26:   fld_upperbound(computer) >= measures__bpm__first .
-H27:   fld_upperbound(computer) <= measures__bpm__last .
-H28:   fld_state(computer) >= icdstates__first .
-H29:   fld_state(computer) <= icdstates__last .
-H30:   true .
-H31:   true .
-H32:   fld_rate(computer) >= measures__bpm__first .
-H33:   fld_rate(computer) <= measures__bpm__last .
-H34:   not (fld_ison(computer) and ((fld_rate(computer) > 
-           fld_upperbound(computer)) and (fld_state(
-           computer) = normal))) .
-H35:   not (fld_inprocess(computer) and ((fld_state(
-           computer) = tar) and (fld_count(computer) > 0))) .
+H18:   fld_tickcount(computer) >= integer__first .
+H19:   fld_tickcount(computer) <= integer__last .
+H20:   fld_tickstonextshock(computer) >= integer__first .
+H21:   fld_tickstonextshock(computer) <= integer__last .
+H22:   fld_count(computer) >= integer__first .
+H23:   fld_count(computer) <= integer__last .
+H24:   fld_upperbound(computer) >= measures__bpm__first .
+H25:   fld_upperbound(computer) <= measures__bpm__last .
+H26:   fld_state(computer) >= icdstates__first .
+H27:   fld_state(computer) <= icdstates__last .
+H28:   true .
+H29:   fld_rate(computer) >= measures__bpm__first .
+H30:   fld_rate(computer) <= measures__bpm__last .
+H31:   not ((fld_rate(computer) > fld_upperbound(computer)) and (
+           fld_state(computer) = normal)) .
+H32:   fld_state(computer) = tar .
+H33:   fld_count(computer) = 0 .
         ->
 C1:    normal >= icdstates__first .
 C2:    normal <= icdstates__last .
@@ -384,19 +138,148 @@ C2:    normal <= icdstates__last .
 
 For path(s) from start to finish:
 
-procedure_detect_tarchycardia_8.
-*** true .          /* trivially true VC removed by Examiner */
+procedure_detect_tarchycardia_4.
+H1:    fld_ison(computer) = true .
+H2:    fld_history_variance(computer) >= integer__first .
+H3:    fld_history_variance(computer) <= integer__last .
+H4:    fld_history_avarage(computer) >= integer__first .
+H5:    fld_history_avarage(computer) <= integer__last .
+H6:    fld_heartratehistory6(computer) >= measures__bpm__first .
+H7:    fld_heartratehistory6(computer) <= measures__bpm__last .
+H8:    fld_heartratehistory5(computer) >= measures__bpm__first .
+H9:    fld_heartratehistory5(computer) <= measures__bpm__last .
+H10:   fld_heartratehistory4(computer) >= measures__bpm__first .
+H11:   fld_heartratehistory4(computer) <= measures__bpm__last .
+H12:   fld_heartratehistory3(computer) >= measures__bpm__first .
+H13:   fld_heartratehistory3(computer) <= measures__bpm__last .
+H14:   fld_heartratehistory2(computer) >= measures__bpm__first .
+H15:   fld_heartratehistory2(computer) <= measures__bpm__last .
+H16:   fld_heartratehistory1(computer) >= measures__bpm__first .
+H17:   fld_heartratehistory1(computer) <= measures__bpm__last .
+H18:   fld_tickcount(computer) >= integer__first .
+H19:   fld_tickcount(computer) <= integer__last .
+H20:   fld_tickstonextshock(computer) >= integer__first .
+H21:   fld_tickstonextshock(computer) <= integer__last .
+H22:   fld_count(computer) >= integer__first .
+H23:   fld_count(computer) <= integer__last .
+H24:   fld_upperbound(computer) >= measures__bpm__first .
+H25:   fld_upperbound(computer) <= measures__bpm__last .
+H26:   fld_state(computer) >= icdstates__first .
+H27:   fld_state(computer) <= icdstates__last .
+H28:   true .
+H29:   fld_rate(computer) >= measures__bpm__first .
+H30:   fld_rate(computer) <= measures__bpm__last .
+H31:   fld_rate(computer) > fld_upperbound(computer) .
+H32:   fld_state(computer) = normal .
+H33:   tar >= icdstates__first .
+H34:   tar <= icdstates__last .
+H35:   maxshocks >= integer__first .
+H36:   maxshocks <= integer__last .
+        ->
+C1:    fld_ison(upf_count(upf_state(computer, tar), 
+           maxshocks)) = true .
+C2:    ((fld_state(computer) = normal) and (fld_rate(upf_count(
+           upf_state(computer, tar), maxshocks)) > fld_upperbound(
+           upf_count(upf_state(computer, tar), maxshocks)))) -> ((
+           fld_state(upf_count(upf_state(computer, tar), 
+           maxshocks)) = tar) and (fld_count(upf_count(upf_state(
+           computer, tar), maxshocks)) = maxshocks)) .
+C3:    ((fld_state(computer) = tar) and (fld_count(upf_count(upf_state(
+           computer, tar), maxshocks)) = 0)) -> (fld_state(upf_count(
+           upf_state(computer, tar), maxshocks)) = normal) .
+ 
 
+procedure_detect_tarchycardia_5.
+H1:    fld_ison(computer) = true .
+H2:    fld_history_variance(computer) >= integer__first .
+H3:    fld_history_variance(computer) <= integer__last .
+H4:    fld_history_avarage(computer) >= integer__first .
+H5:    fld_history_avarage(computer) <= integer__last .
+H6:    fld_heartratehistory6(computer) >= measures__bpm__first .
+H7:    fld_heartratehistory6(computer) <= measures__bpm__last .
+H8:    fld_heartratehistory5(computer) >= measures__bpm__first .
+H9:    fld_heartratehistory5(computer) <= measures__bpm__last .
+H10:   fld_heartratehistory4(computer) >= measures__bpm__first .
+H11:   fld_heartratehistory4(computer) <= measures__bpm__last .
+H12:   fld_heartratehistory3(computer) >= measures__bpm__first .
+H13:   fld_heartratehistory3(computer) <= measures__bpm__last .
+H14:   fld_heartratehistory2(computer) >= measures__bpm__first .
+H15:   fld_heartratehistory2(computer) <= measures__bpm__last .
+H16:   fld_heartratehistory1(computer) >= measures__bpm__first .
+H17:   fld_heartratehistory1(computer) <= measures__bpm__last .
+H18:   fld_tickcount(computer) >= integer__first .
+H19:   fld_tickcount(computer) <= integer__last .
+H20:   fld_tickstonextshock(computer) >= integer__first .
+H21:   fld_tickstonextshock(computer) <= integer__last .
+H22:   fld_count(computer) >= integer__first .
+H23:   fld_count(computer) <= integer__last .
+H24:   fld_upperbound(computer) >= measures__bpm__first .
+H25:   fld_upperbound(computer) <= measures__bpm__last .
+H26:   fld_state(computer) >= icdstates__first .
+H27:   fld_state(computer) <= icdstates__last .
+H28:   true .
+H29:   fld_rate(computer) >= measures__bpm__first .
+H30:   fld_rate(computer) <= measures__bpm__last .
+H31:   not ((fld_rate(computer) > fld_upperbound(computer)) and (
+           fld_state(computer) = normal)) .
+H32:   fld_state(computer) = tar .
+H33:   fld_count(computer) = 0 .
+H34:   normal >= icdstates__first .
+H35:   normal <= icdstates__last .
+        ->
+C1:    fld_ison(upf_state(computer, normal)) = true .
+C2:    ((fld_state(computer) = normal) and (fld_rate(upf_state(
+           computer, normal)) > fld_upperbound(upf_state(
+           computer, normal)))) -> ((fld_state(upf_state(
+           computer, normal)) = tar) and (fld_count(upf_state(
+           computer, normal)) = maxshocks)) .
+C3:    ((fld_state(computer) = tar) and (fld_count(upf_state(
+           computer, normal)) = 0)) -> (fld_state(upf_state(
+           computer, normal)) = normal) .
+ 
 
-procedure_detect_tarchycardia_9.
-*** true .          /* trivially true VC removed by Examiner */
-
-
-procedure_detect_tarchycardia_10.
-*** true .          /* trivially true VC removed by Examiner */
-
-
-procedure_detect_tarchycardia_11.
-*** true .          /* trivially true VC removed by Examiner */
-
+procedure_detect_tarchycardia_6.
+H1:    fld_ison(computer) = true .
+H2:    fld_history_variance(computer) >= integer__first .
+H3:    fld_history_variance(computer) <= integer__last .
+H4:    fld_history_avarage(computer) >= integer__first .
+H5:    fld_history_avarage(computer) <= integer__last .
+H6:    fld_heartratehistory6(computer) >= measures__bpm__first .
+H7:    fld_heartratehistory6(computer) <= measures__bpm__last .
+H8:    fld_heartratehistory5(computer) >= measures__bpm__first .
+H9:    fld_heartratehistory5(computer) <= measures__bpm__last .
+H10:   fld_heartratehistory4(computer) >= measures__bpm__first .
+H11:   fld_heartratehistory4(computer) <= measures__bpm__last .
+H12:   fld_heartratehistory3(computer) >= measures__bpm__first .
+H13:   fld_heartratehistory3(computer) <= measures__bpm__last .
+H14:   fld_heartratehistory2(computer) >= measures__bpm__first .
+H15:   fld_heartratehistory2(computer) <= measures__bpm__last .
+H16:   fld_heartratehistory1(computer) >= measures__bpm__first .
+H17:   fld_heartratehistory1(computer) <= measures__bpm__last .
+H18:   fld_tickcount(computer) >= integer__first .
+H19:   fld_tickcount(computer) <= integer__last .
+H20:   fld_tickstonextshock(computer) >= integer__first .
+H21:   fld_tickstonextshock(computer) <= integer__last .
+H22:   fld_count(computer) >= integer__first .
+H23:   fld_count(computer) <= integer__last .
+H24:   fld_upperbound(computer) >= measures__bpm__first .
+H25:   fld_upperbound(computer) <= measures__bpm__last .
+H26:   fld_state(computer) >= icdstates__first .
+H27:   fld_state(computer) <= icdstates__last .
+H28:   true .
+H29:   fld_rate(computer) >= measures__bpm__first .
+H30:   fld_rate(computer) <= measures__bpm__last .
+H31:   not ((fld_rate(computer) > fld_upperbound(computer)) and (
+           fld_state(computer) = normal)) .
+H32:   not ((fld_state(computer) = tar) and (fld_count(
+           computer) = 0)) .
+        ->
+C1:    fld_ison(computer) = true .
+C2:    ((fld_state(computer) = normal) and (fld_rate(
+           computer) > fld_upperbound(computer))) -> ((fld_state(
+           computer) = tar) and (fld_count(computer) = 
+           maxshocks)) .
+C3:    ((fld_state(computer) = tar) and (fld_count(computer) = 0)) -> (
+           fld_state(computer) = normal) .
+ 
 

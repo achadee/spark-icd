@@ -5,14 +5,14 @@
            *******************************************************
 
 
-                        DATE : 01-JUN-2014 19:41:14.62
+                        DATE : 01-JUN-2014 22:28:21.51
 
                              function ICD.power
 
 
 
 
-For path(s) from start to run-time check associated with statement of line 119:
+For path(s) from start to run-time check associated with statement of line 88:
 
 function_power_1.
 H1:    integer__size > 0 .
@@ -23,7 +23,7 @@ C1:    integer__last >= integer__first .
 C2:    integer__last <= integer__last .
  
 
-For path(s) from start to run-time check associated with statement of line 120:
+For path(s) from start to run-time check associated with statement of line 89:
 
 function_power_2.
 H1:    integer__size > 0 .
@@ -38,7 +38,7 @@ C3:    num * num >= integer__base__first .
 C4:    num * num <= integer__base__last .
  
 
-For path(s) from start to run-time check associated with statement of line 121:
+For path(s) from start to run-time check associated with statement of line 90:
 
 function_power_3.
 H1:    integer__size > 0 .

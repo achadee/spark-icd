@@ -5,7 +5,7 @@
 *****************************************************************************
 
 
-CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:32
+CREATED 01-JUN-2014, 22:28:21  SIMPLIFIED 01-JUN-2014, 22:28:31
 
 SPARK Simplifier GPL 2011
 Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
@@ -18,8 +18,8 @@ procedure ICD.Off
 
 
 @@@@@@@@@@  VC: procedure_off_1.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  true
 ***  Proved C1:  true

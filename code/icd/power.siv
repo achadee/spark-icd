@@ -5,7 +5,7 @@
 *****************************************************************************
 
 
-CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:32
+CREATED 01-JUN-2014, 22:28:21  SIMPLIFIED 01-JUN-2014, 22:28:31
 
 SPARK Simplifier GPL 2011
 Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
@@ -15,13 +15,13 @@ function ICD.power
 
 
 
-For path(s) from start to run-time check associated with statement of line 119:
+For path(s) from start to run-time check associated with statement of line 88:
 
 function_power_1.
 *** true .          /* all conclusions proved */
 
 
-For path(s) from start to run-time check associated with statement of line 120:
+For path(s) from start to run-time check associated with statement of line 89:
 
 function_power_2.
 H1:    integer__size > 0 .
@@ -33,7 +33,7 @@ C1:    num * num >= - 2147483648 .
 C2:    num * num <= 2147483647 .
 
 
-For path(s) from start to run-time check associated with statement of line 121:
+For path(s) from start to run-time check associated with statement of line 90:
 
 function_power_3.
 *** true .          /* all conclusions proved */

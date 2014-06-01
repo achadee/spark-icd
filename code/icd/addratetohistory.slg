@@ -5,7 +5,7 @@
 *****************************************************************************
 
 
-CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:28
+CREATED 01-JUN-2014, 22:28:21  SIMPLIFIED 01-JUN-2014, 22:28:28
 
 SPARK Simplifier GPL 2011
 Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
@@ -18,8 +18,10 @@ procedure ICD.addRateToHistory
 
 
 @@@@@@@@@@  VC: procedure_addratetohistory_1.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
 ***  Proved C1:  fld_heartratehistory2(computer) >= measures__bpm__first
      using hypothesis H14.
 ***  Proved C2:  fld_heartratehistory2(computer) <= measures__bpm__last
@@ -28,11 +30,13 @@ procedure ICD.addRateToHistory
 
 
 @@@@@@@@@@  VC: procedure_addratetohistory_2.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
----  Hypothesis H34 has been replaced by "true".  (It is already present, as 
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
+---  Hypothesis H31 has been replaced by "true".  (It is already present, as 
           H14).
----  Hypothesis H35 has been replaced by "true".  (It is already present, as 
+---  Hypothesis H32 has been replaced by "true".  (It is already present, as 
           H15).
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  fld_heartratehistory3(computer) >= measures__bpm__first
@@ -46,16 +50,18 @@ procedure ICD.addRateToHistory
 
 
 @@@@@@@@@@  VC: procedure_addratetohistory_3.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
----  Hypothesis H34 has been replaced by "true".  (It is already present, as 
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
+---  Hypothesis H31 has been replaced by "true".  (It is already present, as 
           H14).
----  Hypothesis H35 has been replaced by "true".  (It is already present, as 
+---  Hypothesis H32 has been replaced by "true".  (It is already present, as 
           H15).
-%%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  fld_heartratehistory3(computer) >= measures__bpm__first
-%%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  fld_heartratehistory3(computer) <= measures__bpm__last
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  fld_heartratehistory3(computer) >= measures__bpm__first
+%%%  Simplified H34 on reading formula in, to give:
+     %%%  H34:  fld_heartratehistory3(computer) <= measures__bpm__last
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  fld_heartratehistory4(computer) >= measures__bpm__first
 %%%  Simplified C2 on reading formula in, to give:
@@ -68,20 +74,22 @@ procedure ICD.addRateToHistory
 
 
 @@@@@@@@@@  VC: procedure_addratetohistory_4.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
----  Hypothesis H34 has been replaced by "true".  (It is already present, as 
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
+---  Hypothesis H31 has been replaced by "true".  (It is already present, as 
           H14).
----  Hypothesis H35 has been replaced by "true".  (It is already present, as 
+---  Hypothesis H32 has been replaced by "true".  (It is already present, as 
           H15).
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  fld_heartratehistory3(computer) >= measures__bpm__first
+%%%  Simplified H34 on reading formula in, to give:
+     %%%  H34:  fld_heartratehistory3(computer) <= measures__bpm__last
+%%%  Simplified H35 on reading formula in, to give:
+     %%%  H35:  fld_heartratehistory4(computer) >= measures__bpm__first
 %%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  fld_heartratehistory3(computer) >= measures__bpm__first
-%%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  fld_heartratehistory3(computer) <= measures__bpm__last
-%%%  Simplified H38 on reading formula in, to give:
-     %%%  H38:  fld_heartratehistory4(computer) >= measures__bpm__first
-%%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  fld_heartratehistory4(computer) <= measures__bpm__last
+     %%%  H36:  fld_heartratehistory4(computer) <= measures__bpm__last
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  fld_heartratehistory5(computer) >= measures__bpm__first
 %%%  Simplified C2 on reading formula in, to give:
@@ -94,24 +102,26 @@ procedure ICD.addRateToHistory
 
 
 @@@@@@@@@@  VC: procedure_addratetohistory_5.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
----  Hypothesis H34 has been replaced by "true".  (It is already present, as 
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
+---  Hypothesis H31 has been replaced by "true".  (It is already present, as 
           H14).
----  Hypothesis H35 has been replaced by "true".  (It is already present, as 
+---  Hypothesis H32 has been replaced by "true".  (It is already present, as 
           H15).
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  fld_heartratehistory3(computer) >= measures__bpm__first
+%%%  Simplified H34 on reading formula in, to give:
+     %%%  H34:  fld_heartratehistory3(computer) <= measures__bpm__last
+%%%  Simplified H35 on reading formula in, to give:
+     %%%  H35:  fld_heartratehistory4(computer) >= measures__bpm__first
 %%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  fld_heartratehistory3(computer) >= measures__bpm__first
+     %%%  H36:  fld_heartratehistory4(computer) <= measures__bpm__last
 %%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  fld_heartratehistory3(computer) <= measures__bpm__last
+     %%%  H37:  fld_heartratehistory5(computer) >= measures__bpm__first
 %%%  Simplified H38 on reading formula in, to give:
-     %%%  H38:  fld_heartratehistory4(computer) >= measures__bpm__first
-%%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  fld_heartratehistory4(computer) <= measures__bpm__last
-%%%  Simplified H40 on reading formula in, to give:
-     %%%  H40:  fld_heartratehistory5(computer) >= measures__bpm__first
-%%%  Simplified H41 on reading formula in, to give:
-     %%%  H41:  fld_heartratehistory5(computer) <= measures__bpm__last
+     %%%  H38:  fld_heartratehistory5(computer) <= measures__bpm__last
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  fld_heartratehistory6(computer) >= measures__bpm__first
 %%%  Simplified C2 on reading formula in, to give:
@@ -124,66 +134,70 @@ procedure ICD.addRateToHistory
 
 
 @@@@@@@@@@  VC: procedure_addratetohistory_6.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
----  Hypothesis H34 has been replaced by "true".  (It is already present, as 
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
+---  Hypothesis H31 has been replaced by "true".  (It is already present, as 
           H14).
----  Hypothesis H35 has been replaced by "true".  (It is already present, as 
+---  Hypothesis H32 has been replaced by "true".  (It is already present, as 
           H15).
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  fld_heartratehistory3(computer) >= measures__bpm__first
+%%%  Simplified H34 on reading formula in, to give:
+     %%%  H34:  fld_heartratehistory3(computer) <= measures__bpm__last
+%%%  Simplified H35 on reading formula in, to give:
+     %%%  H35:  fld_heartratehistory4(computer) >= measures__bpm__first
 %%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  fld_heartratehistory3(computer) >= measures__bpm__first
+     %%%  H36:  fld_heartratehistory4(computer) <= measures__bpm__last
 %%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  fld_heartratehistory3(computer) <= measures__bpm__last
+     %%%  H37:  fld_heartratehistory5(computer) >= measures__bpm__first
 %%%  Simplified H38 on reading formula in, to give:
-     %%%  H38:  fld_heartratehistory4(computer) >= measures__bpm__first
+     %%%  H38:  fld_heartratehistory5(computer) <= measures__bpm__last
 %%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  fld_heartratehistory4(computer) <= measures__bpm__last
+     %%%  H39:  fld_heartratehistory6(computer) >= measures__bpm__first
 %%%  Simplified H40 on reading formula in, to give:
-     %%%  H40:  fld_heartratehistory5(computer) >= measures__bpm__first
-%%%  Simplified H41 on reading formula in, to give:
-     %%%  H41:  fld_heartratehistory5(computer) <= measures__bpm__last
-%%%  Simplified H42 on reading formula in, to give:
-     %%%  H42:  fld_heartratehistory6(computer) >= measures__bpm__first
-%%%  Simplified H43 on reading formula in, to give:
-     %%%  H43:  fld_heartratehistory6(computer) <= measures__bpm__last
+     %%%  H40:  fld_heartratehistory6(computer) <= measures__bpm__last
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  fld_rate(computer) >= measures__bpm__first
 %%%  Simplified C2 on reading formula in, to give:
      %%%  C2:  fld_rate(computer) <= measures__bpm__last
 ***  Proved C1:  fld_rate(computer) >= measures__bpm__first
-     using hypothesis H32.
+     using hypothesis H29.
 ***  Proved C2:  fld_rate(computer) <= measures__bpm__last
-     using hypothesis H33.
+     using hypothesis H30.
 ***  PROVED VC.
 
 
 @@@@@@@@@@  VC: procedure_addratetohistory_7.  @@@@@@@@@@
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  icdstates__first <= fld_state(computer)
----  Hypothesis H34 has been replaced by "true".  (It is already present, as 
+%%%  Simplified H1 on reading formula in, to give:
+     %%%  H1:  fld_ison(computer)
+%%%  Simplified H26 on reading formula in, to give:
+     %%%  H26:  icdstates__first <= fld_state(computer)
+---  Hypothesis H31 has been replaced by "true".  (It is already present, as 
           H14).
----  Hypothesis H35 has been replaced by "true".  (It is already present, as 
+---  Hypothesis H32 has been replaced by "true".  (It is already present, as 
           H15).
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  fld_heartratehistory3(computer) >= measures__bpm__first
+%%%  Simplified H34 on reading formula in, to give:
+     %%%  H34:  fld_heartratehistory3(computer) <= measures__bpm__last
+%%%  Simplified H35 on reading formula in, to give:
+     %%%  H35:  fld_heartratehistory4(computer) >= measures__bpm__first
 %%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  fld_heartratehistory3(computer) >= measures__bpm__first
+     %%%  H36:  fld_heartratehistory4(computer) <= measures__bpm__last
 %%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  fld_heartratehistory3(computer) <= measures__bpm__last
+     %%%  H37:  fld_heartratehistory5(computer) >= measures__bpm__first
 %%%  Simplified H38 on reading formula in, to give:
-     %%%  H38:  fld_heartratehistory4(computer) >= measures__bpm__first
+     %%%  H38:  fld_heartratehistory5(computer) <= measures__bpm__last
 %%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  fld_heartratehistory4(computer) <= measures__bpm__last
+     %%%  H39:  fld_heartratehistory6(computer) >= measures__bpm__first
 %%%  Simplified H40 on reading formula in, to give:
-     %%%  H40:  fld_heartratehistory5(computer) >= measures__bpm__first
+     %%%  H40:  fld_heartratehistory6(computer) <= measures__bpm__last
 %%%  Simplified H41 on reading formula in, to give:
-     %%%  H41:  fld_heartratehistory5(computer) <= measures__bpm__last
+     %%%  H41:  fld_rate(computer) >= measures__bpm__first
 %%%  Simplified H42 on reading formula in, to give:
-     %%%  H42:  fld_heartratehistory6(computer) >= measures__bpm__first
-%%%  Simplified H43 on reading formula in, to give:
-     %%%  H43:  fld_heartratehistory6(computer) <= measures__bpm__last
-%%%  Simplified H44 on reading formula in, to give:
-     %%%  H44:  fld_rate(computer) >= measures__bpm__first
-%%%  Simplified H45 on reading formula in, to give:
-     %%%  H45:  fld_rate(computer) <= measures__bpm__last
+     %%%  H42:  fld_rate(computer) <= measures__bpm__last
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  true
 %%%  Simplified C2 on reading formula in, to give:

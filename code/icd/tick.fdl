@@ -5,7 +5,7 @@
            {*******************************************************}
 
 
-                        {DATE : 01-JUN-2014 19:41:14.85}
+                        {DATE : 01-JUN-2014 22:28:21.71}
 
                              {procedure ICD.Tick}
 
@@ -24,14 +24,12 @@ title procedure tick;
      end;
   type icdtype = record
         rate : integer;
-        inprocess : boolean;
         ison : boolean;
         state : icdstates;
         upperbound : integer;
         count : integer;
-        next : integer;
+        tickstonextshock : integer;
         tickcount : integer;
-        tickstoreenabledetectionagain : integer;
         heartratehistory1 : integer;
         heartratehistory2 : integer;
         heartratehistory3 : integer;
@@ -41,6 +39,7 @@ title procedure tick;
         history_avarage : integer;
         history_variance : integer
      end;
+  const maxshocks : integer = pending;
   const icdstates__base__first : icdstates = pending; 
   const icdstates__base__last : icdstates = pending; 
   const measures__bpm__base__first : integer = pending; 

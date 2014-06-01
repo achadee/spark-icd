@@ -5,7 +5,7 @@
 *****************************************************************************
 
 
-CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:32
+CREATED 01-JUN-2014, 22:28:21  SIMPLIFIED 01-JUN-2014, 22:28:31
 
 SPARK Simplifier GPL 2011
 Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
@@ -15,25 +15,25 @@ procedure ICD.Detect_Tarchycardia
 
 
 
-For path(s) from start to run-time check associated with statement of line 64:
+For path(s) from start to run-time check associated with statement of line 154:
 
 procedure_detect_tarchycardia_1.
 *** true .          /* all conclusions proved */
 
 
-For path(s) from start to run-time check associated with statement of line 65:
+For path(s) from start to run-time check associated with statement of line 155:
 
 procedure_detect_tarchycardia_2.
 *** true .          /* all conclusions proved */
 
 
-For path(s) from start to run-time check associated with statement of line 67:
+For path(s) from start to run-time check associated with statement of line 157:
 
 procedure_detect_tarchycardia_3.
 *** true .          /* all conclusions proved */
 
 
-For path(s) from start to run-time check associated with statement of line 76:
+For path(s) from start to finish:
 
 procedure_detect_tarchycardia_4.
 *** true .          /* all conclusions proved */
@@ -43,31 +43,45 @@ procedure_detect_tarchycardia_5.
 *** true .          /* all conclusions proved */
 
 
-For path(s) from start to run-time check associated with statement of line 78:
-
 procedure_detect_tarchycardia_6.
-*** true .          /* all conclusions proved */
-
-
-procedure_detect_tarchycardia_7.
-*** true .          /* all conclusions proved */
-
-
-For path(s) from start to finish:
-
-procedure_detect_tarchycardia_8.
-*** true .          /* all conclusions proved */
-
-
-procedure_detect_tarchycardia_9.
-*** true .          /* all conclusions proved */
-
-
-procedure_detect_tarchycardia_10.
-*** true .          /* all conclusions proved */
-
-
-procedure_detect_tarchycardia_11.
-*** true .          /* all conclusions proved */
+H1:    fld_ison(computer) .
+H2:    fld_history_variance(computer) >= - 2147483648 .
+H3:    fld_history_variance(computer) <= 2147483647 .
+H4:    fld_history_avarage(computer) >= - 2147483648 .
+H5:    fld_history_avarage(computer) <= 2147483647 .
+H6:    fld_heartratehistory6(computer) >= - 1 .
+H7:    fld_heartratehistory6(computer) <= 300 .
+H8:    fld_heartratehistory5(computer) >= - 1 .
+H9:    fld_heartratehistory5(computer) <= 300 .
+H10:   fld_heartratehistory4(computer) >= - 1 .
+H11:   fld_heartratehistory4(computer) <= 300 .
+H12:   fld_heartratehistory3(computer) >= - 1 .
+H13:   fld_heartratehistory3(computer) <= 300 .
+H14:   fld_heartratehistory2(computer) >= - 1 .
+H15:   fld_heartratehistory2(computer) <= 300 .
+H16:   fld_heartratehistory1(computer) >= - 1 .
+H17:   fld_heartratehistory1(computer) <= 300 .
+H18:   fld_tickcount(computer) >= - 2147483648 .
+H19:   fld_tickcount(computer) <= 2147483647 .
+H20:   fld_tickstonextshock(computer) >= - 2147483648 .
+H21:   fld_tickstonextshock(computer) <= 2147483647 .
+H22:   fld_count(computer) >= - 2147483648 .
+H23:   fld_count(computer) <= 2147483647 .
+H24:   fld_upperbound(computer) >= - 1 .
+H25:   fld_upperbound(computer) <= 300 .
+H26:   normal <= fld_state(computer) .
+H27:   fld_state(computer) <= tar .
+H28:   fld_rate(computer) >= - 1 .
+H29:   fld_rate(computer) <= 300 .
+H30:   fld_rate(computer) <= fld_upperbound(computer) or fld_state(computer) <> 
+          normal .
+H31:   fld_state(computer) <> tar or fld_count(computer) <> 0 .
+H32:   integer__size >= 0 .
+H33:   measures__bpm__size >= 0 .
+H34:   icdstates__size >= 0 .
+H35:   icdtype__size >= 0 .
+       ->
+C1:    fld_state(computer) = normal and fld_rate(computer) > fld_upperbound(
+          computer) -> fld_state(computer) = tar and fld_count(computer) = 10 .
 
 

@@ -5,7 +5,7 @@
 *****************************************************************************
 
 
-CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:31
+CREATED 01-JUN-2014, 22:28:21  SIMPLIFIED 01-JUN-2014, 22:28:30
 
 SPARK Simplifier GPL 2011
 Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
@@ -15,171 +15,60 @@ procedure ICD.Detect_Fibrillation
 
 
 
-For path(s) from start to run-time check associated with statement of line 172:
+For path(s) from start to run-time check associated with statement of line 141:
 
 procedure_detect_fibrillation_1.
 *** true .          /* all conclusions proved */
 
 
-For path(s) from start to run-time check associated with statement of line 173:
+For path(s) from start to run-time check associated with statement of line 143:
 
 procedure_detect_fibrillation_2.
 *** true .          /* all conclusions proved */
 
 
-For path(s) from start to run-time check associated with statement of line 175:
-
-procedure_detect_fibrillation_3.
-H1:    fld_ison(computer) .
-H2:    fld_history_variance(computer) >= - 2147483648 .
-H3:    fld_history_variance(computer) <= 2147483647 .
-H4:    fld_history_avarage(computer) >= - 2147483648 .
-H5:    fld_history_avarage(computer) <= 2147483647 .
-H6:    fld_heartratehistory6(computer) >= - 1 .
-H7:    fld_heartratehistory6(computer) <= 300 .
-H8:    fld_heartratehistory5(computer) >= - 1 .
-H9:    fld_heartratehistory5(computer) <= 300 .
-H10:   fld_heartratehistory4(computer) >= - 1 .
-H11:   fld_heartratehistory4(computer) <= 300 .
-H12:   fld_heartratehistory3(computer) >= - 1 .
-H13:   fld_heartratehistory3(computer) <= 300 .
-H14:   fld_heartratehistory2(computer) >= - 1 .
-H15:   fld_heartratehistory2(computer) <= 300 .
-H16:   fld_heartratehistory1(computer) >= - 1 .
-H17:   fld_heartratehistory1(computer) <= 300 .
-H18:   fld_tickstoreenabledetectionagain(computer) >= - 2147483648 .
-H19:   fld_tickstoreenabledetectionagain(computer) <= 2147483647 .
-H20:   fld_tickcount(computer) >= - 2147483648 .
-H21:   fld_tickcount(computer) <= 2147483647 .
-H22:   fld_next(computer) >= - 2147483648 .
-H23:   fld_next(computer) <= 2147483647 .
-H24:   fld_count(computer) >= - 2147483648 .
-H25:   fld_count(computer) <= 2147483647 .
-H26:   fld_upperbound(computer) >= - 1 .
-H27:   fld_upperbound(computer) <= 300 .
-H28:   normal <= fld_state(computer) .
-H29:   fld_state(computer) <= tar .
-H30:   fld_rate(computer) >= - 1 .
-H31:   fld_rate(computer) <= 300 .
-H32:   fld_state(computer) <> fib .
-H33:   integer__size >= 0 .
-H34:   measures__bpm__size >= 0 .
-H35:   icdstates__size >= 0 .
-H36:   icdtype__size >= 0 .
-       ->
-C1:    - 1 >= system__min_int .
-C2:    - 1 <= system__max_int .
-
-
-For path(s) from start to run-time check associated with statement of line 178:
-
-procedure_detect_fibrillation_4.
-H1:    fld_ison(computer) .
-H2:    fld_history_variance(computer) >= - 2147483648 .
-H3:    fld_history_variance(computer) <= 2147483647 .
-H4:    fld_history_avarage(computer) >= - 2147483648 .
-H5:    fld_history_avarage(computer) <= 2147483647 .
-H6:    fld_heartratehistory6(computer) >= - 1 .
-H7:    fld_heartratehistory6(computer) <= 300 .
-H8:    fld_heartratehistory5(computer) >= - 1 .
-H9:    fld_heartratehistory5(computer) <= 300 .
-H10:   fld_heartratehistory4(computer) >= - 1 .
-H11:   fld_heartratehistory4(computer) <= 300 .
-H12:   fld_heartratehistory3(computer) >= - 1 .
-H13:   fld_heartratehistory3(computer) <= 300 .
-H14:   fld_heartratehistory2(computer) >= - 1 .
-H15:   fld_heartratehistory2(computer) <= 300 .
-H16:   fld_heartratehistory1(computer) >= - 1 .
-H17:   fld_heartratehistory1(computer) <= 300 .
-H18:   fld_tickstoreenabledetectionagain(computer) >= - 2147483648 .
-H19:   fld_tickstoreenabledetectionagain(computer) <= 2147483647 .
-H20:   fld_tickcount(computer) >= - 2147483648 .
-H21:   fld_tickcount(computer) <= 2147483647 .
-H22:   fld_next(computer) >= - 2147483648 .
-H23:   fld_next(computer) <= 2147483647 .
-H24:   fld_count(computer) >= - 2147483648 .
-H25:   fld_count(computer) <= 2147483647 .
-H26:   fld_upperbound(computer) >= - 1 .
-H27:   fld_upperbound(computer) <= 300 .
-H28:   normal <= fld_state(computer) .
-H29:   fld_state(computer) <= tar .
-H30:   fld_rate(computer) >= - 1 .
-H31:   fld_rate(computer) <= 300 .
-H32:   fld_state(computer) <> fib .
-H33:   - 1 >= system__min_int .
-H34:   - 1 <= system__max_int .
-H35:   fld_heartratehistory1(computer) = - 1 or 
-          fld_tickstoreenabledetectionagain(computer) > 0 .
-H36:   integer__size >= 0 .
-H37:   measures__bpm__size >= 0 .
-H38:   icdstates__size >= 0 .
-H39:   icdtype__size >= 0 .
-       ->
-C1:    fld_tickstoreenabledetectionagain(computer) >= - 2147483647 .
-
-
-For path(s) from start to run-time check associated with statement of line 183:
-
-procedure_detect_fibrillation_5.
-*** true .          /* all conclusions proved */
-
-
 For path(s) from start to finish:
 
-procedure_detect_fibrillation_6.
-*** true .          /* all conclusions proved */
-
-
-procedure_detect_fibrillation_7.
-H1:    fld_ison(computer) .
-H2:    fld_history_variance(computer) >= - 2147483648 .
-H3:    fld_history_variance(computer) <= 2147483647 .
-H4:    fld_history_avarage(computer) >= - 2147483648 .
-H5:    fld_history_avarage(computer) <= 2147483647 .
-H6:    fld_heartratehistory6(computer) >= - 1 .
-H7:    fld_heartratehistory6(computer) <= 300 .
-H8:    fld_heartratehistory5(computer) >= - 1 .
-H9:    fld_heartratehistory5(computer) <= 300 .
-H10:   fld_heartratehistory4(computer) >= - 1 .
-H11:   fld_heartratehistory4(computer) <= 300 .
-H12:   fld_heartratehistory3(computer) >= - 1 .
-H13:   fld_heartratehistory3(computer) <= 300 .
-H14:   fld_heartratehistory2(computer) >= - 1 .
-H15:   fld_heartratehistory2(computer) <= 300 .
-H16:   fld_heartratehistory1(computer) >= - 1 .
-H17:   fld_heartratehistory1(computer) <= 300 .
-H18:   fld_tickstoreenabledetectionagain(computer) <= 2147483647 .
-H19:   fld_tickcount(computer) >= - 2147483648 .
-H20:   fld_tickcount(computer) <= 2147483647 .
-H21:   fld_next(computer) >= - 2147483648 .
-H22:   fld_next(computer) <= 2147483647 .
-H23:   fld_count(computer) >= - 2147483648 .
-H24:   fld_count(computer) <= 2147483647 .
-H25:   fld_upperbound(computer) >= - 1 .
-H26:   fld_upperbound(computer) <= 300 .
-H27:   normal <= fld_state(computer) .
-H28:   fld_state(computer) <= tar .
-H29:   fld_rate(computer) >= - 1 .
-H30:   fld_rate(computer) <= 300 .
-H31:   fld_state(computer) <> fib .
-H32:   - 1 >= system__min_int .
-H33:   - 1 <= system__max_int .
-H34:   fld_heartratehistory1(computer) = - 1 or 
-          fld_tickstoreenabledetectionagain(computer) > 0 .
-H35:   fld_tickstoreenabledetectionagain(computer) >= - 2147483647 .
-H36:   integer__size >= 0 .
-H37:   measures__bpm__size >= 0 .
-H38:   icdstates__size >= 0 .
-H39:   icdtype__size >= 0 .
+procedure_detect_fibrillation_3.
+H1:    fld_history_variance(computer) <= 2147483647 .
+H2:    fld_history_avarage(computer) >= - 2147483648 .
+H3:    fld_history_avarage(computer) <= 2147483647 .
+H4:    fld_heartratehistory6(computer) >= - 1 .
+H5:    fld_heartratehistory6(computer) <= 300 .
+H6:    fld_heartratehistory5(computer) >= - 1 .
+H7:    fld_heartratehistory5(computer) <= 300 .
+H8:    fld_heartratehistory4(computer) >= - 1 .
+H9:    fld_heartratehistory4(computer) <= 300 .
+H10:   fld_heartratehistory3(computer) >= - 1 .
+H11:   fld_heartratehistory3(computer) <= 300 .
+H12:   fld_heartratehistory2(computer) >= - 1 .
+H13:   fld_heartratehistory2(computer) <= 300 .
+H14:   fld_heartratehistory1(computer) <= 300 .
+H15:   fld_tickcount(computer) >= - 2147483648 .
+H16:   fld_tickcount(computer) <= 2147483647 .
+H17:   fld_tickstonextshock(computer) >= - 2147483648 .
+H18:   fld_tickstonextshock(computer) <= 2147483647 .
+H19:   fld_count(computer) >= - 2147483648 .
+H20:   fld_count(computer) <= 2147483647 .
+H21:   fld_upperbound(computer) >= - 1 .
+H22:   fld_upperbound(computer) <= 300 .
+H23:   normal <= fld_state(computer) .
+H24:   fld_state(computer) <= tar .
+H25:   fld_rate(computer) >= - 1 .
+H26:   fld_rate(computer) <= 300 .
+H27:   fld_state(computer) <> fib .
+H28:   fld_history_variance(computer) > 100 .
+H29:   - 1 < fld_heartratehistory1(computer) .
+H30:   integer__size >= 0 .
+H31:   measures__bpm__size >= 0 .
+H32:   icdstates__size >= 0 .
+H33:   icdtype__size >= 0 .
        ->
-C1:    fld_state(computer) = fib <-> fld_state(computer) <> fib and (
-          fld_heartratehistory1(computer) <> - 1 and 
-          fld_tickstoreenabledetectionagain(computer) = 1 and 
-          fld_history_variance(computer) > 100) .
+C1:    fld_ison(computer) .
 
 
-procedure_detect_fibrillation_8.
-H1:    fld_ison(computer) .
+procedure_detect_fibrillation_4.
+H1:    fld_history_variance(computer) >= - 2147483648 .
 H2:    fld_history_variance(computer) <= 2147483647 .
 H3:    fld_history_avarage(computer) >= - 2147483648 .
 H4:    fld_history_avarage(computer) <= 2147483647 .
@@ -193,12 +82,12 @@ H11:   fld_heartratehistory3(computer) >= - 1 .
 H12:   fld_heartratehistory3(computer) <= 300 .
 H13:   fld_heartratehistory2(computer) >= - 1 .
 H14:   fld_heartratehistory2(computer) <= 300 .
-H15:   fld_heartratehistory1(computer) <= 300 .
-H16:   fld_tickstoreenabledetectionagain(computer) >= - 2147483648 .
+H15:   fld_heartratehistory1(computer) >= - 1 .
+H16:   fld_heartratehistory1(computer) <= 300 .
 H17:   fld_tickcount(computer) >= - 2147483648 .
 H18:   fld_tickcount(computer) <= 2147483647 .
-H19:   fld_next(computer) >= - 2147483648 .
-H20:   fld_next(computer) <= 2147483647 .
+H19:   fld_tickstonextshock(computer) >= - 2147483648 .
+H20:   fld_tickstonextshock(computer) <= 2147483647 .
 H21:   fld_count(computer) >= - 2147483648 .
 H22:   fld_count(computer) <= 2147483647 .
 H23:   fld_upperbound(computer) >= - 1 .
@@ -207,21 +96,52 @@ H25:   normal <= fld_state(computer) .
 H26:   fld_state(computer) <= tar .
 H27:   fld_rate(computer) >= - 1 .
 H28:   fld_rate(computer) <= 300 .
-H29:   fld_state(computer) <> fib .
-H30:   - 1 >= system__min_int .
-H31:   - 1 <= system__max_int .
-H32:   fld_history_variance(computer) > 100 .
-H33:   fld_tickstoreenabledetectionagain(computer) <= 0 .
-H34:   - 1 < fld_heartratehistory1(computer) .
-H35:   integer__size >= 0 .
-H36:   measures__bpm__size >= 0 .
-H37:   icdstates__size >= 0 .
-H38:   icdtype__size >= 0 .
+H29:   fld_state(computer) = fib .
+H30:   integer__size >= 0 .
+H31:   measures__bpm__size >= 0 .
+H32:   icdstates__size >= 0 .
+H33:   icdtype__size >= 0 .
        ->
-C1:    fld_tickstoreenabledetectionagain(computer) = 0 .
+C1:    fld_ison(computer) .
 
 
-procedure_detect_fibrillation_9.
-*** true .          /* all conclusions proved */
+procedure_detect_fibrillation_5.
+H1:    fld_history_variance(computer) >= - 2147483648 .
+H2:    fld_history_variance(computer) <= 2147483647 .
+H3:    fld_history_avarage(computer) >= - 2147483648 .
+H4:    fld_history_avarage(computer) <= 2147483647 .
+H5:    fld_heartratehistory6(computer) >= - 1 .
+H6:    fld_heartratehistory6(computer) <= 300 .
+H7:    fld_heartratehistory5(computer) >= - 1 .
+H8:    fld_heartratehistory5(computer) <= 300 .
+H9:    fld_heartratehistory4(computer) >= - 1 .
+H10:   fld_heartratehistory4(computer) <= 300 .
+H11:   fld_heartratehistory3(computer) >= - 1 .
+H12:   fld_heartratehistory3(computer) <= 300 .
+H13:   fld_heartratehistory2(computer) >= - 1 .
+H14:   fld_heartratehistory2(computer) <= 300 .
+H15:   fld_heartratehistory1(computer) >= - 1 .
+H16:   fld_heartratehistory1(computer) <= 300 .
+H17:   fld_tickcount(computer) >= - 2147483648 .
+H18:   fld_tickcount(computer) <= 2147483647 .
+H19:   fld_tickstonextshock(computer) >= - 2147483648 .
+H20:   fld_tickstonextshock(computer) <= 2147483647 .
+H21:   fld_count(computer) >= - 2147483648 .
+H22:   fld_count(computer) <= 2147483647 .
+H23:   fld_upperbound(computer) >= - 1 .
+H24:   fld_upperbound(computer) <= 300 .
+H25:   normal <= fld_state(computer) .
+H26:   fld_state(computer) <= tar .
+H27:   fld_rate(computer) >= - 1 .
+H28:   fld_rate(computer) <= 300 .
+H29:   fld_heartratehistory1(computer) = - 1 or fld_history_variance(computer) 
+          <= 100 .
+H30:   fld_state(computer) <> fib .
+H31:   integer__size >= 0 .
+H32:   measures__bpm__size >= 0 .
+H33:   icdstates__size >= 0 .
+H34:   icdtype__size >= 0 .
+       ->
+C1:    fld_ison(computer) .
 
 

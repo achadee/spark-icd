@@ -1,0 +1,67 @@
+           *******************************************************
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 01-JUN-2014 21:01:42.17
+
+
+           Examining the specification of package Measures ...
+
+           Examining the specification of package RandomNumber ...
+
+           Examining the specification of package Heart ...
+
+           Examining the specification of package HRM ...
+
+           Examining the specification of package ImpulseGenerator ...
+
+           Examining the specification of package ICD ...
+
+           Examining the body of package ICD ...
+
++++        Flow analysis of subprogram Init performed: no 
+           errors found.
+
++++        Flow analysis of subprogram On performed: no 
+           errors found.
+
++++        Flow analysis of subprogram Off performed: no 
+           errors found.
+
++++        Flow analysis of subprogram addRateToHistory 
+           performed: no errors found.
+
++++        Flow analysis of subprogram Set_Impulse 
+           performed: no errors found.
+
++++        Flow analysis of subprogram CalculateAvarage 
+           performed: no errors found.
+
++++        Flow analysis of subprogram power performed: no 
+           errors found.
+
++++        Flow analysis of subprogram secureAdd performed: 
+           no errors found.
+
++++        Flow analysis of subprogram CalculateVariance 
+           performed: no errors found.
+
++++        Flow analysis of subprogram Detect_Fibrillation 
+           performed: no errors found.
+
++++        Flow analysis of subprogram Detect_Tarchycardia 
+           performed: no errors found.
+
++++        Flow analysis of subprogram Tick performed: no 
+           errors found.
+
+           Generating listing file icd.lst ...
+
+           Generating report file ...
+
+   No errors or warnings
+
+
+-----------End of SPARK Examination--------------------------------

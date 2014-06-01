@@ -5,7 +5,7 @@
            {*******************************************************}
 
 
-                        {DATE : 01-JUN-2014 19:41:14.53}
+                        {DATE : 01-JUN-2014 22:28:21.43}
 
                        {procedure ICD.addRateToHistory}
 
@@ -16,14 +16,12 @@ title procedure addratetohistory;
   type icdstates = (normal, fib, tar);
   type icdtype = record
         rate : integer;
-        inprocess : boolean;
         ison : boolean;
         state : icdstates;
         upperbound : integer;
         count : integer;
-        next : integer;
+        tickstonextshock : integer;
         tickcount : integer;
-        tickstoreenabledetectionagain : integer;
         heartratehistory1 : integer;
         heartratehistory2 : integer;
         heartratehistory3 : integer;

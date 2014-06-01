@@ -5,7 +5,7 @@
 *****************************************************************************
 
 
-CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:32
+CREATED 01-JUN-2014, 22:28:21  SIMPLIFIED 01-JUN-2014, 22:28:31
 
 SPARK Simplifier GPL 2011
 Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
@@ -65,33 +65,29 @@ procedure ICD.Init
 %%%  Simplified H19 on reading formula in, to give:
      %%%  H19:  fld_heartratehistory1(computer) <= measures__bpm__last
 %%%  Simplified H20 on reading formula in, to give:
-     %%%  H20:  fld_tickstoreenabledetectionagain(computer) >= integer__first
+     %%%  H20:  fld_tickcount(computer) >= integer__first
 %%%  Simplified H21 on reading formula in, to give:
-     %%%  H21:  fld_tickstoreenabledetectionagain(computer) <= integer__last
+     %%%  H21:  fld_tickcount(computer) <= integer__last
 %%%  Simplified H22 on reading formula in, to give:
-     %%%  H22:  fld_tickcount(computer) >= integer__first
+     %%%  H22:  fld_tickstonextshock(computer) >= integer__first
 %%%  Simplified H23 on reading formula in, to give:
-     %%%  H23:  fld_tickcount(computer) <= integer__last
+     %%%  H23:  fld_tickstonextshock(computer) <= integer__last
 %%%  Simplified H24 on reading formula in, to give:
-     %%%  H24:  fld_next(computer) >= integer__first
+     %%%  H24:  fld_count(computer) >= integer__first
 %%%  Simplified H25 on reading formula in, to give:
-     %%%  H25:  fld_next(computer) <= integer__last
+     %%%  H25:  fld_count(computer) <= integer__last
 %%%  Simplified H26 on reading formula in, to give:
-     %%%  H26:  fld_count(computer) >= integer__first
+     %%%  H26:  130 >= measures__bpm__first
 %%%  Simplified H27 on reading formula in, to give:
-     %%%  H27:  fld_count(computer) <= integer__last
+     %%%  H27:  130 <= measures__bpm__last
 %%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  130 >= measures__bpm__first
+     %%%  H28:  icdstates__first <= fld_state(computer)
 %%%  Simplified H29 on reading formula in, to give:
-     %%%  H29:  130 <= measures__bpm__last
-%%%  Simplified H30 on reading formula in, to give:
-     %%%  H30:  icdstates__first <= fld_state(computer)
+     %%%  H29:  fld_state(computer) <= icdstates__last
 %%%  Simplified H31 on reading formula in, to give:
-     %%%  H31:  fld_state(computer) <= icdstates__last
-%%%  Simplified H34 on reading formula in, to give:
-     %%%  H34:  fld_rate(computer) >= measures__bpm__first
-%%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  fld_rate(computer) <= measures__bpm__last
+     %%%  H31:  fld_rate(computer) >= measures__bpm__first
+%%%  Simplified H32 on reading formula in, to give:
+     %%%  H32:  fld_rate(computer) <= measures__bpm__last
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  600 div (130 + projectedrate) >= integer__first
 %%%  Simplified C2 on reading formula in, to give:
@@ -107,20 +103,18 @@ procedure ICD.Init
           - 2147483648.
 <S>  New H4:  fld_history_variance(computer) >= - 2147483648
 <S>  New H6:  fld_history_avarage(computer) >= - 2147483648
-<S>  New H20:  fld_tickstoreenabledetectionagain(computer) >= - 2147483648
-<S>  New H22:  fld_tickcount(computer) >= - 2147483648
-<S>  New H24:  fld_next(computer) >= - 2147483648
-<S>  New H26:  fld_count(computer) >= - 2147483648
+<S>  New H20:  fld_tickcount(computer) >= - 2147483648
+<S>  New H22:  fld_tickstonextshock(computer) >= - 2147483648
+<S>  New H24:  fld_count(computer) >= - 2147483648
 <S>  New C1:  600 div (130 + projectedrate) >= - 2147483648
 -S-  Applied substitution rule init_rules(4).
      This was achieved by replacing all occurrences of integer__last by:
           2147483647.
 <S>  New H5:  fld_history_variance(computer) <= 2147483647
 <S>  New H7:  fld_history_avarage(computer) <= 2147483647
-<S>  New H21:  fld_tickstoreenabledetectionagain(computer) <= 2147483647
-<S>  New H23:  fld_tickcount(computer) <= 2147483647
-<S>  New H25:  fld_next(computer) <= 2147483647
-<S>  New H27:  fld_count(computer) <= 2147483647
+<S>  New H21:  fld_tickcount(computer) <= 2147483647
+<S>  New H23:  fld_tickstonextshock(computer) <= 2147483647
+<S>  New H25:  fld_count(computer) <= 2147483647
 <S>  New C2:  600 div (130 + projectedrate) <= 2147483647
 -S-  Applied substitution rule init_rules(5).
      This was achieved by replacing all occurrences of integer__base__first by:
@@ -180,64 +174,58 @@ procedure ICD.Init
 %%%  Simplified H19 on reading formula in, to give:
      %%%  H19:  fld_heartratehistory1(computer) <= measures__bpm__last
 %%%  Simplified H20 on reading formula in, to give:
-     %%%  H20:  fld_tickstoreenabledetectionagain(computer) >= integer__first
+     %%%  H20:  fld_tickcount(computer) >= integer__first
 %%%  Simplified H21 on reading formula in, to give:
-     %%%  H21:  fld_tickstoreenabledetectionagain(computer) <= integer__last
+     %%%  H21:  fld_tickcount(computer) <= integer__last
 %%%  Simplified H22 on reading formula in, to give:
-     %%%  H22:  fld_tickcount(computer) >= integer__first
+     %%%  H22:  fld_tickstonextshock(computer) >= integer__first
 %%%  Simplified H23 on reading formula in, to give:
-     %%%  H23:  fld_tickcount(computer) <= integer__last
+     %%%  H23:  fld_tickstonextshock(computer) <= integer__last
 %%%  Simplified H24 on reading formula in, to give:
-     %%%  H24:  fld_next(computer) >= integer__first
+     %%%  H24:  fld_count(computer) >= integer__first
 %%%  Simplified H25 on reading formula in, to give:
-     %%%  H25:  fld_next(computer) <= integer__last
+     %%%  H25:  fld_count(computer) <= integer__last
 %%%  Simplified H26 on reading formula in, to give:
-     %%%  H26:  fld_count(computer) >= integer__first
+     %%%  H26:  130 >= measures__bpm__first
 %%%  Simplified H27 on reading formula in, to give:
-     %%%  H27:  fld_count(computer) <= integer__last
+     %%%  H27:  130 <= measures__bpm__last
 %%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  130 >= measures__bpm__first
+     %%%  H28:  icdstates__first <= fld_state(computer)
 %%%  Simplified H29 on reading formula in, to give:
-     %%%  H29:  130 <= measures__bpm__last
-%%%  Simplified H30 on reading formula in, to give:
-     %%%  H30:  icdstates__first <= fld_state(computer)
+     %%%  H29:  fld_state(computer) <= icdstates__last
 %%%  Simplified H31 on reading formula in, to give:
-     %%%  H31:  fld_state(computer) <= icdstates__last
+     %%%  H31:  fld_rate(computer) >= measures__bpm__first
+%%%  Simplified H32 on reading formula in, to give:
+     %%%  H32:  fld_rate(computer) <= measures__bpm__last
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  600 div (130 + projectedrate) >= integer__first
 %%%  Simplified H34 on reading formula in, to give:
-     %%%  H34:  fld_rate(computer) >= measures__bpm__first
+     %%%  H34:  600 div (130 + projectedrate) <= integer__last
 %%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  fld_rate(computer) <= measures__bpm__last
+     %%%  H35:  projectedrate <> - 130
 %%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  600 div (130 + projectedrate) >= integer__first
+     %%%  H36:  130 + projectedrate >= integer__base__first
 %%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  600 div (130 + projectedrate) <= integer__last
-%%%  Simplified H38 on reading formula in, to give:
-     %%%  H38:  projectedrate <> - 130
-%%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  130 + projectedrate >= integer__base__first
-%%%  Simplified H40 on reading formula in, to give:
-     %%%  H40:  130 + projectedrate <= integer__base__last
+     %%%  H37:  130 + projectedrate <= integer__base__last
 -S-  Applied substitution rule init_rules(3).
      This was achieved by replacing all occurrences of integer__first by:
           - 2147483648.
 <S>  New H4:  fld_history_variance(computer) >= - 2147483648
 <S>  New H6:  fld_history_avarage(computer) >= - 2147483648
-<S>  New H20:  fld_tickstoreenabledetectionagain(computer) >= - 2147483648
-<S>  New H22:  fld_tickcount(computer) >= - 2147483648
-<S>  New H24:  fld_next(computer) >= - 2147483648
-<S>  New H26:  fld_count(computer) >= - 2147483648
-<S>  New H36:  600 div (130 + projectedrate) >= - 2147483648
+<S>  New H20:  fld_tickcount(computer) >= - 2147483648
+<S>  New H22:  fld_tickstonextshock(computer) >= - 2147483648
+<S>  New H24:  fld_count(computer) >= - 2147483648
+<S>  New H33:  600 div (130 + projectedrate) >= - 2147483648
 <S>  New C1:  true
 -S-  Applied substitution rule init_rules(4).
      This was achieved by replacing all occurrences of integer__last by:
           2147483647.
 <S>  New H5:  fld_history_variance(computer) <= 2147483647
 <S>  New H7:  fld_history_avarage(computer) <= 2147483647
-<S>  New H21:  fld_tickstoreenabledetectionagain(computer) <= 2147483647
-<S>  New H23:  fld_tickcount(computer) <= 2147483647
-<S>  New H25:  fld_next(computer) <= 2147483647
-<S>  New H27:  fld_count(computer) <= 2147483647
-<S>  New H37:  600 div (130 + projectedrate) <= 2147483647
+<S>  New H21:  fld_tickcount(computer) <= 2147483647
+<S>  New H23:  fld_tickstonextshock(computer) <= 2147483647
+<S>  New H25:  fld_count(computer) <= 2147483647
+<S>  New H34:  600 div (130 + projectedrate) <= 2147483647
 <S>  New C2:  true
 ***  Proved C1:  true
 ***  Proved C2:  true
@@ -278,47 +266,43 @@ procedure ICD.Init
 %%%  Simplified H19 on reading formula in, to give:
      %%%  H19:  fld_heartratehistory1(computer) <= measures__bpm__last
 %%%  Simplified H20 on reading formula in, to give:
-     %%%  H20:  fld_tickstoreenabledetectionagain(computer) >= integer__first
+     %%%  H20:  fld_tickcount(computer) >= integer__first
 %%%  Simplified H21 on reading formula in, to give:
-     %%%  H21:  fld_tickstoreenabledetectionagain(computer) <= integer__last
+     %%%  H21:  fld_tickcount(computer) <= integer__last
 %%%  Simplified H22 on reading formula in, to give:
-     %%%  H22:  fld_tickcount(computer) >= integer__first
+     %%%  H22:  fld_tickstonextshock(computer) >= integer__first
 %%%  Simplified H23 on reading formula in, to give:
-     %%%  H23:  fld_tickcount(computer) <= integer__last
+     %%%  H23:  fld_tickstonextshock(computer) <= integer__last
 %%%  Simplified H24 on reading formula in, to give:
-     %%%  H24:  fld_next(computer) >= integer__first
+     %%%  H24:  fld_count(computer) >= integer__first
 %%%  Simplified H25 on reading formula in, to give:
-     %%%  H25:  fld_next(computer) <= integer__last
+     %%%  H25:  fld_count(computer) <= integer__last
 %%%  Simplified H26 on reading formula in, to give:
-     %%%  H26:  fld_count(computer) >= integer__first
+     %%%  H26:  130 >= measures__bpm__first
 %%%  Simplified H27 on reading formula in, to give:
-     %%%  H27:  fld_count(computer) <= integer__last
+     %%%  H27:  130 <= measures__bpm__last
 %%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  130 >= measures__bpm__first
+     %%%  H28:  icdstates__first <= fld_state(computer)
 %%%  Simplified H29 on reading formula in, to give:
-     %%%  H29:  130 <= measures__bpm__last
-%%%  Simplified H30 on reading formula in, to give:
-     %%%  H30:  icdstates__first <= fld_state(computer)
+     %%%  H29:  fld_state(computer) <= icdstates__last
 %%%  Simplified H31 on reading formula in, to give:
-     %%%  H31:  fld_state(computer) <= icdstates__last
+     %%%  H31:  fld_rate(computer) >= measures__bpm__first
+%%%  Simplified H32 on reading formula in, to give:
+     %%%  H32:  fld_rate(computer) <= measures__bpm__last
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  600 div (130 + projectedrate) >= integer__first
 %%%  Simplified H34 on reading formula in, to give:
-     %%%  H34:  fld_rate(computer) >= measures__bpm__first
+     %%%  H34:  600 div (130 + projectedrate) <= integer__last
 %%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  fld_rate(computer) <= measures__bpm__last
+     %%%  H35:  projectedrate <> - 130
 %%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  600 div (130 + projectedrate) >= integer__first
+     %%%  H36:  130 + projectedrate >= integer__base__first
 %%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  600 div (130 + projectedrate) <= integer__last
-%%%  Simplified H38 on reading formula in, to give:
-     %%%  H38:  projectedrate <> - 130
-%%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  130 + projectedrate >= integer__base__first
-%%%  Simplified H40 on reading formula in, to give:
-     %%%  H40:  130 + projectedrate <= integer__base__last
+     %%%  H37:  130 + projectedrate <= integer__base__last
 ***  Proved C1:  0 >= integer__first
-     using hypothesis H41.
+     using hypothesis H38.
 ***  Proved C2:  0 <= integer__last
-     using hypothesis H42.
+     using hypothesis H39.
 ***  PROVED VC.
 
 
@@ -356,58 +340,54 @@ procedure ICD.Init
 %%%  Simplified H19 on reading formula in, to give:
      %%%  H19:  fld_heartratehistory1(computer) <= measures__bpm__last
 %%%  Simplified H20 on reading formula in, to give:
-     %%%  H20:  fld_tickstoreenabledetectionagain(computer) >= integer__first
+     %%%  H20:  fld_tickcount(computer) >= integer__first
 %%%  Simplified H21 on reading formula in, to give:
-     %%%  H21:  fld_tickstoreenabledetectionagain(computer) <= integer__last
+     %%%  H21:  fld_tickcount(computer) <= integer__last
 %%%  Simplified H22 on reading formula in, to give:
-     %%%  H22:  fld_tickcount(computer) >= integer__first
+     %%%  H22:  fld_tickstonextshock(computer) >= integer__first
 %%%  Simplified H23 on reading formula in, to give:
-     %%%  H23:  fld_tickcount(computer) <= integer__last
+     %%%  H23:  fld_tickstonextshock(computer) <= integer__last
 %%%  Simplified H24 on reading formula in, to give:
-     %%%  H24:  fld_next(computer) >= integer__first
+     %%%  H24:  fld_count(computer) >= integer__first
 %%%  Simplified H25 on reading formula in, to give:
-     %%%  H25:  fld_next(computer) <= integer__last
+     %%%  H25:  fld_count(computer) <= integer__last
 %%%  Simplified H26 on reading formula in, to give:
-     %%%  H26:  fld_count(computer) >= integer__first
+     %%%  H26:  130 >= measures__bpm__first
 %%%  Simplified H27 on reading formula in, to give:
-     %%%  H27:  fld_count(computer) <= integer__last
+     %%%  H27:  130 <= measures__bpm__last
 %%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  130 >= measures__bpm__first
+     %%%  H28:  icdstates__first <= fld_state(computer)
 %%%  Simplified H29 on reading formula in, to give:
-     %%%  H29:  130 <= measures__bpm__last
-%%%  Simplified H30 on reading formula in, to give:
-     %%%  H30:  icdstates__first <= fld_state(computer)
+     %%%  H29:  fld_state(computer) <= icdstates__last
 %%%  Simplified H31 on reading formula in, to give:
-     %%%  H31:  fld_state(computer) <= icdstates__last
+     %%%  H31:  fld_rate(computer) >= measures__bpm__first
+%%%  Simplified H32 on reading formula in, to give:
+     %%%  H32:  fld_rate(computer) <= measures__bpm__last
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  600 div (130 + projectedrate) >= integer__first
 %%%  Simplified H34 on reading formula in, to give:
-     %%%  H34:  fld_rate(computer) >= measures__bpm__first
+     %%%  H34:  600 div (130 + projectedrate) <= integer__last
 %%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  fld_rate(computer) <= measures__bpm__last
+     %%%  H35:  projectedrate <> - 130
 %%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  600 div (130 + projectedrate) >= integer__first
+     %%%  H36:  130 + projectedrate >= integer__base__first
 %%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  600 div (130 + projectedrate) <= integer__last
-%%%  Simplified H38 on reading formula in, to give:
-     %%%  H38:  projectedrate <> - 130
-%%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  130 + projectedrate >= integer__base__first
-%%%  Simplified H40 on reading formula in, to give:
-     %%%  H40:  130 + projectedrate <= integer__base__last
----  Hypothesis H43 has been replaced by "true".  (It is already present, as 
-          H41).
----  Hypothesis H44 has been replaced by "true".  (It is already present, as 
-          H42).
+     %%%  H37:  130 + projectedrate <= integer__base__last
+---  Hypothesis H40 has been replaced by "true".  (It is already present, as 
+          H38).
+---  Hypothesis H41 has been replaced by "true".  (It is already present, as 
+          H39).
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  icdstates__first <= normal
 -S-  Applied substitution rule init_rules(13).
      This was achieved by replacing all occurrences of icdstates__first by:
           normal.
-<S>  New H30:  normal <= fld_state(computer)
+<S>  New H28:  normal <= fld_state(computer)
 <S>  New C1:  true
 -S-  Applied substitution rule init_rules(14).
      This was achieved by replacing all occurrences of icdstates__last by:
           tar.
-<S>  New H31:  fld_state(computer) <= tar
+<S>  New H29:  fld_state(computer) <= tar
 <S>  New C2:  true
 ***  Proved C1:  true
 ***  Proved C2:  true
@@ -448,53 +428,49 @@ procedure ICD.Init
 %%%  Simplified H19 on reading formula in, to give:
      %%%  H19:  fld_heartratehistory1(computer) <= measures__bpm__last
 %%%  Simplified H20 on reading formula in, to give:
-     %%%  H20:  fld_tickstoreenabledetectionagain(computer) >= integer__first
+     %%%  H20:  fld_tickcount(computer) >= integer__first
 %%%  Simplified H21 on reading formula in, to give:
-     %%%  H21:  fld_tickstoreenabledetectionagain(computer) <= integer__last
+     %%%  H21:  fld_tickcount(computer) <= integer__last
 %%%  Simplified H22 on reading formula in, to give:
-     %%%  H22:  fld_tickcount(computer) >= integer__first
+     %%%  H22:  fld_tickstonextshock(computer) >= integer__first
 %%%  Simplified H23 on reading formula in, to give:
-     %%%  H23:  fld_tickcount(computer) <= integer__last
+     %%%  H23:  fld_tickstonextshock(computer) <= integer__last
 %%%  Simplified H24 on reading formula in, to give:
-     %%%  H24:  fld_next(computer) >= integer__first
+     %%%  H24:  fld_count(computer) >= integer__first
 %%%  Simplified H25 on reading formula in, to give:
-     %%%  H25:  fld_next(computer) <= integer__last
+     %%%  H25:  fld_count(computer) <= integer__last
 %%%  Simplified H26 on reading formula in, to give:
-     %%%  H26:  fld_count(computer) >= integer__first
+     %%%  H26:  130 >= measures__bpm__first
 %%%  Simplified H27 on reading formula in, to give:
-     %%%  H27:  fld_count(computer) <= integer__last
+     %%%  H27:  130 <= measures__bpm__last
 %%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  130 >= measures__bpm__first
+     %%%  H28:  icdstates__first <= fld_state(computer)
 %%%  Simplified H29 on reading formula in, to give:
-     %%%  H29:  130 <= measures__bpm__last
-%%%  Simplified H30 on reading formula in, to give:
-     %%%  H30:  icdstates__first <= fld_state(computer)
+     %%%  H29:  fld_state(computer) <= icdstates__last
 %%%  Simplified H31 on reading formula in, to give:
-     %%%  H31:  fld_state(computer) <= icdstates__last
+     %%%  H31:  fld_rate(computer) >= measures__bpm__first
+%%%  Simplified H32 on reading formula in, to give:
+     %%%  H32:  fld_rate(computer) <= measures__bpm__last
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  600 div (130 + projectedrate) >= integer__first
 %%%  Simplified H34 on reading formula in, to give:
-     %%%  H34:  fld_rate(computer) >= measures__bpm__first
+     %%%  H34:  600 div (130 + projectedrate) <= integer__last
 %%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  fld_rate(computer) <= measures__bpm__last
+     %%%  H35:  projectedrate <> - 130
 %%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  600 div (130 + projectedrate) >= integer__first
+     %%%  H36:  130 + projectedrate >= integer__base__first
 %%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  600 div (130 + projectedrate) <= integer__last
-%%%  Simplified H38 on reading formula in, to give:
-     %%%  H38:  projectedrate <> - 130
-%%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  130 + projectedrate >= integer__base__first
-%%%  Simplified H40 on reading formula in, to give:
-     %%%  H40:  130 + projectedrate <= integer__base__last
----  Hypothesis H43 has been replaced by "true".  (It is already present, as 
-          H41).
----  Hypothesis H44 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H45 on reading formula in, to give:
-     %%%  H45:  icdstates__first <= normal
+     %%%  H37:  130 + projectedrate <= integer__base__last
+---  Hypothesis H40 has been replaced by "true".  (It is already present, as 
+          H38).
+---  Hypothesis H41 has been replaced by "true".  (It is already present, as 
+          H39).
+%%%  Simplified H42 on reading formula in, to give:
+     %%%  H42:  icdstates__first <= normal
 ***  Proved C1:  0 >= integer__first
-     using hypothesis H41.
+     using hypothesis H38.
 ***  Proved C2:  0 <= integer__last
-     using hypothesis H42.
+     using hypothesis H39.
 ***  PROVED VC.
 
 
@@ -532,57 +508,53 @@ procedure ICD.Init
 %%%  Simplified H19 on reading formula in, to give:
      %%%  H19:  fld_heartratehistory1(computer) <= measures__bpm__last
 %%%  Simplified H20 on reading formula in, to give:
-     %%%  H20:  fld_tickstoreenabledetectionagain(computer) >= integer__first
+     %%%  H20:  fld_tickcount(computer) >= integer__first
 %%%  Simplified H21 on reading formula in, to give:
-     %%%  H21:  fld_tickstoreenabledetectionagain(computer) <= integer__last
+     %%%  H21:  fld_tickcount(computer) <= integer__last
 %%%  Simplified H22 on reading formula in, to give:
-     %%%  H22:  fld_tickcount(computer) >= integer__first
+     %%%  H22:  fld_tickstonextshock(computer) >= integer__first
 %%%  Simplified H23 on reading formula in, to give:
-     %%%  H23:  fld_tickcount(computer) <= integer__last
+     %%%  H23:  fld_tickstonextshock(computer) <= integer__last
 %%%  Simplified H24 on reading formula in, to give:
-     %%%  H24:  fld_next(computer) >= integer__first
+     %%%  H24:  fld_count(computer) >= integer__first
 %%%  Simplified H25 on reading formula in, to give:
-     %%%  H25:  fld_next(computer) <= integer__last
+     %%%  H25:  fld_count(computer) <= integer__last
 %%%  Simplified H26 on reading formula in, to give:
-     %%%  H26:  fld_count(computer) >= integer__first
+     %%%  H26:  130 >= measures__bpm__first
 %%%  Simplified H27 on reading formula in, to give:
-     %%%  H27:  fld_count(computer) <= integer__last
+     %%%  H27:  130 <= measures__bpm__last
 %%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  130 >= measures__bpm__first
+     %%%  H28:  icdstates__first <= fld_state(computer)
 %%%  Simplified H29 on reading formula in, to give:
-     %%%  H29:  130 <= measures__bpm__last
-%%%  Simplified H30 on reading formula in, to give:
-     %%%  H30:  icdstates__first <= fld_state(computer)
+     %%%  H29:  fld_state(computer) <= icdstates__last
 %%%  Simplified H31 on reading formula in, to give:
-     %%%  H31:  fld_state(computer) <= icdstates__last
+     %%%  H31:  fld_rate(computer) >= measures__bpm__first
+%%%  Simplified H32 on reading formula in, to give:
+     %%%  H32:  fld_rate(computer) <= measures__bpm__last
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  600 div (130 + projectedrate) >= integer__first
 %%%  Simplified H34 on reading formula in, to give:
-     %%%  H34:  fld_rate(computer) >= measures__bpm__first
+     %%%  H34:  600 div (130 + projectedrate) <= integer__last
 %%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  fld_rate(computer) <= measures__bpm__last
+     %%%  H35:  projectedrate <> - 130
 %%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  600 div (130 + projectedrate) >= integer__first
+     %%%  H36:  130 + projectedrate >= integer__base__first
 %%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  600 div (130 + projectedrate) <= integer__last
-%%%  Simplified H38 on reading formula in, to give:
-     %%%  H38:  projectedrate <> - 130
-%%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  130 + projectedrate >= integer__base__first
-%%%  Simplified H40 on reading formula in, to give:
-     %%%  H40:  130 + projectedrate <= integer__base__last
----  Hypothesis H43 has been replaced by "true".  (It is already present, as 
-          H41).
+     %%%  H37:  130 + projectedrate <= integer__base__last
+---  Hypothesis H40 has been replaced by "true".  (It is already present, as 
+          H38).
+---  Hypothesis H41 has been replaced by "true".  (It is already present, as 
+          H39).
+%%%  Simplified H42 on reading formula in, to give:
+     %%%  H42:  icdstates__first <= normal
 ---  Hypothesis H44 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H45 on reading formula in, to give:
-     %%%  H45:  icdstates__first <= normal
----  Hypothesis H47 has been replaced by "true".  (It is already present, as 
-          H41).
----  Hypothesis H48 has been replaced by "true".  (It is already present, as 
-          H42).
+          H38).
+---  Hypothesis H45 has been replaced by "true".  (It is already present, as 
+          H39).
 ***  Proved C1:  0 >= integer__first
-     using hypothesis H41.
+     using hypothesis H38.
 ***  Proved C2:  0 <= integer__last
-     using hypothesis H42.
+     using hypothesis H39.
 ***  PROVED VC.
 
 
@@ -620,57 +592,53 @@ procedure ICD.Init
 %%%  Simplified H19 on reading formula in, to give:
      %%%  H19:  fld_heartratehistory1(computer) <= measures__bpm__last
 %%%  Simplified H20 on reading formula in, to give:
-     %%%  H20:  fld_tickstoreenabledetectionagain(computer) >= integer__first
+     %%%  H20:  fld_tickcount(computer) >= integer__first
 %%%  Simplified H21 on reading formula in, to give:
-     %%%  H21:  fld_tickstoreenabledetectionagain(computer) <= integer__last
+     %%%  H21:  fld_tickcount(computer) <= integer__last
 %%%  Simplified H22 on reading formula in, to give:
-     %%%  H22:  fld_tickcount(computer) >= integer__first
+     %%%  H22:  fld_tickstonextshock(computer) >= integer__first
 %%%  Simplified H23 on reading formula in, to give:
-     %%%  H23:  fld_tickcount(computer) <= integer__last
+     %%%  H23:  fld_tickstonextshock(computer) <= integer__last
 %%%  Simplified H24 on reading formula in, to give:
-     %%%  H24:  fld_next(computer) >= integer__first
+     %%%  H24:  fld_count(computer) >= integer__first
 %%%  Simplified H25 on reading formula in, to give:
-     %%%  H25:  fld_next(computer) <= integer__last
+     %%%  H25:  fld_count(computer) <= integer__last
 %%%  Simplified H26 on reading formula in, to give:
-     %%%  H26:  fld_count(computer) >= integer__first
+     %%%  H26:  130 >= measures__bpm__first
 %%%  Simplified H27 on reading formula in, to give:
-     %%%  H27:  fld_count(computer) <= integer__last
+     %%%  H27:  130 <= measures__bpm__last
 %%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  130 >= measures__bpm__first
+     %%%  H28:  icdstates__first <= fld_state(computer)
 %%%  Simplified H29 on reading formula in, to give:
-     %%%  H29:  130 <= measures__bpm__last
-%%%  Simplified H30 on reading formula in, to give:
-     %%%  H30:  icdstates__first <= fld_state(computer)
+     %%%  H29:  fld_state(computer) <= icdstates__last
 %%%  Simplified H31 on reading formula in, to give:
-     %%%  H31:  fld_state(computer) <= icdstates__last
+     %%%  H31:  fld_rate(computer) >= measures__bpm__first
+%%%  Simplified H32 on reading formula in, to give:
+     %%%  H32:  fld_rate(computer) <= measures__bpm__last
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  600 div (130 + projectedrate) >= integer__first
 %%%  Simplified H34 on reading formula in, to give:
-     %%%  H34:  fld_rate(computer) >= measures__bpm__first
+     %%%  H34:  600 div (130 + projectedrate) <= integer__last
 %%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  fld_rate(computer) <= measures__bpm__last
+     %%%  H35:  projectedrate <> - 130
 %%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  600 div (130 + projectedrate) >= integer__first
+     %%%  H36:  130 + projectedrate >= integer__base__first
 %%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  600 div (130 + projectedrate) <= integer__last
-%%%  Simplified H38 on reading formula in, to give:
-     %%%  H38:  projectedrate <> - 130
-%%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  130 + projectedrate >= integer__base__first
-%%%  Simplified H40 on reading formula in, to give:
-     %%%  H40:  130 + projectedrate <= integer__base__last
----  Hypothesis H43 has been replaced by "true".  (It is already present, as 
-          H41).
+     %%%  H37:  130 + projectedrate <= integer__base__last
+---  Hypothesis H40 has been replaced by "true".  (It is already present, as 
+          H38).
+---  Hypothesis H41 has been replaced by "true".  (It is already present, as 
+          H39).
+%%%  Simplified H42 on reading formula in, to give:
+     %%%  H42:  icdstates__first <= normal
 ---  Hypothesis H44 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H45 on reading formula in, to give:
-     %%%  H45:  icdstates__first <= normal
+          H38).
+---  Hypothesis H45 has been replaced by "true".  (It is already present, as 
+          H39).
+---  Hypothesis H46 has been replaced by "true".  (It is already present, as 
+          H38).
 ---  Hypothesis H47 has been replaced by "true".  (It is already present, as 
-          H41).
----  Hypothesis H48 has been replaced by "true".  (It is already present, as 
-          H42).
----  Hypothesis H49 has been replaced by "true".  (It is already present, as 
-          H41).
----  Hypothesis H50 has been replaced by "true".  (It is already present, as 
-          H42).
+          H39).
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  true
 ***  Proved C1:  true
@@ -713,64 +681,60 @@ procedure ICD.Init
 %%%  Simplified H19 on reading formula in, to give:
      %%%  H19:  fld_heartratehistory1(computer) <= measures__bpm__last
 %%%  Simplified H20 on reading formula in, to give:
-     %%%  H20:  fld_tickstoreenabledetectionagain(computer) >= integer__first
+     %%%  H20:  fld_tickcount(computer) >= integer__first
 %%%  Simplified H21 on reading formula in, to give:
-     %%%  H21:  fld_tickstoreenabledetectionagain(computer) <= integer__last
+     %%%  H21:  fld_tickcount(computer) <= integer__last
 %%%  Simplified H22 on reading formula in, to give:
-     %%%  H22:  fld_tickcount(computer) >= integer__first
+     %%%  H22:  fld_tickstonextshock(computer) >= integer__first
 %%%  Simplified H23 on reading formula in, to give:
-     %%%  H23:  fld_tickcount(computer) <= integer__last
+     %%%  H23:  fld_tickstonextshock(computer) <= integer__last
 %%%  Simplified H24 on reading formula in, to give:
-     %%%  H24:  fld_next(computer) >= integer__first
+     %%%  H24:  fld_count(computer) >= integer__first
 %%%  Simplified H25 on reading formula in, to give:
-     %%%  H25:  fld_next(computer) <= integer__last
+     %%%  H25:  fld_count(computer) <= integer__last
 %%%  Simplified H26 on reading formula in, to give:
-     %%%  H26:  fld_count(computer) >= integer__first
+     %%%  H26:  130 >= measures__bpm__first
 %%%  Simplified H27 on reading formula in, to give:
-     %%%  H27:  fld_count(computer) <= integer__last
+     %%%  H27:  130 <= measures__bpm__last
 %%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  130 >= measures__bpm__first
+     %%%  H28:  icdstates__first <= fld_state(computer)
 %%%  Simplified H29 on reading formula in, to give:
-     %%%  H29:  130 <= measures__bpm__last
-%%%  Simplified H30 on reading formula in, to give:
-     %%%  H30:  icdstates__first <= fld_state(computer)
+     %%%  H29:  fld_state(computer) <= icdstates__last
 %%%  Simplified H31 on reading formula in, to give:
-     %%%  H31:  fld_state(computer) <= icdstates__last
+     %%%  H31:  fld_rate(computer) >= measures__bpm__first
+%%%  Simplified H32 on reading formula in, to give:
+     %%%  H32:  fld_rate(computer) <= measures__bpm__last
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  600 div (130 + projectedrate) >= integer__first
 %%%  Simplified H34 on reading formula in, to give:
-     %%%  H34:  fld_rate(computer) >= measures__bpm__first
+     %%%  H34:  600 div (130 + projectedrate) <= integer__last
 %%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  fld_rate(computer) <= measures__bpm__last
+     %%%  H35:  projectedrate <> - 130
 %%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  600 div (130 + projectedrate) >= integer__first
+     %%%  H36:  130 + projectedrate >= integer__base__first
 %%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  600 div (130 + projectedrate) <= integer__last
-%%%  Simplified H38 on reading formula in, to give:
-     %%%  H38:  projectedrate <> - 130
-%%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  130 + projectedrate >= integer__base__first
-%%%  Simplified H40 on reading formula in, to give:
-     %%%  H40:  130 + projectedrate <= integer__base__last
----  Hypothesis H43 has been replaced by "true".  (It is already present, as 
-          H41).
+     %%%  H37:  130 + projectedrate <= integer__base__last
+---  Hypothesis H40 has been replaced by "true".  (It is already present, as 
+          H38).
+---  Hypothesis H41 has been replaced by "true".  (It is already present, as 
+          H39).
+%%%  Simplified H42 on reading formula in, to give:
+     %%%  H42:  icdstates__first <= normal
 ---  Hypothesis H44 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H45 on reading formula in, to give:
-     %%%  H45:  icdstates__first <= normal
+          H38).
+---  Hypothesis H45 has been replaced by "true".  (It is already present, as 
+          H39).
+---  Hypothesis H46 has been replaced by "true".  (It is already present, as 
+          H38).
 ---  Hypothesis H47 has been replaced by "true".  (It is already present, as 
-          H41).
----  Hypothesis H48 has been replaced by "true".  (It is already present, as 
-          H42).
----  Hypothesis H49 has been replaced by "true".  (It is already present, as 
-          H41).
----  Hypothesis H50 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H51 on reading formula in, to give:
-     %%%  H51:  true
+          H39).
+%%%  Simplified H48 on reading formula in, to give:
+     %%%  H48:  true
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  true
 ***  Proved C1:  true
 ***  Proved C2:  measures__bpm__first <= measures__bpm__last
-     using hypothesis H52.
+     using hypothesis H49.
 ***  PROVED VC.
 
 
@@ -808,68 +772,64 @@ procedure ICD.Init
 %%%  Simplified H19 on reading formula in, to give:
      %%%  H19:  fld_heartratehistory1(computer) <= measures__bpm__last
 %%%  Simplified H20 on reading formula in, to give:
-     %%%  H20:  fld_tickstoreenabledetectionagain(computer) >= integer__first
+     %%%  H20:  fld_tickcount(computer) >= integer__first
 %%%  Simplified H21 on reading formula in, to give:
-     %%%  H21:  fld_tickstoreenabledetectionagain(computer) <= integer__last
+     %%%  H21:  fld_tickcount(computer) <= integer__last
 %%%  Simplified H22 on reading formula in, to give:
-     %%%  H22:  fld_tickcount(computer) >= integer__first
+     %%%  H22:  fld_tickstonextshock(computer) >= integer__first
 %%%  Simplified H23 on reading formula in, to give:
-     %%%  H23:  fld_tickcount(computer) <= integer__last
+     %%%  H23:  fld_tickstonextshock(computer) <= integer__last
 %%%  Simplified H24 on reading formula in, to give:
-     %%%  H24:  fld_next(computer) >= integer__first
+     %%%  H24:  fld_count(computer) >= integer__first
 %%%  Simplified H25 on reading formula in, to give:
-     %%%  H25:  fld_next(computer) <= integer__last
+     %%%  H25:  fld_count(computer) <= integer__last
 %%%  Simplified H26 on reading formula in, to give:
-     %%%  H26:  fld_count(computer) >= integer__first
+     %%%  H26:  130 >= measures__bpm__first
 %%%  Simplified H27 on reading formula in, to give:
-     %%%  H27:  fld_count(computer) <= integer__last
+     %%%  H27:  130 <= measures__bpm__last
 %%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  130 >= measures__bpm__first
+     %%%  H28:  icdstates__first <= fld_state(computer)
 %%%  Simplified H29 on reading formula in, to give:
-     %%%  H29:  130 <= measures__bpm__last
-%%%  Simplified H30 on reading formula in, to give:
-     %%%  H30:  icdstates__first <= fld_state(computer)
+     %%%  H29:  fld_state(computer) <= icdstates__last
 %%%  Simplified H31 on reading formula in, to give:
-     %%%  H31:  fld_state(computer) <= icdstates__last
+     %%%  H31:  fld_rate(computer) >= measures__bpm__first
+%%%  Simplified H32 on reading formula in, to give:
+     %%%  H32:  fld_rate(computer) <= measures__bpm__last
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  600 div (130 + projectedrate) >= integer__first
 %%%  Simplified H34 on reading formula in, to give:
-     %%%  H34:  fld_rate(computer) >= measures__bpm__first
+     %%%  H34:  600 div (130 + projectedrate) <= integer__last
 %%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  fld_rate(computer) <= measures__bpm__last
+     %%%  H35:  projectedrate <> - 130
 %%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  600 div (130 + projectedrate) >= integer__first
+     %%%  H36:  130 + projectedrate >= integer__base__first
 %%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  600 div (130 + projectedrate) <= integer__last
-%%%  Simplified H38 on reading formula in, to give:
-     %%%  H38:  projectedrate <> - 130
-%%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  130 + projectedrate >= integer__base__first
-%%%  Simplified H40 on reading formula in, to give:
-     %%%  H40:  130 + projectedrate <= integer__base__last
----  Hypothesis H43 has been replaced by "true".  (It is already present, as 
-          H41).
+     %%%  H37:  130 + projectedrate <= integer__base__last
+---  Hypothesis H40 has been replaced by "true".  (It is already present, as 
+          H38).
+---  Hypothesis H41 has been replaced by "true".  (It is already present, as 
+          H39).
+%%%  Simplified H42 on reading formula in, to give:
+     %%%  H42:  icdstates__first <= normal
 ---  Hypothesis H44 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H45 on reading formula in, to give:
-     %%%  H45:  icdstates__first <= normal
+          H38).
+---  Hypothesis H45 has been replaced by "true".  (It is already present, as 
+          H39).
+---  Hypothesis H46 has been replaced by "true".  (It is already present, as 
+          H38).
 ---  Hypothesis H47 has been replaced by "true".  (It is already present, as 
-          H41).
----  Hypothesis H48 has been replaced by "true".  (It is already present, as 
-          H42).
----  Hypothesis H49 has been replaced by "true".  (It is already present, as 
-          H41).
+          H39).
+%%%  Simplified H48 on reading formula in, to give:
+     %%%  H48:  true
 ---  Hypothesis H50 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H51 on reading formula in, to give:
-     %%%  H51:  true
----  Hypothesis H53 has been replaced by "true".  (It is already present, as 
-          H51).
----  Hypothesis H54 has been replaced by "true".  (It is already present, as 
-          H52).
+          H48).
+---  Hypothesis H51 has been replaced by "true".  (It is already present, as 
+          H49).
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  true
 ***  Proved C1:  true
 ***  Proved C2:  measures__bpm__first <= measures__bpm__last
-     using hypothesis H52.
+     using hypothesis H49.
 ***  PROVED VC.
 
 
@@ -907,72 +867,68 @@ procedure ICD.Init
 %%%  Simplified H19 on reading formula in, to give:
      %%%  H19:  fld_heartratehistory1(computer) <= measures__bpm__last
 %%%  Simplified H20 on reading formula in, to give:
-     %%%  H20:  fld_tickstoreenabledetectionagain(computer) >= integer__first
+     %%%  H20:  fld_tickcount(computer) >= integer__first
 %%%  Simplified H21 on reading formula in, to give:
-     %%%  H21:  fld_tickstoreenabledetectionagain(computer) <= integer__last
+     %%%  H21:  fld_tickcount(computer) <= integer__last
 %%%  Simplified H22 on reading formula in, to give:
-     %%%  H22:  fld_tickcount(computer) >= integer__first
+     %%%  H22:  fld_tickstonextshock(computer) >= integer__first
 %%%  Simplified H23 on reading formula in, to give:
-     %%%  H23:  fld_tickcount(computer) <= integer__last
+     %%%  H23:  fld_tickstonextshock(computer) <= integer__last
 %%%  Simplified H24 on reading formula in, to give:
-     %%%  H24:  fld_next(computer) >= integer__first
+     %%%  H24:  fld_count(computer) >= integer__first
 %%%  Simplified H25 on reading formula in, to give:
-     %%%  H25:  fld_next(computer) <= integer__last
+     %%%  H25:  fld_count(computer) <= integer__last
 %%%  Simplified H26 on reading formula in, to give:
-     %%%  H26:  fld_count(computer) >= integer__first
+     %%%  H26:  130 >= measures__bpm__first
 %%%  Simplified H27 on reading formula in, to give:
-     %%%  H27:  fld_count(computer) <= integer__last
+     %%%  H27:  130 <= measures__bpm__last
 %%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  130 >= measures__bpm__first
+     %%%  H28:  icdstates__first <= fld_state(computer)
 %%%  Simplified H29 on reading formula in, to give:
-     %%%  H29:  130 <= measures__bpm__last
-%%%  Simplified H30 on reading formula in, to give:
-     %%%  H30:  icdstates__first <= fld_state(computer)
+     %%%  H29:  fld_state(computer) <= icdstates__last
 %%%  Simplified H31 on reading formula in, to give:
-     %%%  H31:  fld_state(computer) <= icdstates__last
+     %%%  H31:  fld_rate(computer) >= measures__bpm__first
+%%%  Simplified H32 on reading formula in, to give:
+     %%%  H32:  fld_rate(computer) <= measures__bpm__last
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  600 div (130 + projectedrate) >= integer__first
 %%%  Simplified H34 on reading formula in, to give:
-     %%%  H34:  fld_rate(computer) >= measures__bpm__first
+     %%%  H34:  600 div (130 + projectedrate) <= integer__last
 %%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  fld_rate(computer) <= measures__bpm__last
+     %%%  H35:  projectedrate <> - 130
 %%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  600 div (130 + projectedrate) >= integer__first
+     %%%  H36:  130 + projectedrate >= integer__base__first
 %%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  600 div (130 + projectedrate) <= integer__last
-%%%  Simplified H38 on reading formula in, to give:
-     %%%  H38:  projectedrate <> - 130
-%%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  130 + projectedrate >= integer__base__first
-%%%  Simplified H40 on reading formula in, to give:
-     %%%  H40:  130 + projectedrate <= integer__base__last
----  Hypothesis H43 has been replaced by "true".  (It is already present, as 
-          H41).
+     %%%  H37:  130 + projectedrate <= integer__base__last
+---  Hypothesis H40 has been replaced by "true".  (It is already present, as 
+          H38).
+---  Hypothesis H41 has been replaced by "true".  (It is already present, as 
+          H39).
+%%%  Simplified H42 on reading formula in, to give:
+     %%%  H42:  icdstates__first <= normal
 ---  Hypothesis H44 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H45 on reading formula in, to give:
-     %%%  H45:  icdstates__first <= normal
+          H38).
+---  Hypothesis H45 has been replaced by "true".  (It is already present, as 
+          H39).
+---  Hypothesis H46 has been replaced by "true".  (It is already present, as 
+          H38).
 ---  Hypothesis H47 has been replaced by "true".  (It is already present, as 
-          H41).
----  Hypothesis H48 has been replaced by "true".  (It is already present, as 
-          H42).
----  Hypothesis H49 has been replaced by "true".  (It is already present, as 
-          H41).
+          H39).
+%%%  Simplified H48 on reading formula in, to give:
+     %%%  H48:  true
 ---  Hypothesis H50 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H51 on reading formula in, to give:
-     %%%  H51:  true
+          H48).
+---  Hypothesis H51 has been replaced by "true".  (It is already present, as 
+          H49).
+---  Hypothesis H52 has been replaced by "true".  (It is already present, as 
+          H48).
 ---  Hypothesis H53 has been replaced by "true".  (It is already present, as 
-          H51).
----  Hypothesis H54 has been replaced by "true".  (It is already present, as 
-          H52).
----  Hypothesis H55 has been replaced by "true".  (It is already present, as 
-          H51).
----  Hypothesis H56 has been replaced by "true".  (It is already present, as 
-          H52).
+          H49).
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  true
 ***  Proved C1:  true
 ***  Proved C2:  measures__bpm__first <= measures__bpm__last
-     using hypothesis H52.
+     using hypothesis H49.
 ***  PROVED VC.
 
 
@@ -1010,76 +966,72 @@ procedure ICD.Init
 %%%  Simplified H19 on reading formula in, to give:
      %%%  H19:  fld_heartratehistory1(computer) <= measures__bpm__last
 %%%  Simplified H20 on reading formula in, to give:
-     %%%  H20:  fld_tickstoreenabledetectionagain(computer) >= integer__first
+     %%%  H20:  fld_tickcount(computer) >= integer__first
 %%%  Simplified H21 on reading formula in, to give:
-     %%%  H21:  fld_tickstoreenabledetectionagain(computer) <= integer__last
+     %%%  H21:  fld_tickcount(computer) <= integer__last
 %%%  Simplified H22 on reading formula in, to give:
-     %%%  H22:  fld_tickcount(computer) >= integer__first
+     %%%  H22:  fld_tickstonextshock(computer) >= integer__first
 %%%  Simplified H23 on reading formula in, to give:
-     %%%  H23:  fld_tickcount(computer) <= integer__last
+     %%%  H23:  fld_tickstonextshock(computer) <= integer__last
 %%%  Simplified H24 on reading formula in, to give:
-     %%%  H24:  fld_next(computer) >= integer__first
+     %%%  H24:  fld_count(computer) >= integer__first
 %%%  Simplified H25 on reading formula in, to give:
-     %%%  H25:  fld_next(computer) <= integer__last
+     %%%  H25:  fld_count(computer) <= integer__last
 %%%  Simplified H26 on reading formula in, to give:
-     %%%  H26:  fld_count(computer) >= integer__first
+     %%%  H26:  130 >= measures__bpm__first
 %%%  Simplified H27 on reading formula in, to give:
-     %%%  H27:  fld_count(computer) <= integer__last
+     %%%  H27:  130 <= measures__bpm__last
 %%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  130 >= measures__bpm__first
+     %%%  H28:  icdstates__first <= fld_state(computer)
 %%%  Simplified H29 on reading formula in, to give:
-     %%%  H29:  130 <= measures__bpm__last
-%%%  Simplified H30 on reading formula in, to give:
-     %%%  H30:  icdstates__first <= fld_state(computer)
+     %%%  H29:  fld_state(computer) <= icdstates__last
 %%%  Simplified H31 on reading formula in, to give:
-     %%%  H31:  fld_state(computer) <= icdstates__last
+     %%%  H31:  fld_rate(computer) >= measures__bpm__first
+%%%  Simplified H32 on reading formula in, to give:
+     %%%  H32:  fld_rate(computer) <= measures__bpm__last
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  600 div (130 + projectedrate) >= integer__first
 %%%  Simplified H34 on reading formula in, to give:
-     %%%  H34:  fld_rate(computer) >= measures__bpm__first
+     %%%  H34:  600 div (130 + projectedrate) <= integer__last
 %%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  fld_rate(computer) <= measures__bpm__last
+     %%%  H35:  projectedrate <> - 130
 %%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  600 div (130 + projectedrate) >= integer__first
+     %%%  H36:  130 + projectedrate >= integer__base__first
 %%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  600 div (130 + projectedrate) <= integer__last
-%%%  Simplified H38 on reading formula in, to give:
-     %%%  H38:  projectedrate <> - 130
-%%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  130 + projectedrate >= integer__base__first
-%%%  Simplified H40 on reading formula in, to give:
-     %%%  H40:  130 + projectedrate <= integer__base__last
----  Hypothesis H43 has been replaced by "true".  (It is already present, as 
-          H41).
+     %%%  H37:  130 + projectedrate <= integer__base__last
+---  Hypothesis H40 has been replaced by "true".  (It is already present, as 
+          H38).
+---  Hypothesis H41 has been replaced by "true".  (It is already present, as 
+          H39).
+%%%  Simplified H42 on reading formula in, to give:
+     %%%  H42:  icdstates__first <= normal
 ---  Hypothesis H44 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H45 on reading formula in, to give:
-     %%%  H45:  icdstates__first <= normal
+          H38).
+---  Hypothesis H45 has been replaced by "true".  (It is already present, as 
+          H39).
+---  Hypothesis H46 has been replaced by "true".  (It is already present, as 
+          H38).
 ---  Hypothesis H47 has been replaced by "true".  (It is already present, as 
-          H41).
----  Hypothesis H48 has been replaced by "true".  (It is already present, as 
-          H42).
----  Hypothesis H49 has been replaced by "true".  (It is already present, as 
-          H41).
+          H39).
+%%%  Simplified H48 on reading formula in, to give:
+     %%%  H48:  true
 ---  Hypothesis H50 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H51 on reading formula in, to give:
-     %%%  H51:  true
+          H48).
+---  Hypothesis H51 has been replaced by "true".  (It is already present, as 
+          H49).
+---  Hypothesis H52 has been replaced by "true".  (It is already present, as 
+          H48).
 ---  Hypothesis H53 has been replaced by "true".  (It is already present, as 
-          H51).
+          H49).
 ---  Hypothesis H54 has been replaced by "true".  (It is already present, as 
-          H52).
+          H48).
 ---  Hypothesis H55 has been replaced by "true".  (It is already present, as 
-          H51).
----  Hypothesis H56 has been replaced by "true".  (It is already present, as 
-          H52).
----  Hypothesis H57 has been replaced by "true".  (It is already present, as 
-          H51).
----  Hypothesis H58 has been replaced by "true".  (It is already present, as 
-          H52).
+          H49).
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  true
 ***  Proved C1:  true
 ***  Proved C2:  measures__bpm__first <= measures__bpm__last
-     using hypothesis H52.
+     using hypothesis H49.
 ***  PROVED VC.
 
 
@@ -1117,80 +1069,76 @@ procedure ICD.Init
 %%%  Simplified H19 on reading formula in, to give:
      %%%  H19:  fld_heartratehistory1(computer) <= measures__bpm__last
 %%%  Simplified H20 on reading formula in, to give:
-     %%%  H20:  fld_tickstoreenabledetectionagain(computer) >= integer__first
+     %%%  H20:  fld_tickcount(computer) >= integer__first
 %%%  Simplified H21 on reading formula in, to give:
-     %%%  H21:  fld_tickstoreenabledetectionagain(computer) <= integer__last
+     %%%  H21:  fld_tickcount(computer) <= integer__last
 %%%  Simplified H22 on reading formula in, to give:
-     %%%  H22:  fld_tickcount(computer) >= integer__first
+     %%%  H22:  fld_tickstonextshock(computer) >= integer__first
 %%%  Simplified H23 on reading formula in, to give:
-     %%%  H23:  fld_tickcount(computer) <= integer__last
+     %%%  H23:  fld_tickstonextshock(computer) <= integer__last
 %%%  Simplified H24 on reading formula in, to give:
-     %%%  H24:  fld_next(computer) >= integer__first
+     %%%  H24:  fld_count(computer) >= integer__first
 %%%  Simplified H25 on reading formula in, to give:
-     %%%  H25:  fld_next(computer) <= integer__last
+     %%%  H25:  fld_count(computer) <= integer__last
 %%%  Simplified H26 on reading formula in, to give:
-     %%%  H26:  fld_count(computer) >= integer__first
+     %%%  H26:  130 >= measures__bpm__first
 %%%  Simplified H27 on reading formula in, to give:
-     %%%  H27:  fld_count(computer) <= integer__last
+     %%%  H27:  130 <= measures__bpm__last
 %%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  130 >= measures__bpm__first
+     %%%  H28:  icdstates__first <= fld_state(computer)
 %%%  Simplified H29 on reading formula in, to give:
-     %%%  H29:  130 <= measures__bpm__last
-%%%  Simplified H30 on reading formula in, to give:
-     %%%  H30:  icdstates__first <= fld_state(computer)
+     %%%  H29:  fld_state(computer) <= icdstates__last
 %%%  Simplified H31 on reading formula in, to give:
-     %%%  H31:  fld_state(computer) <= icdstates__last
+     %%%  H31:  fld_rate(computer) >= measures__bpm__first
+%%%  Simplified H32 on reading formula in, to give:
+     %%%  H32:  fld_rate(computer) <= measures__bpm__last
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  600 div (130 + projectedrate) >= integer__first
 %%%  Simplified H34 on reading formula in, to give:
-     %%%  H34:  fld_rate(computer) >= measures__bpm__first
+     %%%  H34:  600 div (130 + projectedrate) <= integer__last
 %%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  fld_rate(computer) <= measures__bpm__last
+     %%%  H35:  projectedrate <> - 130
 %%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  600 div (130 + projectedrate) >= integer__first
+     %%%  H36:  130 + projectedrate >= integer__base__first
 %%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  600 div (130 + projectedrate) <= integer__last
-%%%  Simplified H38 on reading formula in, to give:
-     %%%  H38:  projectedrate <> - 130
-%%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  130 + projectedrate >= integer__base__first
-%%%  Simplified H40 on reading formula in, to give:
-     %%%  H40:  130 + projectedrate <= integer__base__last
----  Hypothesis H43 has been replaced by "true".  (It is already present, as 
-          H41).
+     %%%  H37:  130 + projectedrate <= integer__base__last
+---  Hypothesis H40 has been replaced by "true".  (It is already present, as 
+          H38).
+---  Hypothesis H41 has been replaced by "true".  (It is already present, as 
+          H39).
+%%%  Simplified H42 on reading formula in, to give:
+     %%%  H42:  icdstates__first <= normal
 ---  Hypothesis H44 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H45 on reading formula in, to give:
-     %%%  H45:  icdstates__first <= normal
+          H38).
+---  Hypothesis H45 has been replaced by "true".  (It is already present, as 
+          H39).
+---  Hypothesis H46 has been replaced by "true".  (It is already present, as 
+          H38).
 ---  Hypothesis H47 has been replaced by "true".  (It is already present, as 
-          H41).
----  Hypothesis H48 has been replaced by "true".  (It is already present, as 
-          H42).
----  Hypothesis H49 has been replaced by "true".  (It is already present, as 
-          H41).
+          H39).
+%%%  Simplified H48 on reading formula in, to give:
+     %%%  H48:  true
 ---  Hypothesis H50 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H51 on reading formula in, to give:
-     %%%  H51:  true
+          H48).
+---  Hypothesis H51 has been replaced by "true".  (It is already present, as 
+          H49).
+---  Hypothesis H52 has been replaced by "true".  (It is already present, as 
+          H48).
 ---  Hypothesis H53 has been replaced by "true".  (It is already present, as 
-          H51).
+          H49).
 ---  Hypothesis H54 has been replaced by "true".  (It is already present, as 
-          H52).
+          H48).
 ---  Hypothesis H55 has been replaced by "true".  (It is already present, as 
-          H51).
+          H49).
 ---  Hypothesis H56 has been replaced by "true".  (It is already present, as 
-          H52).
+          H48).
 ---  Hypothesis H57 has been replaced by "true".  (It is already present, as 
-          H51).
----  Hypothesis H58 has been replaced by "true".  (It is already present, as 
-          H52).
----  Hypothesis H59 has been replaced by "true".  (It is already present, as 
-          H51).
----  Hypothesis H60 has been replaced by "true".  (It is already present, as 
-          H52).
+          H49).
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  true
 ***  Proved C1:  true
 ***  Proved C2:  measures__bpm__first <= measures__bpm__last
-     using hypothesis H52.
+     using hypothesis H49.
 ***  PROVED VC.
 
 
@@ -1228,84 +1176,80 @@ procedure ICD.Init
 %%%  Simplified H19 on reading formula in, to give:
      %%%  H19:  fld_heartratehistory1(computer) <= measures__bpm__last
 %%%  Simplified H20 on reading formula in, to give:
-     %%%  H20:  fld_tickstoreenabledetectionagain(computer) >= integer__first
+     %%%  H20:  fld_tickcount(computer) >= integer__first
 %%%  Simplified H21 on reading formula in, to give:
-     %%%  H21:  fld_tickstoreenabledetectionagain(computer) <= integer__last
+     %%%  H21:  fld_tickcount(computer) <= integer__last
 %%%  Simplified H22 on reading formula in, to give:
-     %%%  H22:  fld_tickcount(computer) >= integer__first
+     %%%  H22:  fld_tickstonextshock(computer) >= integer__first
 %%%  Simplified H23 on reading formula in, to give:
-     %%%  H23:  fld_tickcount(computer) <= integer__last
+     %%%  H23:  fld_tickstonextshock(computer) <= integer__last
 %%%  Simplified H24 on reading formula in, to give:
-     %%%  H24:  fld_next(computer) >= integer__first
+     %%%  H24:  fld_count(computer) >= integer__first
 %%%  Simplified H25 on reading formula in, to give:
-     %%%  H25:  fld_next(computer) <= integer__last
+     %%%  H25:  fld_count(computer) <= integer__last
 %%%  Simplified H26 on reading formula in, to give:
-     %%%  H26:  fld_count(computer) >= integer__first
+     %%%  H26:  130 >= measures__bpm__first
 %%%  Simplified H27 on reading formula in, to give:
-     %%%  H27:  fld_count(computer) <= integer__last
+     %%%  H27:  130 <= measures__bpm__last
 %%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  130 >= measures__bpm__first
+     %%%  H28:  icdstates__first <= fld_state(computer)
 %%%  Simplified H29 on reading formula in, to give:
-     %%%  H29:  130 <= measures__bpm__last
-%%%  Simplified H30 on reading formula in, to give:
-     %%%  H30:  icdstates__first <= fld_state(computer)
+     %%%  H29:  fld_state(computer) <= icdstates__last
 %%%  Simplified H31 on reading formula in, to give:
-     %%%  H31:  fld_state(computer) <= icdstates__last
+     %%%  H31:  fld_rate(computer) >= measures__bpm__first
+%%%  Simplified H32 on reading formula in, to give:
+     %%%  H32:  fld_rate(computer) <= measures__bpm__last
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  600 div (130 + projectedrate) >= integer__first
 %%%  Simplified H34 on reading formula in, to give:
-     %%%  H34:  fld_rate(computer) >= measures__bpm__first
+     %%%  H34:  600 div (130 + projectedrate) <= integer__last
 %%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  fld_rate(computer) <= measures__bpm__last
+     %%%  H35:  projectedrate <> - 130
 %%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  600 div (130 + projectedrate) >= integer__first
+     %%%  H36:  130 + projectedrate >= integer__base__first
 %%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  600 div (130 + projectedrate) <= integer__last
-%%%  Simplified H38 on reading formula in, to give:
-     %%%  H38:  projectedrate <> - 130
-%%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  130 + projectedrate >= integer__base__first
-%%%  Simplified H40 on reading formula in, to give:
-     %%%  H40:  130 + projectedrate <= integer__base__last
----  Hypothesis H43 has been replaced by "true".  (It is already present, as 
-          H41).
+     %%%  H37:  130 + projectedrate <= integer__base__last
+---  Hypothesis H40 has been replaced by "true".  (It is already present, as 
+          H38).
+---  Hypothesis H41 has been replaced by "true".  (It is already present, as 
+          H39).
+%%%  Simplified H42 on reading formula in, to give:
+     %%%  H42:  icdstates__first <= normal
 ---  Hypothesis H44 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H45 on reading formula in, to give:
-     %%%  H45:  icdstates__first <= normal
+          H38).
+---  Hypothesis H45 has been replaced by "true".  (It is already present, as 
+          H39).
+---  Hypothesis H46 has been replaced by "true".  (It is already present, as 
+          H38).
 ---  Hypothesis H47 has been replaced by "true".  (It is already present, as 
-          H41).
----  Hypothesis H48 has been replaced by "true".  (It is already present, as 
-          H42).
----  Hypothesis H49 has been replaced by "true".  (It is already present, as 
-          H41).
+          H39).
+%%%  Simplified H48 on reading formula in, to give:
+     %%%  H48:  true
 ---  Hypothesis H50 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H51 on reading formula in, to give:
-     %%%  H51:  true
+          H48).
+---  Hypothesis H51 has been replaced by "true".  (It is already present, as 
+          H49).
+---  Hypothesis H52 has been replaced by "true".  (It is already present, as 
+          H48).
 ---  Hypothesis H53 has been replaced by "true".  (It is already present, as 
-          H51).
+          H49).
 ---  Hypothesis H54 has been replaced by "true".  (It is already present, as 
-          H52).
+          H48).
 ---  Hypothesis H55 has been replaced by "true".  (It is already present, as 
-          H51).
+          H49).
 ---  Hypothesis H56 has been replaced by "true".  (It is already present, as 
-          H52).
+          H48).
 ---  Hypothesis H57 has been replaced by "true".  (It is already present, as 
-          H51).
+          H49).
 ---  Hypothesis H58 has been replaced by "true".  (It is already present, as 
-          H52).
+          H48).
 ---  Hypothesis H59 has been replaced by "true".  (It is already present, as 
-          H51).
----  Hypothesis H60 has been replaced by "true".  (It is already present, as 
-          H52).
----  Hypothesis H61 has been replaced by "true".  (It is already present, as 
-          H51).
----  Hypothesis H62 has been replaced by "true".  (It is already present, as 
-          H52).
+          H49).
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  true
 ***  Proved C1:  true
 ***  Proved C2:  measures__bpm__first <= measures__bpm__last
-     using hypothesis H52.
+     using hypothesis H49.
 ***  PROVED VC.
 
 
@@ -1343,212 +1287,79 @@ procedure ICD.Init
 %%%  Simplified H19 on reading formula in, to give:
      %%%  H19:  fld_heartratehistory1(computer) <= measures__bpm__last
 %%%  Simplified H20 on reading formula in, to give:
-     %%%  H20:  fld_tickstoreenabledetectionagain(computer) >= integer__first
+     %%%  H20:  fld_tickcount(computer) >= integer__first
 %%%  Simplified H21 on reading formula in, to give:
-     %%%  H21:  fld_tickstoreenabledetectionagain(computer) <= integer__last
+     %%%  H21:  fld_tickcount(computer) <= integer__last
 %%%  Simplified H22 on reading formula in, to give:
-     %%%  H22:  fld_tickcount(computer) >= integer__first
+     %%%  H22:  fld_tickstonextshock(computer) >= integer__first
 %%%  Simplified H23 on reading formula in, to give:
-     %%%  H23:  fld_tickcount(computer) <= integer__last
+     %%%  H23:  fld_tickstonextshock(computer) <= integer__last
 %%%  Simplified H24 on reading formula in, to give:
-     %%%  H24:  fld_next(computer) >= integer__first
+     %%%  H24:  fld_count(computer) >= integer__first
 %%%  Simplified H25 on reading formula in, to give:
-     %%%  H25:  fld_next(computer) <= integer__last
+     %%%  H25:  fld_count(computer) <= integer__last
 %%%  Simplified H26 on reading formula in, to give:
-     %%%  H26:  fld_count(computer) >= integer__first
+     %%%  H26:  130 >= measures__bpm__first
 %%%  Simplified H27 on reading formula in, to give:
-     %%%  H27:  fld_count(computer) <= integer__last
+     %%%  H27:  130 <= measures__bpm__last
 %%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  130 >= measures__bpm__first
+     %%%  H28:  icdstates__first <= fld_state(computer)
 %%%  Simplified H29 on reading formula in, to give:
-     %%%  H29:  130 <= measures__bpm__last
-%%%  Simplified H30 on reading formula in, to give:
-     %%%  H30:  icdstates__first <= fld_state(computer)
+     %%%  H29:  fld_state(computer) <= icdstates__last
 %%%  Simplified H31 on reading formula in, to give:
-     %%%  H31:  fld_state(computer) <= icdstates__last
+     %%%  H31:  fld_rate(computer) >= measures__bpm__first
+%%%  Simplified H32 on reading formula in, to give:
+     %%%  H32:  fld_rate(computer) <= measures__bpm__last
+%%%  Simplified H33 on reading formula in, to give:
+     %%%  H33:  600 div (130 + projectedrate) >= integer__first
 %%%  Simplified H34 on reading formula in, to give:
-     %%%  H34:  fld_rate(computer) >= measures__bpm__first
+     %%%  H34:  600 div (130 + projectedrate) <= integer__last
 %%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  fld_rate(computer) <= measures__bpm__last
+     %%%  H35:  projectedrate <> - 130
 %%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  600 div (130 + projectedrate) >= integer__first
+     %%%  H36:  130 + projectedrate >= integer__base__first
 %%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  600 div (130 + projectedrate) <= integer__last
-%%%  Simplified H38 on reading formula in, to give:
-     %%%  H38:  projectedrate <> - 130
-%%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  130 + projectedrate >= integer__base__first
-%%%  Simplified H40 on reading formula in, to give:
-     %%%  H40:  130 + projectedrate <= integer__base__last
----  Hypothesis H43 has been replaced by "true".  (It is already present, as 
-          H41).
+     %%%  H37:  130 + projectedrate <= integer__base__last
+---  Hypothesis H40 has been replaced by "true".  (It is already present, as 
+          H38).
+---  Hypothesis H41 has been replaced by "true".  (It is already present, as 
+          H39).
+%%%  Simplified H42 on reading formula in, to give:
+     %%%  H42:  icdstates__first <= normal
 ---  Hypothesis H44 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H45 on reading formula in, to give:
-     %%%  H45:  icdstates__first <= normal
+          H38).
+---  Hypothesis H45 has been replaced by "true".  (It is already present, as 
+          H39).
+---  Hypothesis H46 has been replaced by "true".  (It is already present, as 
+          H38).
 ---  Hypothesis H47 has been replaced by "true".  (It is already present, as 
-          H41).
----  Hypothesis H48 has been replaced by "true".  (It is already present, as 
-          H42).
----  Hypothesis H49 has been replaced by "true".  (It is already present, as 
-          H41).
+          H39).
+%%%  Simplified H48 on reading formula in, to give:
+     %%%  H48:  true
 ---  Hypothesis H50 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H51 on reading formula in, to give:
-     %%%  H51:  true
+          H48).
+---  Hypothesis H51 has been replaced by "true".  (It is already present, as 
+          H49).
+---  Hypothesis H52 has been replaced by "true".  (It is already present, as 
+          H48).
 ---  Hypothesis H53 has been replaced by "true".  (It is already present, as 
-          H51).
+          H49).
 ---  Hypothesis H54 has been replaced by "true".  (It is already present, as 
-          H52).
+          H48).
 ---  Hypothesis H55 has been replaced by "true".  (It is already present, as 
-          H51).
+          H49).
 ---  Hypothesis H56 has been replaced by "true".  (It is already present, as 
-          H52).
+          H48).
 ---  Hypothesis H57 has been replaced by "true".  (It is already present, as 
-          H51).
+          H49).
 ---  Hypothesis H58 has been replaced by "true".  (It is already present, as 
-          H52).
+          H48).
 ---  Hypothesis H59 has been replaced by "true".  (It is already present, as 
-          H51).
+          H49).
 ---  Hypothesis H60 has been replaced by "true".  (It is already present, as 
-          H52).
+          H48).
 ---  Hypothesis H61 has been replaced by "true".  (It is already present, as 
-          H51).
----  Hypothesis H62 has been replaced by "true".  (It is already present, as 
-          H52).
----  Hypothesis H63 has been replaced by "true".  (It is already present, as 
-          H51).
----  Hypothesis H64 has been replaced by "true".  (It is already present, as 
-          H52).
-***  Proved C1:  6 >= integer__first
-     using hypothesis H41.
--S-  Applied substitution rule init_rules(4).
-     This was achieved by replacing all occurrences of integer__last by:
-          2147483647.
-<S>  New H5:  fld_history_variance(computer) <= 2147483647
-<S>  New H7:  fld_history_avarage(computer) <= 2147483647
-<S>  New H21:  fld_tickstoreenabledetectionagain(computer) <= 2147483647
-<S>  New H23:  fld_tickcount(computer) <= 2147483647
-<S>  New H25:  fld_next(computer) <= 2147483647
-<S>  New H27:  fld_count(computer) <= 2147483647
-<S>  New H37:  600 div (130 + projectedrate) <= 2147483647
-<S>  New H42:  true
-<S>  New C2:  true
-***  Proved C2:  true
-***  PROVED VC.
-
-
-@@@@@@@@@@  VC: procedure_init_16.  @@@@@@@@@@
-%%%  Simplified H4 on reading formula in, to give:
-     %%%  H4:  fld_history_variance(computer) >= integer__first
-%%%  Simplified H5 on reading formula in, to give:
-     %%%  H5:  fld_history_variance(computer) <= integer__last
-%%%  Simplified H6 on reading formula in, to give:
-     %%%  H6:  fld_history_avarage(computer) >= integer__first
-%%%  Simplified H7 on reading formula in, to give:
-     %%%  H7:  fld_history_avarage(computer) <= integer__last
-%%%  Simplified H8 on reading formula in, to give:
-     %%%  H8:  fld_heartratehistory6(computer) >= measures__bpm__first
-%%%  Simplified H9 on reading formula in, to give:
-     %%%  H9:  fld_heartratehistory6(computer) <= measures__bpm__last
-%%%  Simplified H10 on reading formula in, to give:
-     %%%  H10:  fld_heartratehistory5(computer) >= measures__bpm__first
-%%%  Simplified H11 on reading formula in, to give:
-     %%%  H11:  fld_heartratehistory5(computer) <= measures__bpm__last
-%%%  Simplified H12 on reading formula in, to give:
-     %%%  H12:  fld_heartratehistory4(computer) >= measures__bpm__first
-%%%  Simplified H13 on reading formula in, to give:
-     %%%  H13:  fld_heartratehistory4(computer) <= measures__bpm__last
-%%%  Simplified H14 on reading formula in, to give:
-     %%%  H14:  fld_heartratehistory3(computer) >= measures__bpm__first
-%%%  Simplified H15 on reading formula in, to give:
-     %%%  H15:  fld_heartratehistory3(computer) <= measures__bpm__last
-%%%  Simplified H16 on reading formula in, to give:
-     %%%  H16:  fld_heartratehistory2(computer) >= measures__bpm__first
-%%%  Simplified H17 on reading formula in, to give:
-     %%%  H17:  fld_heartratehistory2(computer) <= measures__bpm__last
-%%%  Simplified H18 on reading formula in, to give:
-     %%%  H18:  fld_heartratehistory1(computer) >= measures__bpm__first
-%%%  Simplified H19 on reading formula in, to give:
-     %%%  H19:  fld_heartratehistory1(computer) <= measures__bpm__last
-%%%  Simplified H20 on reading formula in, to give:
-     %%%  H20:  fld_tickstoreenabledetectionagain(computer) >= integer__first
-%%%  Simplified H21 on reading formula in, to give:
-     %%%  H21:  fld_tickstoreenabledetectionagain(computer) <= integer__last
-%%%  Simplified H22 on reading formula in, to give:
-     %%%  H22:  fld_tickcount(computer) >= integer__first
-%%%  Simplified H23 on reading formula in, to give:
-     %%%  H23:  fld_tickcount(computer) <= integer__last
-%%%  Simplified H24 on reading formula in, to give:
-     %%%  H24:  fld_next(computer) >= integer__first
-%%%  Simplified H25 on reading formula in, to give:
-     %%%  H25:  fld_next(computer) <= integer__last
-%%%  Simplified H26 on reading formula in, to give:
-     %%%  H26:  fld_count(computer) >= integer__first
-%%%  Simplified H27 on reading formula in, to give:
-     %%%  H27:  fld_count(computer) <= integer__last
-%%%  Simplified H28 on reading formula in, to give:
-     %%%  H28:  130 >= measures__bpm__first
-%%%  Simplified H29 on reading formula in, to give:
-     %%%  H29:  130 <= measures__bpm__last
-%%%  Simplified H30 on reading formula in, to give:
-     %%%  H30:  icdstates__first <= fld_state(computer)
-%%%  Simplified H31 on reading formula in, to give:
-     %%%  H31:  fld_state(computer) <= icdstates__last
-%%%  Simplified H34 on reading formula in, to give:
-     %%%  H34:  fld_rate(computer) >= measures__bpm__first
-%%%  Simplified H35 on reading formula in, to give:
-     %%%  H35:  fld_rate(computer) <= measures__bpm__last
-%%%  Simplified H36 on reading formula in, to give:
-     %%%  H36:  600 div (130 + projectedrate) >= integer__first
-%%%  Simplified H37 on reading formula in, to give:
-     %%%  H37:  600 div (130 + projectedrate) <= integer__last
-%%%  Simplified H38 on reading formula in, to give:
-     %%%  H38:  projectedrate <> - 130
-%%%  Simplified H39 on reading formula in, to give:
-     %%%  H39:  130 + projectedrate >= integer__base__first
-%%%  Simplified H40 on reading formula in, to give:
-     %%%  H40:  130 + projectedrate <= integer__base__last
----  Hypothesis H43 has been replaced by "true".  (It is already present, as 
-          H41).
----  Hypothesis H44 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H45 on reading formula in, to give:
-     %%%  H45:  icdstates__first <= normal
----  Hypothesis H47 has been replaced by "true".  (It is already present, as 
-          H41).
----  Hypothesis H48 has been replaced by "true".  (It is already present, as 
-          H42).
----  Hypothesis H49 has been replaced by "true".  (It is already present, as 
-          H41).
----  Hypothesis H50 has been replaced by "true".  (It is already present, as 
-          H42).
-%%%  Simplified H51 on reading formula in, to give:
-     %%%  H51:  true
----  Hypothesis H53 has been replaced by "true".  (It is already present, as 
-          H51).
----  Hypothesis H54 has been replaced by "true".  (It is already present, as 
-          H52).
----  Hypothesis H55 has been replaced by "true".  (It is already present, as 
-          H51).
----  Hypothesis H56 has been replaced by "true".  (It is already present, as 
-          H52).
----  Hypothesis H57 has been replaced by "true".  (It is already present, as 
-          H51).
----  Hypothesis H58 has been replaced by "true".  (It is already present, as 
-          H52).
----  Hypothesis H59 has been replaced by "true".  (It is already present, as 
-          H51).
----  Hypothesis H60 has been replaced by "true".  (It is already present, as 
-          H52).
----  Hypothesis H61 has been replaced by "true".  (It is already present, as 
-          H51).
----  Hypothesis H62 has been replaced by "true".  (It is already present, as 
-          H52).
----  Hypothesis H63 has been replaced by "true".  (It is already present, as 
-          H51).
----  Hypothesis H64 has been replaced by "true".  (It is already present, as 
-          H52).
+          H49).
 %%%  Simplified C1 on reading formula in, to give:
      %%%  C1:  true
 %%%  Simplified C2 on reading formula in, to give:
@@ -1579,10 +1390,6 @@ procedure ICD.Init
      %%%  C14:  true
 %%%  Simplified C15 on reading formula in, to give:
      %%%  C15:  true
-%%%  Simplified C16 on reading formula in, to give:
-     %%%  C16:  true
-%%%  Simplified C17 on reading formula in, to give:
-     %%%  C17:  true
 ***  Proved C1:  true
 ***  Proved C2:  true
 ***  Proved C3:  true
@@ -1598,7 +1405,5 @@ procedure ICD.Init
 ***  Proved C13:  true
 ***  Proved C14:  true
 ***  Proved C15:  true
-***  Proved C16:  true
-***  Proved C17:  true
 ***  PROVED VC.
 
