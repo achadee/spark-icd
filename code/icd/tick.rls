@@ -5,7 +5,7 @@
            /*********************************************************/
 
 
-                        /*DATE : 27-MAY-2014 15:39:24.13*/
+                        /*DATE : 01-JUN-2014 19:41:14.85*/
 
                              /*procedure ICD.Tick*/
 
@@ -15,3 +15,92 @@ rule_family tick_rules:
      X <= Y requires [X:ire, Y:ire] &
      X >= Y requires [X:ire, Y:ire].
 
+tick_rules(1): integer__size >= 0 may_be_deduced.
+tick_rules(2): integer__first may_be_replaced_by -2147483648.
+tick_rules(3): integer__last may_be_replaced_by 2147483647.
+tick_rules(4): integer__base__first may_be_replaced_by -2147483648.
+tick_rules(5): integer__base__last may_be_replaced_by 2147483647.
+tick_rules(6): measures__joules__size >= 0 may_be_deduced.
+tick_rules(7): measures__joules__first may_be_replaced_by 0.
+tick_rules(8): measures__joules__last may_be_replaced_by 45.
+tick_rules(9): measures__joules__base__first may_be_replaced_by -2147483648.
+tick_rules(10): measures__joules__base__last may_be_replaced_by 2147483647.
+tick_rules(11): measures__bpm__size >= 0 may_be_deduced.
+tick_rules(12): measures__bpm__first may_be_replaced_by -1.
+tick_rules(13): measures__bpm__last may_be_replaced_by 300.
+tick_rules(14): measures__bpm__base__first may_be_replaced_by -2147483648.
+tick_rules(15): measures__bpm__base__last may_be_replaced_by 2147483647.
+tick_rules(16): impulsegenerator__generatortype__size >= 0 may_be_deduced.
+tick_rules(17): A = B may_be_deduced_from
+     [goal(checktype(A,impulsegenerator__generatortype)),
+      goal(checktype(B,impulsegenerator__generatortype)),
+      fld_impulse(A) = fld_impulse(B),
+      fld_ison(A) = fld_ison(B)].
+tick_rules(18): hrm__hrmtype__size >= 0 may_be_deduced.
+tick_rules(19): A = B may_be_deduced_from
+     [goal(checktype(A,hrm__hrmtype)),
+      goal(checktype(B,hrm__hrmtype)),
+      fld_rate(A) = fld_rate(B),
+      fld_ison(A) = fld_ison(B)].
+tick_rules(20): icdstates__size >= 0 may_be_deduced.
+tick_rules(21): icdstates__first may_be_replaced_by normal.
+tick_rules(22): icdstates__last may_be_replaced_by tar.
+tick_rules(23): icdstates__base__first may_be_replaced_by normal.
+tick_rules(24): icdstates__base__last may_be_replaced_by tar.
+tick_rules(25): icdstates__pos(icdstates__first) may_be_replaced_by 0.
+tick_rules(26): icdstates__pos(normal) may_be_replaced_by 0.
+tick_rules(27): icdstates__val(0) may_be_replaced_by normal.
+tick_rules(28): icdstates__pos(fib) may_be_replaced_by 1.
+tick_rules(29): icdstates__val(1) may_be_replaced_by fib.
+tick_rules(30): icdstates__pos(tar) may_be_replaced_by 2.
+tick_rules(31): icdstates__val(2) may_be_replaced_by tar.
+tick_rules(32): icdstates__pos(icdstates__last) may_be_replaced_by 2.
+tick_rules(33): icdstates__pos(succ(X)) may_be_replaced_by 
+     icdstates__pos(X) + 1
+     if [X <=tar, X <> tar].
+tick_rules(34): icdstates__pos(pred(X)) may_be_replaced_by 
+     icdstates__pos(X) - 1
+     if [X >=normal, X <> normal].
+tick_rules(35): icdstates__pos(X) >= 0 may_be_deduced_from
+     [normal <= X, X <= tar].
+tick_rules(36): icdstates__pos(X) <= 2 may_be_deduced_from
+     [normal <= X, X <= tar].
+tick_rules(37): icdstates__val(X) >= normal may_be_deduced_from
+     [0 <= X, X <= 2].
+tick_rules(38): icdstates__val(X) <= tar may_be_deduced_from
+     [0 <= X, X <= 2].
+tick_rules(39): succ(icdstates__val(X)) may_be_replaced_by 
+     icdstates__val(X+1)
+     if [0 <= X, X < 2].
+tick_rules(40): pred(icdstates__val(X)) may_be_replaced_by 
+     icdstates__val(X-1)
+     if [0 < X, X <= 2].
+tick_rules(41): icdstates__pos(icdstates__val(X)) may_be_replaced_by X
+     if [0 <= X, X <= 2].
+tick_rules(42): icdstates__val(icdstates__pos(X)) may_be_replaced_by X
+     if [normal <= X, X <= tar].
+tick_rules(43): icdstates__pos(X) <= icdstates__pos(Y) & X <= Y are_interchangeable 
+     if [normal <= X, X <= tar, normal <= Y, Y <= tar].
+tick_rules(44): icdstates__val(X) <= icdstates__val(Y) & X <= Y are_interchangeable 
+     if [0 <= X, X <= 2, 0 <= Y, Y <= 2].
+tick_rules(45): icdtype__size >= 0 may_be_deduced.
+tick_rules(46): A = B may_be_deduced_from
+     [goal(checktype(A,icdtype)),
+      goal(checktype(B,icdtype)),
+      fld_rate(A) = fld_rate(B),
+      fld_inprocess(A) = fld_inprocess(B),
+      fld_ison(A) = fld_ison(B),
+      fld_state(A) = fld_state(B),
+      fld_upperbound(A) = fld_upperbound(B),
+      fld_count(A) = fld_count(B),
+      fld_next(A) = fld_next(B),
+      fld_tickcount(A) = fld_tickcount(B),
+      fld_tickstoreenabledetectionagain(A) = fld_tickstoreenabledetectionagain(B),
+      fld_heartratehistory1(A) = fld_heartratehistory1(B),
+      fld_heartratehistory2(A) = fld_heartratehistory2(B),
+      fld_heartratehistory3(A) = fld_heartratehistory3(B),
+      fld_heartratehistory4(A) = fld_heartratehistory4(B),
+      fld_heartratehistory5(A) = fld_heartratehistory5(B),
+      fld_heartratehistory6(A) = fld_heartratehistory6(B),
+      fld_history_avarage(A) = fld_history_avarage(B),
+      fld_history_variance(A) = fld_history_variance(B)].

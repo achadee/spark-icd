@@ -1,14 +1,15 @@
 V "SPARK 2011"
 A -noswitch
 A -index_file=project.idx
-A -nowarning_file
+A -warning_file=spark.wrn
 A -notarget_compiler_data
-A -noconfig_file
+A -config_file=spark.cfg
 A -source_extension=ada
 A -listing_extension=lst
 A -nodictionary_file
 A -report_file=spark.rep
 A -nohtml
+A -vcg
 A -nostatistics
 A -fdl_identifiers=accept
 A -flow_analysis=information
@@ -19,35 +20,33 @@ A -rules=none
 A -error_explanations=off
 A -justification_option=full
 A -output_directory=.
-A -output_directory (actual)=/home/samana/swen90010-2014/assignments/assignment-4/code/
+A -output_directory (actual)=/Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/
 P
 R
 
 U ImpulseGenerator%b impulsegenerator.adb
 U ImpulseGenerator%s impulsegenerator.ads
+W Measures%s measures.adb measures.sli
 W Heart%s heart.adb heart.sli
 W RandomNumber%s randomnumber.adb randomnumber.sli
-W Measures%s measures.adb measures.sli
 
-D impulsegenerator.adb 00000000000000 00000000
-D impulsegenerator.ads 00000000000000 00000000
+D measures.ads 00000000000000 00000000
 D heart.ads 00000000000000 00000000
 D randomnumber.ads 00000000000000 00000000
-D measures.ads 00000000000000 00000000
+D impulsegenerator.adb 00000000000000 00000000
+D impulsegenerator.ads 00000000000000 00000000
 
-X 2 impulsegenerator.ads
-17i3 Impulse 26r50 46r42
-20e3 IsOn 26r23 31r23 36r27 40r25 46r24 47r28 53r27
-24r19 Generator 25m16 26r13 26r40
-29r17 Generator 30m16 30r31 31r13
-34r18 Generator 35m16 35r31 36r17
-39r18 Generator 40r15
-43r25 Generator 45m16 45r31 46r14 46r32 47r18 47r36 47r48
-44i4 J 45r42 46r52
-50r19 Generator 52r25 53r17
-51r5 Hrt 52m16 52r36 53r35 53r41
-X 3 heart.ads
-10K9 Heart 2|9w13
+X 1 measures.ads
+3K9 Measures 2|11r27 32r13 33r25 8w13 5|7w13
+9I12 Joules 29r26 29r63
+15I12 BPM 25r26 25r60 2|11r36 32r22 33r34
+18i39 Fst 20r12 21r26
+18i57 Lst 20r19 21r54
+21i15 Output 21r33 21r44
+25i15 Output 25r39 25r50
+29i15 Output 29r42 29r53
+X 2 heart.ads
+10K9 Heart 5|9w13
 19i3 Rate 32r39 33r17 51r24
 22i3 Impulse 31r17 40r17 44r19
 28U14 Init 29<19
@@ -60,14 +59,16 @@ X 3 heart.ads
 54U14 Tick 55=22
 54r19 Hrt 56m16 56r25 57r50
 61i4 DefaultChange 30m21 57m16 11o11 12r19 29r19 34r13 55r22 56r30 57r35
-X 4 randomnumber.ads
-2K9 RandomNumber 2|8w13 3|9w13
-X 5 measures.ads
-3K9 Measures 2|7w13 3|11r27 32r13 33r25 8w13
-9I12 Joules 29r26 29r63
-15I12 BPM 25r26 25r60 3|11r36 32r22 33r34
-18i39 Fst 20r12 21r26
-18i57 Lst 20r19 21r54
-21i15 Output 21r33 21r44
-25i15 Output 25r39 25r50
-29i15 Output 29r42 29r53
+X 3 randomnumber.ads
+2K9 RandomNumber 2|9w13 5|8w13
+X 5 impulsegenerator.ads
+17i3 Impulse 26r50 46r42
+20e3 IsOn 26r23 31r23 36r27 40r25 46r24 47r28 53r27
+24r19 Generator 25m16 26r13 26r40
+29r17 Generator 30m16 30r31 31r13
+34r18 Generator 35m16 35r31 36r17
+39r18 Generator 40r15
+43r25 Generator 45m16 45r31 46r14 46r32 47r18 47r36 47r48
+44i4 J 45r42 46r52
+50r19 Generator 52r25 53r17
+51r5 Hrt 52m16 52r36 53r35 53r41

@@ -5,19 +5,20 @@
            *******************************************************
 
 
-                        DATE : 31-MAY-2014 16:05:25.82
+                        DATE : 01-JUN-2014 19:41:14.93
 
 Options:
     noswitch
     index_file=project.idx
-    nowarning_file
+    warning_file=spark.wrn
     notarget_compiler_data
-    noconfig_file
+    config_file=spark.cfg
     source_extension=ada
     listing_extension=lst
     nodictionary_file
     report_file=spark.rep
     nohtml
+    vcg
     nostatistics
     fdl_identifiers=accept
     flow_analysis=information
@@ -28,74 +29,62 @@ Options:
     error_explanations=off
     justification_option=full
     output_directory=.
-    output_directory (actual)=/Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/
+    output_directory (actual)=/Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/
 
 Selected files:
+   measures.adb
+   heart.adb
+   impulsegenerator.adb
+   hrm.adb
    icd.adb
 
 
 Index Filename(s) used were: 
-   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/project.idx
+   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/project.idx
 
 
 No Meta Files used
 
 
-Full warning reporting selected
+Summary warning reporting selected for:
+   Generation of RTCs on real numbers
+
+
+
+Target configuration file:
+Line
+   1  package Standard is
+   2   
+   3     type Integer is range -2**31 .. 2**31-1;
+   4     type Short_Short_Integer is range -2**7 .. 2**7-1;
+   5     type Short_Integer is range -2**15 .. 2**15-1;
+   6     type Long_Integer is range -2**31 .. 2**31-1;
+   7     type Long_Long_Integer is range -2**63 .. 2**63-1;
+   8   
+   9     type Short_Float is digits 6 range -3.40282E+38 ..  3.40282E+38;
+  10     type Float is digits 6 range -3.40282E+38 ..  3.40282E+38;
+  11  
+  12  end Standard;
+No summarized warnings
+
 
 
 Source Filename(s) used were:
-   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/icd.adb
-   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/icd.ads
-   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/impulsegenerator.ads
-   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/hrm.ads
-   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/randomnumber.ads
-   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/measures.ads
-   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/heart.ads
+   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/measures.adb
+   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/measures.ads
+   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/heart.adb
+   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/heart.ads
+   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/randomnumber.ads
+   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/impulsegenerator.adb
+   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/impulsegenerator.ads
+   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/hrm.adb
+   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/hrm.ads
+   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd.adb
+   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd.ads
 
 
 
-Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/icd.ads
-No Listing File
-
-   Unit name:  ICD
-   Unit type:  package specification
-   Unit has been analysed, any errors are listed below.
-
-No errors found
-
-
-Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/impulsegenerator.ads
-No Listing File
-
-   Unit name:  ImpulseGenerator
-   Unit type:  package specification
-   Unit has been analysed, any errors are listed below.
-
-No errors found
-
-
-Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/hrm.ads
-No Listing File
-
-   Unit name:  HRM
-   Unit type:  package specification
-   Unit has been analysed, any errors are listed below.
-
-No errors found
-
-
-Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/randomnumber.ads
-No Listing File
-
-   Unit name:  RandomNumber
-   Unit type:  package specification
-   Unit has been analysed, any errors are listed below.
-
-No errors found
-
-
-Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/measures.ads
+Source Filename:   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/measures.ads
 No Listing File
 
    Unit name:  Measures
@@ -104,8 +93,10 @@ No Listing File
 
 No errors found
 
+No summarized warnings
 
-Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/heart.ads
+
+Source Filename:   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/heart.ads
 No Listing File
 
    Unit name:  Heart
@@ -114,15 +105,119 @@ No Listing File
 
 No errors found
 
+No summarized warnings
 
-Source Filename:   /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/icd.adb
-Listing Filename:  /Users/avinchadee/University/his/swen90010-2014/assignments/assignment-4/spark-icd/code/icd.lst
+
+Source Filename:   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/randomnumber.ads
+No Listing File
+
+   Unit name:  RandomNumber
+   Unit type:  package specification
+   Unit has been analysed, any errors are listed below.
+
+No errors found
+
+No summarized warnings
+
+
+Source Filename:   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/impulsegenerator.ads
+No Listing File
+
+   Unit name:  ImpulseGenerator
+   Unit type:  package specification
+   Unit has been analysed, any errors are listed below.
+
+No errors found
+
+No summarized warnings
+
+
+Source Filename:   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/hrm.ads
+No Listing File
+
+   Unit name:  HRM
+   Unit type:  package specification
+   Unit has been analysed, any errors are listed below.
+
+No errors found
+
+No summarized warnings
+
+
+Source Filename:   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd.ads
+No Listing File
+
+   Unit name:  ICD
+   Unit type:  package specification
+   Unit has been analysed, any errors are listed below.
+
+No errors found
+
+No summarized warnings
+
+
+Source Filename:   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/measures.adb
+Listing Filename:  /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/measures.lst
+
+   Unit name:  Measures
+   Unit type:  package body
+   Unit has been analysed, any errors are listed below.
+
+No errors found
+
+No summarized warnings
+
+
+Source Filename:   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/heart.adb
+Listing Filename:  /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/heart.lst
+
+   Unit name:  Heart
+   Unit type:  package body
+   Unit has been analysed, any errors are listed below.
+
+No errors found
+
+1 summarized warning(s), comprising:
+     1 generation of RTCs on real numbers*
+(*Note: the above warnings may affect the validity of the analysis.)
+
+
+Source Filename:   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/impulsegenerator.adb
+Listing Filename:  /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/impulsegenerator.lst
+
+   Unit name:  ImpulseGenerator
+   Unit type:  package body
+   Unit has been analysed, any errors are listed below.
+
+No errors found
+
+No summarized warnings
+
+
+Source Filename:   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/hrm.adb
+Listing Filename:  /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/hrm.lst
+
+   Unit name:  HRM
+   Unit type:  package body
+   Unit has been analysed, any errors are listed below.
+
+No errors found
+
+1 summarized warning(s), comprising:
+     1 generation of RTCs on real numbers*
+(*Note: the above warnings may affect the validity of the analysis.)
+
+
+Source Filename:   /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd.adb
+Listing Filename:  /Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/icd.lst
 
    Unit name:  ICD
    Unit type:  package body
    Unit has been analysed, any errors are listed below.
 
 No errors found
+
+No summarized warnings
 
 
 --End of file--------------------------------------------------

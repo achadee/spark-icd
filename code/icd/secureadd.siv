@@ -1,0 +1,54 @@
+*****************************************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+*****************************************************************************
+
+
+CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:32
+
+SPARK Simplifier GPL 2011
+Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+
+function ICD.secureAdd
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 129:
+
+function_secureadd_1.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 130:
+
+function_secureadd_2.
+H1:    integer__size > 0 .
+H2:    num1 >= - 2147483648 .
+H3:    num1 <= 2147483647 .
+H4:    num2 >= - 2147483648 .
+H5:    num2 <= 2147483647 .
+H6:    integer__size >= 0 .
+       ->
+C1:    num1 + num2 >= - 2147483648 .
+C2:    num1 + num2 <= 2147483647 .
+
+
+For path(s) from start to run-time check associated with statement of line 131:
+
+function_secureadd_3.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to finish:
+
+function_secureadd_4.
+*** true .          /* all conclusions proved */
+
+
+function_secureadd_5.
+*** true .   /* contradiction within hypotheses. */
+
+
+

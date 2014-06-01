@@ -1,0 +1,65 @@
+*****************************************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+*****************************************************************************
+
+
+CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:32
+
+SPARK Simplifier GPL 2011
+Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+
+procedure ICD.Set_Impulse
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 91:
+
+procedure_set_impulse_1.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 95:
+
+procedure_set_impulse_2.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 96:
+
+procedure_set_impulse_3.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 97:
+
+procedure_set_impulse_4.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 100:
+
+procedure_set_impulse_5.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to finish:
+
+procedure_set_impulse_6.
+*** true .          /* all conclusions proved */
+
+
+procedure_set_impulse_7.
+*** true .          /* all conclusions proved */
+
+
+procedure_set_impulse_8.
+*** true .          /* all conclusions proved */
+
+
+procedure_set_impulse_9.
+*** true .          /* all conclusions proved */
+
+

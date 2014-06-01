@@ -1,0 +1,73 @@
+*****************************************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+*****************************************************************************
+
+
+CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:32
+
+SPARK Simplifier GPL 2011
+Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+
+procedure ICD.Detect_Tarchycardia
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 64:
+
+procedure_detect_tarchycardia_1.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 65:
+
+procedure_detect_tarchycardia_2.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 67:
+
+procedure_detect_tarchycardia_3.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 76:
+
+procedure_detect_tarchycardia_4.
+*** true .          /* all conclusions proved */
+
+
+procedure_detect_tarchycardia_5.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 78:
+
+procedure_detect_tarchycardia_6.
+*** true .          /* all conclusions proved */
+
+
+procedure_detect_tarchycardia_7.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to finish:
+
+procedure_detect_tarchycardia_8.
+*** true .          /* all conclusions proved */
+
+
+procedure_detect_tarchycardia_9.
+*** true .          /* all conclusions proved */
+
+
+procedure_detect_tarchycardia_10.
+*** true .          /* all conclusions proved */
+
+
+procedure_detect_tarchycardia_11.
+*** true .          /* all conclusions proved */
+
+

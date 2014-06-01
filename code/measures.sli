@@ -20,7 +20,7 @@ A -rules=none
 A -error_explanations=off
 A -justification_option=full
 A -output_directory=.
-A -output_directory (actual)=/home/samana/swen90010-2014/assignments/assignment-4/code/
+A -output_directory (actual)=/Users/saman/Documents/Uni Docs/SWEN90010 High Integarity/proj4/spark-icd/code/
 P
 R
 

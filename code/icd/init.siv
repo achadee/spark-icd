@@ -1,0 +1,113 @@
+*****************************************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+*****************************************************************************
+
+
+CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:32
+
+SPARK Simplifier GPL 2011
+Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+
+procedure ICD.Init
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 15:
+
+procedure_init_1.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 16:
+
+procedure_init_2.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 18:
+
+procedure_init_3.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 19:
+
+procedure_init_4.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 21:
+
+procedure_init_5.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 24:
+
+procedure_init_6.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 25:
+
+procedure_init_7.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 27:
+
+procedure_init_8.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 28:
+
+procedure_init_9.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 29:
+
+procedure_init_10.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 30:
+
+procedure_init_11.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 31:
+
+procedure_init_12.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 32:
+
+procedure_init_13.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 33:
+
+procedure_init_14.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 34:
+
+procedure_init_15.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to finish:
+
+procedure_init_16.
+*** true .          /* all conclusions proved */
+
+

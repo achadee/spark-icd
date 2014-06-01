@@ -16,5 +16,5 @@ clean:
 	rm -f *.ali *.o *.lst *.sli
 
 CLEAN: clean
-	rm -rf hrm/ impulsegenerator/ heart/ measures/ closedloop/
+	rm -rf hrm/ impulsegenerator/ heart/ measures/ closedloop/ icd/
 	rm -f code.sum spark.rep

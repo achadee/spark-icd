@@ -1,0 +1,118 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 01-JUN-2014 19:41:14.63
+
+                           function ICD.secureAdd
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 129:
+
+function_secureadd_1.
+H1:    integer__size > 0 .
+H2:    integer__size > 0 .
+H3:    num1 >= integer__first .
+H4:    num1 <= integer__last .
+H5:    num2 >= integer__first .
+H6:    num2 <= integer__last .
+        ->
+C1:    integer__last >= integer__first .
+C2:    integer__last <= integer__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 130:
+
+function_secureadd_2.
+H1:    integer__size > 0 .
+H2:    integer__size > 0 .
+H3:    num1 >= integer__first .
+H4:    num1 <= integer__last .
+H5:    num2 >= integer__first .
+H6:    num2 <= integer__last .
+H7:    integer__last >= integer__first .
+H8:    integer__last <= integer__last .
+        ->
+C1:    num1 + num2 >= integer__base__first .
+C2:    num1 + num2 <= integer__base__last .
+C3:    num1 + num2 >= integer__base__first .
+C4:    num1 + num2 <= integer__base__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 131:
+
+function_secureadd_3.
+H1:    integer__size > 0 .
+H2:    integer__size > 0 .
+H3:    num1 >= integer__first .
+H4:    num1 <= integer__last .
+H5:    num2 >= integer__first .
+H6:    num2 <= integer__last .
+H7:    integer__last >= integer__first .
+H8:    integer__last <= integer__last .
+H9:    num1 + num2 >= integer__base__first .
+H10:   num1 + num2 <= integer__base__last .
+H11:   num1 + num2 >= integer__base__first .
+H12:   num1 + num2 <= integer__base__last .
+H13:   num1 + num2 <= integer__last .
+H14:   num1 + num2 >= integer__first .
+        ->
+C1:    num1 + num2 >= integer__first .
+C2:    num1 + num2 <= integer__last .
+ 
+
+For path(s) from start to finish:
+
+function_secureadd_4.
+H1:    integer__size > 0 .
+H2:    integer__size > 0 .
+H3:    num1 >= integer__first .
+H4:    num1 <= integer__last .
+H5:    num2 >= integer__first .
+H6:    num2 <= integer__last .
+H7:    integer__last >= integer__first .
+H8:    integer__last <= integer__last .
+H9:    num1 + num2 >= integer__base__first .
+H10:   num1 + num2 <= integer__base__last .
+H11:   num1 + num2 >= integer__base__first .
+H12:   num1 + num2 <= integer__base__last .
+H13:   num1 + num2 <= integer__last .
+H14:   num1 + num2 >= integer__first .
+H15:   num1 + num2 >= integer__first .
+H16:   num1 + num2 <= integer__last .
+H17:   num1 + num2 >= integer__first .
+H18:   num1 + num2 <= integer__last .
+        ->
+C1:    num1 + num2 = num1 + num2 .
+C2:    num1 + num2 >= integer__first .
+C3:    num1 + num2 <= integer__last .
+ 
+
+function_secureadd_5.
+H1:    integer__size > 0 .
+H2:    integer__size > 0 .
+H3:    num1 >= integer__first .
+H4:    num1 <= integer__last .
+H5:    num2 >= integer__first .
+H6:    num2 <= integer__last .
+H7:    integer__last >= integer__first .
+H8:    integer__last <= integer__last .
+H9:    num1 + num2 >= integer__base__first .
+H10:   num1 + num2 <= integer__base__last .
+H11:   num1 + num2 >= integer__base__first .
+H12:   num1 + num2 <= integer__base__last .
+H13:   not ((num1 + num2 <= integer__last) and (num1 + num2 >= 
+           integer__first)) .
+H14:   integer__last >= integer__first .
+H15:   integer__last <= integer__last .
+        ->
+C1:    integer__last = num1 + num2 .
+C2:    integer__last >= integer__first .
+C3:    integer__last <= integer__last .
+ 
+

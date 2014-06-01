@@ -1,0 +1,142 @@
+*****************************************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+*****************************************************************************
+
+
+CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:32
+
+SPARK Simplifier GPL 2011
+Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+
+procedure ICD.Set_Impulse
+
+
+
+
+
+
+@@@@@@@@@@  VC: procedure_set_impulse_1.  @@@@@@@@@@
+%%%  Simplified H28 on reading formula in, to give:
+     %%%  H28:  icdstates__first <= fld_state(computer)
+-S-  Applied substitution rule set_impulse_rules(2).
+     This was achieved by replacing all occurrences of fibshock by:
+          30.
+<S>  New C1:  30 >= measures__joules__first
+<S>  New C2:  30 <= measures__joules__last
+-S-  Applied substitution rule set_impulse_rules(9).
+     This was achieved by replacing all occurrences of measures__joules__first 
+          by:
+          0.
+<S>  New H35:  fld_impulse(shock) >= 0
+<S>  New C1:  true
+-S-  Applied substitution rule set_impulse_rules(10).
+     This was achieved by replacing all occurrences of measures__joules__last 
+          by:
+          45.
+<S>  New H36:  fld_impulse(shock) <= 45
+<S>  New C2:  true
+***  Proved C1:  true
+***  Proved C2:  true
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_set_impulse_2.  @@@@@@@@@@
+%%%  Simplified H28 on reading formula in, to give:
+     %%%  H28:  icdstates__first <= fld_state(computer)
+-S-  Applied substitution rule set_impulse_rules(1).
+     This was achieved by replacing all occurrences of tarshock by:
+          2.
+<S>  New C1:  2 >= measures__joules__first
+<S>  New C2:  2 <= measures__joules__last
+-S-  Applied substitution rule set_impulse_rules(9).
+     This was achieved by replacing all occurrences of measures__joules__first 
+          by:
+          0.
+<S>  New H35:  fld_impulse(shock) >= 0
+<S>  New C1:  true
+-S-  Applied substitution rule set_impulse_rules(10).
+     This was achieved by replacing all occurrences of measures__joules__last 
+          by:
+          45.
+<S>  New H36:  fld_impulse(shock) <= 45
+<S>  New C2:  true
+***  Proved C1:  true
+***  Proved C2:  true
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_set_impulse_3.  @@@@@@@@@@
+%%%  Simplified H28 on reading formula in, to give:
+     %%%  H28:  icdstates__first <= fld_state(computer)
+***  Proved C2:  fld_count(computer) - 1 <= integer__last
+     using hypothesis H25.
+-S-  Applied substitution rule set_impulse_rules(4).
+     This was achieved by replacing all occurrences of integer__first by:
+          - 2147483648.
+<S>  New H2:  fld_history_variance(computer) >= - 2147483648
+<S>  New H4:  fld_history_avarage(computer) >= - 2147483648
+<S>  New H18:  fld_tickstoreenabledetectionagain(computer) >= - 2147483648
+<S>  New H20:  fld_tickcount(computer) >= - 2147483648
+<S>  New H22:  fld_next(computer) >= - 2147483648
+<S>  New H24:  fld_count(computer) >= - 2147483648
+<S>  New C1:  fld_count(computer) >= - 2147483647
+***  Proved C1:  fld_count(computer) >= - 2147483647
+     using hypothesis H40.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_set_impulse_4.  @@@@@@@@@@
+%%%  Simplified H28 on reading formula in, to give:
+     %%%  H28:  icdstates__first <= fld_state(computer)
+%%%  Simplified C1 on reading formula in, to give:
+     %%%  C1:  fld_next(computer) >= integer__first
+%%%  Simplified C2 on reading formula in, to give:
+     %%%  C2:  fld_next(computer) <= integer__last
+***  Proved C1:  fld_next(computer) >= integer__first
+     using hypothesis H22.
+***  Proved C2:  fld_next(computer) <= integer__last
+     using hypothesis H23.
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_set_impulse_5.  @@@@@@@@@@
+%%%  Simplified H28 on reading formula in, to give:
+     %%%  H28:  icdstates__first <= fld_state(computer)
+-S-  Applied substitution rule set_impulse_rules(9).
+     This was achieved by replacing all occurrences of measures__joules__first 
+          by:
+          0.
+<S>  New H35:  fld_impulse(shock) >= 0
+<S>  New C1:  true
+-S-  Applied substitution rule set_impulse_rules(10).
+     This was achieved by replacing all occurrences of measures__joules__last 
+          by:
+          45.
+<S>  New H36:  fld_impulse(shock) <= 45
+<S>  New C2:  true
+***  Proved C1:  true
+***  Proved C2:  true
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_set_impulse_6.  @@@@@@@@@@
+***  Proved C1:  true
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_set_impulse_7.  @@@@@@@@@@
+***  Proved C1:  true
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_set_impulse_8.  @@@@@@@@@@
+***  Proved C1:  true
+***  PROVED VC.
+
+
+@@@@@@@@@@  VC: procedure_set_impulse_9.  @@@@@@@@@@
+***  Proved C1:  true
+***  PROVED VC.
+

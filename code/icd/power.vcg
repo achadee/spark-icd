@@ -1,0 +1,103 @@
+           *******************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+           *******************************************************
+
+
+                        DATE : 01-JUN-2014 19:41:14.62
+
+                             function ICD.power
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 119:
+
+function_power_1.
+H1:    integer__size > 0 .
+H2:    num >= integer__first .
+H3:    num <= integer__last .
+        ->
+C1:    integer__last >= integer__first .
+C2:    integer__last <= integer__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 120:
+
+function_power_2.
+H1:    integer__size > 0 .
+H2:    num >= integer__first .
+H3:    num <= integer__last .
+H4:    integer__last >= integer__first .
+H5:    integer__last <= integer__last .
+        ->
+C1:    num * num >= integer__base__first .
+C2:    num * num <= integer__base__last .
+C3:    num * num >= integer__base__first .
+C4:    num * num <= integer__base__last .
+ 
+
+For path(s) from start to run-time check associated with statement of line 121:
+
+function_power_3.
+H1:    integer__size > 0 .
+H2:    num >= integer__first .
+H3:    num <= integer__last .
+H4:    integer__last >= integer__first .
+H5:    integer__last <= integer__last .
+H6:    num * num >= integer__base__first .
+H7:    num * num <= integer__base__last .
+H8:    num * num >= integer__base__first .
+H9:    num * num <= integer__base__last .
+H10:   num * num < integer__last .
+H11:   num * num > integer__first .
+        ->
+C1:    num * num >= integer__first .
+C2:    num * num <= integer__last .
+ 
+
+For path(s) from start to finish:
+
+function_power_4.
+H1:    integer__size > 0 .
+H2:    num >= integer__first .
+H3:    num <= integer__last .
+H4:    integer__last >= integer__first .
+H5:    integer__last <= integer__last .
+H6:    num * num >= integer__base__first .
+H7:    num * num <= integer__base__last .
+H8:    num * num >= integer__base__first .
+H9:    num * num <= integer__base__last .
+H10:   num * num < integer__last .
+H11:   num * num > integer__first .
+H12:   num * num >= integer__first .
+H13:   num * num <= integer__last .
+H14:   num * num >= integer__first .
+H15:   num * num <= integer__last .
+        ->
+C1:    num * num = num * num .
+C2:    num * num >= integer__first .
+C3:    num * num <= integer__last .
+ 
+
+function_power_5.
+H1:    integer__size > 0 .
+H2:    num >= integer__first .
+H3:    num <= integer__last .
+H4:    integer__last >= integer__first .
+H5:    integer__last <= integer__last .
+H6:    num * num >= integer__base__first .
+H7:    num * num <= integer__base__last .
+H8:    num * num >= integer__base__first .
+H9:    num * num <= integer__base__last .
+H10:   not ((num * num < integer__last) and (num * num > 
+           integer__first)) .
+H11:   integer__last >= integer__first .
+H12:   integer__last <= integer__last .
+        ->
+C1:    integer__last = num * num .
+C2:    integer__last >= integer__first .
+C3:    integer__last <= integer__last .
+ 
+

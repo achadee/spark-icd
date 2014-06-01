@@ -1,0 +1,239 @@
+*****************************************************************************
+                       Semantic Analysis of SPARK Text
+                              Examiner GPL 2011
+             Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+*****************************************************************************
+
+
+CREATED 01-JUN-2014, 19:41:14  SIMPLIFIED 01-JUN-2014, 19:41:28
+
+SPARK Simplifier GPL 2011
+Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.
+
+procedure ICD.CalculateVariance
+
+
+
+
+For path(s) from start to run-time check associated with statement of line 141:
+
+procedure_calculatevariance_1.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 142:
+
+procedure_calculatevariance_2.
+H1:    fld_history_variance(computer) >= - 2147483648 .
+H2:    fld_history_variance(computer) <= 2147483647 .
+H3:    fld_history_avarage(computer) >= - 2147483648 .
+H4:    fld_history_avarage(computer) <= 2147483647 .
+H5:    fld_heartratehistory6(computer) >= - 1 .
+H6:    fld_heartratehistory6(computer) <= 300 .
+H7:    fld_heartratehistory5(computer) >= - 1 .
+H8:    fld_heartratehistory5(computer) <= 300 .
+H9:    fld_heartratehistory4(computer) >= - 1 .
+H10:   fld_heartratehistory4(computer) <= 300 .
+H11:   fld_heartratehistory3(computer) >= - 1 .
+H12:   fld_heartratehistory3(computer) <= 300 .
+H13:   fld_heartratehistory2(computer) >= - 1 .
+H14:   fld_heartratehistory2(computer) <= 300 .
+H15:   fld_heartratehistory1(computer) >= - 1 .
+H16:   fld_heartratehistory1(computer) <= 300 .
+H17:   fld_tickstoreenabledetectionagain(computer) >= - 2147483648 .
+H18:   fld_tickstoreenabledetectionagain(computer) <= 2147483647 .
+H19:   fld_tickcount(computer) >= - 2147483648 .
+H20:   fld_tickcount(computer) <= 2147483647 .
+H21:   fld_next(computer) >= - 2147483648 .
+H22:   fld_next(computer) <= 2147483647 .
+H23:   fld_count(computer) >= - 2147483648 .
+H24:   fld_count(computer) <= 2147483647 .
+H25:   fld_upperbound(computer) >= - 1 .
+H26:   fld_upperbound(computer) <= 300 .
+H27:   normal <= fld_state(computer) .
+H28:   fld_state(computer) <= tar .
+H29:   fld_rate(computer) >= - 1 .
+H30:   fld_rate(computer) <= 300 .
+H31:   integer__size >= 0 .
+H32:   measures__bpm__size >= 0 .
+H33:   icdstates__size >= 0 .
+H34:   icdtype__size >= 0 .
+       ->
+C1:    fld_history_avarage(computer) - fld_heartratehistory6(computer) >= - 
+          2147483648 .
+C2:    fld_history_avarage(computer) - fld_heartratehistory6(computer) <= 
+          2147483647 .
+C3:    fld_history_avarage(computer) - fld_heartratehistory5(computer) >= - 
+          2147483648 .
+C4:    fld_history_avarage(computer) - fld_heartratehistory5(computer) <= 
+          2147483647 .
+C5:    fld_history_avarage(computer) - fld_heartratehistory4(computer) >= - 
+          2147483648 .
+C6:    fld_history_avarage(computer) - fld_heartratehistory4(computer) <= 
+          2147483647 .
+C7:    fld_history_avarage(computer) - fld_heartratehistory3(computer) >= - 
+          2147483648 .
+C8:    fld_history_avarage(computer) - fld_heartratehistory3(computer) <= 
+          2147483647 .
+C9:    fld_history_avarage(computer) - fld_heartratehistory2(computer) >= - 
+          2147483648 .
+C10:   fld_history_avarage(computer) - fld_heartratehistory2(computer) <= 
+          2147483647 .
+C11:   fld_history_avarage(computer) - fld_heartratehistory1(computer) >= - 
+          2147483648 .
+C12:   fld_history_avarage(computer) - fld_heartratehistory1(computer) <= 
+          2147483647 .
+
+
+For path(s) from start to precondition check associated with statement of line 
+          155:
+
+procedure_calculatevariance_3.
+H1:    fld_history_variance(computer) >= - 2147483648 .
+H2:    fld_history_variance(computer) <= 2147483647 .
+H3:    fld_history_avarage(computer) >= - 2147483648 .
+H4:    fld_history_avarage(computer) <= 2147483647 .
+H5:    fld_heartratehistory6(computer) >= - 1 .
+H6:    fld_heartratehistory6(computer) <= 300 .
+H7:    fld_heartratehistory5(computer) >= - 1 .
+H8:    fld_heartratehistory5(computer) <= 300 .
+H9:    fld_heartratehistory4(computer) >= - 1 .
+H10:   fld_heartratehistory4(computer) <= 300 .
+H11:   fld_heartratehistory3(computer) >= - 1 .
+H12:   fld_heartratehistory3(computer) <= 300 .
+H13:   fld_heartratehistory2(computer) >= - 1 .
+H14:   fld_heartratehistory2(computer) <= 300 .
+H15:   fld_heartratehistory1(computer) >= - 1 .
+H16:   fld_heartratehistory1(computer) <= 300 .
+H17:   fld_tickstoreenabledetectionagain(computer) >= - 2147483648 .
+H18:   fld_tickstoreenabledetectionagain(computer) <= 2147483647 .
+H19:   fld_tickcount(computer) >= - 2147483648 .
+H20:   fld_tickcount(computer) <= 2147483647 .
+H21:   fld_next(computer) >= - 2147483648 .
+H22:   fld_next(computer) <= 2147483647 .
+H23:   fld_count(computer) >= - 2147483648 .
+H24:   fld_count(computer) <= 2147483647 .
+H25:   fld_upperbound(computer) >= - 1 .
+H26:   fld_upperbound(computer) <= 300 .
+H27:   normal <= fld_state(computer) .
+H28:   fld_state(computer) <= tar .
+H29:   fld_rate(computer) >= - 1 .
+H30:   fld_rate(computer) <= 300 .
+H31:   fld_history_avarage(computer) - fld_heartratehistory6(computer) >= - 
+          2147483648 .
+H32:   fld_history_avarage(computer) - fld_heartratehistory6(computer) <= 
+          2147483647 .
+H33:   fld_history_avarage(computer) - fld_heartratehistory5(computer) >= - 
+          2147483648 .
+H34:   fld_history_avarage(computer) - fld_heartratehistory5(computer) <= 
+          2147483647 .
+H35:   fld_history_avarage(computer) - fld_heartratehistory4(computer) >= - 
+          2147483648 .
+H36:   fld_history_avarage(computer) - fld_heartratehistory4(computer) <= 
+          2147483647 .
+H37:   fld_history_avarage(computer) - fld_heartratehistory3(computer) >= - 
+          2147483648 .
+H38:   fld_history_avarage(computer) - fld_heartratehistory3(computer) <= 
+          2147483647 .
+H39:   fld_history_avarage(computer) - fld_heartratehistory2(computer) >= - 
+          2147483648 .
+H40:   fld_history_avarage(computer) - fld_heartratehistory2(computer) <= 
+          2147483647 .
+H41:   fld_history_avarage(computer) - fld_heartratehistory1(computer) >= - 
+          2147483648 .
+H42:   fld_history_avarage(computer) - fld_heartratehistory1(computer) <= 
+          2147483647 .
+H43:   integer__size >= 0 .
+H44:   measures__bpm__size >= 0 .
+H45:   icdstates__size >= 0 .
+H46:   icdtype__size >= 0 .
+       ->
+C1:    integer__size > 0 .
+
+
+For path(s) from start to precondition check associated with statement of line 
+          155:
+
+procedure_calculatevariance_4.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to precondition check associated with statement of line 
+          155:
+
+procedure_calculatevariance_5.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to precondition check associated with statement of line 
+          155:
+
+procedure_calculatevariance_6.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to precondition check associated with statement of line 
+          155:
+
+procedure_calculatevariance_7.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to precondition check associated with statement of line 
+          155:
+
+procedure_calculatevariance_8.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to precondition check associated with statement of line 
+          155:
+
+procedure_calculatevariance_9.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to precondition check associated with statement of line 
+          155:
+
+procedure_calculatevariance_10.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to precondition check associated with statement of line 
+          155:
+
+procedure_calculatevariance_11.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to precondition check associated with statement of line 
+          155:
+
+procedure_calculatevariance_12.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to precondition check associated with statement of line 
+          155:
+
+procedure_calculatevariance_13.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to run-time check associated with statement of line 155:
+
+procedure_calculatevariance_14.
+*** true .          /* all conclusions proved */
+
+
+For path(s) from start to finish:
+
+procedure_calculatevariance_15.
+*** true .          /* all conclusions proved */
+
+
+procedure_calculatevariance_16.
+*** true .          /* all conclusions proved */
+
+

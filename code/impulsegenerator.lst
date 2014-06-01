@@ -5,64 +5,86 @@
            *******************************************************
 
 
-                        DATE : 28-MAY-2014 16:19:30.43
+                        DATE : 01-JUN-2014 19:41:14.27
 
 Line
-   1  with Measures; 
+   1  with RandomNumber;
    2  with Heart;
    3  
-   4  -- This package simulates a simple impulse generator for an ICD. It is
-   5  --  provided with an amount to discharge, and provides this amount to
-   6  --  a heart in the next 'tick'.
-   7  --# inherit Measures,
-   8  --#         RandomNumber,
-   9  --#         Heart;
-  10  package ImpulseGenerator is
+   4  package body ImpulseGenerator is
+   5     
+   6     procedure Init(Generator : out GeneratorType) is
+   7     begin
+   8        Generator.IsOn := False;
+   9        Generator.Impulse := Measures.Joules'First;
+  10     end Init;
+
++++        Flow analysis of subprogram Init performed: no 
+           errors found.
+
   11     
-  12     -- The generator type
-  13     type GeneratorType is
-  14        record
-  15  	 -- The current impulse; to be administered to the heart at
-  16  	 --  the next clock tick
-  17  	 Impulse : Measures.Joules;  
-  18     
-  19  	 -- Indicates whether the generator has been turned on.
-  20  	 IsOn : Boolean;
-  21        end record;
-  22     
-  23     -- Create and initialise a new generator.
-  24     procedure Init(Generator : out GeneratorType);
-  25     --# derives Generator from ;
-  26     --# post Generator.IsOn = False and Generator.Impulse = 0;
-  27     
-  28     -- Turn on the generator, but do not administer any impulse yet.
-  29     procedure On(Generator : in out GeneratorType);
-  30     --# derives Generator from Generator;
-  31     --# post Generator.IsOn;
-  32     
-  33     -- Turn off the generator;
-  34     procedure Off(Generator : in out GeneratorType);
-  35     --# derives Generator from Generator;
-  36     --# post not Generator.IsOn;
-  37     
-  38     -- Query the status of the generator (on/off)
-  39     function IsOn(Generator : in GeneratorType) return Boolean;
-  40     --# return Generator.IsOn;
-  41     
-  42     -- Set the impulse to be administered
-  43     procedure SetImpulse(Generator : in out GeneratorType; 
-  44  			J : in Measures.Joules);
-  45     --# derives Generator from Generator, J;
-  46     --# post (Generator.IsOn -> Generator.Impulse = J) and
-  47     --#      (not Generator.IsOn -> Generator = Generator~);
-  48     
-  49     -- Tick the clock, providing an impulse to the heart.
-  50     procedure Tick(Generator : in GeneratorType; 
-  51  		  Hrt : in out Heart.HeartType);
-  52     --# derives Hrt from Generator, Hrt;
-  53     --# post not Generator.IsOn -> Hrt = Hrt~;
-  54     
-  55  end ImpulseGenerator;
+  12     procedure On(Generator : in out GeneratorType) is
+  13     begin
+  14        Generator.IsOn := True;
+  15     end On;
+
++++        Flow analysis of subprogram On performed: no 
+           errors found.
+
+  16        
+  17     procedure Off(Generator : in out GeneratorType) is
+  18     begin
+  19        Generator.IsOn := False;
+  20     end Off;
+
++++        Flow analysis of subprogram Off performed: no 
+           errors found.
+
+  21     
+  22     function IsOn(Generator : in GeneratorType) return Boolean is
+  23     begin
+  24        return Generator.IsOn;
+  25     end IsOn;
+
++++        Flow analysis of subprogram IsOn performed: no 
+           errors found.
+
+  26     
+  27     procedure SetImpulse(Generator : in out GeneratorType; 
+  28  			J : in Measures.Joules) is
+  29     begin
+  30        -- Only set the impulse if the machine is on
+  31        if Generator.IsOn then
+  32  	 Generator.Impulse := J;
+  33        end if;
+  34     end SetImpulse;
+
++++        Flow analysis of subprogram SetImpulse 
+           performed: no errors found.
+
+  35     
+  36     procedure Tick(Generator : in GeneratorType; 
+  37  		  Hrt : in out Heart.HeartType) is
+  38        HrtVariable : Heart.HeartType;
+  39     begin
+  40        -- Administer the impulse if the generator is on
+  41        if Generator.IsOn then
+  42  	 -- For an 'out' variable, we must create a new variable for
+  43  	 --  the call, and the copy the output value from
+  44  	 --  Heart.SetImpulse back to Ptnt
+  45  	 HrtVariable := Hrt;
+  46  	 Heart.SetImpulse(HrtVariable, Generator.Impulse);
+  47  	 Hrt := HrtVariable;
+  48        end if;
+  49     end Tick;
+
++++        Flow analysis of subprogram Tick performed: no 
+           errors found.
+
+  50     
+  51  end ImpulseGenerator;
+No summarized warnings
+
 
 
 --End of file--------------------------------------------------

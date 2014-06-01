@@ -1,0 +1,90 @@
+           /*********************************************************/
+                           /*Proof Rule Declarations*/
+                              /*Examiner GPL 2011*/
+             /*Copyright (C) 2011 Altran Praxis Limited, Bath, U.K.*/
+           /*********************************************************/
+
+
+                        /*DATE : 01-JUN-2014 19:41:14.65*/
+
+                      /*procedure ICD.CalculateVariance*/
+
+
+rule_family calculatevar_rules:
+     X      requires [X:any] &
+     X <= Y requires [X:ire, Y:ire] &
+     X >= Y requires [X:ire, Y:ire].
+
+calculatevar_rules(1): integer__size >= 0 may_be_deduced.
+calculatevar_rules(2): integer__first may_be_replaced_by -2147483648.
+calculatevar_rules(3): integer__last may_be_replaced_by 2147483647.
+calculatevar_rules(4): integer__base__first may_be_replaced_by -2147483648.
+calculatevar_rules(5): integer__base__last may_be_replaced_by 2147483647.
+calculatevar_rules(6): measures__bpm__size >= 0 may_be_deduced.
+calculatevar_rules(7): measures__bpm__first may_be_replaced_by -1.
+calculatevar_rules(8): measures__bpm__last may_be_replaced_by 300.
+calculatevar_rules(9): measures__bpm__base__first may_be_replaced_by -2147483648.
+calculatevar_rules(10): measures__bpm__base__last may_be_replaced_by 2147483647.
+calculatevar_rules(11): icdstates__size >= 0 may_be_deduced.
+calculatevar_rules(12): icdstates__first may_be_replaced_by normal.
+calculatevar_rules(13): icdstates__last may_be_replaced_by tar.
+calculatevar_rules(14): icdstates__base__first may_be_replaced_by normal.
+calculatevar_rules(15): icdstates__base__last may_be_replaced_by tar.
+calculatevar_rules(16): icdstates__pos(icdstates__first) may_be_replaced_by 0.
+calculatevar_rules(17): icdstates__pos(normal) may_be_replaced_by 0.
+calculatevar_rules(18): icdstates__val(0) may_be_replaced_by 
+     normal.
+calculatevar_rules(19): icdstates__pos(fib) may_be_replaced_by 1.
+calculatevar_rules(20): icdstates__val(1) may_be_replaced_by fib.
+calculatevar_rules(21): icdstates__pos(tar) may_be_replaced_by 2.
+calculatevar_rules(22): icdstates__val(2) may_be_replaced_by tar.
+calculatevar_rules(23): icdstates__pos(icdstates__last) may_be_replaced_by 2.
+calculatevar_rules(24): icdstates__pos(succ(X)) may_be_replaced_by 
+     icdstates__pos(X) + 1
+     if [X <=tar, X <> tar].
+calculatevar_rules(25): icdstates__pos(pred(X)) may_be_replaced_by 
+     icdstates__pos(X) - 1
+     if [X >=normal, X <> normal].
+calculatevar_rules(26): icdstates__pos(X) >= 0 may_be_deduced_from
+     [normal <= X, X <= tar].
+calculatevar_rules(27): icdstates__pos(X) <= 2 may_be_deduced_from
+     [normal <= X, X <= tar].
+calculatevar_rules(28): icdstates__val(X) >= normal may_be_deduced_from
+     [0 <= X, X <= 2].
+calculatevar_rules(29): icdstates__val(X) <= tar may_be_deduced_from
+     [0 <= X, X <= 2].
+calculatevar_rules(30): succ(icdstates__val(X)) may_be_replaced_by 
+     icdstates__val(X+1)
+     if [0 <= X, X < 2].
+calculatevar_rules(31): pred(icdstates__val(X)) may_be_replaced_by 
+     icdstates__val(X-1)
+     if [0 < X, X <= 2].
+calculatevar_rules(32): icdstates__pos(icdstates__val(X)) may_be_replaced_by X
+     if [0 <= X, X <= 2].
+calculatevar_rules(33): icdstates__val(icdstates__pos(X)) may_be_replaced_by X
+     if [normal <= X, X <= tar].
+calculatevar_rules(34): icdstates__pos(X) <= icdstates__pos(Y) & X <= Y are_interchangeable 
+     if [normal <= X, X <= tar, normal <= Y, Y <= tar].
+calculatevar_rules(35): icdstates__val(X) <= icdstates__val(Y) & X <= Y are_interchangeable 
+     if [0 <= X, X <= 2, 0 <= Y, Y <= 2].
+calculatevar_rules(36): icdtype__size >= 0 may_be_deduced.
+calculatevar_rules(37): A = B may_be_deduced_from
+     [goal(checktype(A,icdtype)),
+      goal(checktype(B,icdtype)),
+      fld_rate(A) = fld_rate(B),
+      fld_inprocess(A) = fld_inprocess(B),
+      fld_ison(A) = fld_ison(B),
+      fld_state(A) = fld_state(B),
+      fld_upperbound(A) = fld_upperbound(B),
+      fld_count(A) = fld_count(B),
+      fld_next(A) = fld_next(B),
+      fld_tickcount(A) = fld_tickcount(B),
+      fld_tickstoreenabledetectionagain(A) = fld_tickstoreenabledetectionagain(B),
+      fld_heartratehistory1(A) = fld_heartratehistory1(B),
+      fld_heartratehistory2(A) = fld_heartratehistory2(B),
+      fld_heartratehistory3(A) = fld_heartratehistory3(B),
+      fld_heartratehistory4(A) = fld_heartratehistory4(B),
+      fld_heartratehistory5(A) = fld_heartratehistory5(B),
+      fld_heartratehistory6(A) = fld_heartratehistory6(B),
+      fld_history_avarage(A) = fld_history_avarage(B),
+      fld_history_variance(A) = fld_history_variance(B)].
